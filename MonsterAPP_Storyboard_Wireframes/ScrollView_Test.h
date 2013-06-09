@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ScrollView_Test.h
 //  MonsterAPP_Storyboard_Wireframes
 //
 //  Created by Sonam Dhingra on 6/8/13.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface ViewController : UIViewController
+@interface ScrollView_Test : UIScrollView
 
 @end

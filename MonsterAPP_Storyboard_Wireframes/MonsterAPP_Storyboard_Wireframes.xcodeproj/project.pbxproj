@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291A1284176411130098D66E /* ScrollView_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 291A1283176411130098D66E /* ScrollView_Test.m */; };
+		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
 		294B082A1763631B00C5DFFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08291763631B00C5DFFA /* Foundation.framework */; };
 		294B082C1763631B00C5DFFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B082B1763631B00C5DFFA /* CoreGraphics.framework */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291A1282176411130098D66E /* ScrollView_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollView_Test.h; path = ../ScrollView_Test.h; sourceTree = "<group>"; };
+		291A1283176411130098D66E /* ScrollView_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollView_Test.m; path = ../ScrollView_Test.m; sourceTree = "<group>"; };
+		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
 		294B08241763631B00C5DFFA /* MonsterAPP_Storyboard_Wireframes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterAPP_Storyboard_Wireframes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		294B08271763631B00C5DFFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		294B08291763631B00C5DFFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				294B08361763631B00C5DFFA /* AppDelegate.h */,
+				291A1282176411130098D66E /* ScrollView_Test.h */,
+				291A1283176411130098D66E /* ScrollView_Test.m */,
 				294B08371763631B00C5DFFA /* AppDelegate.m */,
 				294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
@@ -102,6 +109,7 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				292943FA176403E4001315E8 /* chinchilla.png */,
 				294B084E1763874100C5DFFA /* junglg_bg.png */,
 				294B084C176386F800C5DFFA /* egg_still.png */,
 				294B084A176385E600C5DFFA /* vector_monster.png */,
@@ -175,6 +183,7 @@
 				294B084B176385E600C5DFFA /* vector_monster.png in Resources */,
 				294B084D176386F800C5DFFA /* egg_still.png in Resources */,
 				294B084F1763874100C5DFFA /* junglg_bg.png in Resources */,
+				292943FB176403E4001315E8 /* chinchilla.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +197,7 @@
 				294B08341763631B00C5DFFA /* main.m in Sources */,
 				294B08381763631B00C5DFFA /* AppDelegate.m in Sources */,
 				294B08441763631B00C5DFFA /* ViewController.m in Sources */,
+				291A1284176411130098D66E /* ScrollView_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +320,7 @@
 				294B08491763631B00C5DFFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
