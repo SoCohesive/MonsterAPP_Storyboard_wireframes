@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProjectPickerVC : UIViewController
+@interface ProjectPickerVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property NSMutableArray *projectTypes;
 @property (strong, nonatomic) IBOutlet UITableView *projectTypesTable;
+@property (strong, nonatomic) NSString *projectTemplateName;
 
 @end

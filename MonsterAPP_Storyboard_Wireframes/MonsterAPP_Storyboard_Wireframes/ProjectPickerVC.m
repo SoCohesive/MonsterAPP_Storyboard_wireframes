@@ -11,7 +11,6 @@
 
 @interface ProjectPickerVC ()
 
-@property (strong, nonatomic) NSString *projectTemplateName;
 
 @end
 
@@ -29,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.projectTemplateName = [[NSString alloc] init];
+    
     self.title = @"Pick a Project Type";
 
     // related to table view for generating project items, and segue to next view
@@ -86,16 +87,15 @@
     self.projectTemplateName = [self.projectTypes objectAtIndex:indexPath.row];
     [self.projectTypesTable deselectRowAtIndexPath:indexPath animated:YES];
     
-    //[self performSegueWithIdentifier:@"segueToFirstEgg" sender:self];
+   [self performSegueWithIdentifier:@"segueToRewardView" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+((NewEggViewController*)(segue.destinationViewController)).projectTypeName = self.projectTemplateName;
     
-((NewEggViewController*)(segue.destinationViewController)).projectTemplateName = self.projectTemplateName;
     
-    
-    NSLog(@"%@",((NewEggViewController*)(segue.destinationViewController)).projectTemplateName );
+    NSLog(@"PickedProject as sent to egg -->%@",((NewEggViewController*)(segue.destinationViewController)).projectTypeName );
     
 }
 

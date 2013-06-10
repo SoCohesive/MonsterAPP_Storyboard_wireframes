@@ -12,6 +12,7 @@
 @interface NewEggViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet SparkleImageView *shineRays;
-@property (strong, nonatomic) NSString *projectTemplateName;
+@property (strong, nonatomic) NSString *projectTypeName;
+
 
 @end
