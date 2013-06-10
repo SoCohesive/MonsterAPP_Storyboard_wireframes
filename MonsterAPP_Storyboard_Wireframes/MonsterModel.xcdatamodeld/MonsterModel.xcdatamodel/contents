@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Monster" syncable="YES">
+        <attribute name="monsterDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monsterID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="monsterName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Task" syncable="YES">
+        <attribute name="actualHP" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="actualXP" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="monsterID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="possibleHP" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="possibleXP" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="projectedEndDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="projectedStartDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="taskID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="TaskDetail" syncable="YES">
+        <attribute name="monsterID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stepCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="stepCompletedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stepCreatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stepDetail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stepHeader" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stepHP" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stepNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stepXP" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="taskID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="User" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Task" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="TaskDetail" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Monster" positionX="160" positionY="192" width="128" height="90"/>
+    </elements>
+</model>
