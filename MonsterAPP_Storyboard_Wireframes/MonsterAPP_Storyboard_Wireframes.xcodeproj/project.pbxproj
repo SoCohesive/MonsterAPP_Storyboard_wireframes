@@ -23,6 +23,11 @@
 		294B084B176385E600C5DFFA /* vector_monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084A176385E600C5DFFA /* vector_monster.png */; };
 		294B084D176386F800C5DFFA /* egg_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084C176386F800C5DFFA /* egg_still.png */; };
 		294B084F1763874100C5DFFA /* junglg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084E1763874100C5DFFA /* junglg_bg.png */; };
+		A4F378E21766268200CEC7FB /* firstEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E11766268200CEC7FB /* firstEgg.png */; };
+		A4F378E51766268E00CEC7FB /* SparkleShine-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E31766268E00CEC7FB /* SparkleShine-overlay.png */; };
+		A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E41766268E00CEC7FB /* SparkleShine.png */; };
+		A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378E8176627E300CEC7FB /* SparkleImageView.m */; };
+		A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378EE176629A700CEC7FB /* NewEggViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,13 @@
 		294B084A176385E600C5DFFA /* vector_monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vector_monster.png; sourceTree = "<group>"; };
 		294B084C176386F800C5DFFA /* egg_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_still.png; sourceTree = "<group>"; };
 		294B084E1763874100C5DFFA /* junglg_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junglg_bg.png; sourceTree = "<group>"; };
+		A4F378E11766268200CEC7FB /* firstEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstEgg.png; sourceTree = "<group>"; };
+		A4F378E31766268E00CEC7FB /* SparkleShine-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SparkleShine-overlay.png"; sourceTree = "<group>"; };
+		A4F378E41766268E00CEC7FB /* SparkleShine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SparkleShine.png; sourceTree = "<group>"; };
+		A4F378E7176627E300CEC7FB /* SparkleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleImageView.h; sourceTree = "<group>"; };
+		A4F378E8176627E300CEC7FB /* SparkleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkleImageView.m; sourceTree = "<group>"; };
+		A4F378ED176629A700CEC7FB /* NewEggViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewEggViewController.h; path = ../NewEggViewController.h; sourceTree = "<group>"; };
+		A4F378EE176629A700CEC7FB /* NewEggViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewEggViewController.m; path = ../NewEggViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,10 @@
 				294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
 				294B08431763631B00C5DFFA /* ViewController.m */,
+				A4F378ED176629A700CEC7FB /* NewEggViewController.h */,
+				A4F378EE176629A700CEC7FB /* NewEggViewController.m */,
+				A4F378E7176627E300CEC7FB /* SparkleImageView.h */,
+				A4F378E8176627E300CEC7FB /* SparkleImageView.m */,
 				294B082E1763631B00C5DFFA /* Supporting Files */,
 			);
 			path = MonsterAPP_Storyboard_Wireframes;
@@ -109,6 +125,7 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4F378E01766267000CEC7FB /* new egg files */,
 				292943FA176403E4001315E8 /* chinchilla.png */,
 				294B084E1763874100C5DFFA /* junglg_bg.png */,
 				294B084C176386F800C5DFFA /* egg_still.png */,
@@ -122,6 +139,16 @@
 				294B083D1763631B00C5DFFA /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4F378E01766267000CEC7FB /* new egg files */ = {
+			isa = PBXGroup;
+			children = (
+				A4F378E31766268E00CEC7FB /* SparkleShine-overlay.png */,
+				A4F378E41766268E00CEC7FB /* SparkleShine.png */,
+				A4F378E11766268200CEC7FB /* firstEgg.png */,
+			);
+			name = "new egg files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +211,9 @@
 				294B084D176386F800C5DFFA /* egg_still.png in Resources */,
 				294B084F1763874100C5DFFA /* junglg_bg.png in Resources */,
 				292943FB176403E4001315E8 /* chinchilla.png in Resources */,
+				A4F378E21766268200CEC7FB /* firstEgg.png in Resources */,
+				A4F378E51766268E00CEC7FB /* SparkleShine-overlay.png in Resources */,
+				A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +228,8 @@
 				294B08381763631B00C5DFFA /* AppDelegate.m in Sources */,
 				294B08441763631B00C5DFFA /* ViewController.m in Sources */,
 				291A1284176411130098D66E /* ScrollView_Test.m in Sources */,
+				A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */,
+				A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
