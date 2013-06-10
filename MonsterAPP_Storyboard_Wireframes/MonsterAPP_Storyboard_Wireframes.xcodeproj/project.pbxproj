@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		185B9F4317665E5000F3E24B /* MonsterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F4117665E5000F3E24B /* MonsterModel.xcdatamodeld */; };
+		185B9F461766622100F3E24B /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F451766622100F3E24B /* Monster.m */; };
+		185B9F491766622200F3E24B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F481766622200F3E24B /* User.m */; };
+		185B9F4C1766622200F3E24B /* TaskDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F4B1766622200F3E24B /* TaskDetail.m */; };
+		185B9F4F1766622200F3E24B /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F4E1766622200F3E24B /* Task.m */; };
 		291A1284176411130098D66E /* ScrollView_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 291A1283176411130098D66E /* ScrollView_Test.m */; };
 		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
@@ -33,6 +37,14 @@
 
 /* Begin PBXFileReference section */
 		185B9F4217665E5000F3E24B /* MonsterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonsterModel.xcdatamodel; sourceTree = "<group>"; };
+		185B9F441766622100F3E24B /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		185B9F451766622100F3E24B /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
+		185B9F471766622200F3E24B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		185B9F481766622200F3E24B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		185B9F4A1766622200F3E24B /* TaskDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetail.h; sourceTree = "<group>"; };
+		185B9F4B1766622200F3E24B /* TaskDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetail.m; sourceTree = "<group>"; };
+		185B9F4D1766622200F3E24B /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		185B9F4E1766622200F3E24B /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		291A1282176411130098D66E /* ScrollView_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollView_Test.h; path = ../ScrollView_Test.h; sourceTree = "<group>"; };
 		291A1283176411130098D66E /* ScrollView_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollView_Test.m; path = ../ScrollView_Test.m; sourceTree = "<group>"; };
 		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
@@ -120,6 +132,14 @@
 				A4F378E7176627E300CEC7FB /* SparkleImageView.h */,
 				A4F378E8176627E300CEC7FB /* SparkleImageView.m */,
 				185B9F4117665E5000F3E24B /* MonsterModel.xcdatamodeld */,
+				185B9F4D1766622200F3E24B /* Task.h */,
+				185B9F4E1766622200F3E24B /* Task.m */,
+				185B9F4A1766622200F3E24B /* TaskDetail.h */,
+				185B9F4B1766622200F3E24B /* TaskDetail.m */,
+				185B9F471766622200F3E24B /* User.h */,
+				185B9F481766622200F3E24B /* User.m */,
+				185B9F441766622100F3E24B /* Monster.h */,
+				185B9F451766622100F3E24B /* Monster.m */,
 				294B082E1763631B00C5DFFA /* Supporting Files */,
 			);
 			path = MonsterAPP_Storyboard_Wireframes;
@@ -234,6 +254,10 @@
 				A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */,
 				A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */,
 				185B9F4317665E5000F3E24B /* MonsterModel.xcdatamodeld in Sources */,
+				185B9F461766622100F3E24B /* Monster.m in Sources */,
+				185B9F491766622200F3E24B /* User.m in Sources */,
+				185B9F4C1766622200F3E24B /* TaskDetail.m in Sources */,
+				185B9F4F1766622200F3E24B /* Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
