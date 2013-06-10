@@ -28,6 +28,7 @@
 		A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E41766268E00CEC7FB /* SparkleShine.png */; };
 		A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378E8176627E300CEC7FB /* SparkleImageView.m */; };
 		A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378EE176629A700CEC7FB /* NewEggViewController.m */; };
+		A4FDE61D1766332D00623BB3 /* ProjectPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		A4F378E8176627E300CEC7FB /* SparkleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkleImageView.m; sourceTree = "<group>"; };
 		A4F378ED176629A700CEC7FB /* NewEggViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewEggViewController.h; path = ../NewEggViewController.h; sourceTree = "<group>"; };
 		A4F378EE176629A700CEC7FB /* NewEggViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewEggViewController.m; path = ../NewEggViewController.m; sourceTree = "<group>"; };
+		A4FDE61B1766332D00623BB3 /* ProjectPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectPickerVC.h; sourceTree = "<group>"; };
+		A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectPickerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
 				294B08431763631B00C5DFFA /* ViewController.m */,
+				A4FDE61B1766332D00623BB3 /* ProjectPickerVC.h */,
+				A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */,
 				A4F378ED176629A700CEC7FB /* NewEggViewController.h */,
 				A4F378EE176629A700CEC7FB /* NewEggViewController.m */,
 				A4F378E7176627E300CEC7FB /* SparkleImageView.h */,
@@ -230,6 +235,7 @@
 				291A1284176411130098D66E /* ScrollView_Test.m in Sources */,
 				A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */,
 				A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */,
+				A4FDE61D1766332D00623BB3 /* ProjectPickerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
