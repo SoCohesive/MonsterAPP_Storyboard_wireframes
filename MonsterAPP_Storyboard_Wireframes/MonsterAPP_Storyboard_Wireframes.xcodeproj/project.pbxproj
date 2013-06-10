@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185B9F5617667A5700F3E24B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B9F5517667A5700F3E24B /* CoreData.framework */; };
+		185B9F5917667AEB00F3E24B /* MonsterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */; };
+		185B9F5C17667C5700F3E24B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5B17667C5700F3E24B /* LoginViewController.m */; };
 		291A1284176411130098D66E /* ScrollView_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 291A1283176411130098D66E /* ScrollView_Test.m */; };
 		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
@@ -31,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		185B9F5517667A5700F3E24B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		185B9F5817667AEB00F3E24B /* MonsterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonsterModel.xcdatamodel; sourceTree = "<group>"; };
+		185B9F5A17667C5700F3E24B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		185B9F5B17667C5700F3E24B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		291A1282176411130098D66E /* ScrollView_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollView_Test.h; path = ../ScrollView_Test.h; sourceTree = "<group>"; };
 		291A1283176411130098D66E /* ScrollView_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollView_Test.m; path = ../ScrollView_Test.m; sourceTree = "<group>"; };
 		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
@@ -67,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185B9F5617667A5700F3E24B /* CoreData.framework in Frameworks */,
 				294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */,
 				294B082A1763631B00C5DFFA /* Foundation.framework in Frameworks */,
 				294B082C1763631B00C5DFFA /* CoreGraphics.framework in Frameworks */,
@@ -96,6 +104,7 @@
 		294B08261763631B00C5DFFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				185B9F5517667A5700F3E24B /* CoreData.framework */,
 				294B08271763631B00C5DFFA /* UIKit.framework */,
 				294B08291763631B00C5DFFA /* Foundation.framework */,
 				294B082B1763631B00C5DFFA /* CoreGraphics.framework */,
@@ -117,6 +126,9 @@
 				A4F378EE176629A700CEC7FB /* NewEggViewController.m */,
 				A4F378E7176627E300CEC7FB /* SparkleImageView.h */,
 				A4F378E8176627E300CEC7FB /* SparkleImageView.m */,
+				185B9F5A17667C5700F3E24B /* LoginViewController.h */,
+				185B9F5B17667C5700F3E24B /* LoginViewController.m */,
+				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
 				294B082E1763631B00C5DFFA /* Supporting Files */,
 			);
 			path = MonsterAPP_Storyboard_Wireframes;
@@ -230,6 +242,8 @@
 				291A1284176411130098D66E /* ScrollView_Test.m in Sources */,
 				A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */,
 				A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */,
+				185B9F5917667AEB00F3E24B /* MonsterModel.xcdatamodeld in Sources */,
+				185B9F5C17667C5700F3E24B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +369,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				185B9F5817667AEB00F3E24B /* MonsterModel.xcdatamodel */,
+			);
+			currentVersion = 185B9F5817667AEB00F3E24B /* MonsterModel.xcdatamodel */;
+			name = MonsterModel.xcdatamodeld;
+			path = ../MonsterModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 294B081C1763631B00C5DFFA /* Project object */;
 }
