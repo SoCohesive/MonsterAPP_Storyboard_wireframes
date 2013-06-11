@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
 }
 
@@ -34,5 +35,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)loginButton:(id)sender {
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.emailField resignFirstResponder];
+    [self.nameField resignFirstResponder];
+
+    return YES;
+}
+
 
 @end

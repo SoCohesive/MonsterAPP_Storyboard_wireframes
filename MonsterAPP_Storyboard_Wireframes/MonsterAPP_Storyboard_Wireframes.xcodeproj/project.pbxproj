@@ -21,17 +21,24 @@
 		294B083A1763631B00C5DFFA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B08391763631B00C5DFFA /* Default.png */; };
 		294B083C1763631B00C5DFFA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B083B1763631B00C5DFFA /* Default@2x.png */; };
 		294B083E1763631B00C5DFFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B083D1763631B00C5DFFA /* Default-568h@2x.png */; };
-		294B08411763631B00C5DFFA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */; };
 		294B08441763631B00C5DFFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B08431763631B00C5DFFA /* ViewController.m */; };
 		294B084B176385E600C5DFFA /* vector_monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084A176385E600C5DFFA /* vector_monster.png */; };
 		294B084D176386F800C5DFFA /* egg_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084C176386F800C5DFFA /* egg_still.png */; };
 		294B084F1763874100C5DFFA /* junglg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084E1763874100C5DFFA /* junglg_bg.png */; };
+		A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */; };
+		A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E81767775E00AE7F7F /* TaskListViewController.m */; };
+		A43ED6991766942F00BD14DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */; };
+		A43ED69C1766B39000BD14DE /* DueDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43ED69B1766B39000BD14DE /* DueDateViewController.m */; };
+		A43ED6A11766C4CE00BD14DE /* firstEgg_left.png in Resources */ = {isa = PBXBuildFile; fileRef = A43ED69E1766C4CE00BD14DE /* firstEgg_left.png */; };
+		A43ED6A21766C4CE00BD14DE /* firstEgg_right-half.png in Resources */ = {isa = PBXBuildFile; fileRef = A43ED69F1766C4CE00BD14DE /* firstEgg_right-half.png */; };
+		A43ED6A31766C4CE00BD14DE /* turtling.png in Resources */ = {isa = PBXBuildFile; fileRef = A43ED6A01766C4CE00BD14DE /* turtling.png */; };
 		A4F378E21766268200CEC7FB /* firstEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E11766268200CEC7FB /* firstEgg.png */; };
 		A4F378E51766268E00CEC7FB /* SparkleShine-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E31766268E00CEC7FB /* SparkleShine-overlay.png */; };
 		A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E41766268E00CEC7FB /* SparkleShine.png */; };
 		A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378E8176627E300CEC7FB /* SparkleImageView.m */; };
 		A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378EE176629A700CEC7FB /* NewEggViewController.m */; };
 		A4FDE61D1766332D00623BB3 /* ProjectPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */; };
+		A4FE71E917668BAE00FB60D1 /* ProjectNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FE71E817668BAE00FB60D1 /* ProjectNameVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,12 +62,21 @@
 		294B08391763631B00C5DFFA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		294B083B1763631B00C5DFFA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		294B083D1763631B00C5DFFA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		294B08401763631B00C5DFFA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		294B08421763631B00C5DFFA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		294B08431763631B00C5DFFA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		294B084A176385E600C5DFFA /* vector_monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vector_monster.png; sourceTree = "<group>"; };
 		294B084C176386F800C5DFFA /* egg_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_still.png; sourceTree = "<group>"; };
 		294B084E1763874100C5DFFA /* junglg_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junglg_bg.png; sourceTree = "<group>"; };
+		A40769E417676FAB00AE7F7F /* EggHatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHatchesViewController.h; sourceTree = "<group>"; };
+		A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchesViewController.m; sourceTree = "<group>"; };
+		A40769E71767775E00AE7F7F /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
+		A40769E81767775E00AE7F7F /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
+		A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A43ED69A1766B39000BD14DE /* DueDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DueDateViewController.h; sourceTree = "<group>"; };
+		A43ED69B1766B39000BD14DE /* DueDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DueDateViewController.m; sourceTree = "<group>"; };
+		A43ED69E1766C4CE00BD14DE /* firstEgg_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstEgg_left.png; sourceTree = "<group>"; };
+		A43ED69F1766C4CE00BD14DE /* firstEgg_right-half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "firstEgg_right-half.png"; sourceTree = "<group>"; };
+		A43ED6A01766C4CE00BD14DE /* turtling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtling.png; sourceTree = "<group>"; };
 		A4F378E11766268200CEC7FB /* firstEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstEgg.png; sourceTree = "<group>"; };
 		A4F378E31766268E00CEC7FB /* SparkleShine-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SparkleShine-overlay.png"; sourceTree = "<group>"; };
 		A4F378E41766268E00CEC7FB /* SparkleShine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SparkleShine.png; sourceTree = "<group>"; };
@@ -70,6 +86,8 @@
 		A4F378EE176629A700CEC7FB /* NewEggViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewEggViewController.m; path = ../NewEggViewController.m; sourceTree = "<group>"; };
 		A4FDE61B1766332D00623BB3 /* ProjectPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectPickerVC.h; sourceTree = "<group>"; };
 		A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectPickerVC.m; sourceTree = "<group>"; };
+		A4FE71E717668BAE00FB60D1 /* ProjectNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectNameVC.h; sourceTree = "<group>"; };
+		A4FE71E817668BAE00FB60D1 /* ProjectNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectNameVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +140,7 @@
 				291A1282176411130098D66E /* ScrollView_Test.h */,
 				291A1283176411130098D66E /* ScrollView_Test.m */,
 				294B08371763631B00C5DFFA /* AppDelegate.m */,
-				294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */,
+				A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
 				294B08431763631B00C5DFFA /* ViewController.m */,
 				A4FDE61B1766332D00623BB3 /* ProjectPickerVC.h */,
@@ -131,6 +149,14 @@
 				A4F378EE176629A700CEC7FB /* NewEggViewController.m */,
 				A4F378E7176627E300CEC7FB /* SparkleImageView.h */,
 				A4F378E8176627E300CEC7FB /* SparkleImageView.m */,
+				A4FE71E717668BAE00FB60D1 /* ProjectNameVC.h */,
+				A4FE71E817668BAE00FB60D1 /* ProjectNameVC.m */,
+				A43ED69A1766B39000BD14DE /* DueDateViewController.h */,
+				A43ED69B1766B39000BD14DE /* DueDateViewController.m */,
+				A40769E417676FAB00AE7F7F /* EggHatchesViewController.h */,
+				A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */,
+				A40769E71767775E00AE7F7F /* TaskListViewController.h */,
+				A40769E81767775E00AE7F7F /* TaskListViewController.m */,
 				185B9F5A17667C5700F3E24B /* LoginViewController.h */,
 				185B9F5B17667C5700F3E24B /* LoginViewController.m */,
 				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
@@ -143,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F378E01766267000CEC7FB /* new egg files */,
+				A43ED69D1766C1AA00BD14DE /* hatching egg files */,
 				292943FA176403E4001315E8 /* chinchilla.png */,
 				294B084E1763874100C5DFFA /* junglg_bg.png */,
 				294B084C176386F800C5DFFA /* egg_still.png */,
@@ -156,6 +183,16 @@
 				294B083D1763631B00C5DFFA /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A43ED69D1766C1AA00BD14DE /* hatching egg files */ = {
+			isa = PBXGroup;
+			children = (
+				A43ED69E1766C4CE00BD14DE /* firstEgg_left.png */,
+				A43ED69F1766C4CE00BD14DE /* firstEgg_right-half.png */,
+				A43ED6A01766C4CE00BD14DE /* turtling.png */,
+			);
+			name = "hatching egg files";
 			sourceTree = "<group>";
 		};
 		A4F378E01766267000CEC7FB /* new egg files */ = {
@@ -223,7 +260,6 @@
 				294B083A1763631B00C5DFFA /* Default.png in Resources */,
 				294B083C1763631B00C5DFFA /* Default@2x.png in Resources */,
 				294B083E1763631B00C5DFFA /* Default-568h@2x.png in Resources */,
-				294B08411763631B00C5DFFA /* MainStoryboard.storyboard in Resources */,
 				294B084B176385E600C5DFFA /* vector_monster.png in Resources */,
 				294B084D176386F800C5DFFA /* egg_still.png in Resources */,
 				294B084F1763874100C5DFFA /* junglg_bg.png in Resources */,
@@ -231,6 +267,10 @@
 				A4F378E21766268200CEC7FB /* firstEgg.png in Resources */,
 				A4F378E51766268E00CEC7FB /* SparkleShine-overlay.png in Resources */,
 				A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */,
+				A43ED6991766942F00BD14DE /* MainStoryboard.storyboard in Resources */,
+				A43ED6A11766C4CE00BD14DE /* firstEgg_left.png in Resources */,
+				A43ED6A21766C4CE00BD14DE /* firstEgg_right-half.png in Resources */,
+				A43ED6A31766C4CE00BD14DE /* turtling.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +290,10 @@
 				A4FDE61D1766332D00623BB3 /* ProjectPickerVC.m in Sources */,
 				185B9F5917667AEB00F3E24B /* MonsterModel.xcdatamodeld in Sources */,
 				185B9F5C17667C5700F3E24B /* LoginViewController.m in Sources */,
+				A4FE71E917668BAE00FB60D1 /* ProjectNameVC.m in Sources */,
+				A43ED69C1766B39000BD14DE /* DueDateViewController.m in Sources */,
+				A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */,
+				A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +306,6 @@
 				294B08311763631B00C5DFFA /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				294B08401763631B00C5DFFA /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -334,10 +370,12 @@
 		294B08481763631B00C5DFFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MonsterAPP_Storyboard_Wireframes/MonsterAPP_Storyboard_Wireframes-Prefix.pch";
 				INFOPLIST_FILE = "MonsterAPP_Storyboard_Wireframes/MonsterAPP_Storyboard_Wireframes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -345,10 +383,12 @@
 		294B08491763631B00C5DFFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MonsterAPP_Storyboard_Wireframes/MonsterAPP_Storyboard_Wireframes-Prefix.pch";
 				INFOPLIST_FILE = "MonsterAPP_Storyboard_Wireframes/MonsterAPP_Storyboard_Wireframes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

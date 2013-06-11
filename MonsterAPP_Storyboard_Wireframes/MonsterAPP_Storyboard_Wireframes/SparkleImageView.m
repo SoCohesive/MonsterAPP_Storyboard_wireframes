@@ -27,7 +27,7 @@
                           delay:0.2f
                         options: ((UIViewAnimationOptions)(UIViewAnimationCurveEaseOut))
                      animations:^{
-                         [UIView setAnimationRepeatCount:6];
+                         [UIView setAnimationRepeatCount:3];
                          
                          self.transform = CGAffineTransformMakeRotation(135 * M_PI/180);                     }
      

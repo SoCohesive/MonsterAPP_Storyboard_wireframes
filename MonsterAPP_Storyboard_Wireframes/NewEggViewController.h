@@ -14,5 +14,5 @@
 @property (strong, nonatomic) IBOutlet SparkleImageView *shineRays;
 @property (strong, nonatomic) NSString *projectTypeName;
 
-
+@property (strong, nonatomic) IBOutlet UILabel *tapInstructionLabel;
 @end

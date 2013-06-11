@@ -8,6 +8,7 @@
 
 #import "NewEggViewController.h"
 #import "ProjectPickerVC.h"
+#import "ProjectNameVC.h"
 
 @interface NewEggViewController ()
 {
@@ -18,6 +19,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *hintLabel;
 @property (strong, nonatomic) IBOutlet UILabel *congratsLabel;
 
+-(void)chooseAchievementMessage;
+-(void)chooseCongrat;
+-(void)rephraseProjectType;
 
 @end
 
@@ -40,6 +44,11 @@
     [self chooseAchievementMessage];
     
     [self.shineRays rotateShine];
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [self.view addGestureRecognizer:singleFingerTap];
     
 	// Do any additional setup after loading the view.
 }
@@ -88,4 +97,27 @@
     
 
 }
+
+#pragma
+#pragma mark Segue to Naming Project
+
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    
+    //CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    
+    [self performSegueWithIdentifier:@"segueToTitle" sender:self];
+
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName = self.projectTypeName;
+    
+    
+    NSLog(@"ProjectType sent to Name View -->%@",((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName);
+    
+}
+
 @end
