@@ -10,6 +10,7 @@
 		185B9F5617667A5700F3E24B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B9F5517667A5700F3E24B /* CoreData.framework */; };
 		185B9F5917667AEB00F3E24B /* MonsterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */; };
 		185B9F5C17667C5700F3E24B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5B17667C5700F3E24B /* LoginViewController.m */; };
+		185B9F981767C0AF00F3E24B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F971767C0AF00F3E24B /* User.m */; };
 		291A1284176411130098D66E /* ScrollView_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 291A1283176411130098D66E /* ScrollView_Test.m */; };
 		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		185B9F5817667AEB00F3E24B /* MonsterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonsterModel.xcdatamodel; sourceTree = "<group>"; };
 		185B9F5A17667C5700F3E24B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		185B9F5B17667C5700F3E24B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		185B9F961767C0AF00F3E24B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		185B9F971767C0AF00F3E24B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		291A1282176411130098D66E /* ScrollView_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollView_Test.h; path = ../ScrollView_Test.h; sourceTree = "<group>"; };
 		291A1283176411130098D66E /* ScrollView_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollView_Test.m; path = ../ScrollView_Test.m; sourceTree = "<group>"; };
 		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
@@ -137,9 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				294B08361763631B00C5DFFA /* AppDelegate.h */,
+				294B08371763631B00C5DFFA /* AppDelegate.m */,
 				291A1282176411130098D66E /* ScrollView_Test.h */,
 				291A1283176411130098D66E /* ScrollView_Test.m */,
-				294B08371763631B00C5DFFA /* AppDelegate.m */,
 				A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
 				294B08431763631B00C5DFFA /* ViewController.m */,
@@ -160,6 +163,8 @@
 				185B9F5A17667C5700F3E24B /* LoginViewController.h */,
 				185B9F5B17667C5700F3E24B /* LoginViewController.m */,
 				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
+				185B9F961767C0AF00F3E24B /* User.h */,
+				185B9F971767C0AF00F3E24B /* User.m */,
 				294B082E1763631B00C5DFFA /* Supporting Files */,
 			);
 			path = MonsterAPP_Storyboard_Wireframes;
@@ -294,6 +299,7 @@
 				A43ED69C1766B39000BD14DE /* DueDateViewController.m in Sources */,
 				A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */,
 				A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */,
+				185B9F981767C0AF00F3E24B /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
