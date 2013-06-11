@@ -27,6 +27,7 @@
 		294B084F1763874100C5DFFA /* junglg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084E1763874100C5DFFA /* junglg_bg.png */; };
 		A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */; };
 		A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E81767775E00AE7F7F /* TaskListViewController.m */; };
+		A40F336B1767C1B400E9EF58 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */; };
 		A43ED6991766942F00BD14DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */; };
 		A43ED69C1766B39000BD14DE /* DueDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43ED69B1766B39000BD14DE /* DueDateViewController.m */; };
 		A43ED6A11766C4CE00BD14DE /* firstEgg_left.png in Resources */ = {isa = PBXBuildFile; fileRef = A43ED69E1766C4CE00BD14DE /* firstEgg_left.png */; };
@@ -71,6 +72,8 @@
 		A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchesViewController.m; sourceTree = "<group>"; };
 		A40769E71767775E00AE7F7F /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
 		A40769E81767775E00AE7F7F /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
+		A40F33691767C1B300E9EF58 /* ProjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListViewController.h; sourceTree = "<group>"; };
+		A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectListViewController.m; sourceTree = "<group>"; };
 		A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A43ED69A1766B39000BD14DE /* DueDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DueDateViewController.h; sourceTree = "<group>"; };
 		A43ED69B1766B39000BD14DE /* DueDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DueDateViewController.m; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				A43ED69B1766B39000BD14DE /* DueDateViewController.m */,
 				A40769E417676FAB00AE7F7F /* EggHatchesViewController.h */,
 				A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */,
+				A40F33691767C1B300E9EF58 /* ProjectListViewController.h */,
+				A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */,
 				A40769E71767775E00AE7F7F /* TaskListViewController.h */,
 				A40769E81767775E00AE7F7F /* TaskListViewController.m */,
 				185B9F5A17667C5700F3E24B /* LoginViewController.h */,
@@ -294,6 +299,7 @@
 				A43ED69C1766B39000BD14DE /* DueDateViewController.m in Sources */,
 				A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */,
 				A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */,
+				A40F336B1767C1B400E9EF58 /* ProjectListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
