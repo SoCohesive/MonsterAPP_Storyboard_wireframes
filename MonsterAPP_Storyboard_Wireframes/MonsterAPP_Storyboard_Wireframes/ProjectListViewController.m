@@ -35,4 +35,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark TableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return  1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5; 
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    NSString *identifier = @"myIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:identifier];
+
+
+
+}
+    cell.textLabel.text = @"sonam";
+    return cell;
+
+}
 @end
