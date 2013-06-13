@@ -10,12 +10,11 @@
 #import "User.h"
 #import "AppDelegate.h"
 
-
 @interface LoginViewController ()
--(void) saveUser;
+
+
+
 @end
-
-
 
 @implementation LoginViewController
 
@@ -32,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -43,9 +42,8 @@
 }
 
 - (IBAction)loginButton:(id)sender {
-    
-   // NSManagedObjectContext *managedObjectContext;
-  NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+    // NSManagedObjectContext *managedObjectContext;
+    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     //user is our managedObject
     User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
@@ -55,7 +53,7 @@
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         
-        NSLog(@"An error occured: %@", error); 
+        NSLog(@"An error occured: %@", error);
     }
 }
 
@@ -63,15 +61,9 @@
 {
     [self.emailField resignFirstResponder];
     [self.nameField resignFirstResponder];
-
+    
     return YES;
 }
-
-//-(void) saveUser  {
-//    NSManagedObjectContext *managedObjectContext = ()
-//    
-//
-//}
 
 
 @end
