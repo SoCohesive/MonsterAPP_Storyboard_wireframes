@@ -7,8 +7,12 @@
 //
 
 #import "LoginViewController.h"
+#import "User.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
+
+
 
 @end
 
@@ -38,6 +42,19 @@
 }
 
 - (IBAction)loginButton:(id)sender {
+    // NSManagedObjectContext *managedObjectContext;
+    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+    
+    //user is our managedObject
+    User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
+    
+    testUser.firstName = self.nameField.text;
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        
+        NSLog(@"An error occured: %@", error);
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface ProjectListViewController : UIViewController
+
+@property (strong, nonatomic) NSString *currentUser;
+
+@property (strong, nonatomic) IBOutlet UITableView *projectsTableView;
+@property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
 
 @end
