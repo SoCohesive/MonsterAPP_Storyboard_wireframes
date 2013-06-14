@@ -94,7 +94,6 @@
     
 ((NewEggViewController*)(segue.destinationViewController)).projectTypeName = self.projectTemplateName;
     
-    
     NSLog(@"PickedProject as sent to egg -->%@",((NewEggViewController*)(segue.destinationViewController)).projectTypeName );
     
 }

@@ -14,8 +14,8 @@
 
 @interface ViewController ()
 {
-    NSString    *userName;
     NSString    *segueID;
+    User * user;
 }
 -(void)fetchForLanding;
 @end
@@ -46,7 +46,6 @@
 
     NSError *error = nil;
     NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    userName = [[NSString alloc] init];
     
     if (fetchedObjects == nil) {
     NSLog(@"error");
@@ -56,17 +55,17 @@ if (fetchedObjects.count == 0){
     segueID = @"segueToOnboarding";
     [self chooseLanding];
 } else {
-    User * user = fetchedObjects.lastObject;
-    userName = user.firstName;
+    user = fetchedObjects.lastObject;
     segueID = @"segueToHome";
     [self chooseLanding];
 }
 
 }
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
         if ([segueID isEqualToString: @"segueToHome"]) {
-            ((ProjectListViewController*)(segue.destinationViewController)).currentUser = userName;
+            ((ProjectListViewController*)(segue.destinationViewController)).currentUser = user;
             NSLog(@"UserName: %@",  ((ProjectListViewController*)(segue.destinationViewController)).currentUser);
             
         } else {

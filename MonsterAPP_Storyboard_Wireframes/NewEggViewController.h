@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SparkleImageView.h"
+#import "User.h"
 
 @interface NewEggViewController : UIViewController
 

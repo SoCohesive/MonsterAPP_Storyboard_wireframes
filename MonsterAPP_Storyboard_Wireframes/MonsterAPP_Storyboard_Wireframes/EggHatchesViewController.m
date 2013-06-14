@@ -40,8 +40,8 @@
 #pragma mark Segue to Naming Project
 
 - (IBAction)enterNameButton:(id)sender {
-    
-    [self performSegueWithIdentifier:@"segueToTasks" sender:self];
+    //fix this post-merge.
+    [self performSegueWithIdentifier:@"segueToTaskList" sender:self];
 }
 
 

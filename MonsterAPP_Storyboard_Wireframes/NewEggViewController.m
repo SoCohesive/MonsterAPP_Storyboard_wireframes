@@ -7,7 +7,6 @@
 //
 
 #import "NewEggViewController.h"
-#import "ProjectPickerVC.h"
 #import "ProjectNameVC.h"
 
 @interface NewEggViewController ()
@@ -87,14 +86,10 @@
 -(void)chooseAchievementMessage
 {
      [self rephraseProjectType];
-    
-    if ([self.presentingViewController isKindOfClass:[ProjectPickerVC class]])
-    {
+       
         NSString *achievementString = [NSString stringWithFormat:@"Starting your %@ earned you a new monster egg!",projectPhrase];
         self.achievementText.text = achievementString;
         self.hintLabel.text = @"hint: you might want to start thinking of names";
-    }
-    
 
 }
 
@@ -106,7 +101,7 @@
     
     //CGPoint location = [recognizer locationInView:[recognizer.view superview]];
     
-    [self performSegueWithIdentifier:@"segueToTitle" sender:self];
+    [self performSegueWithIdentifier:@"segueToProjectName" sender:self];
 
 }
 
@@ -115,8 +110,8 @@
     
     ((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName = self.projectTypeName;
     
-    
     NSLog(@"ProjectType sent to Name View -->%@",((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName);
+    
     
 }
 

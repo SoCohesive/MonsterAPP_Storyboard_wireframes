@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface ProjectPickerVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
+{
+    User *projPickerCurrentUser;
+}
 @property NSMutableArray *projectTypes;
 @property (strong, nonatomic) IBOutlet UITableView *projectTypesTable;
 @property (strong, nonatomic) NSString *projectTemplateName;

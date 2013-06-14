@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface ProjectNameVC : UIViewController<UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *nameRequestLabel;
-@property (strong, nonatomic) NSString *projectTypeForName;
-- (IBAction)nameWithButton:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) NSString    *projectTypeForName;
+
+@property (strong, nonatomic) NSString    *taskTitleEntered;
+@property (strong, nonatomic) IBOutlet  UITextField *titleTextField;
+
+@property (strong, nonatomic) IBOutlet  UITextField *dateEntryField;
+@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+- (IBAction)saveTaskDoneButton:(id)sender;
 
 @end

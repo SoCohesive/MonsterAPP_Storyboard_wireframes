@@ -11,7 +11,7 @@
 
 @interface ProjectListViewController : UIViewController
 
-@property (strong, nonatomic) NSString *currentUser;
+@property (strong, nonatomic) User *currentUser;
 
 @property (strong, nonatomic) IBOutlet UITableView *projectsTableView;
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
