@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "Task.h"
 
-@interface ProjectListViewController : UIViewController
+@interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) User *currentUser;
 
 @property (strong, nonatomic) IBOutlet UITableView *projectsTableView;
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *projectCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointCountLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *currentHighPointMonster;
 
 @end

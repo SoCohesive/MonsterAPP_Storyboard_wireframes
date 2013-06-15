@@ -59,6 +59,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)formatTextFields
+{
+    self.titleTextField.layer.cornerRadius=8.0f;
+    self.titleTextField.layer.masksToBounds=YES;
+    self.titleTextField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
+    self.titleTextField.layer.borderWidth= 1.0f;
+    
+    self.dateEntryField.layer.cornerRadius=8.0f;
+    self.dateEntryField.layer.masksToBounds=YES;
+    self.dateEntryField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
+    self.dateEntryField.layer.borderWidth= 1.0f;
+}
+
+
 #pragma
 #pragma Title/Name Input
 

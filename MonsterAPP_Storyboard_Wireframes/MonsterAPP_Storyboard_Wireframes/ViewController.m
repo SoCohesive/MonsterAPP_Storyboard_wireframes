@@ -25,9 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self fetchForLanding];
 
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning

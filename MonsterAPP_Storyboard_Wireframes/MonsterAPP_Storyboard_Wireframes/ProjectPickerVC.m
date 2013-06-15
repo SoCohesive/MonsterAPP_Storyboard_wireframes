@@ -30,8 +30,6 @@
     [super viewDidLoad];
     self.projectTemplateName = [[NSString alloc] init];
     
-    self.title = @"Pick a Project Type";
-
     // related to table view for generating project items, and segue to next view.  These will likely later become entities.
     self.projectTypes = [NSMutableArray arrayWithObjects: @"Write a Book Report", @"Study for a Test", @"Prepare for a Science Project", nil];
 }

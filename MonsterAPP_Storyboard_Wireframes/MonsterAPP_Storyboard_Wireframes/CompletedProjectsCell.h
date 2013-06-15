@@ -10,4 +10,9 @@
 
 @interface CompletedProjectsCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *completedMonsterProfilePic;
+@property (weak, nonatomic) IBOutlet UILabel *completedTitle;
+@property (strong, nonatomic) IBOutlet UILabel *completedSubtitle;
+@property (strong, nonatomic) IBOutlet UILabel *completedLabel;
+
 @end

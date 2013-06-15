@@ -37,12 +37,12 @@
 
 - (void)viewDidLoad
 {
+    [self.shineRays rotateShine];
+
     [super viewDidLoad];
     
     [self chooseCongrat];
     [self chooseAchievementMessage];
-    
-    [self.shineRays rotateShine];
     
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 - (IBAction)loginButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *loginLabel;
+- (IBAction)loginDoneButton:(id)sender;
 
 
 @end

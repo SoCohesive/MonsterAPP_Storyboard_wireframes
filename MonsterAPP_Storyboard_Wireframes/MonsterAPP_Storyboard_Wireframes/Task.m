@@ -2,7 +2,7 @@
 //  Task.m
 //  MonsterAPP_Storyboard_Wireframes
 //
-//  Created by Erin Hochstatter on 6/14/13.
+//  Created by ehochs  on 6/15/13.
 //  Copyright (c) 2013 Sonam Dhingra. All rights reserved.
 //
 
@@ -24,8 +24,9 @@
 @dynamic projectedStartDate;
 @dynamic taskID;
 @dynamic taskName;
-@dynamic userID;
 @dynamic taskType;
+@dynamic userID;
+@dynamic taskComplete;
 @dynamic monster;
 @dynamic taskDetails;
 @dynamic user;

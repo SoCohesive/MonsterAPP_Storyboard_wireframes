@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
+#import "MonsterStyleController.h"
 
 
 @implementation AppDelegate
@@ -16,11 +17,15 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+     
+    [MonsterStyleController applyStyle];
     return YES;
 }
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -142,5 +147,7 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
 
 @end

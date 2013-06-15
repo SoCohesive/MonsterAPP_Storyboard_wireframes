@@ -39,6 +39,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.loginLabel.text= @"Login, please:";
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.loginLabel.font.pointSize];
+    self.loginLabel.font = lunchBoxBold;
+    
+    
+    [self formatTextFields];
+    
+    NSLog(@"LunchBox: %@", [UIFont fontNamesForFamilyName:@"LunchBox"]);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +57,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginButton:(id)sender {
+-(void)formatTextFields
+{
+    self.nameField.text = @"What's your name?";
+    self.emailField.text = @"Give us a special nickname, too.";
+    
+    self.nameField.layer.cornerRadius=8.0f;
+    self.nameField.layer.masksToBounds=YES;
+    self.nameField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
+    self.nameField.layer.borderWidth= 1.0f;
+    
+    self.emailField.layer.cornerRadius=8.0f;
+    self.emailField.layer.masksToBounds=YES;
+    self.emailField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
+    self.emailField.layer.borderWidth= 1.0f;
+}
+
+/*- (IBAction)loginButton:(id)sender {
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     //user is our managedObject
@@ -63,15 +89,47 @@
         
         NSLog(@"An error occured: %@", error);
     }
-}
+
+    }*/
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.emailField resignFirstResponder];
-    [self.nameField resignFirstResponder];
     
+    if (textField == self.nameField) {
+        
+        self.nameField.delegate = self;
+        
+        [self.nameField resignFirstResponder];
+        [self.emailField becomeFirstResponder];
+        //add titleTextField.text to task properties
+    } else {
+        
+         self.emailField.delegate = self;
+        
+        //maybe this should be a separate method, called at button and enter
+        
+        NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+        
+        //user is our managedObject
+        User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
+        
+        testUser.firstName = self.nameField.text;
+        testUser.nickname = self.emailField.text;
+        testUser.userID = userNumber;
+        testUser.dateCreated = [NSDate date];
+        
+        NSError *error = nil;
+        if (![managedObjectContext save:&error]) {
+            
+            NSLog(@"An error occured: %@", error);
+        }
+
+        
+    }
     return YES;
 }
+
 
 -(void)fetchUserInfo
 {
@@ -100,4 +158,22 @@
 
 
 
+- (IBAction)loginDoneButton:(id)sender {
+    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+    
+    //user is our managedObject
+    User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
+    
+    testUser.firstName = self.nameField.text;
+    testUser.nickname = self.emailField.text;
+    testUser.userID = userNumber;
+    testUser.dateCreated = [NSDate date];
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        
+        NSLog(@"An error occured: %@", error);
+    }
+
+}
 @end

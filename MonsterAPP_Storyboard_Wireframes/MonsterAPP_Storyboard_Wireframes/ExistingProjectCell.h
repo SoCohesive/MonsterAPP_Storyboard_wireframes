@@ -11,6 +11,7 @@
 @interface ExistingProjectCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *monsterProfilePic;
+@property (weak, nonatomic) IBOutlet UILabel *existingTitle;
 @property (strong, nonatomic) IBOutlet UILabel *subtitle;
 @property (strong, nonatomic) IBOutlet UILabel *deadlineReminderLabel;
 
