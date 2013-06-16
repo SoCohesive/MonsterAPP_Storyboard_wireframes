@@ -7,10 +7,17 @@
 //
 
 #import "TaskListViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "User.h"
+#import "Task.h"
 
 @interface TaskListViewController ()
 
 -(void)chooseTaskList;
+-(void)toggleEdit;
+-(void) setUpPointsArray;
+-(void) showCheeksAnimation;
+-(void) createTemplates;
 
 @end
 
@@ -28,10 +35,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *projectCaption = [NSString stringWithFormat:@"%@, due:%@", self.taskName, self.taskDueDate];
-    self.projectDetailLabel.text = projectCaption;
+//    NSString *projectCaption = [NSString stringWithFormat:@"%@, due:%@", self.taskName, self.taskDueDate];
+//    self.projectDetailLabel.text = projectCaption;
+    
+    // Add Project Title and due date. ** format due date ASAP!
+    self.navigationItem.title = self.taskName;
+    self.dateLabel.text = self.taskDueDate;
     
     
+    
+    //Set up edit/done button
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.editButtonItem.action = @selector(toggleEdit);
+    
+    // set up points array and task templates
+    [self setUpPointsArray];
+    [self createTemplates];
+   
+    
+    // set up timer for eye blinking animation
+    [NSTimer scheduledTimerWithTimeInterval:2
+                                     target:self
+                                   selector:@selector(blinkCloseAnimationForMonster)                                    userInfo:self
+                                    repeats:YES];
+    
+    //set up timer for cheeks
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(showCheeksAnimation)
+                                   userInfo:self
+                                    repeats:NO];
+    
+
+}
+
+#pragma mark 
+-(void) createTemplates {
     self.scienceTaskTemplate = [NSMutableArray arrayWithObjects:
                                 @"Choose the scientific question you want to answer or what problem you want to solve.",
                                 @"Compose your experiment idea in the form of a testable question.",
@@ -55,24 +94,82 @@
                                 nil];
 
     
-    self.bookReptTaskTemplate = [NSArray arrayWithObjects:
-                                 @"this one is still in progress"
-                                 @"Get book from library."
-                                 @"Read first third of the chapters"
-                                 @"Take notes on characters as you read the first section."
-                                 @"Take notes on major plot themes in first section",
-                                 @"Take notes on unfamiliar vocabulary words in first section",
+    self.bookReptTaskTemplate = [NSMutableArray arrayWithObjects:
+                                 @"Get book from Library"
+                                 @"Study protagonist"
+                                 @"Read first three chapters"
+                                 @"Take notes on characters",
                                  nil];
     
-    self.testTaskTemplate = [NSArray arrayWithObjects:
-                                 @"this one is still in progress",
-                                 @"i found a video on cornell's website",
-                                 @"that i plan to break into steps for this",
-                                 @"i just wanted to have something here in the test",
+    self.testTaskTemplate = [NSMutableArray arrayWithObjects:
+                                 @"Review homework",
+                                 @"Make FlashCards",
+                                 @"Explain topics to friends",
+                                 @"Get an A!",
                                  nil];
     
     [self chooseTaskList];
+    
+    }
+
+
+#pragma mark cheek animation
+-(void) showCheeksAnimation {
+    
+    self.blushedCheeksImage.alpha =0.0f;
+    
+    [UIView animateWithDuration:2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+    
+        self.blushedCheeksImage.alpha = 1.0;
+        self.blushedCheeksImage.hidden= NO;
+        
+    } completion:^(BOOL finished) {
+        //
+    }];
+    
 }
+
+#pragma mark add points
+-(void) setUpPointsArray {
+    
+    // i thought it would be best to stick to common numbers instead of very very random ones. This outputs on a random basis
+    
+    self.pointsArray =[[NSMutableArray alloc] initWithObjects:@"50",@"100",@"500",@"250",@"20", nil];
+}
+
+#pragma mark edit button & actions
+-(void)toggleEdit
+{
+    
+    [self.taskTable setEditing:!self.taskTable.editing animated:YES];
+    
+    if (self.taskTable.editing == YES)
+        
+        [self.navigationItem.rightBarButtonItem setTitle:@"Done"];
+    else
+        
+        [self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
+}
+
+#pragma mark commit editing style
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"editing tableview");
+    
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.selectedTaskTemplate removeObjectAtIndex:indexPath.row];
+        
+        [NSArray arrayWithObject:indexPath];
+        [self.taskTable  deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -80,6 +177,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma  chooose corresponding task list
 -(void)chooseTaskList
 {
     if ([self.taskType isEqual:@"Write a Book Report"]) {
@@ -92,12 +190,42 @@
     }
 }
 
-#pragma
-#pragma mark Table view data source
+#pragma mark set up keyboard response for textfield entry and add text to the array
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    self.customStepTextField.delegate = self;
+    
+    if ( textField == self.customStepTextField) {
+        
+        NSString *customStepsEntered = self.customStepTextField.text;
+        NSLog(@"the custom step is %@",customStepsEntered);
+        
+        if ([customStepsEntered length] > 0) {
+            
+            [self.selectedTaskTemplate addObject:customStepsEntered];
+            [self.taskTable reloadData];
+            
+        };
+        
+        // make textfield blank after pressing enter
+        [textField setText:@""];
+        
+        [textField resignFirstResponder];
+        
+        
+        return NO;
+        
+    }
+    
+    return YES;
+}
 
+
+
+#pragma mark Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
+
     return 1;
     
 }
@@ -111,23 +239,86 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"taskCell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: identifier];
-    
     if (cell==nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:identifier];
     }
     
+     // add points from points array
+    UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
+    int  pointsIndexPath = arc4random() % (self.pointsArray.count-1);
+    pointsLabel.text = self.pointsArray[pointsIndexPath];
+    
+    UILabel *stepsLabel = (UILabel *) [cell viewWithTag:1];
+    stepsLabel.text = [self.selectedTaskTemplate objectAtIndex:indexPath.row];
+    
+    
     //UIImage *background = [UIImage imageNamed:@"{custom table cell?}.png"];
     //cell.backgroundView = [[UIImageView alloc] initWithImage:background];
-    //cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = [self.selectedTaskTemplate objectAtIndex:indexPath.row];
-    //cell.textLabel.textColor = [UIColor whiteColor];
-    
+    //cell.textLabel.backgroundColor = [UIColor clearColor];    
     
     return cell;
 }
+
+#pragma mark select row action 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.taskTable cellForRowAtIndexPath:indexPath];
+    
+    // Unhide image of check mark
+    UIImageView *checkMarkImage = (UIImageView *)[cell viewWithTag:4];
+    checkMarkImage.hidden = NO;
+    
+    // lessen alpha of cell itself
+    cell.alpha = .3;
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+#pragma mark create monster eye animation
+-(void) blinkCloseAnimationForMonster {
+    
+    //self.monsterLeftEyeImage.hidden = NO;
+    
+    [UIView animateWithDuration:.4
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+        self.monsterRightEyeImage.hidden= NO;
+        self.monsterLeftEyeImage.hidden = NO;
+                         
+        self.monsterLeftEyeImage.alpha = 1.0f;
+        self.monsterRightEyeImage.alpha = 1.0f;
+        
+        
+        
+    } completion:^(BOOL finished) {
+        
+        [self blinkOpeneAnimationForMonster];
+        
+    }];
+    
+}
+
+#pragma mark open eye animation
+-(void) blinkOpeneAnimationForMonster {
+    [UIView animateWithDuration:.4 delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+        self.monsterLeftEyeImage.alpha = 0.0f;
+        self.monsterRightEyeImage.alpha = 0.0f;
+        
+    } completion:^(BOOL finished) {
+   
+        
+    }];
+    
+}
+
 
 
 @end

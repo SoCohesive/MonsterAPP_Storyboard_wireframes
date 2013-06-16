@@ -10,6 +10,12 @@
 		185B9F5617667A5700F3E24B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B9F5517667A5700F3E24B /* CoreData.framework */; };
 		185B9F5917667AEB00F3E24B /* MonsterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */; };
 		185B9F5C17667C5700F3E24B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5B17667C5700F3E24B /* LoginViewController.m */; };
+		290B476D176D2A4300B91B7E /* turtling_leftEye.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B476C176D2A4300B91B7E /* turtling_leftEye.png */; };
+		290B476F176D2A4800B91B7E /* turtling-blushcheeks.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B476E176D2A4800B91B7E /* turtling-blushcheeks.png */; };
+		290B4771176D2A6100B91B7E /* turtling_rightEye.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4770176D2A6100B91B7E /* turtling_rightEye.png */; };
+		290B4773176D2A6700B91B7E /* turtling-mouth_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4772176D2A6700B91B7E /* turtling-mouth_open.png */; };
+		290B4776176D2C0A00B91B7E /* purple_checkmark_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4775176D2C0A00B91B7E /* purple_checkmark_v1.png */; };
+		290B4778176D2C3C00B91B7E /* checkbox-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4777176D2C3C00B91B7E /* checkbox-empty.png */; };
 		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
 		293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293DD110176CAE1C001B4FB0 /* PagedScrollViewController.m */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
@@ -61,6 +67,12 @@
 		185B9F5817667AEB00F3E24B /* MonsterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonsterModel.xcdatamodel; sourceTree = "<group>"; };
 		185B9F5A17667C5700F3E24B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		185B9F5B17667C5700F3E24B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		290B476C176D2A4300B91B7E /* turtling_leftEye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtling_leftEye.png; sourceTree = "<group>"; };
+		290B476E176D2A4800B91B7E /* turtling-blushcheeks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-blushcheeks.png"; sourceTree = "<group>"; };
+		290B4770176D2A6100B91B7E /* turtling_rightEye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtling_rightEye.png; sourceTree = "<group>"; };
+		290B4772176D2A6700B91B7E /* turtling-mouth_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-mouth_open.png"; sourceTree = "<group>"; };
+		290B4775176D2C0A00B91B7E /* purple_checkmark_v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_checkmark_v1.png; sourceTree = "<group>"; };
+		290B4777176D2C3C00B91B7E /* checkbox-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-empty.png"; sourceTree = "<group>"; };
 		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
 		293DD10F176CAE11001B4FB0 /* PagedScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagedScrollViewController.h; sourceTree = "<group>"; };
 		293DD110176CAE1C001B4FB0 /* PagedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedScrollViewController.m; sourceTree = "<group>"; };
@@ -145,6 +157,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290B476B176D29DE00B91B7E /* baby monster */ = {
+			isa = PBXGroup;
+			children = (
+				290B476C176D2A4300B91B7E /* turtling_leftEye.png */,
+				290B4772176D2A6700B91B7E /* turtling-mouth_open.png */,
+				290B4770176D2A6100B91B7E /* turtling_rightEye.png */,
+				A43ED6A01766C4CE00BD14DE /* turtling.png */,
+				290B476E176D2A4800B91B7E /* turtling-blushcheeks.png */,
+			);
+			name = "baby monster";
+			sourceTree = "<group>";
+		};
+		290B4774176D2BF800B91B7E /* CheckBox for tasks */ = {
+			isa = PBXGroup;
+			children = (
+				290B4775176D2C0A00B91B7E /* purple_checkmark_v1.png */,
+				290B4777176D2C3C00B91B7E /* checkbox-empty.png */,
+			);
+			name = "CheckBox for tasks";
+			sourceTree = "<group>";
+		};
 		294B081B1763631B00C5DFFA = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +242,8 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				290B4774176D2BF800B91B7E /* CheckBox for tasks */,
+				290B476B176D29DE00B91B7E /* baby monster */,
 				29F1DF7D176C227500FFB46F /* Onboarding Images */,
 				A4F378E01766267000CEC7FB /* new egg files */,
 				A43ED69D1766C1AA00BD14DE /* hatching egg files */,
@@ -255,7 +290,6 @@
 			children = (
 				A43ED69E1766C4CE00BD14DE /* firstEgg_left.png */,
 				A43ED69F1766C4CE00BD14DE /* firstEgg_right-half.png */,
-				A43ED6A01766C4CE00BD14DE /* turtling.png */,
 			);
 			name = "hatching egg files";
 			sourceTree = "<group>";
@@ -372,6 +406,12 @@
 				29F1DF8A176C32A000FFB46F /* step1.png in Resources */,
 				29F1DF8D176C32B400FFB46F /* step3.png in Resources */,
 				29F1DF8F176C45CF00FFB46F /* step2.png in Resources */,
+				290B476D176D2A4300B91B7E /* turtling_leftEye.png in Resources */,
+				290B476F176D2A4800B91B7E /* turtling-blushcheeks.png in Resources */,
+				290B4771176D2A6100B91B7E /* turtling_rightEye.png in Resources */,
+				290B4773176D2A6700B91B7E /* turtling-mouth_open.png in Resources */,
+				290B4776176D2C0A00B91B7E /* purple_checkmark_v1.png in Resources */,
+				290B4778176D2C3C00B91B7E /* checkbox-empty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
