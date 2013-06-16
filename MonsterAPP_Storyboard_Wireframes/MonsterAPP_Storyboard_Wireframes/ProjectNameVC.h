@@ -12,7 +12,6 @@
 @interface ProjectNameVC : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) NSString    *projectTypeForName;
-
 @property (strong, nonatomic) NSString    *taskTitleEntered;
 @property (strong, nonatomic) IBOutlet  UITextField *titleTextField;
 

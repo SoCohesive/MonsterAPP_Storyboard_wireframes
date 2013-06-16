@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ugd-EL-KOj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ugd-EL-KOj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -110,6 +110,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="xLR-tL-bC3" eventType="touchUpInside" id="Qai-tU-VnB"/>
+                                    <action selector="loginDoneButton:" destination="xLR-tL-bC3" eventType="touchUpInside" id="TaO-Js-uKz"/>
                                     <segue destination="jjf-9H-Cbw" kind="push" identifier="segueToNewProject" id="9eV-Gq-OaZ"/>
                                 </connections>
                             </button>
@@ -208,7 +209,7 @@
             <objects>
                 <viewController id="jjf-9H-Cbw" customClass="ProjectPickerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7b-2Z-RiB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Shhh the monsters coming" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KYz-Ud-zA0">
@@ -223,7 +224,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6iv-ob-JpV">
-                                <rect key="frame" x="0.0" y="167" width="320" height="152"/>
+                                <rect key="frame" x="0.0" y="167" width="320" height="304"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -267,7 +268,7 @@
             <objects>
                 <viewController title="segueToTitle" id="fnN-2y-K5g" customClass="NewEggViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YR5-BA-ddd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SparkleShine.png" id="7Ry-vV-nLN">
@@ -332,7 +333,7 @@
             <objects>
                 <viewController id="hU3-eb-Yu9" customClass="ProjectNameVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dP4-1Z-IUV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First things First" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eip-sz-NDn">
@@ -414,7 +415,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="3hE-Oy-nRC" customClass="EggHatchesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MiQ-E7-yIm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your baby Monster has HATCHED!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d6S-S7-tKk">
@@ -491,43 +492,86 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chinchilla.png" id="0yb-ma-iDx">
-                                <rect key="frame" x="74" y="53" width="128" height="98"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="turtling.png" id="0yb-ma-iDx">
+                                <rect key="frame" x="7" y="21" width="128" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Health" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="so1-sC-CpR">
-                                <rect key="frame" x="210" y="59" width="50" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Health:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="so1-sC-CpR">
+                                <rect key="frame" x="136" y="59" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I2m-gN-Uv5">
+                                <rect key="frame" x="206" y="59" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zpl-Gf-tdE">
+                                <rect key="frame" x="136" y="21" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W7b-FM-5N1">
+                                <rect key="frame" x="206" y="5" width="101" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Experience" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mhv-Px-7VM">
-                                <rect key="frame" x="210" y="102" width="86" height="21"/>
+                                <rect key="frame" x="136" y="98" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="v31-ZF-vPC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="v31-ZF-vPC">
                                 <rect key="frame" x="0.0" y="199" width="320" height="217"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="Zjg-ei-TuL">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" rowHeight="55" id="Zjg-ei-TuL">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Step 1 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lG6-XL-ozp">
-                                                    <rect key="frame" x="25" y="11" width="54" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Step 1 " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lG6-XL-ozp">
+                                                    <rect key="frame" x="43" y="4" width="269" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u7M-NW-za8">
+                                                    <rect key="frame" x="78" y="35" width="54" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g8c-Ug-7FY">
+                                                    <rect key="frame" x="41" y="35" width="54" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" image="checkbox-empty.png" id="N17-G6-ezC">
+                                                    <rect key="frame" x="6" y="8" width="27" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView hidden="YES" tag="4" contentMode="scaleToFill" image="purple_checkmark_v1.png" id="1fD-Od-zbh">
+                                                    <rect key="frame" x="7" y="8" width="26" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -541,29 +585,51 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <outlet property="delegate" destination="BxA-Tk-9iq" id="498-wp-H8N"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Project Name, due:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aB2-TK-6cU">
-                                <rect key="frame" x="20" y="170" width="280" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter steps" minimumFontSize="17" id="z0l-Au-ZVa">
+                                <rect key="frame" x="7" y="168" width="307" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BxA-Tk-9iq" id="cWd-dV-aNq"/>
+                                </connections>
+                            </textField>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="turtling_leftEye.png" id="caX-se-GBT">
+                                <rect key="frame" x="35" y="59" width="28" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="turtling_rightEye.png" id="6IF-4L-OnO">
+                                <rect key="frame" x="76" y="58" width="28" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="turtling-blushcheeks.png" id="qLg-9q-pQ8">
+                                <rect key="frame" x="19" y="76" width="101" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="turtling-mouth_open.png" id="XId-qq-Kv0">
+                                <rect key="frame" x="57" y="98" width="28" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95178817400000004" green="0.96384113049999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FiI-kk-FgG">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="gOJ-e1-53e"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="FiI-kk-FgG"/>
                     <connections>
+                        <outlet property="blushedCheeksImage" destination="qLg-9q-pQ8" id="tjX-iQ-5o6"/>
+                        <outlet property="customStepTextField" destination="z0l-Au-ZVa" id="f7n-UF-XkE"/>
+                        <outlet property="dateLabel" destination="W7b-FM-5N1" id="Lrr-Op-fcg"/>
+                        <outlet property="fullMonsterImage" destination="0yb-ma-iDx" id="8Ep-DF-8x8"/>
                         <outlet property="hpLabel" destination="so1-sC-CpR" id="Y9z-e4-hXH"/>
-                        <outlet property="projectDetailLabel" destination="aB2-TK-6cU" id="yKB-bC-80i"/>
-                        <outlet property="taskTable" destination="lgU-Ib-JOd" id="Koi-vp-uUd"/>
+                        <outlet property="monsterLeftEyeImage" destination="caX-se-GBT" id="va4-Hn-h5j"/>
+                        <outlet property="monsterRightEyeImage" destination="6IF-4L-OnO" id="fPA-dF-Z5K"/>
+                        <outlet property="mouthOpenImage" destination="XId-qq-Kv0" id="TKM-nQ-sFW"/>
+                        <outlet property="taskTable" destination="v31-ZF-vPC" id="VJY-dv-Tjb"/>
                         <outlet property="xpLabel" destination="Mhv-Px-7VM" id="cht-oa-zRp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ns-Ek-dbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805" y="-1334"/>
+            <point key="canvasLocation" x="1801" y="-1206"/>
         </scene>
         <!--Project List View Controller-->
         <scene sceneID="OGi-Gq-18n">
@@ -716,7 +782,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTR-Gt-0Dn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="-1334"/>
+            <point key="canvasLocation" x="1397" y="-1206"/>
         </scene>
         <!--Evolution View Controller-->
         <scene sceneID="BGX-tD-Afa">
@@ -770,7 +836,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIf-Qc-b4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2169" y="-1324"/>
+            <point key="canvasLocation" x="2216" y="-1206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xYa-D3-UTz">
@@ -797,10 +863,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="SparkleShine-overlay.png" width="540" height="539"/>
         <image name="SparkleShine.png" width="320" height="540"/>
         <image name="WelcomeMat_whitebg.png" width="320" height="548"/>
+        <image name="checkbox-empty.png" width="14" height="14"/>
         <image name="chinchilla.png" width="248" height="203"/>
         <image name="firstEgg.png" width="174" height="133"/>
         <image name="firstEgg_left.png" width="140" height="163"/>
         <image name="firstEgg_right-half.png" width="108" height="163"/>
+        <image name="purple_checkmark_v1.png" width="512" height="512"/>
+        <image name="turtling-blushcheeks.png" width="135" height="28"/>
+        <image name="turtling-mouth_open.png" width="45" height="13"/>
+        <image name="turtling.png" width="183" height="146"/>
+        <image name="turtling_leftEye.png" width="31" height="30"/>
+        <image name="turtling_rightEye.png" width="31" height="30"/>
     </resources>
     <classes>
         <class className="CompletedProjectsCell" superclassName="UITableViewCell">
@@ -841,7 +914,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="loginButton:"/>
                 <relationship kind="action" name="loginDoneButton:"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
@@ -868,7 +940,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="PagedScrollViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PagedScrollViewController.h"/>
             <relationships>
-                <relationship kind="action" name="getStartedButton:"/>
                 <relationship kind="outlet" name="getStartedButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
@@ -905,9 +976,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="TaskListViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TaskListViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="blushedCheeksImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="customStepTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fullMonsterImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="hpLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="projectDetailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="taskTable" candidateClass="UIView"/>
+                <relationship kind="outlet" name="monsterLeftEyeImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="monsterRightEyeImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mouthOpenImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="taskTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="xpLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

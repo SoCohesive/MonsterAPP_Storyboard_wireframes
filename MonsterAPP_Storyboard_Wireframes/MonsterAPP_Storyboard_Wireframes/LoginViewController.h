@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
-- (IBAction)loginButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
 - (IBAction)loginDoneButton:(id)sender;
 
