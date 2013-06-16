@@ -18,6 +18,7 @@
 -(void) setUpPointsArray;
 -(void) showCheeksAnimation;
 -(void) createTemplates;
+-(void) rotateMonster;
 
 @end
 
@@ -66,6 +67,13 @@
                                    userInfo:self
                                     repeats:NO];
     
+    //set up timer for rotating turtle guy
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(rotateMonster)
+                                   userInfo:self
+                                    repeats:NO];
+    
 
 }
 
@@ -95,9 +103,9 @@
 
     
     self.bookReptTaskTemplate = [NSMutableArray arrayWithObjects:
-                                 @"Get book from Library"
-                                 @"Study protagonist"
-                                 @"Read first three chapters"
+                                 @"Get book from Library",
+                                 @"Study protagonist",
+                                 @"Read first three chapters",
                                  @"Take notes on characters",
                                  nil];
     
@@ -112,6 +120,23 @@
     
     }
 
+
+#pragma mark rotate monster animation 
+-(void) rotateMonster {
+    
+    [UIView animateWithDuration:1 animations:^{
+        
+        // In order to do this we need to make an animation group so that all elements move in accordance with the monsters full image
+//        
+//        self.fullMonsterImage.transform = CGAffineTransformMakeRotation(20 * M_PI / 180);
+//        self.monsterRightEyeImage.transform = CGAffineTransformMakeRotation(20 * M_PI / 180);
+//        self.monsterLeftEyeImage.transform = CGAffineTransformMakeRotation(20 * M_PI / 180);
+//        self.blushedCheeksImage.transform = CGAffineTransformMakeRotation(20 * M_PI / 180);
+      
+        
+    }];
+    
+}
 
 #pragma mark cheek animation
 -(void) showCheeksAnimation {
