@@ -44,6 +44,10 @@
 		8918C96C176DF84E007421DF /* monsterNavBar-users-tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 8944DB95176D2248000A9552 /* monsterNavBar-users-tapped.png */; };
 		8918C96D176DF855007421DF /* monsterNavBar-Users.png in Resources */ = {isa = PBXBuildFile; fileRef = 8944DB96176D2248000A9552 /* monsterNavBar-Users.png */; };
 		8918C96E176DF85B007421DF /* monsterNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8944DB97176D2248000A9552 /* monsterNavBar.png */; };
+		8918C971176E5019007421DF /* monsterNavBar-edit-tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C96F176E5019007421DF /* monsterNavBar-edit-tapped.png */; };
+		8918C972176E5019007421DF /* ProjectIcons-new.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C970176E5019007421DF /* ProjectIcons-new.png */; };
+		8918C974176E51B1007421DF /* monsterNavBar-Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C973176E51B1007421DF /* monsterNavBar-Edit.png */; };
+		8918C976176E570B007421DF /* monsterNavBar-TableBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */; };
 		892CC50A176DE43200BF8122 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 892CC509176DE43200BF8122 /* Task.m */; };
 		892CC50C176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */; };
 		892CC50E176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */; };
@@ -111,6 +115,10 @@
 		29F1DF89176C32A000FFB46F /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
 		29F1DF8C176C32B400FFB46F /* step3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step3.png; sourceTree = "<group>"; };
 		29F1DF8E176C45CF00FFB46F /* step2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step2.png; sourceTree = "<group>"; };
+		8918C96F176E5019007421DF /* monsterNavBar-edit-tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-edit-tapped.png"; sourceTree = "<group>"; };
+		8918C970176E5019007421DF /* ProjectIcons-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectIcons-new.png"; sourceTree = "<group>"; };
+		8918C973176E51B1007421DF /* monsterNavBar-Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-Edit.png"; sourceTree = "<group>"; };
+		8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-TableBackdrop.png"; sourceTree = "<group>"; };
 		892CC508176DE43200BF8122 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		892CC509176DE43200BF8122 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kimmy Design - LunchBox-Bold.otf"; sourceTree = "<group>"; };
@@ -272,8 +280,10 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */,
-				892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */,
+				8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */,
+				8918C973176E51B1007421DF /* monsterNavBar-Edit.png */,
+				8918C96F176E5019007421DF /* monsterNavBar-edit-tapped.png */,
+				8918C970176E5019007421DF /* ProjectIcons-new.png */,
 				8944DB90176D2248000A9552 /* monsterNavBar_back-tapped.png */,
 				8944DB91176D2248000A9552 /* monsterNavBar_back.png */,
 				8944DB92176D2248000A9552 /* monsterNavBar-done_tapped.png */,
@@ -282,6 +292,8 @@
 				8944DB95176D2248000A9552 /* monsterNavBar-users-tapped.png */,
 				8944DB96176D2248000A9552 /* monsterNavBar-Users.png */,
 				8944DB97176D2248000A9552 /* monsterNavBar.png */,
+				892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */,
+				892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */,
 				290B4774176D2BF800B91B7E /* CheckBox for tasks */,
 				290B476B176D29DE00B91B7E /* baby monster */,
 				29F1DF7D176C227500FFB46F /* Onboarding Images */,
@@ -462,6 +474,10 @@
 				290B4778176D2C3C00B91B7E /* checkbox-empty.png in Resources */,
 				892CC50C176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf in Resources */,
 				892CC50E176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf in Resources */,
+				8918C971176E5019007421DF /* monsterNavBar-edit-tapped.png in Resources */,
+				8918C972176E5019007421DF /* ProjectIcons-new.png in Resources */,
+				8918C974176E51B1007421DF /* monsterNavBar-Edit.png in Resources */,
+				8918C976176E570B007421DF /* monsterNavBar-TableBackdrop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

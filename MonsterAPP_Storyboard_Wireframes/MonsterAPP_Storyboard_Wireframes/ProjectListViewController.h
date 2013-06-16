@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *projectCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *finishedCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *currentHighPointMonster;
+@property (weak, nonatomic) IBOutlet UITableView *staticesqueTable;
 
 @end

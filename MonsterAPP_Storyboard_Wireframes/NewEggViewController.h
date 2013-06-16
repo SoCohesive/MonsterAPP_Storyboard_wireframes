@@ -13,7 +13,6 @@
 @interface NewEggViewController : UIViewController
 
 @property (strong, nonatomic) NSString *projectTypeName;
-@property (strong, nonatomic) IBOutlet SparkleImageView *shineRays;
 @property (strong, nonatomic) IBOutlet UILabel *tapInstructionLabel;
-
+@property (weak, nonatomic) IBOutlet SparkleImageView *sparkleImage;
 @end

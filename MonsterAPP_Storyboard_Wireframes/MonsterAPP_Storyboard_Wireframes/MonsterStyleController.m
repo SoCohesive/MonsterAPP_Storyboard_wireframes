@@ -38,23 +38,42 @@
     UIImage *barItemBackDefaultImg = [[UIImage imageNamed:@"monsterNavBar_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
     UIImage *barItemBackSelectImg = [[UIImage imageNamed:@"monsterNavBar_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
    
-    [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackDefaultImg forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackSelectImg forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2) forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
-  
-   
+    [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackDefaultImg
+                                                 forState:UIControlStateNormal
+                                               barMetrics:UIBarMetricsDefault];
     
+    [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackSelectImg
+                                                 forState:UIControlStateSelected
+                                               barMetrics:UIBarMetricsDefault];
+    
+    [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2)
+                                                    forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
+  
+  
+
     UIImage *doneButtonImage = [[UIImage imageNamed:@"monsterNavBar-done.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
     UIImage *doneButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-done_tapped.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-
-    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0) forBarMetrics:UIBarMetricsDefault];
+    
+    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0)
+                                               forBarMetrics:UIBarMetricsDefault];
    
-
+    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonImage
+                                            forState:UIControlStateNormal
+                                               style:UIBarButtonItemStyleDone
+                                          barMetrics:UIBarMetricsDefault];
+    
+    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage
+                                            forState:UIControlStateSelected
+                                               style:UIBarButtonItemStyleDone
+                                          barMetrics:UIBarMetricsDefault];
     
     
+    //[[done appearance] setBackgroundImage:doneButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    // [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
 
+
+      
 }
 
 

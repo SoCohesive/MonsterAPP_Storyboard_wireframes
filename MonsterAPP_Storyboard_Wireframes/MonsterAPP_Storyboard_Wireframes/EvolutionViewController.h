@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SparkleImageView.h"
 
 @interface EvolutionViewController : UIViewController
 

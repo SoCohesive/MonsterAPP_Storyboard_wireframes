@@ -51,6 +51,9 @@
     pickerDate = [self.datePicker date];
     selectionString = [[NSString alloc] initWithFormat:@"%@", [pickerDate descriptionWithLocale:[NSLocale currentLocale]]];
     
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.titleLabel.font.pointSize];
+    self.titleLabel.font = lunchBoxBold;
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -32,6 +32,8 @@
     
     // related to table view for generating project items, and segue to next view.  These will likely later become entities.
     self.projectTypes = [NSMutableArray arrayWithObjects: @"Write a Book Report", @"Study for a Test", @"Prepare for a Science Project", nil];
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.whatProjectLabel.font.pointSize];
+    self.whatProjectLabel.font = lunchBoxBold;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,8 +73,7 @@
     //cell.backgroundView = [[UIImageView alloc] initWithImage:background];
     //cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.textLabel.text = [self.projectTypes objectAtIndex:indexPath.row];
-    //cell.textLabel.textColor = [UIColor whiteColor];
-    
+    cell.textLabel.font = [UIFont systemFontOfSize:17.0];
     
     return cell;
 }

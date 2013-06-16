@@ -37,12 +37,14 @@
 
 - (void)viewDidLoad
 {
-    [self.shineRays rotateShine];
+    [self.sparkleImage rotateShine];
 
     [super viewDidLoad];
     
     [self chooseCongrat];
     [self chooseAchievementMessage];
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.congratsLabel.font.pointSize];
+    self.congratsLabel.font = lunchBoxBold;
     
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self

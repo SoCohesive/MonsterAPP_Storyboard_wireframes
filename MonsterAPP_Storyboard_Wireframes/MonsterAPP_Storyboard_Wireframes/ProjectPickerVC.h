@@ -17,5 +17,6 @@
 @property NSMutableArray *projectTypes;
 @property (strong, nonatomic) IBOutlet UITableView *projectTypesTable;
 @property (strong, nonatomic) NSString *projectTemplateName;
+@property (weak, nonatomic) IBOutlet UILabel *whatProjectLabel;
 
 @end

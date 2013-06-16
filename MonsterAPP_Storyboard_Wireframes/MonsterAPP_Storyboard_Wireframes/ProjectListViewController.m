@@ -19,20 +19,11 @@
 
 {
     NSMutableArray              *projectsBySection;
-    NSArray                     *newProjectsArray;
-    NSMutableArray              *existingProjectsArray;
-    NSMutableArray              *completedProjectsArray;
+   
 }
 
 @property (strong, nonatomic) NSFetchedResultsController  *taskResultsController;
 
-@property (nonatomic) BOOL taskComplete;
-@property (strong, nonatomic) NSDate *projectedEndDate;
-@property (strong, nonatomic) NSNumber *actualHP;
-@property (strong, nonatomic) NSNumber *actualXP;
-@property (strong, nonatomic) NSString *taskName;
-@property (strong, nonatomic) NSString *taskType;
-@property (strong, nonatomic) TaskDetail *taskDetails;
 
 @end
 
@@ -52,6 +43,8 @@
     [super viewDidLoad];
     //do an array where we have random greetings, random between name/nickname
     NSString *welcome = [NSString stringWithFormat:@"Welcome back, %@", self.currentUser.firstName];
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.welcomeLabel.font.pointSize];
+    self.welcomeLabel.font = lunchBoxBold;
     self.welcomeLabel.text = welcome;
     
     NSString *firstCellString = @"Create a New Project.";
@@ -59,21 +52,6 @@
 
     [self setupTasksFetchController];
 
-//dummy arrays
-//    NSMutableArray *dummyOpenProjArray = [NSMutableArray arrayWithObjects:@"Winn Dixie Report", @"Math Test", nil];
-//    [projectsBySection[1] addObjectsFromArray:dummyOpenProjArray];
-//    
-//    NSLog(@"%@", [self.currentUser.tasks valueForKey:@"taskName"]);
-//    
-//    //use this to enumerate for the tasks.  though the fetch request controller may be more appropriate for table views
-//    //for (id task in [appObject valueForKey:@"task"]) {
-//      //  NSLog(@"name = %@", [person valueForKey:@"name"]);}
-//    
-//
-//    //link this to core data for completed projects (maybe search for tasks whose task details are 0)
-//    NSMutableArray *dummyClosedProjArray = [NSMutableArray arrayWithObjects:@"SuperFudge Report", @"Geography Test", nil];
-//    [[projectsBySection objectAtIndex:2] addObjectsFromArray:dummyClosedProjArray];
-    
     
 }
 
@@ -93,7 +71,7 @@
     
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
-    //NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", ];
+//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
@@ -111,31 +89,8 @@
     BOOL success = [self.taskResultsController performFetch:&error];
     if (!success) {
         NSLog(@"Task Fetch Error: %@", error.description);
-    
-   //     if ([self.taskResultsController valueForKey:@"taskComplete" == NO]){
-    
-            for (id task in [self.taskResultsController valueForKey:@"task"])
-            {
-                Task *existingTask = [[Task alloc]init];
-                
-                existingTask.projectedEndDate=[self.taskResultsController valueForKey:@"projectedEndDate"];
-                existingTask.actualHP = [self.taskResultsController valueForKey:@"actualHP"];
-                existingTask.actualXP = [self.taskResultsController valueForKey:@"actualXP"];
-                existingTask.taskName = [self.taskResultsController valueForKey:@"taskName"];
-                existingTask.taskType = [self.taskResultsController valueForKey:@"taskType"];
-                existingTask.taskComplete = [self.taskResultsController valueForKey:@"taskComplete"];
-                existingTask.taskDetails = [self.taskResultsController valueForKey:@"taskDetails"];
-                
-                [projectsBySection[1] addObject:existingTask];
-                NSLog(@"%@", existingTask);
-            }
-            
-        //} else {
-        //    [projectsBySection[2] addObject];
-        //}
-             
     }
-
+         
 }
 
 
@@ -146,70 +101,92 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [projectsBySection count];
+    if (tableView == self.staticesqueTable) {
+        
+        return 1;
+        
+    } else {
+   
+        return [[self.taskResultsController sections] count];
+    }
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    return [projectsBySection[section] count];
-    
+    if (tableView == self.staticesqueTable) {
+        
+        return 1;
+        
+    } else {
+
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.taskResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    static NSString *cellID1 = @"newProjectCell";
-    static NSString *cellID2 = @"existingProjectCell";
-    static NSString *cellID3 = @"completedProjectCell";
+static NSString *cellID1 = @"newProjectCell";
+static NSString *cellID2 = @"existingProjectCell";
+static NSString *cellID3 = @"completedProjectCell";
 
-    CreateNewProjectCell *newProjectCell =[[CreateNewProjectCell alloc] init];
-    ExistingProjectCell *existingProjectCell =[[ExistingProjectCell alloc] init];
-    CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init];
-    
-    
-        //NSLog(@"projectsBySection[1].row = %@", projectsBySection[1][0]);
-    
-    if (indexPath.section == 0) {
+CreateNewProjectCell *newProjectCell =[[CreateNewProjectCell alloc] init];
+ExistingProjectCell *existingProjectCell =[[ExistingProjectCell alloc] init];
+CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init];
+
+    if (tableView == self.staticesqueTable) {
         
+    
         newProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID1];
         newProjectCell.createLabel.text = [projectsBySection[0] objectAtIndex:indexPath.row];
         
         return newProjectCell;
         
-    } else if (indexPath.section == 1) {
+    } else {
+    
+    if ([[self.taskResultsController sections] objectAtIndex:0]) {
         
-        existingProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID2];
-        existingProjectCell.subtitle.text = [projectsBySection[1] objectAtIndex:indexPath.row];
+        existingProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
         
+        Task *existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
+        existingProjectCell.existingTitle.text = existingTask.taskName;
+        existingProjectCell.subtitle.text = existingTask.taskType;
+        
+        NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
+        existingProjectCell.deadlineReminderLabel.text = dateString;
+                
         return existingProjectCell;
         
     } else {
-        completedProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID3];
-        completedProjectCell.textLabel.text = [projectsBySection[2] objectAtIndex:indexPath.row];
+        completedProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID3 forIndexPath:indexPath];
+        
+        Task *completedTask = [self.taskResultsController objectAtIndexPath:indexPath];
+        completedProjectCell.completedTitle.text = completedTask.taskName;
+        completedProjectCell.completedSubtitle.text = completedTask.taskType;
+        
+        NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [completedTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
+        completedProjectCell.completedLabel.text = dateString;
         
         return completedProjectCell;
+
     }
-    
+   
+    }
 }
 
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-   if (indexPath.section == 0) {
-   
-       [self performSegueWithIdentifier:@"segueToNewProject" sender:self];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
+indexPath
+{
+    if (tableView == self.staticesqueTable) {
+        [self.staticesqueTable deselectRowAtIndexPath:indexPath animated:YES];
+        //once the segues pass info, set this up to do the @"segueToCreateProject" segue
 
-   } else {
-   
-       [self performSegueWithIdentifier:@"segueToExistingTaskDetail" sender:self];
-   }
-    
-    [self.projectsTableView deselectRowAtIndexPath:indexPath animated:YES];
- 
+    }else {
+     
+        [self.projectsTableView deselectRowAtIndexPath:indexPath animated:YES];
+        //once the segues pass info, set this up to do the @"segueToCreateProject" segue & fetch taskDetails
+    }
 }
-*/
-
-
 @end
