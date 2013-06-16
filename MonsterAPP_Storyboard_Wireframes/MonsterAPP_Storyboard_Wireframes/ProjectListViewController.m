@@ -12,6 +12,7 @@
 #import "ExistingProjectCell.h"
 #import "CompletedProjectsCell.h"
 #import "ProjectPickerVC.h"
+#import "TaskDetail.h"
 #import "TaskListViewController.h"
 
 @interface ProjectListViewController ()
@@ -24,6 +25,14 @@
 }
 
 @property (strong, nonatomic) NSFetchedResultsController  *taskResultsController;
+
+@property (nonatomic) BOOL taskComplete;
+@property (strong, nonatomic) NSDate *projectedEndDate;
+@property (strong, nonatomic) NSNumber *actualHP;
+@property (strong, nonatomic) NSNumber *actualXP;
+@property (strong, nonatomic) NSString *taskName;
+@property (strong, nonatomic) NSString *taskType;
+@property (strong, nonatomic) TaskDetail *taskDetails;
 
 @end
 
@@ -84,29 +93,48 @@
     
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
-    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser.firstName];
+    //NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", ];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
-    [taskFetchRequest setPredicate:userPredicate];
+  //  [taskFetchRequest setPredicate:userPredicate];
     
 //once Tasks save taskDetails, switch name to taskDetails
-    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"taskName" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"taskType" ascending:YES]];
+    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"taskName" ascending:NO]];
     
     self.taskResultsController = [[NSFetchedResultsController alloc]
                                     initWithFetchRequest:taskFetchRequest
                                     managedObjectContext:managedObjectContext
-                                    sectionNameKeyPath:@"taskName" //taskComplete
+                                    sectionNameKeyPath:@"taskComplete" //taskComplete
                                     cacheName:@"nil"];
     NSError *error;
     BOOL success = [self.taskResultsController performFetch:&error];
     if (!success) {
         NSLog(@"Task Fetch Error: %@", error.description);
-    }
     
-    [projectsBySection[1] addObjectsFromArray:[self.taskResultsController objectAtIndexPath:0]];
-    //[projectsBySection[2] addObjectsFromArray:[self.taskResultsController objectAtIndexPath:1]];
-    [self.projectsTableView reloadData];
+   //     if ([self.taskResultsController valueForKey:@"taskComplete" == NO]){
+    
+            for (id task in [self.taskResultsController valueForKey:@"task"])
+            {
+                Task *existingTask = [[Task alloc]init];
+                
+                existingTask.projectedEndDate=[self.taskResultsController valueForKey:@"projectedEndDate"];
+                existingTask.actualHP = [self.taskResultsController valueForKey:@"actualHP"];
+                existingTask.actualXP = [self.taskResultsController valueForKey:@"actualXP"];
+                existingTask.taskName = [self.taskResultsController valueForKey:@"taskName"];
+                existingTask.taskType = [self.taskResultsController valueForKey:@"taskType"];
+                existingTask.taskComplete = [self.taskResultsController valueForKey:@"taskComplete"];
+                existingTask.taskDetails = [self.taskResultsController valueForKey:@"taskDetails"];
+                
+                [projectsBySection[1] addObject:existingTask];
+                NSLog(@"%@", existingTask);
+            }
+            
+        //} else {
+        //    [projectsBySection[2] addObject];
+        //}
+             
+    }
 
 }
 

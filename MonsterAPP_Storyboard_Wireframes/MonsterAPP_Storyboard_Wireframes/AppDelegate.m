@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
-#import "MonsterStyleController.h"
+#import "MonsterStyleSheet.h"
 
 
 @implementation AppDelegate
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MonsterStyleController applyStyle];
+    [MonsterStyleSheet applyStyle];
     
     return YES;
 }

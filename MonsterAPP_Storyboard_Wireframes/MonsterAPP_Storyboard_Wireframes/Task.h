@@ -2,7 +2,7 @@
 //  Task.h
 //  MonsterAPP_Storyboard_Wireframes
 //
-//  Created by ehochs  on 6/15/13.
+//  Created by ehochs  on 6/16/13.
 //  Copyright (c) 2013 Sonam Dhingra. All rights reserved.
 //
 
@@ -21,11 +21,11 @@
 @property (nonatomic, retain) NSNumber * possibleXP;
 @property (nonatomic, retain) NSDate * projectedEndDate;
 @property (nonatomic, retain) NSDate * projectedStartDate;
+@property (nonatomic, retain) NSNumber * taskComplete;
 @property (nonatomic, retain) NSNumber * taskID;
 @property (nonatomic, retain) NSString * taskName;
 @property (nonatomic, retain) NSString * taskType;
 @property (nonatomic, retain) NSNumber * userID;
-@property (nonatomic, retain) NSNumber * taskComplete;
 @property (nonatomic, retain) Monster *monster;
 @property (nonatomic, retain) NSSet *taskDetails;
 @property (nonatomic, retain) User *user;

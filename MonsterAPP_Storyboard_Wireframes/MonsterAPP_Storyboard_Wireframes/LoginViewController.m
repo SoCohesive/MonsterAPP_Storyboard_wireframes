@@ -31,7 +31,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        // Custom initialization
     }
     return self;
 }
@@ -158,7 +157,8 @@
 
 
 
-- (IBAction)loginDoneButton:(id)sender {
+
+- (IBAction)loginDoneBarButton:(id)sender {
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     //user is our managedObject
