@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface OnboardingViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *doorImage;
+- (IBAction)tapGestureForDoor:(id)sender;
+
 
 @end

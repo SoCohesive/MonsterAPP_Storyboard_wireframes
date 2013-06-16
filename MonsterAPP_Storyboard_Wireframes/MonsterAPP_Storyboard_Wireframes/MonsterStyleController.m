@@ -40,21 +40,22 @@
    
     [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackDefaultImg forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackSelectImg forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2) forBarMetrics:UIBarMetricsDefault];
+    [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2) forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
   
+   
     
-    //trying here to get the damnable title to go away- set the color to clear or purple setting the title to nil crashes. 
-    NSDictionary *barItemTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIColor greenColor],UITextAttributeTextColor, [UIColor redColor], UITextAttributeTextShadowColor, nil];
-    [barButtonItemAppearance setTitleTextAttributes:barItemTextAttributes forState:UIControlStateSelected |UIControlStateNormal |UIControlStateHighlighted |UIControlStateHighlighted |UIControlStateApplication];
+    UIImage *doneButtonImage = [[UIImage imageNamed:@"monsterNavBar-done.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
+    UIImage *doneButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-done_tapped.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
 
+    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0) forBarMetrics:UIBarMetricsDefault];
+   
 
-    //((UIColor*)[[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor])
-    //for the other buttons, i think you use identifiers.
     
     
-    /*UIBarButtonItem *doneButton =[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"monsterNavBar-done.png"] style:UIBarButtonItemStylePlain target:<#(id)#> action:<#(SEL)#>
-    */
-    
+
 }
+
 
 @end

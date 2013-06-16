@@ -49,7 +49,8 @@
     projectsBySection = [[NSMutableArray alloc] initWithObjects: [NSArray arrayWithObject: firstCellString], [NSMutableArray array], [NSMutableArray array], nil];
 
     [self setupTasksFetchController];
-    //link this to core data for projects
+
+//dummy arrays
 //    NSMutableArray *dummyOpenProjArray = [NSMutableArray arrayWithObjects:@"Winn Dixie Report", @"Math Test", nil];
 //    [projectsBySection[1] addObjectsFromArray:dummyOpenProjArray];
 //    
@@ -83,19 +84,19 @@
     
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
-    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];
+    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser.firstName];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
     [taskFetchRequest setPredicate:userPredicate];
     
-    //once you figure out predicates, filter by user rather than sorting?
-    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"Task.taskDetails" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"Task.projectedEndDate" ascending:YES]];
+//once Tasks save taskDetails, switch name to taskDetails
+    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"taskName" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"taskType" ascending:YES]];
     
     self.taskResultsController = [[NSFetchedResultsController alloc]
                                     initWithFetchRequest:taskFetchRequest
                                     managedObjectContext:managedObjectContext
-                                    sectionNameKeyPath:@"task.taskComplete"
+                                    sectionNameKeyPath:@"taskName" //taskComplete
                                     cacheName:@"nil"];
     NSError *error;
     BOOL success = [self.taskResultsController performFetch:&error];
@@ -103,11 +104,12 @@
         NSLog(@"Task Fetch Error: %@", error.description);
     }
     
-    [projectsBySection[1] addObjectsFromArray: [self.taskResultsController objectAtIndexPath:0]];
-    [projectsBySection[1] addObjectsFromArray: [self.taskResultsController objectAtIndexPath:0]];
+    [projectsBySection[1] addObjectsFromArray:[self.taskResultsController objectAtIndexPath:0]];
+    //[projectsBySection[2] addObjectsFromArray:[self.taskResultsController objectAtIndexPath:1]];
     [self.projectsTableView reloadData];
 
 }
+
 
 
 

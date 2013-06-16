@@ -43,7 +43,7 @@
     [super viewDidLoad];
 
 	//nameRequest = [[NSString alloc] init];
-    
+    [self formatTextFields];
     [self chooseNameRequest];
     [self chooseDueQuestion];
     [self fetchCurrentUser];
