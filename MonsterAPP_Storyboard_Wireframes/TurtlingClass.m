@@ -10,4 +10,10 @@
 
 @implementation TurtlingClass
 
+//fetch evolution
+
+//if evolution = 1,
+//thumbnailName = @"turtling-ev1-thumbnail.png"
+
+
 @end

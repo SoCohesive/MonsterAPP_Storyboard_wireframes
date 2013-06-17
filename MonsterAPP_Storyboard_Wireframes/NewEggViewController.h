@@ -15,4 +15,5 @@
 @property (strong, nonatomic) NSString *projectTypeName;
 @property (strong, nonatomic) IBOutlet UILabel *tapInstructionLabel;
 @property (weak, nonatomic) IBOutlet SparkleImageView *sparkleImage;
+@property (strong, nonatomic) NSString *monsterType;
 @end

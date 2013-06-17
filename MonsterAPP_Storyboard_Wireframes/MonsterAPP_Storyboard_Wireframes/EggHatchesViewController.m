@@ -69,6 +69,7 @@
 {
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
+    
     //create managedObject
     Monster *monster = [NSEntityDescription insertNewObjectForEntityForName:@"Monster" inManagedObjectContext:managedObjectContext];
     

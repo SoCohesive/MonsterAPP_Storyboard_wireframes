@@ -48,7 +48,6 @@
 		8918C972176E5019007421DF /* ProjectIcons-new.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C970176E5019007421DF /* ProjectIcons-new.png */; };
 		8918C974176E51B1007421DF /* monsterNavBar-Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C973176E51B1007421DF /* monsterNavBar-Edit.png */; };
 		8918C976176E570B007421DF /* monsterNavBar-TableBackdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */; };
-		892CC50A176DE43200BF8122 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 892CC509176DE43200BF8122 /* Task.m */; };
 		892CC50C176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */; };
 		892CC50E176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */; };
 		892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 892CC510176DEC0800BF8122 /* MonsterStyleSheet.m */; };
@@ -72,6 +71,11 @@
 		A442FCEC176A3A3D006E71B6 /* CompletedProjectsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A442FCEB176A3A3D006E71B6 /* CompletedProjectsCell.m */; };
 		A442FCFE176ABA1E006E71B6 /* TaskDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A442FCFD176ABA1E006E71B6 /* TaskDetail.m */; };
 		A442FD05176B4EC3006E71B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A442FD04176B4EC3006E71B6 /* QuartzCore.framework */; };
+		A4744FA1176F52EE004A55E9 /* turtling-ev2-thumbnail@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744F9D176F52EE004A55E9 /* turtling-ev2-thumbnail@2px.png */; };
+		A4744FA2176F52EE004A55E9 /* turtling-ev2-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744F9E176F52EE004A55E9 /* turtling-ev2-thumbnail.png */; };
+		A4744FA3176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744F9F176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png */; };
+		A4744FA4176F52EE004A55E9 /* turtling-ev1-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744FA0176F52EE004A55E9 /* turtling-ev1-thumbnail.png */; };
+		A4744FA7176F62F2004A55E9 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A4744FA6176F62F2004A55E9 /* Task.m */; };
 		A485E13E1768E18E00ED06DC /* EvolutionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E13D1768E18E00ED06DC /* EvolutionViewController.m */; };
 		A485E1411768E1CE00ED06DC /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E1401768E1CE00ED06DC /* OnboardingViewController.m */; };
 		A4B3FDE0176B903500EFBDEA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B3FDDF176B903500EFBDEA /* User.m */; };
@@ -127,8 +131,6 @@
 		8918C970176E5019007421DF /* ProjectIcons-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProjectIcons-new.png"; sourceTree = "<group>"; };
 		8918C973176E51B1007421DF /* monsterNavBar-Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-Edit.png"; sourceTree = "<group>"; };
 		8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-TableBackdrop.png"; sourceTree = "<group>"; };
-		892CC508176DE43200BF8122 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
-		892CC509176DE43200BF8122 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kimmy Design - LunchBox-Bold.otf"; sourceTree = "<group>"; };
 		892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kimmy Design - LunchBox-Light.otf"; sourceTree = "<group>"; };
 		892CC50F176DEC0800BF8122 /* MonsterStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterStyleSheet.h; sourceTree = "<group>"; };
@@ -170,6 +172,12 @@
 		A442FCFC176ABA1E006E71B6 /* TaskDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetail.h; sourceTree = "<group>"; };
 		A442FCFD176ABA1E006E71B6 /* TaskDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetail.m; sourceTree = "<group>"; };
 		A442FD04176B4EC3006E71B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A4744F9D176F52EE004A55E9 /* turtling-ev2-thumbnail@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev2-thumbnail@2px.png"; sourceTree = "<group>"; };
+		A4744F9E176F52EE004A55E9 /* turtling-ev2-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev2-thumbnail.png"; sourceTree = "<group>"; };
+		A4744F9F176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev1-thumbnail@2px.png"; sourceTree = "<group>"; };
+		A4744FA0176F52EE004A55E9 /* turtling-ev1-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev1-thumbnail.png"; sourceTree = "<group>"; };
+		A4744FA5176F62F1004A55E9 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		A4744FA6176F62F2004A55E9 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		A485E13C1768E18E00ED06DC /* EvolutionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvolutionViewController.h; sourceTree = "<group>"; };
 		A485E13D1768E18E00ED06DC /* EvolutionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvolutionViewController.m; sourceTree = "<group>"; };
 		A485E13F1768E1CE00ED06DC /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
@@ -299,6 +307,7 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4744F9C176F52C6004A55E9 /* turtlingEvolutions */,
 				8918C970176E5019007421DF /* ProjectIcons-new.png */,
 				89A0EF25176EE476001ADFE8 /* NavBarImages */,
 				892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */,
@@ -384,12 +393,12 @@
 			isa = PBXGroup;
 			children = (
 				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
+				A4744FA5176F62F1004A55E9 /* Task.h */,
+				A4744FA6176F62F2004A55E9 /* Task.m */,
 				89A0EF22176EE386001ADFE8 /* Monster.h */,
 				89A0EF23176EE386001ADFE8 /* Monster.m */,
 				89A0EF1F176EDB69001ADFE8 /* Evolution.h */,
 				89A0EF20176EDB69001ADFE8 /* Evolution.m */,
-				892CC508176DE43200BF8122 /* Task.h */,
-				892CC509176DE43200BF8122 /* Task.m */,
 				A442FCFC176ABA1E006E71B6 /* TaskDetail.h */,
 				A442FCFD176ABA1E006E71B6 /* TaskDetail.m */,
 				A4B3FDDE176B903500EFBDEA /* User.h */,
@@ -411,6 +420,17 @@
 				A442FCEB176A3A3D006E71B6 /* CompletedProjectsCell.m */,
 			);
 			name = "Project List";
+			sourceTree = "<group>";
+		};
+		A4744F9C176F52C6004A55E9 /* turtlingEvolutions */ = {
+			isa = PBXGroup;
+			children = (
+				A4744F9D176F52EE004A55E9 /* turtling-ev2-thumbnail@2px.png */,
+				A4744F9E176F52EE004A55E9 /* turtling-ev2-thumbnail.png */,
+				A4744F9F176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png */,
+				A4744FA0176F52EE004A55E9 /* turtling-ev1-thumbnail.png */,
+			);
+			name = turtlingEvolutions;
 			sourceTree = "<group>";
 		};
 		A4F378E01766267000CEC7FB /* new egg files */ = {
@@ -521,6 +541,10 @@
 				89A0EF15176ECED0001ADFE8 /* monsterNavBar-done_back@2px.png in Resources */,
 				89A0EF16176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png in Resources */,
 				89A0EF17176ECED0001ADFE8 /* monsterNavBar_back@2x.png in Resources */,
+				A4744FA1176F52EE004A55E9 /* turtling-ev2-thumbnail@2px.png in Resources */,
+				A4744FA2176F52EE004A55E9 /* turtling-ev2-thumbnail.png in Resources */,
+				A4744FA3176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png in Resources */,
+				A4744FA4176F52EE004A55E9 /* turtling-ev1-thumbnail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,11 +575,11 @@
 				A442FCFE176ABA1E006E71B6 /* TaskDetail.m in Sources */,
 				A4B3FDE0176B903500EFBDEA /* User.m in Sources */,
 				293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */,
-				892CC50A176DE43200BF8122 /* Task.m in Sources */,
 				892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */,
 				89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */,
 				89A0EF21176EDB69001ADFE8 /* Evolution.m in Sources */,
 				89A0EF24176EE386001ADFE8 /* Monster.m in Sources */,
+				A4744FA7176F62F2004A55E9 /* Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

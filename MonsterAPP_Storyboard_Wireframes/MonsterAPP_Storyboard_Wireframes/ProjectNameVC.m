@@ -9,8 +9,6 @@
 #import "ProjectNameVC.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
-#import "User.h"
-#import "Task.h"
 #import "EggHatchesViewController.h"
 
 @interface ProjectNameVC ()
@@ -21,8 +19,8 @@
     NSString    *selectionString;
     NSDate      *pickerDate;
     User        *currentUser;
-    Task        *currentTask;
 }
+
 -(void)chooseNameRequest;
 
 @end
@@ -42,7 +40,6 @@
 {
     [super viewDidLoad];
 
-	currentTask = [[Task alloc] init];
     [self formatTextFields];
     [self chooseNameRequest];
     [self chooseDueQuestion];
@@ -181,17 +178,18 @@
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     //create managedObject
-    currentTask = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
+    self.currentTask = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
+    
     
     //set managedObject properties
     NSDate *currentDate = [NSDate date];
-    currentTask.dateCreated =  currentDate;
-    currentTask.projectedEndDate =  pickerDate;
-    currentTask.taskName = self.titleTextField.text;
-    currentTask.taskType= self.projectTypeForName;
-    currentTask.actualHP = [NSNumber numberWithInt: 50];
-    currentTask.actualXP = [NSNumber numberWithInt:50];
-    currentTask.user = currentUser;
+    self.currentTask.dateCreated =  currentDate;
+    self.currentTask.projectedEndDate =  pickerDate;
+    self.currentTask.taskName = self.titleTextField.text;
+    self.currentTask.taskType= self.projectTypeForName;
+    self.currentTask.actualHP = [NSNumber numberWithInt: 50];
+    self.currentTask.actualXP = [NSNumber numberWithInt:50];
+    self.currentTask.user = currentUser;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -199,8 +197,8 @@
         NSLog(@"Could not save task: %@", error);
     }
     
-    [currentUser addTasksObject:currentTask];
-    
+    [currentUser addTasksObject:self.currentTask];
+   
     //once this works, we should prevent the back button from saving over it, and do some kind of edit instead.
     //when the project is saved, we should assign a new monster, and save the monster name on the next screen.
 
@@ -212,13 +210,14 @@
 {
     //add titleTextField.text to task properties
     [self performSegueWithIdentifier:@"segueToHatch" sender:self];
-    [self addTask];
-    
+       
 }
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
+    [self addTask];
+    
     //these will go away
     ((EggHatchesViewController*)(segue.destinationViewController)).taskProjectType = self.projectTypeForName;
     ((EggHatchesViewController*)(segue.destinationViewController)).taskTitle = self.titleTextField.text;
@@ -226,18 +225,10 @@
     
     ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString = selectionString;
     ((EggHatchesViewController*)(segue.destinationViewController)).monsterType = self.monsterKind;
-     ((EggHatchesViewController*)(segue.destinationViewController)).task = currentTask;
+     ((EggHatchesViewController*)(segue.destinationViewController)).task = self.currentTask;
     
-     NSLog(@"Project sent to Hatching View -->%@, due%@",((EggHatchesViewController*)(segue.destinationViewController)).taskTitle,  ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString);
+     NSLog(@"Project sent to Hatching View -->%@, due: %@, namedTaskName: %@",((EggHatchesViewController*)(segue.destinationViewController)).taskTitle,  ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString, self.currentTask);
     
 }
-
-
-
-
-
-
-
-
 
 @end

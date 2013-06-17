@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *achievementText;
 @property (strong, nonatomic) IBOutlet UILabel *hintLabel;
 @property (strong, nonatomic) IBOutlet UILabel *congratsLabel;
-@property (strong, nonatomic) NSString *monsterType;
+
 
 -(void)chooseAchievementMessage;
 -(void)chooseCongrat;
@@ -43,6 +43,10 @@
 
     [super viewDidLoad];
     
+    //eventually this string will come from an array of monster names.
+    self.monsterType = @"turtling";
+
+    
     [self chooseCongrat];
     [self chooseAchievementMessage];
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.congratsLabel.font.pointSize];
@@ -53,9 +57,7 @@
                                             action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];
     
-    //eventually this string will come from an array of monster names. 
-    self.monsterType = @"turtling";
-    
+        
 	// Do any additional setup after loading the view.
 }
 
