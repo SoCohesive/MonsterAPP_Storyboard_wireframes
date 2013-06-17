@@ -17,7 +17,6 @@
 @dynamic monsterID;
 @dynamic monsterName;
 @dynamic monsterType;
-@dynamic task;
 @dynamic evolutions;
 
 @end

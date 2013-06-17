@@ -270,10 +270,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SparkleShine-overlay.png" id="85c-yA-A1l" customClass="SparkleImageView">
-                                <rect key="frame" x="-160" y="-46" width="640" height="640"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="firstEgg.png" id="UIY-w8-KGS">
                                 <rect key="frame" x="58" y="203" width="205" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -306,6 +302,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SparkleShine-overlay.png" id="85c-yA-A1l" customClass="SparkleImageView">
+                                <rect key="frame" x="-160" y="-46" width="640" height="640"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SparkleShine-overlay.png" id="7T6-pf-UN8" customClass="SparkleImageView">
+                                <rect key="frame" x="10" y="235" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95178817400000004" green="0.96384113049999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -315,6 +323,7 @@
                         <outlet property="achievementText" destination="x5O-my-egy" id="1eb-6f-3UW"/>
                         <outlet property="congratsLabel" destination="dXN-xR-wOy" id="J7s-Sq-yNL"/>
                         <outlet property="hintLabel" destination="CCp-z3-Z9m" id="6cS-bB-MCN"/>
+                        <outlet property="littleSparkle" destination="7T6-pf-UN8" id="4eR-FS-ORJ"/>
                         <outlet property="sparkleImage" destination="85c-yA-A1l" id="0iv-Gu-vhi"/>
                         <outlet property="tapInstructionLabel" destination="EOE-0L-Fnf" id="slG-Gq-mu8"/>
                         <segue destination="hU3-eb-Yu9" kind="push" identifier="segueToProjectName" id="g7F-Zx-ASM"/>
@@ -1013,6 +1022,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="achievementText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="congratsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="littleSparkle" candidateClass="SparkleImageView"/>
                 <relationship kind="outlet" name="sparkleImage" candidateClass="SparkleImageView"/>
                 <relationship kind="outlet" name="tapInstructionLabel" candidateClass="UILabel"/>
             </relationships>
@@ -1027,6 +1037,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="PagedScrollViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PagedScrollViewController.h"/>
             <relationships>
+                <relationship kind="action" name="getStartedButton:"/>
                 <relationship kind="outlet" name="getStartedButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>

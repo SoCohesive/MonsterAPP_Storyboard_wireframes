@@ -17,8 +17,8 @@
 @property (nonatomic, retain) NSNumber * monsterID;
 @property (nonatomic, retain) NSString * monsterName;
 @property (nonatomic, retain) NSString * monsterType;
-@property (nonatomic, retain) Task *task;
 @property (nonatomic, retain) NSSet *evolutions;
+@property (nonatomic, retain) Task *task;
 @end
 
 @interface Monster (CoreDataGeneratedAccessors)
