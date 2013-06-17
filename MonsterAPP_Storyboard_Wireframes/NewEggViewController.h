@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SparkleImageView.h"
 #import "User.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface NewEggViewController : UIViewController
 

@@ -59,6 +59,16 @@
     
         
 	// Do any additional setup after loading the view.
+    // Audio triggers below, with Monster_Shimmer.wav sound
+    
+    SystemSoundID soundID2;
+    NSString *soundFile2 = [[NSBundle mainBundle]
+                            pathForResource:@"Monster_Shimmer" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile2]
+									 , &soundID2);
+    AudioServicesPlaySystemSound(soundID2);
 }
 
 - (void)didReceiveMemoryWarning

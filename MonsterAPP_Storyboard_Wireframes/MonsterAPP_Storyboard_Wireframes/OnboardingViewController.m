@@ -49,6 +49,16 @@
 - (IBAction)tapGestureForDoor:(id)sender {
     
     [self openDoorAnimation];
+    
+    //Audio trigger below for door opening Monster_Door.wav
+    SystemSoundID soundID;
+    NSString *soundFile = [[NSBundle mainBundle]
+						   pathForResource:@"Monster_Door" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile]
+									 , &soundID);
+    AudioServicesPlaySystemSound(soundID);
 }
 
 -(void) openDoorAnimation {
