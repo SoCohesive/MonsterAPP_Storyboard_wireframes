@@ -12,6 +12,8 @@
 		185B9F491766622200F3E24B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F481766622200F3E24B /* User.m */; };
 		185B9F4C1766622200F3E24B /* TaskDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F4B1766622200F3E24B /* TaskDetail.m */; };
 		185B9F4F1766622200F3E24B /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F4E1766622200F3E24B /* Task.m */; };
+		185B9F521766715E00F3E24B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F511766715E00F3E24B /* LoginViewController.m */; };
+		185B9F541766789900F3E24B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B9F531766789900F3E24B /* CoreData.framework */; };
 		291A1284176411130098D66E /* ScrollView_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 291A1283176411130098D66E /* ScrollView_Test.m */; };
 		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
@@ -45,6 +47,9 @@
 		185B9F4B1766622200F3E24B /* TaskDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetail.m; sourceTree = "<group>"; };
 		185B9F4D1766622200F3E24B /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		185B9F4E1766622200F3E24B /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		185B9F501766715E00F3E24B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		185B9F511766715E00F3E24B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		185B9F531766789900F3E24B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		291A1282176411130098D66E /* ScrollView_Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollView_Test.h; path = ../ScrollView_Test.h; sourceTree = "<group>"; };
 		291A1283176411130098D66E /* ScrollView_Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScrollView_Test.m; path = ../ScrollView_Test.m; sourceTree = "<group>"; };
 		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185B9F541766789900F3E24B /* CoreData.framework in Frameworks */,
 				294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */,
 				294B082A1763631B00C5DFFA /* Foundation.framework in Frameworks */,
 				294B082C1763631B00C5DFFA /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +116,7 @@
 		294B08261763631B00C5DFFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				185B9F531766789900F3E24B /* CoreData.framework */,
 				294B08271763631B00C5DFFA /* UIKit.framework */,
 				294B08291763631B00C5DFFA /* Foundation.framework */,
 				294B082B1763631B00C5DFFA /* CoreGraphics.framework */,
@@ -125,6 +132,8 @@
 				291A1282176411130098D66E /* ScrollView_Test.h */,
 				291A1283176411130098D66E /* ScrollView_Test.m */,
 				294B083F1763631B00C5DFFA /* MainStoryboard.storyboard */,
+				185B9F501766715E00F3E24B /* LoginViewController.h */,
+				185B9F511766715E00F3E24B /* LoginViewController.m */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
 				294B08431763631B00C5DFFA /* ViewController.m */,
 				A4F378ED176629A700CEC7FB /* NewEggViewController.h */,
@@ -258,6 +267,7 @@
 				185B9F491766622200F3E24B /* User.m in Sources */,
 				185B9F4C1766622200F3E24B /* TaskDetail.m in Sources */,
 				185B9F4F1766622200F3E24B /* Task.m in Sources */,
+				185B9F521766715E00F3E24B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
