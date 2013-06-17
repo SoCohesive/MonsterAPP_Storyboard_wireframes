@@ -7,8 +7,21 @@
 //
 
 #import "NewEggViewController.h"
+#import "ProjectNameVC.h"
 
 @interface NewEggViewController ()
+{
+    NSArray *congratPhrases;
+    NSString *projectPhrase;
+}
+@property (strong, nonatomic) IBOutlet UILabel *achievementText;
+@property (strong, nonatomic) IBOutlet UILabel *hintLabel;
+@property (strong, nonatomic) IBOutlet UILabel *congratsLabel;
+
+
+-(void)chooseAchievementMessage;
+-(void)chooseCongrat;
+-(void)rephraseProjectType;
 
 @end
 
@@ -24,9 +37,27 @@
 }
 
 - (void)viewDidLoad
-{
+{    //perfect world, we would have a way to randomly select our monster from the roster.
+
+    [self.sparkleImage rotateShine];
+
     [super viewDidLoad];
-    [self.shineRays rotateShine];
+    
+    //eventually this string will come from an array of monster names.
+    self.monsterType = @"turtling";
+
+    
+    [self chooseCongrat];
+    [self chooseAchievementMessage];
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.congratsLabel.font.pointSize];
+    self.congratsLabel.font = lunchBoxBold;
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [self.view addGestureRecognizer:singleFingerTap];
+    
+        
 	// Do any additional setup after loading the view.
 }
 
@@ -34,6 +65,64 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)chooseCongrat
+{
+    congratPhrases = [NSMutableArray arrayWithObjects: @"Congrats!", @"Awesome!", @"Way to Go!", @"You're a Rockstar!", @"Yay!", @"Hooray!", nil];
+
+    int messageIndexPath = arc4random()%(congratPhrases.count-1);
+    NSString *congratText = congratPhrases[messageIndexPath];
+    
+    self.congratsLabel.text = congratText;
+}
+
+-(void)rephraseProjectType
+{
+    
+    if ([self.projectTypeName isEqual:@"Study for a Test"]) {
+        projectPhrase = @"test preparation";
+        
+    } else if ([self.projectTypeName isEqual:@"Write a Book Report"]){
+        projectPhrase = @"book report";
+        
+         }    else {
+             projectPhrase = @"science fair project";
+         }
+    
+}
+
+-(void)chooseAchievementMessage
+{
+     [self rephraseProjectType];
+       
+        NSString *achievementString = [NSString stringWithFormat:@"Starting your %@ earned you a new %@ egg!",projectPhrase, self.monsterType];
+        self.achievementText.text = achievementString;
+        self.hintLabel.text = @"hint: you might want to start thinking of names";
+
+}
+
+#pragma
+#pragma mark Segue to Naming Project
+
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    
+    //CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    
+    [self performSegueWithIdentifier:@"segueToProjectName" sender:self];
+
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName = self.projectTypeName;
+    ((ProjectNameVC*)(segue.destinationViewController)).monsterKind = self.monsterType;
+    
+    NSLog(@"ProjectType sent to Name View -->%@",((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName);
+    
+    
 }
 
 @end

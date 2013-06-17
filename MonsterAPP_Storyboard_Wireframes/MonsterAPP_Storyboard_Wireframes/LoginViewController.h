@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
 
 @interface LoginViewController : UIViewController
 
@@ -16,5 +17,16 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+=======
+#import <QuartzCore/QuartzCore.h>
+
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UILabel *loginLabel;
+- (IBAction)loginDoneBarButton:(id)sender;
+
+>>>>>>> 42b38aab70833dbb8744053da937a9a515e7f4de
 
 @end

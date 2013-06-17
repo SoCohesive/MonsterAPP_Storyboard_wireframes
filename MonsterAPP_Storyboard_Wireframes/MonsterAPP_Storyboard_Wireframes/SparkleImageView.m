@@ -22,21 +22,21 @@
 
 -(void)rotateShine{
     
-    
-    [UIView animateWithDuration:1.0
-                          delay:0.2f
-                        options: ((UIViewAnimationOptions)(UIViewAnimationCurveEaseOut))
-                     animations:^{
-                         [UIView setAnimationRepeatCount:6];
-                         
-                         self.transform = CGAffineTransformMakeRotation(135 * M_PI/180);                     }
+    [UIView animateWithDuration: 1.0
+                          delay: 0.2f
+                        options:((UIViewAnimationOptions)(UIViewAnimationCurveEaseOut))
+                        animations:^{
+        
+            [UIView setAnimationRepeatCount:5];
+            self.transform = CGAffineTransformMakeRotation(135 *M_PI/180);
+                        }
      
-                     completion:^(BOOL finished){
-                         
-                         
-                         NSLog(@"Done!");
-                     }];
+             completion:^(BOOL finished)
+    {
+        NSLog(@"SparkleDone!");
+    }];
 }
+    
 
 /*
 // Only override drawRect: if you perform custom drawing.

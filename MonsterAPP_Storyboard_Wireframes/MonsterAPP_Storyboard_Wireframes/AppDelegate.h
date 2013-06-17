@@ -19,4 +19,8 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 42b38aab70833dbb8744053da937a9a515e7f4de
 @end
