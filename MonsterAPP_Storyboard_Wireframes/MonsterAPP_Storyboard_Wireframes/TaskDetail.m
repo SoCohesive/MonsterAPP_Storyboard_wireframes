@@ -32,17 +32,7 @@
 @dynamic stepCompletedDate;
 @dynamic stepCreatedDate;
 
-@dynamic monsterID;
-@dynamic stepCompleted;
-@dynamic stepCompletedDate;
-@dynamic stepCreatedDate;
-@dynamic stepDetail;
-@dynamic stepHeader;
-@dynamic stepHP;
-@dynamic stepNumber;
-@dynamic stepXP;
-@dynamic taskID;
-@dynamic userID;
+
 @dynamic task;
 
 

@@ -19,10 +19,7 @@
 @dynamic firstName;
 @dynamic dateCreated;
 
-@dynamic dateCreated;
-@dynamic firstName;
 @dynamic nickname;
-@dynamic userID;
 @dynamic tasks;
 
 

@@ -34,19 +34,8 @@
 @dynamic projectedEndDate;
 @dynamic dateCreated;
 
-@dynamic actualHP;
-@dynamic actualXP;
-@dynamic dateCreated;
-@dynamic monsterID;
-@dynamic possibleHP;
-@dynamic possibleXP;
-@dynamic projectedEndDate;
-@dynamic projectedStartDate;
 @dynamic taskComplete;
-@dynamic taskID;
-@dynamic taskName;
 @dynamic taskType;
-@dynamic userID;
 @dynamic monster;
 @dynamic taskDetails;
 @dynamic user;
