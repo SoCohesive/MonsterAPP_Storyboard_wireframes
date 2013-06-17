@@ -52,7 +52,16 @@
 		892CC50C176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */; };
 		892CC50E176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */; };
 		892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 892CC510176DEC0800BF8122 /* MonsterStyleSheet.m */; };
-		89AACA30176D242E0036D07D /* MonsterStyleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8944DB99176D2248000A9552 /* MonsterStyleController.m */; };
+		89A0EF11176ECED0001ADFE8 /* monsterNavBar-users-tapped@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0A176ECED0001ADFE8 /* monsterNavBar-users-tapped@2px.png */; };
+		89A0EF12176ECED0001ADFE8 /* monsterNavBar-Users@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0B176ECED0001ADFE8 /* monsterNavBar-Users@2px.png */; };
+		89A0EF13176ECED0001ADFE8 /* monsterNavBar-Edit@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0C176ECED0001ADFE8 /* monsterNavBar-Edit@2px.png */; };
+		89A0EF14176ECED0001ADFE8 /* monsterNavBar-done@px.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0D176ECED0001ADFE8 /* monsterNavBar-done@px.png */; };
+		89A0EF15176ECED0001ADFE8 /* monsterNavBar-done_back@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0E176ECED0001ADFE8 /* monsterNavBar-done_back@2px.png */; };
+		89A0EF16176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0F176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png */; };
+		89A0EF17176ECED0001ADFE8 /* monsterNavBar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF10176ECED0001ADFE8 /* monsterNavBar_back@2x.png */; };
+		89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0EF1A176EDA33001ADFE8 /* TurtlingClass.m */; };
+		89A0EF21176EDB69001ADFE8 /* Evolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0EF20176EDB69001ADFE8 /* Evolution.m */; };
+		89A0EF24176EE386001ADFE8 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0EF23176EE386001ADFE8 /* Monster.m */; };
 		A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */; };
 		A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E81767775E00AE7F7F /* TaskListViewController.m */; };
 		A40F336B1767C1B400E9EF58 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */; };
@@ -61,7 +70,6 @@
 		A43ED6A21766C4CE00BD14DE /* firstEgg_right-half.png in Resources */ = {isa = PBXBuildFile; fileRef = A43ED69F1766C4CE00BD14DE /* firstEgg_right-half.png */; };
 		A43ED6A31766C4CE00BD14DE /* turtling.png in Resources */ = {isa = PBXBuildFile; fileRef = A43ED6A01766C4CE00BD14DE /* turtling.png */; };
 		A442FCEC176A3A3D006E71B6 /* CompletedProjectsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A442FCEB176A3A3D006E71B6 /* CompletedProjectsCell.m */; };
-		A442FCF8176ABA05006E71B6 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = A442FCF7176ABA05006E71B6 /* Monster.m */; };
 		A442FCFE176ABA1E006E71B6 /* TaskDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A442FCFD176ABA1E006E71B6 /* TaskDetail.m */; };
 		A442FD05176B4EC3006E71B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A442FD04176B4EC3006E71B6 /* QuartzCore.framework */; };
 		A485E13E1768E18E00ED06DC /* EvolutionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E13D1768E18E00ED06DC /* EvolutionViewController.m */; };
@@ -133,8 +141,20 @@
 		8944DB95176D2248000A9552 /* monsterNavBar-users-tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-users-tapped.png"; sourceTree = "<group>"; };
 		8944DB96176D2248000A9552 /* monsterNavBar-Users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-Users.png"; sourceTree = "<group>"; };
 		8944DB97176D2248000A9552 /* monsterNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monsterNavBar.png; sourceTree = "<group>"; };
-		8944DB98176D2248000A9552 /* MonsterStyleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonsterStyleController.h; sourceTree = "<group>"; };
-		8944DB99176D2248000A9552 /* MonsterStyleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonsterStyleController.m; sourceTree = "<group>"; };
+		89A0EF0A176ECED0001ADFE8 /* monsterNavBar-users-tapped@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-users-tapped@2px.png"; sourceTree = "<group>"; };
+		89A0EF0B176ECED0001ADFE8 /* monsterNavBar-Users@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-Users@2px.png"; sourceTree = "<group>"; };
+		89A0EF0C176ECED0001ADFE8 /* monsterNavBar-Edit@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-Edit@2px.png"; sourceTree = "<group>"; };
+		89A0EF0D176ECED0001ADFE8 /* monsterNavBar-done@px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-done@px.png"; sourceTree = "<group>"; };
+		89A0EF0E176ECED0001ADFE8 /* monsterNavBar-done_back@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-done_back@2px.png"; sourceTree = "<group>"; };
+		89A0EF0F176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar_back-tapped@2x.png"; sourceTree = "<group>"; };
+		89A0EF10176ECED0001ADFE8 /* monsterNavBar_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar_back@2x.png"; sourceTree = "<group>"; };
+		89A0EF18176ED9D8001ADFE8 /* Turtling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Turtling.h; sourceTree = "<group>"; };
+		89A0EF19176EDA33001ADFE8 /* TurtlingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurtlingClass.h; sourceTree = "<group>"; };
+		89A0EF1A176EDA33001ADFE8 /* TurtlingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurtlingClass.m; sourceTree = "<group>"; };
+		89A0EF1F176EDB69001ADFE8 /* Evolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evolution.h; sourceTree = "<group>"; };
+		89A0EF20176EDB69001ADFE8 /* Evolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evolution.m; sourceTree = "<group>"; };
+		89A0EF22176EE386001ADFE8 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		89A0EF23176EE386001ADFE8 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		A40769E417676FAB00AE7F7F /* EggHatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHatchesViewController.h; sourceTree = "<group>"; };
 		A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchesViewController.m; sourceTree = "<group>"; };
 		A40769E71767775E00AE7F7F /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
@@ -147,8 +167,6 @@
 		A43ED6A01766C4CE00BD14DE /* turtling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtling.png; sourceTree = "<group>"; };
 		A442FCEA176A3A3D006E71B6 /* CompletedProjectsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedProjectsCell.h; sourceTree = "<group>"; };
 		A442FCEB176A3A3D006E71B6 /* CompletedProjectsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedProjectsCell.m; sourceTree = "<group>"; };
-		A442FCF6176ABA05006E71B6 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
-		A442FCF7176ABA05006E71B6 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		A442FCFC176ABA1E006E71B6 /* TaskDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetail.h; sourceTree = "<group>"; };
 		A442FCFD176ABA1E006E71B6 /* TaskDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetail.m; sourceTree = "<group>"; };
 		A442FD04176B4EC3006E71B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -215,6 +233,9 @@
 		294B081B1763631B00C5DFFA = {
 			isa = PBXGroup;
 			children = (
+				89A0EF18176ED9D8001ADFE8 /* Turtling.h */,
+				89A0EF19176EDA33001ADFE8 /* TurtlingClass.h */,
+				89A0EF1A176EDA33001ADFE8 /* TurtlingClass.m */,
 				294B082D1763631B00C5DFFA /* MonsterAPP_Storyboard_Wireframes */,
 				294B08261763631B00C5DFFA /* Frameworks */,
 				294B08251763631B00C5DFFA /* Products */,
@@ -248,8 +269,6 @@
 				294B08371763631B00C5DFFA /* AppDelegate.m */,
 				892CC50F176DEC0800BF8122 /* MonsterStyleSheet.h */,
 				892CC510176DEC0800BF8122 /* MonsterStyleSheet.m */,
-				8944DB98176D2248000A9552 /* MonsterStyleController.h */,
-				8944DB99176D2248000A9552 /* MonsterStyleController.m */,
 				A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */,
 				294B08421763631B00C5DFFA /* ViewController.h */,
 				294B08431763631B00C5DFFA /* ViewController.m */,
@@ -280,18 +299,8 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */,
-				8918C973176E51B1007421DF /* monsterNavBar-Edit.png */,
-				8918C96F176E5019007421DF /* monsterNavBar-edit-tapped.png */,
 				8918C970176E5019007421DF /* ProjectIcons-new.png */,
-				8944DB90176D2248000A9552 /* monsterNavBar_back-tapped.png */,
-				8944DB91176D2248000A9552 /* monsterNavBar_back.png */,
-				8944DB92176D2248000A9552 /* monsterNavBar-done_tapped.png */,
-				8944DB93176D2248000A9552 /* monsterNavBar-done-back.png */,
-				8944DB94176D2248000A9552 /* monsterNavBar-done.png */,
-				8944DB95176D2248000A9552 /* monsterNavBar-users-tapped.png */,
-				8944DB96176D2248000A9552 /* monsterNavBar-Users.png */,
-				8944DB97176D2248000A9552 /* monsterNavBar.png */,
+				89A0EF25176EE476001ADFE8 /* NavBarImages */,
 				892CC50D176DEA3800BF8122 /* Kimmy Design - LunchBox-Light.otf */,
 				892CC50B176DEA2600BF8122 /* Kimmy Design - LunchBox-Bold.otf */,
 				290B4774176D2BF800B91B7E /* CheckBox for tasks */,
@@ -337,6 +346,31 @@
 			name = "OnBoarding ";
 			sourceTree = "<group>";
 		};
+		89A0EF25176EE476001ADFE8 /* NavBarImages */ = {
+			isa = PBXGroup;
+			children = (
+				8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */,
+				8918C973176E51B1007421DF /* monsterNavBar-Edit.png */,
+				89A0EF0C176ECED0001ADFE8 /* monsterNavBar-Edit@2px.png */,
+				8918C96F176E5019007421DF /* monsterNavBar-edit-tapped.png */,
+				8944DB90176D2248000A9552 /* monsterNavBar_back-tapped.png */,
+				89A0EF0F176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png */,
+				8944DB91176D2248000A9552 /* monsterNavBar_back.png */,
+				89A0EF10176ECED0001ADFE8 /* monsterNavBar_back@2x.png */,
+				8944DB92176D2248000A9552 /* monsterNavBar-done_tapped.png */,
+				8944DB93176D2248000A9552 /* monsterNavBar-done-back.png */,
+				89A0EF0E176ECED0001ADFE8 /* monsterNavBar-done_back@2px.png */,
+				8944DB94176D2248000A9552 /* monsterNavBar-done.png */,
+				89A0EF0D176ECED0001ADFE8 /* monsterNavBar-done@px.png */,
+				8944DB95176D2248000A9552 /* monsterNavBar-users-tapped.png */,
+				89A0EF0A176ECED0001ADFE8 /* monsterNavBar-users-tapped@2px.png */,
+				8944DB96176D2248000A9552 /* monsterNavBar-Users.png */,
+				89A0EF0B176ECED0001ADFE8 /* monsterNavBar-Users@2px.png */,
+				8944DB97176D2248000A9552 /* monsterNavBar.png */,
+			);
+			name = NavBarImages;
+			sourceTree = "<group>";
+		};
 		A43ED69D1766C1AA00BD14DE /* hatching egg files */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,15 +383,17 @@
 		A442FD02176ABA70006E71B6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
+				89A0EF22176EE386001ADFE8 /* Monster.h */,
+				89A0EF23176EE386001ADFE8 /* Monster.m */,
+				89A0EF1F176EDB69001ADFE8 /* Evolution.h */,
+				89A0EF20176EDB69001ADFE8 /* Evolution.m */,
 				892CC508176DE43200BF8122 /* Task.h */,
 				892CC509176DE43200BF8122 /* Task.m */,
-				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
-				A4B3FDDE176B903500EFBDEA /* User.h */,
-				A4B3FDDF176B903500EFBDEA /* User.m */,
 				A442FCFC176ABA1E006E71B6 /* TaskDetail.h */,
 				A442FCFD176ABA1E006E71B6 /* TaskDetail.m */,
-				A442FCF6176ABA05006E71B6 /* Monster.h */,
-				A442FCF7176ABA05006E71B6 /* Monster.m */,
+				A4B3FDDE176B903500EFBDEA /* User.h */,
+				A4B3FDDF176B903500EFBDEA /* User.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -478,6 +514,13 @@
 				8918C972176E5019007421DF /* ProjectIcons-new.png in Resources */,
 				8918C974176E51B1007421DF /* monsterNavBar-Edit.png in Resources */,
 				8918C976176E570B007421DF /* monsterNavBar-TableBackdrop.png in Resources */,
+				89A0EF11176ECED0001ADFE8 /* monsterNavBar-users-tapped@2px.png in Resources */,
+				89A0EF12176ECED0001ADFE8 /* monsterNavBar-Users@2px.png in Resources */,
+				89A0EF13176ECED0001ADFE8 /* monsterNavBar-Edit@2px.png in Resources */,
+				89A0EF14176ECED0001ADFE8 /* monsterNavBar-done@px.png in Resources */,
+				89A0EF15176ECED0001ADFE8 /* monsterNavBar-done_back@2px.png in Resources */,
+				89A0EF16176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png in Resources */,
+				89A0EF17176ECED0001ADFE8 /* monsterNavBar_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +531,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89AACA30176D242E0036D07D /* MonsterStyleController.m in Sources */,
 				294B08341763631B00C5DFFA /* main.m in Sources */,
 				294B08381763631B00C5DFFA /* AppDelegate.m in Sources */,
 				294B08441763631B00C5DFFA /* ViewController.m in Sources */,
@@ -506,12 +548,14 @@
 				A4DF683C17692E4E00A8A5FC /* CreateNewProjectCell.m in Sources */,
 				A4EC77DF1769F20000892EF3 /* ExistingProjectCell.m in Sources */,
 				A442FCEC176A3A3D006E71B6 /* CompletedProjectsCell.m in Sources */,
-				A442FCF8176ABA05006E71B6 /* Monster.m in Sources */,
 				A442FCFE176ABA1E006E71B6 /* TaskDetail.m in Sources */,
 				A4B3FDE0176B903500EFBDEA /* User.m in Sources */,
 				293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */,
 				892CC50A176DE43200BF8122 /* Task.m in Sources */,
 				892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */,
+				89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */,
+				89A0EF21176EDB69001ADFE8 /* Evolution.m in Sources */,
+				89A0EF24176EE386001ADFE8 /* Monster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import "EggHatchesViewController.h"
 #import "TaskListViewController.h"
+#import "AppDelegate.h"
+#import "Monster.h"
 
 @interface EggHatchesViewController ()
 
@@ -28,6 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,8 +43,9 @@
 #pragma mark Segue to Naming Project
 
 - (IBAction)enterNameButton:(id)sender {
-    //fix this post-merge.
+    
     [self performSegueWithIdentifier:@"segueToTaskList" sender:self];
+    [self saveMonster];
 }
 
 
@@ -57,7 +61,30 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.monsterNameField resignFirstResponder];
+    
     return YES;
+}
+
+-(void)saveMonster
+{
+    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+    
+    //create managedObject
+    Monster *monster = [NSEntityDescription insertNewObjectForEntityForName:@"Monster" inManagedObjectContext:managedObjectContext];
+    
+    //set managedObject properties
+    monster.monsterName = self.monsterNameField.text;
+    monster.monsterType  =self.monsterType;
+    monster.task = self.task;
+
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) {
+        
+        NSLog(@"Could not save task: %@", error);
+    }
+    
+    self.task.monster = monster;
 }
 
 

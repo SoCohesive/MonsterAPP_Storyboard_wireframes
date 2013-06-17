@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *achievementText;
 @property (strong, nonatomic) IBOutlet UILabel *hintLabel;
 @property (strong, nonatomic) IBOutlet UILabel *congratsLabel;
+@property (strong, nonatomic) NSString *monsterType;
 
 -(void)chooseAchievementMessage;
 -(void)chooseCongrat;
@@ -36,7 +37,8 @@
 }
 
 - (void)viewDidLoad
-{
+{    //perfect world, we would have a way to randomly select our monster from the roster.
+
     [self.sparkleImage rotateShine];
 
     [super viewDidLoad];
@@ -50,6 +52,9 @@
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];
+    
+    //eventually this string will come from an array of monster names. 
+    self.monsterType = @"turtling";
     
 	// Do any additional setup after loading the view.
 }
@@ -89,7 +94,7 @@
 {
      [self rephraseProjectType];
        
-        NSString *achievementString = [NSString stringWithFormat:@"Starting your %@ earned you a new monster egg!",projectPhrase];
+        NSString *achievementString = [NSString stringWithFormat:@"Starting your %@ earned you a new %@ egg!",projectPhrase, self.monsterType];
         self.achievementText.text = achievementString;
         self.hintLabel.text = @"hint: you might want to start thinking of names";
 
@@ -111,6 +116,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     ((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName = self.projectTypeName;
+    ((ProjectNameVC*)(segue.destinationViewController)).monsterKind = self.monsterType;
     
     NSLog(@"ProjectType sent to Name View -->%@",((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName);
     

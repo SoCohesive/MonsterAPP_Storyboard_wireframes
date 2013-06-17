@@ -50,6 +50,7 @@
     self.navigationItem.rightBarButtonItem.title = @"Edit";
     self.editButtonItem.action = @selector(toggleEdit);
     
+    
     // set up points array and task templates
     [self setUpPointsArray];
     [self createTemplates];

@@ -147,11 +147,12 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
     } else {
     
     if ([[self.taskResultsController sections] objectAtIndex:0]) {
-        
+        //confirm that this will always be completedTasks, should I use key?    
         existingProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
         
         Task *existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
         existingProjectCell.existingTitle.text = existingTask.taskName;
+        NSLog(@"%@", existingTask.taskName);
         existingProjectCell.subtitle.text = existingTask.taskType;
         
         NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];

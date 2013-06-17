@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) NSString    *projectTypeForName;
 @property (strong, nonatomic) NSString    *taskTitleEntered;
+@property (strong, nonatomic) NSString *monsterKind;
+
 @property (strong, nonatomic) IBOutlet  UITextField *titleTextField;
 
 @property (strong, nonatomic) IBOutlet  UITextField *dateEntryField;

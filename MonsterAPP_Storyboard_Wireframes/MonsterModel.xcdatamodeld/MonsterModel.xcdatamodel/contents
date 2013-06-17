@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Evolution" representedClassName="Evolution" syncable="YES">
+        <attribute name="eggImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="evolutionDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="monster" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" inverseName="evolutions" inverseEntity="Monster" syncable="YES"/>
+    </entity>
     <entity name="Monster" representedClassName="Monster" syncable="YES">
         <attribute name="monsterDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="monsterID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="monsterName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monsterType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="evolutions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evolution" inverseName="monster" inverseEntity="Evolution" syncable="YES"/>
         <relationship name="task" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="monster" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES">
@@ -46,7 +54,8 @@
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="user" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Monster" positionX="718" positionY="18" width="128" height="103"/>
+        <element name="Evolution" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Monster" positionX="718" positionY="18" width="128" height="135"/>
         <element name="Task" positionX="567" positionY="20" width="128" height="285"/>
         <element name="TaskDetail" positionX="720" positionY="200" width="128" height="223"/>
         <element name="User" positionX="313" positionY="36" width="128" height="118"/>

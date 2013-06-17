@@ -40,7 +40,7 @@
     [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackSelectImg forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2) forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
     
-#pragma
+/*#pragma
 #pragma editButton
     
     UIImage *editButtonImage = [[UIImage imageNamed:@"monsterNavBar-Edit.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
@@ -59,7 +59,6 @@
                                           barMetrics:UIBarMetricsDefault];
     
     
-    
 #pragma 
 #pragma doneButton
     
@@ -70,7 +69,7 @@
     [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0) forBarMetrics:UIBarMetricsDefault];
 
-    
+    */
 /*#pragma
 #pragma usersButton
 

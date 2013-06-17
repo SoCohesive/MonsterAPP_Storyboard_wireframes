@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "Task.h"
+
 
 @interface EggHatchesViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *monsterNameField;
+@property (strong, nonatomic) NSString *monsterType;
 
 @property (strong, nonatomic) NSString *taskDueString;
 @property (strong, nonatomic) NSString *taskProjectType;
 @property (strong, nonatomic) NSString *taskTitle;
+@property (strong, nonatomic) Task *task;
 
 - (IBAction)enterNameButton:(id)sender;
 

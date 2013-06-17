@@ -21,7 +21,7 @@
     NSString    *selectionString;
     NSDate      *pickerDate;
     User        *currentUser;
-
+    Task        *currentTask;
 }
 -(void)chooseNameRequest;
 
@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
 
-	//nameRequest = [[NSString alloc] init];
+	currentTask = [[Task alloc] init];
     [self formatTextFields];
     [self chooseNameRequest];
     [self chooseDueQuestion];
@@ -181,7 +181,7 @@
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     //create managedObject
-    Task *currentTask = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
+    currentTask = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:managedObjectContext];
     
     //set managedObject properties
     NSDate *currentDate = [NSDate date];
@@ -192,7 +192,6 @@
     currentTask.actualHP = [NSNumber numberWithInt: 50];
     currentTask.actualXP = [NSNumber numberWithInt:50];
     currentTask.user = currentUser;
-    //currentTask.monster =
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -226,7 +225,8 @@
     
     
     ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString = selectionString;
-    //send monster type, and set image path for that monster's egg/hatch sequence.
+    ((EggHatchesViewController*)(segue.destinationViewController)).monsterType = self.monsterKind;
+     ((EggHatchesViewController*)(segue.destinationViewController)).task = currentTask;
     
      NSLog(@"Project sent to Hatching View -->%@, due%@",((EggHatchesViewController*)(segue.destinationViewController)).taskTitle,  ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString);
     
