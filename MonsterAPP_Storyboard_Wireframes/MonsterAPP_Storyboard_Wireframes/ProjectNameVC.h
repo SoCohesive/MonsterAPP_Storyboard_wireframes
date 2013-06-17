@@ -23,5 +23,6 @@
 @property (weak, nonatomic)     IBOutlet    UILabel *titleLabel;
 
 - (IBAction)saveTaskDoneButton:(id)sender;
+-(void)calculateDateDifference:(NSDate *)chosenDate;
 
 @end

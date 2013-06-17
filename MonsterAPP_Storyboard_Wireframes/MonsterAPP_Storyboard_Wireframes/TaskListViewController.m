@@ -323,6 +323,15 @@
         
     }];
     
+    SystemSoundID soundID3;
+    NSString *soundFile3 = [[NSBundle mainBundle]
+                            pathForResource:@"Monster_Wink" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile3]
+									 , &soundID3);
+    AudioServicesPlaySystemSound(soundID3);
+    
 }
 
 #pragma mark open eye animation

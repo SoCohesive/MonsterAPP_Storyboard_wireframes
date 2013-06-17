@@ -18,6 +18,7 @@
     
     NSString    *selectionString;
     NSDate      *pickerDate;
+    NSDate      *currentDate;
     User        *currentUser;
 }
 
@@ -182,7 +183,7 @@
     
     
     //set managedObject properties
-    NSDate *currentDate = [NSDate date];
+    currentDate = [NSDate date];
     self.currentTask.dateCreated =  currentDate;
     self.currentTask.projectedEndDate =  pickerDate;
     self.currentTask.taskName = self.titleTextField.text;
@@ -203,6 +204,37 @@
     //when the project is saved, we should assign a new monster, and save the monster name on the next screen.
 
 }
+
+#pragma
+#pragma mark Date Difference Logic
+
+    //currentDate
+    //pickerDate
+
+-(void)calculateDateDifference:(NSDate *)chosenDate{
+//    NSDate *todaysDate;
+    NSString *differenceOutput;
+    NSString *currentDateString;
+    NSString *pickerDateString;
+    NSDateFormatter *dateFormat;
+    NSTimeInterval differenceInDays;
+    
+//    todaysDate = [NSDate date];
+    differenceInDays = [currentDate timeIntervalSinceDate:chosenDate] / 86400;
+    
+    dateFormat = [[NSDateFormatter alloc]init];
+    [dateFormat setDateFormat:@"MMMM d, yyyy hh:mm:ssa"];
+    currentDateString = [dateFormat stringFromDate:currentDate];
+    pickerDateString = [dateFormat stringFromDate:pickerDate];
+    
+    differenceOutput = [[NSString alloc] initWithFormat:@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", pickerDateString, currentDateString, fabs(differenceInDays)];
+    
+    NSLog(@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", pickerDateString, currentDateString, fabs(differenceInDays));
+//    self.outputLabel.text = differenceOutput;
+    
+}
+
+
 #pragma
 #pragma mark Segue to EggHatch
 
