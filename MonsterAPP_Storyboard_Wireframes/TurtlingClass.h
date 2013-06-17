@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Monster.h"
+#import "Evolution.h"
 
 @interface TurtlingClass : NSObject
+
+@property (strong, nonatomic) Monster   *monster;
+@property (strong, nonatomic) Evolution *evolution1;
+@property (strong, nonatomic) Evolution *evolution2;
 
 @end

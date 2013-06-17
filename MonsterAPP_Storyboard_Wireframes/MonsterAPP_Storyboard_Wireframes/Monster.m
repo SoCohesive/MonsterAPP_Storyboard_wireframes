@@ -2,7 +2,7 @@
 //  Monster.m
 //  MonsterAPP_Storyboard_Wireframes
 //
-//  Created by ehochs  on 6/17/13.
+//  Created by Erin Hochstatter on 6/17/13.
 //  Copyright (c) 2013 Sonam Dhingra. All rights reserved.
 //
 
@@ -17,7 +17,7 @@
 @dynamic monsterID;
 @dynamic monsterName;
 @dynamic monsterType;
-@dynamic task;
 @dynamic evolutions;
+@dynamic task;
 
 @end

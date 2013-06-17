@@ -38,9 +38,11 @@
 
 - (void)viewDidLoad
 {    //perfect world, we would have a way to randomly select our monster from the roster.
-
+    [self.sparkleImage setBackgroundColor:[UIColor blueColor]];
+    
     [self.sparkleImage rotateShine];
-
+    [self.littleSparkle rotateShine];
+    
     [super viewDidLoad];
     
     //eventually this string will come from an array of monster names.

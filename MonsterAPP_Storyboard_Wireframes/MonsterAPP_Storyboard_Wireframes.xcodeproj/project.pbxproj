@@ -59,8 +59,6 @@
 		89A0EF16176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF0F176ECED0001ADFE8 /* monsterNavBar_back-tapped@2x.png */; };
 		89A0EF17176ECED0001ADFE8 /* monsterNavBar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A0EF10176ECED0001ADFE8 /* monsterNavBar_back@2x.png */; };
 		89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0EF1A176EDA33001ADFE8 /* TurtlingClass.m */; };
-		89A0EF21176EDB69001ADFE8 /* Evolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0EF20176EDB69001ADFE8 /* Evolution.m */; };
-		89A0EF24176EE386001ADFE8 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0EF23176EE386001ADFE8 /* Monster.m */; };
 		A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */; };
 		A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E81767775E00AE7F7F /* TaskListViewController.m */; };
 		A40F336B1767C1B400E9EF58 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */; };
@@ -76,6 +74,8 @@
 		A4744FA3176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744F9F176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png */; };
 		A4744FA4176F52EE004A55E9 /* turtling-ev1-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744FA0176F52EE004A55E9 /* turtling-ev1-thumbnail.png */; };
 		A4744FA7176F62F2004A55E9 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A4744FA6176F62F2004A55E9 /* Task.m */; };
+		A4744FAD176F8894004A55E9 /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = A4744FAC176F8894004A55E9 /* Monster.m */; };
+		A4744FB3176F891B004A55E9 /* Evolution.m in Sources */ = {isa = PBXBuildFile; fileRef = A4744FB2176F891B004A55E9 /* Evolution.m */; };
 		A485E13E1768E18E00ED06DC /* EvolutionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E13D1768E18E00ED06DC /* EvolutionViewController.m */; };
 		A485E1411768E1CE00ED06DC /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E1401768E1CE00ED06DC /* OnboardingViewController.m */; };
 		A4B3FDE0176B903500EFBDEA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B3FDDF176B903500EFBDEA /* User.m */; };
@@ -153,10 +153,6 @@
 		89A0EF18176ED9D8001ADFE8 /* Turtling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Turtling.h; sourceTree = "<group>"; };
 		89A0EF19176EDA33001ADFE8 /* TurtlingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurtlingClass.h; sourceTree = "<group>"; };
 		89A0EF1A176EDA33001ADFE8 /* TurtlingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurtlingClass.m; sourceTree = "<group>"; };
-		89A0EF1F176EDB69001ADFE8 /* Evolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evolution.h; sourceTree = "<group>"; };
-		89A0EF20176EDB69001ADFE8 /* Evolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evolution.m; sourceTree = "<group>"; };
-		89A0EF22176EE386001ADFE8 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
-		89A0EF23176EE386001ADFE8 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		A40769E417676FAB00AE7F7F /* EggHatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHatchesViewController.h; sourceTree = "<group>"; };
 		A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchesViewController.m; sourceTree = "<group>"; };
 		A40769E71767775E00AE7F7F /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
@@ -178,6 +174,10 @@
 		A4744FA0176F52EE004A55E9 /* turtling-ev1-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev1-thumbnail.png"; sourceTree = "<group>"; };
 		A4744FA5176F62F1004A55E9 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		A4744FA6176F62F2004A55E9 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		A4744FAB176F8893004A55E9 /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		A4744FAC176F8894004A55E9 /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
+		A4744FB1176F891B004A55E9 /* Evolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evolution.h; sourceTree = "<group>"; };
+		A4744FB2176F891B004A55E9 /* Evolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evolution.m; sourceTree = "<group>"; };
 		A485E13C1768E18E00ED06DC /* EvolutionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvolutionViewController.h; sourceTree = "<group>"; };
 		A485E13D1768E18E00ED06DC /* EvolutionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvolutionViewController.m; sourceTree = "<group>"; };
 		A485E13F1768E1CE00ED06DC /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
@@ -393,12 +393,12 @@
 			isa = PBXGroup;
 			children = (
 				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
+				A4744FB1176F891B004A55E9 /* Evolution.h */,
+				A4744FB2176F891B004A55E9 /* Evolution.m */,
+				A4744FAB176F8893004A55E9 /* Monster.h */,
+				A4744FAC176F8894004A55E9 /* Monster.m */,
 				A4744FA5176F62F1004A55E9 /* Task.h */,
 				A4744FA6176F62F2004A55E9 /* Task.m */,
-				89A0EF22176EE386001ADFE8 /* Monster.h */,
-				89A0EF23176EE386001ADFE8 /* Monster.m */,
-				89A0EF1F176EDB69001ADFE8 /* Evolution.h */,
-				89A0EF20176EDB69001ADFE8 /* Evolution.m */,
 				A442FCFC176ABA1E006E71B6 /* TaskDetail.h */,
 				A442FCFD176ABA1E006E71B6 /* TaskDetail.m */,
 				A4B3FDDE176B903500EFBDEA /* User.h */,
@@ -577,9 +577,9 @@
 				293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */,
 				892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */,
 				89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */,
-				89A0EF21176EDB69001ADFE8 /* Evolution.m in Sources */,
-				89A0EF24176EE386001ADFE8 /* Monster.m in Sources */,
 				A4744FA7176F62F2004A55E9 /* Task.m in Sources */,
+				A4744FAD176F8894004A55E9 /* Monster.m in Sources */,
+				A4744FB3176F891B004A55E9 /* Evolution.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
