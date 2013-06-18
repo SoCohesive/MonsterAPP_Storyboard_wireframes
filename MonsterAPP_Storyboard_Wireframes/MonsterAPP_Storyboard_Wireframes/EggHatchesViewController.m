@@ -49,7 +49,7 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    ((TaskListViewController*)(segue.destinationViewController)).selectedTask = self.task;
     ((TaskListViewController*)(segue.destinationViewController)).taskType = self.taskProjectType;
     ((TaskListViewController*)(segue.destinationViewController)).taskDueDate =self.taskDueString;
     ((TaskListViewController*)(segue.destinationViewController)).taskName = self.taskTitle;
