@@ -86,16 +86,17 @@
                                     repeats:NO];
 }
 
+#pragma add custom left bar nav button
 -(void) setNavigationLogic {
     
     if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
         
         self.navigationItem.hidesBackButton = YES;
         
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Custom"
-                                                                       style:UIBarButtonItemStyleBordered
-                                                                      target:self
-                                                                      action:@selector(onClick_ListButton)];
+        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Projects"
+                                                                    style:UIBarButtonItemStyleBordered
+                                                                    target:self
+                                                                    action:@selector(pushViewController:animated:)];
         self.navigationItem.leftBarButtonItem = leftButton;
         
         
@@ -103,15 +104,35 @@
     
 }
 
--(IBAction)onClick_ListButton:(id)sender  {
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
-    NSLog(@"custom button tapped");
+    ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
+    viewController = projectListVC;
+    animated = YES;
     
-//    UIViewController *projectListViewController = [[UIViewController alloc] initWithNibName:@"ProjectListViewController" bundle:nil];
-//    
-//    [self.navigationController pushViewController:projectListViewController animated:YES];
+    [self.navigationController pushViewController:projectListVC animated:YES];
     
 }
+
+//    NSArray *viewControllers=[[self navigationController] viewControllers];
+//
+//    NSMutableArray *newArray = [[NSMutableArray alloc] initWithArray:viewControllers];
+//    //    [newArray addObject:projectListVC];
+//    //
+//    //    for( int i=0;i<[ viewControllers count];i++)
+//    //
+//    //    {
+//    //        id obj=[viewControllers objectAtIndex:i];
+//    //
+//    //        if([obj isKindOfClass:[ProjectListViewController class]])
+//    //        {
+//    //
+//    //            [self.navigationController popToViewController:obj animated:YES];
+//    //            return;
+//    //        }
+//    //    }
+//
+
 
 
 #pragma mark add points
