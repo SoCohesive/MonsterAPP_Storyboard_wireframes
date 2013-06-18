@@ -31,14 +31,22 @@
     return self;
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    
+    self.navigationItem.hidesBackButton = YES;
+    [self.navigationController setNavigationBarHidden:YES]; 
+    animated = YES;
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.hidesBackButton = YES;
 	// Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
-
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

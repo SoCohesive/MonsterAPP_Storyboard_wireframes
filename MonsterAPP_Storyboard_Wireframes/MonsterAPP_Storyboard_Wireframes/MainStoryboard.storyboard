@@ -190,7 +190,7 @@
             <objects>
                 <viewController id="jjf-9H-Cbw" customClass="ProjectPickerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7b-2Z-RiB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="monsterNavBar-TableBackdrop.png" id="qGg-2d-krf">
@@ -209,7 +209,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6iv-ob-JpV">
-                                <rect key="frame" x="0.0" y="167" width="320" height="240"/>
+                                <rect key="frame" x="0.0" y="167" width="320" height="196"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -254,7 +254,7 @@
             <objects>
                 <viewController title="segueToTitle" id="fnN-2y-K5g" customClass="NewEggViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YR5-BA-ddd">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SparkleShine.png" id="WSK-uE-Gw4">
@@ -323,7 +323,7 @@
             <objects>
                 <viewController id="hU3-eb-Yu9" customClass="ProjectNameVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dP4-1Z-IUV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="monsterNavBar-TableBackdrop.png" id="CPB-Qz-fzT">
@@ -411,7 +411,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="3hE-Oy-nRC" customClass="EggHatchesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MiQ-E7-yIm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="monsterNavBar-TableBackdrop.png" id="mNs-tw-Txt">
@@ -490,7 +490,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="BxA-Tk-9iq" customClass="TaskListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lgU-Ib-JOd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="turtling.png" id="0yb-ma-iDx">
@@ -533,7 +533,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="v31-ZF-vPC">
-                                <rect key="frame" x="0.0" y="199" width="320" height="305"/>
+                                <rect key="frame" x="0.0" y="199" width="320" height="261"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -635,7 +635,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Project List View Controller-->
         <scene sceneID="OGi-Gq-18n">
             <objects>
-                <viewController id="ksN-WO-9sP" customClass="ProjectListViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectListViewController" id="ksN-WO-9sP" customClass="ProjectListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T8N-QQ-m91">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -873,7 +873,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="QKW-bl-A1g" customClass="EvolutionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L81-nv-k2B">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chinchilla.png" id="X7n-Nm-3zG">
@@ -1089,7 +1089,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qpM-zs-lIs"/>
-        <segue reference="h8v-6d-2Cj"/>
+        <segue reference="nGZ-hn-d5a"/>
+        <segue reference="69E-28-B73"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,6 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.hidesBackButton = YES;
     //do an array where we have random greetings, random between name/nickname
     NSString *welcome = [NSString stringWithFormat:@"Welcome back, %@", self.currentUser.firstName];
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.welcomeLabel.font.pointSize];

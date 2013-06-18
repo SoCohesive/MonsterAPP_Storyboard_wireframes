@@ -11,8 +11,9 @@
 #import "TaskDetail.h"
 #import "Task.h"
 #import <CoreData/CoreData.h>
+#import "ProjectListViewController.h"
 
-@interface TaskListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, NSFetchedResultsControllerDelegate>
+@interface TaskListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, NSFetchedResultsControllerDelegate , UINavigationControllerDelegate>
 
 @property  (strong, nonatomic) NSFetchedResultsController *stepsResultsController; 
 
