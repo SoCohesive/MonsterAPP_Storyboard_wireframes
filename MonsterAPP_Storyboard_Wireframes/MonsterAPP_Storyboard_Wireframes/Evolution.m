@@ -14,8 +14,8 @@
 
 @dynamic eggImageName;
 @dynamic evolutionDescription;
-@dynamic thumbnailName;
 @dynamic evolutionNumber;
+@dynamic thumbnailName;
 @dynamic monster;
 
 @end

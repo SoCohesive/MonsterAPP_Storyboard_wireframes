@@ -152,8 +152,10 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         
         Task *existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
         existingProjectCell.existingTitle.text = existingTask.taskName;
-        NSLog(@"%@", existingTask.taskName);
         existingProjectCell.subtitle.text = existingTask.taskType;
+
+        NSLog(@"Curious %@",[existingTask.monster evolutions]);        
+        //existingProjectCell.monsterProfilePic =existingTask.monster
         
         NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
         existingProjectCell.deadlineReminderLabel.text = dateString;
