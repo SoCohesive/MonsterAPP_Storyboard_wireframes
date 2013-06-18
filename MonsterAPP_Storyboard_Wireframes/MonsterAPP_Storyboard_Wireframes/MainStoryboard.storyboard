@@ -423,6 +423,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="monsterNavBar-TableBackdrop.png" id="mNs-tw-Txt">
+                                <rect key="frame" x="0.0" y="0.0" width="324" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your baby Monster has HATCHED!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d6S-S7-tKk">
                                 <rect key="frame" x="26" y="20" width="268" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -477,10 +481,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95178817400000004" green="0.96384113049999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nnd-pU-fyL"/>
                     <connections>
+                        <outlet property="hatchedLabel" destination="nVV-rJ-1Mo" id="mkE-cD-MrL"/>
                         <outlet property="monsterNameField" destination="HJk-Ck-jaX" id="MuO-kh-2EH"/>
                         <segue destination="BxA-Tk-9iq" kind="push" identifier="segueToTaskList" id="h8v-6d-2Cj"/>
                     </connections>
@@ -986,6 +991,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EggHatchesViewController.h"/>
             <relationships>
                 <relationship kind="action" name="enterNameButton:"/>
+                <relationship kind="outlet" name="hatchedLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="monsterNameField" candidateClass="UITextField"/>
             </relationships>
         </class>

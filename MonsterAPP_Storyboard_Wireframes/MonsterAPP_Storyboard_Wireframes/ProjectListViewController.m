@@ -23,7 +23,7 @@
 }
 
 @property (strong, nonatomic) NSFetchedResultsController  *taskResultsController;
-
+@property (strong, nonatomic) NSString *thumbPath;
 
 @end
 
@@ -90,7 +90,8 @@
     if (!success) {
         NSLog(@"Task Fetch Error: %@", error.description);
     }
-         
+ 
+    
 }
 
 
@@ -154,8 +155,17 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         existingProjectCell.existingTitle.text = existingTask.taskName;
         existingProjectCell.subtitle.text = existingTask.taskType;
 
-        NSLog(@"Curious %@",[existingTask.monster evolutions]);        
-        //existingProjectCell.monsterProfilePic =existingTask.monster
+        NSLog(@"Curious %d",[[existingTask.monster evolutions] valueForKey:@"evolutionNumber"]==[NSNumber numberWithInt:1]);
+
+        //thumbPath should actually reflect the real evolution #, so if we have an evolution complete box for each evolution... then sort the results, and take the last one with a checked field.
+        
+        if ([[existingTask.monster evolutions] valueForKey:@"evolutionNumber"]==[NSNumber numberWithInt:1]) {
+            self.thumbPath = [[existingTask.monster evolutions] valueForKey:@"thumbnailName"];
+        }
+        NSLog(@"thumbPath: %@", self.thumbPath);
+        
+        UIImage *cellThumb = [UIImage imageNamed:self.thumbPath];
+        existingProjectCell.monsterProfilePic.image = cellThumb;
         
         NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
         existingProjectCell.deadlineReminderLabel.text = dateString;

@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.hatchedLabel.font.pointSize];
+    self.hatchedLabel.font = lunchBoxBold;
 	// Do any additional setup after loading the view.
     
 }
@@ -70,12 +72,12 @@
     
     
     //create managedObject
-    Monster *monster = [NSEntityDescription insertNewObjectForEntityForName:@"Monster" inManagedObjectContext:managedObjectContext];
+    self.monster = [NSEntityDescription insertNewObjectForEntityForName:@"Monster" inManagedObjectContext:managedObjectContext];
     
     //set managedObject properties
-    monster.monsterName = self.monsterNameField.text;
-    monster.monsterType  =self.monsterType;
-    monster.task = self.task;
+    self.monster.monsterName = self.monsterNameField.text;
+    self.monster.monsterType  =self.monsterType;
+    self.monster.task = self.task;
     
 
     
@@ -85,8 +87,9 @@
         NSLog(@"Could not save task: %@", error);
     }
     
-    self.task.monster = monster;
+    self.task.monster = self.monster;
     [self saveEvolutionsToMonster];
+    
 }
 
 -(void)saveEvolutionsToMonster
@@ -112,17 +115,16 @@
     self.evolution2.thumbnailName = @"turtling-ev2-thumbnail.png";
     self.evolution2.monster = self.monster;
     
+    [self.monster addEvolutionsObject:self.evolution1];
+    [self.monster addEvolutionsObject:self.evolution2];
+    
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         
         NSLog(@"Could not save task: %@", error);
     }
     
-    [self.monster addEvolutionsObject:self.evolution1];
-    [self.monster addEvolutionsObject:self.evolution2];
-    
-    
-}
+   }
 
 
 @end
