@@ -10,6 +10,12 @@
 		185B9F5617667A5700F3E24B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B9F5517667A5700F3E24B /* CoreData.framework */; };
 		185B9F5917667AEB00F3E24B /* MonsterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */; };
 		185B9F5C17667C5700F3E24B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B9F5B17667C5700F3E24B /* LoginViewController.m */; };
+		18FDC3EB176F85D90064368F /* Monster_Wink.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18FDC3E6176F85D90064368F /* Monster_Wink.wav */; };
+		18FDC3EC176F85D90064368F /* Monster_Door.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18FDC3E7176F85D90064368F /* Monster_Door.wav */; };
+		18FDC3ED176F85D90064368F /* Monster_Shimmer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18FDC3E8176F85D90064368F /* Monster_Shimmer.wav */; };
+		18FDC3EE176F85D90064368F /* Monster_Step.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18FDC3E9176F85D90064368F /* Monster_Step.wav */; };
+		18FDC3EF176F85D90064368F /* Monster_Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18FDC3EA176F85D90064368F /* Monster_Win.wav */; };
+		18FDC3F1176F86B40064368F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FDC3F0176F86B40064368F /* AudioToolbox.framework */; };
 		290B476D176D2A4300B91B7E /* turtling_leftEye.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B476C176D2A4300B91B7E /* turtling_leftEye.png */; };
 		290B476F176D2A4800B91B7E /* turtling-blushcheeks.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B476E176D2A4800B91B7E /* turtling-blushcheeks.png */; };
 		290B4771176D2A6100B91B7E /* turtling_rightEye.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4770176D2A6100B91B7E /* turtling_rightEye.png */; };
@@ -97,6 +103,12 @@
 		185B9F5817667AEB00F3E24B /* MonsterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MonsterModel.xcdatamodel; sourceTree = "<group>"; };
 		185B9F5A17667C5700F3E24B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		185B9F5B17667C5700F3E24B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		18FDC3E6176F85D90064368F /* Monster_Wink.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Monster_Wink.wav; sourceTree = "<group>"; };
+		18FDC3E7176F85D90064368F /* Monster_Door.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Monster_Door.wav; sourceTree = "<group>"; };
+		18FDC3E8176F85D90064368F /* Monster_Shimmer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Monster_Shimmer.wav; sourceTree = "<group>"; };
+		18FDC3E9176F85D90064368F /* Monster_Step.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Monster_Step.wav; sourceTree = "<group>"; };
+		18FDC3EA176F85D90064368F /* Monster_Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Monster_Win.wav; sourceTree = "<group>"; };
+		18FDC3F0176F86B40064368F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		290B476C176D2A4300B91B7E /* turtling_leftEye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtling_leftEye.png; sourceTree = "<group>"; };
 		290B476E176D2A4800B91B7E /* turtling-blushcheeks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-blushcheeks.png"; sourceTree = "<group>"; };
 		290B4770176D2A6100B91B7E /* turtling_rightEye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtling_rightEye.png; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FDC3F1176F86B40064368F /* AudioToolbox.framework in Frameworks */,
 				A442FD05176B4EC3006E71B6 /* QuartzCore.framework in Frameworks */,
 				185B9F5617667A5700F3E24B /* CoreData.framework in Frameworks */,
 				294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */,
@@ -221,6 +234,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18FDC3E5176F85A60064368F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				18FDC3E6176F85D90064368F /* Monster_Wink.wav */,
+				18FDC3E7176F85D90064368F /* Monster_Door.wav */,
+				18FDC3E8176F85D90064368F /* Monster_Shimmer.wav */,
+				18FDC3E9176F85D90064368F /* Monster_Step.wav */,
+				18FDC3EA176F85D90064368F /* Monster_Win.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		290B476B176D29DE00B91B7E /* baby monster */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +270,7 @@
 		294B081B1763631B00C5DFFA = {
 			isa = PBXGroup;
 			children = (
+				18FDC3E5176F85A60064368F /* Sounds */,
 				89A0EF18176ED9D8001ADFE8 /* Turtling.h */,
 				89A0EF19176EDA33001ADFE8 /* TurtlingClass.h */,
 				89A0EF1A176EDA33001ADFE8 /* TurtlingClass.m */,
@@ -265,6 +291,7 @@
 		294B08261763631B00C5DFFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18FDC3F0176F86B40064368F /* AudioToolbox.framework */,
 				A442FD04176B4EC3006E71B6 /* QuartzCore.framework */,
 				185B9F5517667A5700F3E24B /* CoreData.framework */,
 				294B08271763631B00C5DFFA /* UIKit.framework */,
@@ -553,6 +580,11 @@
 				A42A1F4E176FCFC10008812A /* SparkleShine-overlay.png in Resources */,
 				A4F954FE1770A4FC00FE2554 /* monstrous-icon.png in Resources */,
 				A4F955001770A52300FE2554 /* monstrous-icon@2px.png in Resources */,
+				18FDC3EB176F85D90064368F /* Monster_Wink.wav in Resources */,
+				18FDC3EC176F85D90064368F /* Monster_Door.wav in Resources */,
+				18FDC3ED176F85D90064368F /* Monster_Shimmer.wav in Resources */,
+				18FDC3EE176F85D90064368F /* Monster_Step.wav in Resources */,
+				18FDC3EF176F85D90064368F /* Monster_Win.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

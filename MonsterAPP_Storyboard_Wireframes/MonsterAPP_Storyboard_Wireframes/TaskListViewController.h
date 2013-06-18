@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "TaskDetail.h"
+#import "Task.h"
+#import <CoreData/CoreData.h>
 
-@interface TaskListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface TaskListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, NSFetchedResultsControllerDelegate>
+
+@property  (strong, nonatomic) NSFetchedResultsController *stepsResultsController; 
 
 @property (strong, nonatomic) IBOutlet UITableView *taskTable;
 @property (strong, nonatomic) IBOutlet UILabel *xpLabel;
@@ -32,6 +38,8 @@
 @property NSString *taskDueDate;
 @property NSString *taskType;
 @property NSString *taskName;
+
+@property (strong,nonatomic) Task *selectedTask;
 
 @property (strong,nonatomic) NSMutableArray *pointsArray;
 @property (strong,nonatomic) NSMutableArray *stepsArray;
