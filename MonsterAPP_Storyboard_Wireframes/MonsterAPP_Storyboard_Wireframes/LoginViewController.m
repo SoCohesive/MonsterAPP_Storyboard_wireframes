@@ -33,11 +33,20 @@
     }
     return self;
 }
+-(void) viewWillAppear:(BOOL)animated {
+    
+    [self.navigationItem setHidesBackButton:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+     [self.navigationItem setHidesBackButton:YES animated:YES];
+    
     
     self.loginLabel.text= @"Login, please:";
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.loginLabel.font.pointSize];
@@ -165,9 +174,11 @@
     }
     //this isn't working as of 1pm, 6/14.
     if (fetchedObjects.count == 0){
+        
        userNumber = [NSNumber numberWithInt: 1] ;
         
     } else {
+        
         userNumber = [NSNumber numberWithInt: fetchedObjects.count +1];
 
     }

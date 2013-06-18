@@ -35,6 +35,7 @@
 
 - (IBAction)getStartedButton:(id)sender {
     
+     self.navigationItem.hidesBackButton = YES;
     [self performSegueWithIdentifier:@"pushToLogin" sender:self];
 }
 
@@ -144,7 +145,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    
+     self.navigationItem.hidesBackButton = YES;
     self.getStartedButton.hidden = YES;
     self.getStartedButton.alpha = 0;
     

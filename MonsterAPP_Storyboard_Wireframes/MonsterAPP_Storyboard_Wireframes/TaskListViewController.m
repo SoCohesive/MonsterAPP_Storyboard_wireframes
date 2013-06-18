@@ -12,6 +12,7 @@
 
 
 
+
 @interface TaskListViewController ()
 {
     // TaskDetail *step;
@@ -26,6 +27,8 @@
 -(void) createTemplates;
 -(void) rotateMonster;
 -(void) saveData;
+-(void) setNavigationLogic;
+-(void) pushProjectListView;
 
 @end
 
@@ -45,12 +48,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNavigationLogic];
     
     self.navigationItem.title = self.selectedTask.taskName;
-    
+    NSLog(@"the selected project is %@",self.selectedTask.taskName);
     //self.dateLabel.text = self.selectedTask.dateCreated;
-    
-    
+
     //Set up edit/done button
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem.title = @"Edit";
@@ -83,6 +86,33 @@
                                     repeats:NO];
 }
 
+-(void) setNavigationLogic {
+    
+    if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
+        
+        self.navigationItem.hidesBackButton = YES;
+        
+        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Custom"
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self
+                                                                      action:@selector(onClick_ListButton)];
+        self.navigationItem.leftBarButtonItem = leftButton;
+        
+        
+    }
+    
+}
+
+-(IBAction)onClick_ListButton:(id)sender  {
+    
+    NSLog(@"custom button tapped");
+    
+//    UIViewController *projectListViewController = [[UIViewController alloc] initWithNibName:@"ProjectListViewController" bundle:nil];
+//    
+//    [self.navigationController pushViewController:projectListViewController animated:YES];
+    
+}
+
 
 #pragma mark add points
 -(void) setUpPointsArray {
@@ -99,17 +129,17 @@
     if ( textField == self.customStepTextField) {
         
         NSString *customStepsEntered = self.customStepTextField.text;
-        
         if ([customStepsEntered length] > 0) {
             
             NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
             
             // creating new step object
             TaskDetail *newStep = [NSEntityDescription insertNewObjectForEntityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
-            
             newStep.stepDetail = customStepsEntered;
-            [self.stepsArray addObject:newStep];
             newStep.stepNumber = [NSNumber numberWithInt:[self.stepsArray count]];
+            newStep.task = self.selectedTask;
+            
+            [self.selectedTask.taskDetails setByAddingObject:newStep];
             
             int  pointsIndexPath = arc4random() % (self.pointsArray.count-1);
             pointString = self.pointsArray[pointsIndexPath];
@@ -123,6 +153,7 @@
                 NSLog(@"An error occured: %@", error);
             }
             
+            NSLog(@"the steps array has %@",self.stepsArray);
             
         };
         
@@ -159,6 +190,9 @@
     
     NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:taskDescriptors];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
+   [fetchRequest setPredicate:predicate];
+    
     
     stepsResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
                                                                managedObjectContext:managedObjectContext
@@ -174,7 +208,9 @@
     if (success) {
         
         [self.taskTable reloadData];
+       
     }
+     
     stepsResultsController.delegate = self;
     return stepsResultsController;
     
@@ -312,11 +348,6 @@
     
 }
 
-//        [self.selectedTaskTemplate removeObjectAtIndex:indexPath.row];
-//
-//        [NSArray arrayWithObject:indexPath];
-//        [self.taskTable  deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-
 
 
 
@@ -365,7 +396,8 @@
     //                                      reuseIdentifier:identifier];
     //    }
     
-    // add points from points array
+
+    
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
     
     UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
@@ -462,6 +494,15 @@
                          
                      }];
     
+    SystemSoundID soundID3;
+    NSString *soundFile3 = [[NSBundle mainBundle]
+                            pathForResource:@"Monster_Wink" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile3]
+									 , &soundID3);
+    AudioServicesPlaySystemSound(soundID3);
+    
 }
 
 #pragma mark open eye animation
@@ -478,14 +519,7 @@
                          
                      }];
     
-    SystemSoundID soundID3;
-    NSString *soundFile3 = [[NSBundle mainBundle]
-                            pathForResource:@"Monster_Wink" ofType:@"wav"];
-    
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
-									 [NSURL fileURLWithPath:soundFile3]
-									 , &soundID3);
-    AudioServicesPlaySystemSound(soundID3);
+
     
 }
 
