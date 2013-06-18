@@ -15,8 +15,8 @@
 
 @property (nonatomic, retain) NSString * eggImageName;
 @property (nonatomic, retain) NSString * evolutionDescription;
-@property (nonatomic, retain) NSString * thumbnailName;
 @property (nonatomic, retain) NSNumber * evolutionNumber;
+@property (nonatomic, retain) NSString * thumbnailName;
 @property (nonatomic, retain) Monster *monster;
 
 @end

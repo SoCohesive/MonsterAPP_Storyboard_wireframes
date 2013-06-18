@@ -2,7 +2,7 @@
 //  TaskDetail.h
 //  MonsterAPP_Storyboard_Wireframes
 //
-//  Created by Erin Hochstatter on 6/13/13.
+//  Created by Erin Hochstatter on 6/17/13.
 //  Copyright (c) 2013 Sonam Dhingra. All rights reserved.
 //
 
@@ -25,6 +25,5 @@
 @property (nonatomic, retain) NSNumber * taskID;
 @property (nonatomic, retain) NSNumber * userID;
 @property (nonatomic, retain) Task *task;
-
 
 @end

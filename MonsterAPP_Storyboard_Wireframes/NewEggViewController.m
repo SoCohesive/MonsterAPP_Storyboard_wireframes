@@ -41,7 +41,6 @@
     [self.sparkleImage setBackgroundColor:[UIColor blueColor]];
     
     [self.sparkleImage rotateShine];
-    [self.littleSparkle rotateShine];
     
     [super viewDidLoad];
     

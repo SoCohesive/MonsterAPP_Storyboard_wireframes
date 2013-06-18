@@ -14,6 +14,7 @@
 
 
 @interface EggHatchesViewController : UIViewController<UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *hatchedLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *monsterNameField;
 @property (strong, nonatomic) NSString *monsterType;

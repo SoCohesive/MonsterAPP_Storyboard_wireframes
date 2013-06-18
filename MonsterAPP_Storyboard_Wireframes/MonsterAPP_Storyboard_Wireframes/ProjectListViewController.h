@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "Task.h"
+#import "Monster.h"
+#import "Evolution.h"
 
 @interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
