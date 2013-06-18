@@ -154,14 +154,12 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         Task *existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
         existingProjectCell.existingTitle.text = existingTask.taskName;
         existingProjectCell.subtitle.text = existingTask.taskType;
-
-        NSLog(@"Curious %d",[[existingTask.monster evolutions] valueForKey:@"evolutionNumber"]==[NSNumber numberWithInt:1]);
-
-        //thumbPath should actually reflect the real evolution #, so if we have an evolution complete box for each evolution... then sort the results, and take the last one with a checked field.
         
-        if ([[existingTask.monster evolutions] valueForKey:@"evolutionNumber"]==[NSNumber numberWithInt:1]) {
-            self.thumbPath = [[existingTask.monster evolutions] valueForKey:@"thumbnailName"];
-        }
+        NSSet *evolutions = [existingTask.monster evolutions];
+        //sort, or use value to get highest with evolutionAchived tag, which does not yet exist
+        NSMutableArray *evolutionsArray = [NSMutableArray arrayWithArray:[evolutions allObjects]];
+        self.thumbPath = ((Evolution*)evolutionsArray[0]).thumbnailName ;
+        
         NSLog(@"thumbPath: %@", self.thumbPath);
         
         UIImage *cellThumb = [UIImage imageNamed:self.thumbPath];

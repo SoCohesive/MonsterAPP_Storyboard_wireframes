@@ -52,6 +52,8 @@
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.titleLabel.font.pointSize];
     self.titleLabel.font = lunchBoxBold;
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +73,14 @@
     self.dateEntryField.layer.masksToBounds=YES;
     self.dateEntryField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
     self.dateEntryField.layer.borderWidth= 1.0f;
+    
+    self.dateEntryField.inputView = self.datePicker;
+
+    
+//    UITapGestureRecognizer *singleFingerTap =
+//    [[UITapGestureRecognizer alloc] initWithTarget:self.dateEntryField
+//                                            action:@selector(handleSingleTap:)];
+//    [self.dateEntryField addGestureRecognizer:singleFingerTap];
 }
 
 
@@ -90,25 +100,21 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    if (textField == self.titleTextField) {
         return YES;
-    } else {
-        return NO;
     }
-}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    self.titleTextField.delegate = self;
     
     if (textField == self.titleTextField) {
-        
+        self.titleTextField.delegate = self;
+    
         [self.titleTextField resignFirstResponder];
         [self.dateEntryField becomeFirstResponder];
-        //add titleTextField.text to task properties
     }
     return YES;
 }
+
 
 #pragma
 #pragma DueDate Input

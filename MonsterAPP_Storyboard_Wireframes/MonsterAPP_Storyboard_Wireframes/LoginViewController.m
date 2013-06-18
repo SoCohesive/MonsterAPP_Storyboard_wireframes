@@ -47,6 +47,14 @@
     [self formatTextFields];
     
     NSLog(@"LunchBox: %@", [UIFont fontNamesForFamilyName:@"LunchBox"]);
+    
+    int imageSize=44;
+    UIImage *doneButtonImage = [[UIImage imageNamed:@"monsterNavBar-done.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
+    UIImage *doneButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-done_tapped.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
+    
+    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0) forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +88,7 @@
     self.nameField.text = @"What's your name?";
     self.emailField.text = @"Give us a special nickname, too.";
     
+    self.nameField.clearsOnInsertion = YES;
     self.nameField.layer.cornerRadius=8.0f;
     self.nameField.layer.masksToBounds=YES;
     self.nameField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
@@ -89,26 +98,8 @@
     self.emailField.layer.masksToBounds=YES;
     self.emailField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
     self.emailField.layer.borderWidth= 1.0f;
+    
 }
-
-/*- (IBAction)loginButton:(id)sender {
-    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
-    
-    //user is our managedObject
-    User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
-    
-    testUser.firstName = self.nameField.text;
-    testUser.nickname = self.emailField.text;
-    testUser.userID = userNumber;
-    testUser.dateCreated = [NSDate date];
-    
-    NSError *error = nil;
-    if (![managedObjectContext save:&error]) {
-        
-        NSLog(@"An error occured: %@", error);
-    }
-
-    }*/
 
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -142,7 +133,6 @@
             
             NSLog(@"An error occured: %@", error);
         }
-
         
     }
     return YES;

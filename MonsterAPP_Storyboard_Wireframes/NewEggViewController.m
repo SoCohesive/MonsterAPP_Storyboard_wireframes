@@ -58,8 +58,7 @@
                                             action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];
     
-        
-	// Do any additional setup after loading the view.
+            
     // Audio triggers below, with Monster_Shimmer.wav sound
     
     SystemSoundID soundID2;
@@ -113,6 +112,7 @@
 
 }
 
+
 #pragma
 #pragma mark Segue to Naming Project
 
@@ -132,7 +132,6 @@
     ((ProjectNameVC*)(segue.destinationViewController)).monsterKind = self.monsterType;
     
     NSLog(@"ProjectType sent to Name View -->%@",((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName);
-    
     
 }
 
