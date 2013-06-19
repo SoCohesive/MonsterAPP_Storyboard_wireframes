@@ -15,6 +15,7 @@
 @interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) User *currentUser;
+@property (strong, nonatomic) Task *existingTask;
 
 @property (strong, nonatomic) IBOutlet UITableView *projectsTableView;
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;

@@ -41,6 +41,7 @@
 @property NSString *taskName;
 
 @property (strong,nonatomic) Task *selectedTask;
+@property (strong,nonatomic) Task *taskFromProjectList;
 
 @property (strong,nonatomic) NSMutableArray *pointsArray;
 @property (strong,nonatomic) NSMutableArray *stepsArray;

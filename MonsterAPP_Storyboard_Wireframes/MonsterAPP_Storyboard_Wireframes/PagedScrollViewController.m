@@ -133,8 +133,7 @@
         self.getStartedButton.alpha = 1;
         
     } completion:^(BOOL finished) {
-        
-        NSLog(@"button animation done"); 
+       
     }];
     
 }
