@@ -14,6 +14,7 @@
 
 
 @interface EggHatchesViewController : UIViewController<UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *hatchedHeaderLabel;
 @property (strong, nonatomic) IBOutlet UILabel *hatchedLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *monsterNameField;
@@ -22,6 +23,7 @@
 
 @property (strong, nonatomic) Evolution *evolution1;
 @property (strong, nonatomic) Evolution *evolution2;
+@property (strong, nonatomic) Evolution *evolution3;
 
 @property (strong, nonatomic) NSString *taskDueString;
 @property (strong, nonatomic) NSString *taskProjectType;

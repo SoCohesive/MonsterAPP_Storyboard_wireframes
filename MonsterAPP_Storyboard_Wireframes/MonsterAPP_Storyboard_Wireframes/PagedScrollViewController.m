@@ -112,7 +112,7 @@
         
         // Add an imageView to the page
         UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImages objectAtIndex:page]];
-        newPageView.contentMode = UIViewContentModeScaleToFill;
+        newPageView.contentMode = UIViewContentModeScaleAspectFit;
         newPageView.frame = frame;
         [self.scrollView addSubview:newPageView];
         
@@ -151,9 +151,9 @@
     
     //Add images to array
     self.pageImages = [NSArray arrayWithObjects:
-                       [UIImage imageNamed:@"step1.png"],
-                       [UIImage imageNamed:@"step2.png"],
-                       [UIImage imageNamed:@"step3.png"], nil];
+                       [UIImage imageNamed:@"onboarding-1.png"],
+                       [UIImage imageNamed:@"onboarding-2.png"],
+                       [UIImage imageNamed:@"onboarding-3.png"], nil];
     
     //set up number of pages for page control
     NSInteger pageCount = self.pageImages.count;

@@ -54,7 +54,7 @@
 
     [self setupTasksFetchController];
 
-    
+    [self.projectsTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +73,7 @@
     
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
-//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];
+//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];  user.tasks?
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
@@ -189,6 +189,8 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
     }
 }
 
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
 indexPath
 {
@@ -202,4 +204,5 @@ indexPath
         //once the segues pass info, set this up to do the @"segueToCreateProject" segue & fetch taskDetails
     }
 }
+
 @end
