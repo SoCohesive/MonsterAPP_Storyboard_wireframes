@@ -50,11 +50,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setNavigationLogic];
     
     self.navigationItem.title = self.selectedTask.taskName;
     
-    NSLog(@"the existing task in task list has %@",self.selectedTask.taskDetails);
+    NSLog(@"the existing task in task list has %@",self.selectedTask);
     //self.dateLabel.text = self.selectedTask.dateCreated;
 
     //Set up edit/done button
@@ -66,7 +65,8 @@
     [self setUpPointsArray];
     // [self createTemplates];
     
-    
+    [self setNavigationLogic];
+
     
     // set up timer for eye blinking animation
     [NSTimer scheduledTimerWithTimeInterval:2
@@ -92,16 +92,15 @@
 #pragma add custom left bar nav button
 -(void) setNavigationLogic {
     
-if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
+  if ([self.selectedTask.taskName isEqualToString:self.taskName]) {
         
+      ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
+        
+      self.navigationController.viewControllers = @[projectListVC,self];
+      
+     // projectListVC.existingTask = self.selectedTask;
 
-        ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
-        
-        self.navigationController.viewControllers = @[projectListVC,self];
-        projectListVC.existingTask = self.selectedTask;
-    
-        
-}
+  }
 
 }
 #pragma mark add points
@@ -133,7 +132,7 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
             
             //[self.selectedTask addTaskDetailsObject:newStep];
             
-            [self.selectedTask.taskDetails setByAddingObject:newStep];
+            //[self.selectedTask.taskDetails setByAddingObject:newStep];
             
             int  pointsIndexPath = arc4random() % (self.pointsArray.count-1);
             pointString = self.pointsArray[pointsIndexPath];
@@ -177,15 +176,15 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    //use predicat to filter task types. If tasktype = @"book report", create the steps for that
-    
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"stepDetail"
                                                                    ascending:YES];
     
-    NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+   NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:taskDescriptors];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
+    
+   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
    [fetchRequest setPredicate:predicate];
+    NSLog(@"the predicate is %@",predicate);
     
     
     stepsResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
@@ -388,25 +387,24 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
 {
     static NSString *identifier = @"taskCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: identifier];
-    //    if (cell==nil) {
-    //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-    //                                      reuseIdentifier:identifier];
-    //    }
+    if (cell==nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                          reuseIdentifier:identifier];
+        }
     
 
     
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
     
     NSSet *steps = self.selectedTask.taskDetails;
-    //sort, or use value to get highest with evolutionAchived tag, which does not yet exist
-    NSMutableArray *stepListArray = [NSMutableArray arrayWithArray:[steps allObjects]];
-    // enumerate through array and get all steps for task
+//    NSMutableArray *stepListArray = [NSMutableArray arrayWithArray:[steps allObjects]];
+//    // enumerate through array and get all steps for task
     
-    for (TaskDetail *details in stepListArray) {
-        
-        // use this for an EXISTING project. In a new project there are NO stepdetails so this would be null.
-        stepString = details.stepDetail;
-    }
+//    for (TaskDetail *details in stepListArray) {
+//        
+//        // use this for an EXISTING project. In a new project there are NO stepdetails so this would be null.
+//        stepString = details.stepDetail;
+//    }
     
     UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
     pointsLabel.text = [step.stepXP stringValue];
@@ -422,6 +420,8 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
 #pragma mark select row action
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+    
     UITableViewCell *cell = [self.taskTable cellForRowAtIndexPath:indexPath];
     
     // Unhide image of check mark
@@ -442,8 +442,15 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
         NSLog(@"An error occured: %@", error);
     }
     
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    
+    if ([segue.identifier isEqualToString:@"segueToEvolve"]) {
+        
+        NSLog(@" SEGUE to evolve worked");
+        
+    }
 }
 
 #pragma mark rotate monster animation

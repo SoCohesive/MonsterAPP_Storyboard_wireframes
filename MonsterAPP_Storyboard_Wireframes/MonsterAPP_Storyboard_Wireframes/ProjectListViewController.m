@@ -19,6 +19,8 @@
 
 {
     NSMutableArray              *projectsBySection;
+    NSMutableArray              *existingTasksArray;
+    
    
 }
 
@@ -90,12 +92,13 @@
                                     managedObjectContext:managedObjectContext
                                     sectionNameKeyPath:@"taskComplete" //taskComplete
                                     cacheName:@"nil"];
+   
     NSError *error;
     BOOL success = [self.taskResultsController performFetch:&error];
     if (!success) {
         NSLog(@"Task Fetch Error: %@", error.description);
     }
- 
+
     
 }
 
@@ -159,6 +162,7 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         self.existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
         existingProjectCell.existingTitle.text = self.existingTask.taskName;
         existingProjectCell.subtitle.text = self.existingTask.taskType;
+    
         
         NSSet *evolutions = [self.existingTask.monster evolutions];
         //sort, or use value to get highest with evolutionAchived tag, which does not yet exist
@@ -198,28 +202,35 @@ indexPath
     if (tableView == self.staticesqueTable) {
         
         [self.staticesqueTable deselectRowAtIndexPath:indexPath animated:YES];
-        //once the segues pass info, set this up to do the @"segueToCreateProject" segue
         [self performSegueWithIdentifier:@"segueToCreateProject" sender:self];
         
-    }else {
+    } else {
         
         
         [self.projectsTableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-        //once the segues pass info, set this up to do the @"segueToCreateProject" segue & fetch taskDetails
+       
+        self.tappedTask= [self.taskResultsController objectAtIndexPath:indexPath];
         [self performSegueWithIdentifier:@"segueToExistingTaskDetail" sender:self];
         
     }
+
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"segueToExistingTaskDetail"]) {
-        
-            // ADD THE SPECIFIC INDEX PATH OF THE EXISTING TASK 
-           ((TaskListViewController *)segue.destinationViewController).selectedTask = self.existingTask;
-        
+if ([segue.identifier isEqualToString:@"segueToExistingTaskDetail"]) {
+    
+
+    ((TaskListViewController *)segue.destinationViewController).selectedTask = self.tappedTask;
     }
+    
+if ([segue.identifier isEqualToString:@"segueToCreateProject"]) {
+    
+    NSLog(@"making new project");
+    }
+    
 }
+
+
 
 @end

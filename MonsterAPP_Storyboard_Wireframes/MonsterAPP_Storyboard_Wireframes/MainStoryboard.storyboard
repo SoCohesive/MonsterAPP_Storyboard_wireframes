@@ -576,9 +576,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="QKW-bl-A1g" kind="push" identifier="segueToEvolve" id="gyt-BK-2EX"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -626,11 +623,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="mouthOpenImage" destination="XId-qq-Kv0" id="TKM-nQ-sFW"/>
                         <outlet property="taskTable" destination="v31-ZF-vPC" id="VJY-dv-Tjb"/>
                         <outlet property="xpLabel" destination="Mhv-Px-7VM" id="cht-oa-zRp"/>
+                        <segue destination="QKW-bl-A1g" kind="push" identifier="segueToEvolve" id="6NC-QV-JGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ns-Ek-dbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="-1206"/>
+            <point key="canvasLocation" x="1869" y="-1138"/>
         </scene>
         <!--Project List View Controller-->
         <scene sceneID="OGi-Gq-18n">
@@ -675,7 +673,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <connections>
                                             <outlet property="createLabel" destination="fcP-cB-S14" id="wup-UH-DvE"/>
                                             <outlet property="starterImage" destination="YQK-vX-XdD" id="R5l-Xm-U90"/>
-                                            <segue destination="jjf-9H-Cbw" kind="push" identifier="segueToCreateProject" id="69E-28-B73"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -729,7 +726,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <outlet property="existingTitle" destination="lMU-Y1-qJk" id="V4x-hb-wmp"/>
                                             <outlet property="monsterProfilePic" destination="VEs-nU-NZg" id="5TG-6r-9ee"/>
                                             <outlet property="subtitle" destination="mgY-C7-dv0" id="35j-jO-3f7"/>
-                                            <segue destination="BxA-Tk-9iq" kind="push" identifier="segueToExistingTaskDetail" id="nGZ-hn-d5a"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell alpha="0.5" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="completedProjectCell" id="LVt-EX-iHX" customClass="CompletedProjectsCell">
@@ -862,11 +858,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="projectsTableView" destination="LIA-9Z-uLZ" id="1zn-AQ-c8E"/>
                         <outlet property="staticesqueTable" destination="NZI-gs-5DJ" id="bHs-eo-g7N"/>
                         <outlet property="welcomeLabel" destination="Kpf-aE-DwG" id="LG1-YK-rFt"/>
+                        <segue destination="BxA-Tk-9iq" kind="push" identifier="segueToExistingTaskDetail" id="xpN-Fm-5R4"/>
+                        <segue destination="jjf-9H-Cbw" kind="push" identifier="segueToCreateProject" id="ap1-ha-DPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTR-Gt-0Dn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="-1206"/>
+            <point key="canvasLocation" x="1389" y="-1204"/>
         </scene>
         <!--Evolution View Controller-->
         <scene sceneID="BGX-tD-Afa">
@@ -920,7 +918,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIf-Qc-b4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="-1186"/>
+            <point key="canvasLocation" x="2446" y="-1096"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xYa-D3-UTz">
@@ -961,13 +959,135 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="turtling_leftEye.png" width="31" height="30"/>
         <image name="turtling_rightEye.png" width="31" height="30"/>
     </resources>
+    <classes>
+        <class className="CompletedProjectsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompletedProjectsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="completedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedMonsterProfilePic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="completedSubtitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CreateNewProjectCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateNewProjectCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="createLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="starterImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="EggHatchesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EggHatchesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="enterNameButton:"/>
+                <relationship kind="outlet" name="hatchedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monsterNameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="EvolutionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EvolutionViewController.h"/>
+        </class>
+        <class className="ExistingProjectCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExistingProjectCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="deadlineReminderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="existingTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monsterProfilePic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="subtitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginDoneBarButton:"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="loginLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NewEggViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewEggViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="achievementText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="congratsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sparkleImage" candidateClass="SparkleImageView"/>
+                <relationship kind="outlet" name="tapInstructionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="OnboardingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnboardingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tapGestureForDoor:"/>
+                <relationship kind="outlet" name="doorImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PagedScrollViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PagedScrollViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="getStartedButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="ProjectListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="currentHighPointMonster" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="finishedCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pointCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="projectCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="projectsTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="staticesqueTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="welcomeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ProjectNameVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectNameVC.h"/>
+            <relationships>
+                <relationship kind="action" name="saveTaskDoneButton:"/>
+                <relationship kind="outlet" name="dateEntryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ProjectPickerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectPickerVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="projectTypesTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="whatProjectLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SparkleImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SparkleImageView.h"/>
+        </class>
+        <class className="TaskListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TaskListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="blushedCheeksImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="customStepTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="fullMonsterImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="hpLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="monsterLeftEyeImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="monsterRightEyeImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mouthOpenImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="taskTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="xpLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="69E-28-B73"/>
-        <segue reference="nGZ-hn-d5a"/>
+        <segue reference="ap1-ha-DPG"/>
+        <segue reference="xpN-Fm-5R4"/>
     </inferredMetricsTieBreakers>
 </document>
