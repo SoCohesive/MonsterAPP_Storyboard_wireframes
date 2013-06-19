@@ -12,10 +12,11 @@
 #import "Monster.h"
 #import "Evolution.h"
 
-@interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) User *currentUser;
 @property (strong, nonatomic) Task *existingTask;
+@property (weak, nonatomic) Task *tappedTask;
 
 @property (strong, nonatomic) IBOutlet UITableView *projectsTableView;
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
