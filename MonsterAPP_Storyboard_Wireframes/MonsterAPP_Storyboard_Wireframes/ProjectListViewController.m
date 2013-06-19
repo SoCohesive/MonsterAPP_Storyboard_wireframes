@@ -53,6 +53,9 @@
     projectsBySection = [[NSMutableArray alloc] initWithObjects: [NSArray arrayWithObject: firstCellString], [NSMutableArray array], [NSMutableArray array], nil];
 
     [self setupTasksFetchController];
+    
+    NSLog(@"the existing tasks in project list have these steps %@",self.existingTask.taskDetails);
+    
 
     [self.projectsTableView reloadData];
 }
@@ -153,11 +156,11 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         //confirm that this will always be completedTasks, should I use key?    
         existingProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
         
-        Task *existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
-        existingProjectCell.existingTitle.text = existingTask.taskName;
-        existingProjectCell.subtitle.text = existingTask.taskType;
+        self.existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
+        existingProjectCell.existingTitle.text = self.existingTask.taskName;
+        existingProjectCell.subtitle.text = self.existingTask.taskType;
         
-        NSSet *evolutions = [existingTask.monster evolutions];
+        NSSet *evolutions = [self.existingTask.monster evolutions];
         //sort, or use value to get highest with evolutionAchived tag, which does not yet exist
         NSMutableArray *evolutionsArray = [NSMutableArray arrayWithArray:[evolutions allObjects]];
         self.thumbPath = ((Evolution*)evolutionsArray[0]).thumbnailName ;
@@ -167,7 +170,7 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         UIImage *cellThumb = [UIImage imageNamed:self.thumbPath];
         existingProjectCell.monsterProfilePic.image = cellThumb;
         
-        NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
+        NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [self.existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
         existingProjectCell.deadlineReminderLabel.text = dateString;
                 
         return existingProjectCell;
@@ -195,13 +198,29 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
 indexPath
 {
     if (tableView == self.staticesqueTable) {
+        
         [self.staticesqueTable deselectRowAtIndexPath:indexPath animated:YES];
         //once the segues pass info, set this up to do the @"segueToCreateProject" segue
-
+        [self performSegueWithIdentifier:@"segueToCreateProject" sender:self];
+        
     }else {
-     
+        
+        
         [self.projectsTableView deselectRowAtIndexPath:indexPath animated:YES];
+        
         //once the segues pass info, set this up to do the @"segueToCreateProject" segue & fetch taskDetails
+        [self performSegueWithIdentifier:@"segueToExistingTaskDetail" sender:self];
+        
+    }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"segueToExistingTaskDetail"]) {
+        
+            // ADD THE SPECIFIC INDEX PATH OF THE EXISTING TASK 
+           ((TaskListViewController *)segue.destinationViewController).selectedTask = self.existingTask;
+        
     }
 }
 

@@ -17,6 +17,8 @@
 {
     // TaskDetail *step;
     NSString *pointString;
+    NSString *stepString;
+    
     
 }
 
@@ -110,52 +112,18 @@
 #pragma add custom left bar nav button
 -(void) setNavigationLogic {
     
-    if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
+if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
         
-        self.navigationItem.hidesBackButton = YES;
+
+        ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
         
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Projects"
-                                                                    style:UIBarButtonItemStyleBordered
-                                                                    target:self
-                                                                    action:@selector(pushViewController:animated:)];
-        self.navigationItem.leftBarButtonItem = leftButton;
-        
-        
-    }
+        self.navigationController.viewControllers = @[projectListVC,self];
+        projectListVC.existingTask = self.selectedTask;
     
+        
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
-    ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
-    viewController = projectListVC;
-    animated = YES;
-    
-    [self.navigationController pushViewController:projectListVC animated:YES];
-    
 }
-
-//    NSArray *viewControllers=[[self navigationController] viewControllers];
-//
-//    NSMutableArray *newArray = [[NSMutableArray alloc] initWithArray:viewControllers];
-//    //    [newArray addObject:projectListVC];
-//    //
-//    //    for( int i=0;i<[ viewControllers count];i++)
-//    //
-//    //    {
-//    //        id obj=[viewControllers objectAtIndex:i];
-//    //
-//    //        if([obj isKindOfClass:[ProjectListViewController class]])
-//    //        {
-//    //
-//    //            [self.navigationController popToViewController:obj animated:YES];
-//    //            return;
-//    //        }
-//    //    }
-//
-
-
-
 #pragma mark add points
 -(void) setUpPointsArray {
     
@@ -180,7 +148,11 @@
             TaskDetail *newStep = [NSEntityDescription insertNewObjectForEntityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
             newStep.stepDetail = customStepsEntered;
             newStep.stepNumber = [NSNumber numberWithInt:[self.stepsArray count]];
+            
+            // add steps to task 
             newStep.task = self.selectedTask;
+            
+            //[self.selectedTask addTaskDetailsObject:newStep];
             
             [self.selectedTask.taskDetails setByAddingObject:newStep];
             
@@ -263,12 +235,15 @@
     
     
 }
+
 //-(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
+//    
 //    [self.taskTable beginUpdates];
 //}
-//
-//
+
+
 -(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
     [self.taskTable reloadData];
 }
 
@@ -446,6 +421,17 @@
 
     
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
+    
+    NSSet *steps = self.selectedTask.taskDetails;
+    //sort, or use value to get highest with evolutionAchived tag, which does not yet exist
+    NSMutableArray *stepListArray = [NSMutableArray arrayWithArray:[steps allObjects]];
+    // enumerate through array and get all steps for task
+    
+    for (TaskDetail *details in stepListArray) {
+        
+        // use this for an EXISTING project. In a new project there are NO stepdetails so this would be null.
+        stepString = details.stepDetail;
+    }
     
     UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
     pointsLabel.text = [step.possStepXP stringValue];
