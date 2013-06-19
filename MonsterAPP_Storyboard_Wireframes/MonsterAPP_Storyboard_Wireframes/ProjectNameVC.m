@@ -261,7 +261,7 @@
     NSTimeInterval differenceInHours;
     
     differenceInDays = [currentDate timeIntervalSinceDate:pickerDate] / 86400;
-    differenceInHours = [currentDate timeIntervalSinceDate:pickerDate] / 1440;
+    differenceInHours = [currentDate timeIntervalSinceDate:pickerDate] / 3600;
     
     dateFormat = [[NSDateFormatter alloc]init];
     [dateFormat setDateFormat:@"MMMM d, yyyy hh:mm:ssa"];
@@ -269,10 +269,14 @@
     pickerDateString = [dateFormat stringFromDate:pickerDate];
     
     differenceOutput = [[NSString alloc] initWithFormat:@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", currentDateString, pickerDateString, fabs(differenceInDays)];
+    if (ABS(differenceInDays) > 1) {
+        NSLog(@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", currentDateString, pickerDateString, fabs(differenceInDays));
+    }else{
+        NSLog(@"You have %1.2f hours left!!", fabs(differenceInHours));
+    }
     
-    NSLog(@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", currentDateString, pickerDateString, fabs(differenceInDays));
     
-    NSLog(@"You have %1.2f hours left!!", fabs(differenceInHours));
+    
     
     NSLog(@"the date picked is %@", pickerDateString);
     

@@ -15,6 +15,7 @@
     CABasicAnimation *rotateAnimation; 
     
 }
+@property (strong, nonatomic) IBOutlet UIImageView *wormChat;
 
 -(void) openDoorAnimation;
 
@@ -57,6 +58,7 @@
 - (IBAction)tapGestureForDoor:(id)sender {
     
     [self openDoorAnimation];
+    self.wormChat.alpha = 0.0;
     
     //Audio trigger below for door opening Monster_Door.wav
     SystemSoundID soundID;
