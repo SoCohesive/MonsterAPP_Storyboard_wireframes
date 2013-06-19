@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SparkleImageView.h"
+#import "Evolution.h"
 
 @interface EvolutionViewController : UIViewController
-
+@property (strong, nonatomic) IBOutlet UILabel *evolutionDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UIView *MonsterView;
+@property (strong, nonatomic) IBOutlet SparkleImageView *shineForRotation;
+@property (strong, nonatomic) Evolution *evolutionForImages;
 @end

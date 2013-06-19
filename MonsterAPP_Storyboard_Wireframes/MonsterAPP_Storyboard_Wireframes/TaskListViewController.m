@@ -9,6 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "User.h"
+#import "EvolutionViewController.h"
 
 
 
@@ -26,7 +27,7 @@
 @property (strong, nonatomic) NSNumber *totalPossibleXP;
 @property (strong, nonatomic) NSArray *sortedEvolutions;
 
--(void)chooseTaskList;
+//-(void)chooseTaskList;
 -(void)toggleEdit;
 -(void) setUpPointsArray;
 -(void) showCheeksAnimation;
@@ -446,7 +447,8 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
 
 #pragma mark select row action
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+
     UITableViewCell *cell = [self.taskTable cellForRowAtIndexPath:indexPath];
     
     // Unhide image of check mark
@@ -455,8 +457,7 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
     // lessen alpha of cell itself
     cell.alpha = .3;
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+        
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
     step.stepCompleted = [NSNumber numberWithInt:1];
@@ -476,6 +477,7 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
 
     NSLog(@"updated task XP: %d", updatedTaskXP);
     NSLog(@" total poss%@", self.totalPossibleXP);
+    //self.xpLabel.text =[NSstring st]updatedTaskXP;
     
     float percentageOfCompletedSteps = updatedTaskXP/[self.totalPossibleXP floatValue];
     NSLog(@"percent of tasks complete:%f", percentageOfCompletedSteps);
@@ -486,13 +488,12 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
     float justToKnow = percentageOfPotentialEvolutions * [self.totalPossibleXP floatValue];
     NSLog(@"this should probably tell me the point threshhold for evolution 1, 2 is this x2, etc.: %f", justToKnow);
    
-    //creates array of evolutions, sorted by number, so that [0] should be evolution1, etc.?
+    
     NSSet *evolutionsSet = [self.selectedTask.monster evolutions];
     NSSortDescriptor *sortByEvoNumber = [[NSSortDescriptor alloc] initWithKey:@"evolutionNumber"
                                                                    ascending:YES];
     self.sortedEvolutions = [evolutionsSet sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoNumber]];
 
-    //can i clear all of the evolution completes?  do it before setting the value of one to yes. 
     
     if (percentageOfCompletedSteps < percentageOfPotentialEvolutions){
         NSLog(@"evolution s/b: 1");
@@ -523,7 +524,8 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
         
         NSLog(@"An error occured: %@", error);
     }
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   
 }
 
 #pragma mark rotate monster animation
@@ -607,10 +609,26 @@ if ( [self.selectedTask.taskName isEqualToString:self.taskName]) {
                          
                      }];
     
-
-    
 }
 
 
+#pragma
+#pragma prepareForEvolutionSegue
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString: @"segueToEvolve"]){
+        
+    NSSet *evolutionsSet = [self.selectedTask.monster evolutions];
+    NSSortDescriptor *sortByEvoComplete = [[NSSortDescriptor alloc] initWithKey:@"currentEvolution"
+                                                                    ascending:YES];
+    self.sortedEvolutions = [evolutionsSet sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoComplete]];
+    
+    NSLog(@"%@", self.sortedEvolutions);
+   ((EvolutionViewController*)(segue.destinationViewController)).evolutionForImages = [self.sortedEvolutions objectAtIndex:0];
+    }
+    
+}
 
 @end

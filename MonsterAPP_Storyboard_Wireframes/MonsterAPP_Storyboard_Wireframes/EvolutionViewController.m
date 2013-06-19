@@ -26,7 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.shineForRotation rotateShine];
     
+    self.evolutionDescriptionLabel.text = self.evolutionForImages.evolutionDescription;
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.evolutionDescriptionLabel.font.pointSize];
+    self.evolutionDescriptionLabel.font = lunchBoxBold;
+    self.evolutionDescriptionLabel.font = lunchBoxBold;
+
 	// Do any additional setup after loading the view.
 }
 
