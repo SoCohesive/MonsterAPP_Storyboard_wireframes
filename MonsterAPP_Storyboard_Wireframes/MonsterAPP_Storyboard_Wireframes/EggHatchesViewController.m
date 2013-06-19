@@ -30,6 +30,7 @@
     [super viewDidLoad];
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.hatchedLabel.font.pointSize];
     self.hatchedLabel.font = lunchBoxBold;
+    self.hatchedHeaderLabel.font = lunchBoxBold;
 	// Do any additional setup after loading the view.
     
 }
@@ -105,19 +106,29 @@
     self.evolution1.thumbnailName = @"turtling-ev1-thumbnail.png";
     self.evolution1.eggImageName = @"firstEgg.png";
     self.evolution1.monster = self.monster;
+    [self.monster addEvolutionsObject:self.evolution1];
+
     
     //create managedObject
     self.evolution2 = [NSEntityDescription insertNewObjectForEntityForName:@"Evolution" inManagedObjectContext:managedObjectContext];
     
     //set managedObject properties
-    self.evolution2.evolutionNumber = [NSNumber numberWithInt:1];
+    self.evolution2.evolutionNumber = [NSNumber numberWithInt:2];
     self.evolution2.evolutionDescription=@"Your turtling grew a tail! Now he's a tuserpent.";
     self.evolution2.thumbnailName = @"turtling-ev2-thumbnail.png";
     self.evolution2.monster = self.monster;
-    
-    [self.monster addEvolutionsObject:self.evolution1];
     [self.monster addEvolutionsObject:self.evolution2];
     
+    //create managedObject
+    self.evolution3 = [NSEntityDescription insertNewObjectForEntityForName:@"Evolution" inManagedObjectContext:managedObjectContext];
+    
+    //set managedObject properties
+    self.evolution3.evolutionNumber = [NSNumber numberWithInt:3];
+    self.evolution3.evolutionDescription=@"Your tuserpent grew some interesting forelimbs.";
+    self.evolution3.thumbnailName = @"turtling-ev3-thumbnail.png";
+    self.evolution3.monster = self.monster;
+    [self.monster addEvolutionsObject:self.evolution3];
+
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         

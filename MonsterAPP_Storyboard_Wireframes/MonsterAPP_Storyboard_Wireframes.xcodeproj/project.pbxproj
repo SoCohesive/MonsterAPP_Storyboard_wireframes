@@ -68,10 +68,8 @@
 		A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */; };
 		A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E81767775E00AE7F7F /* TaskListViewController.m */; };
 		A40F336B1767C1B400E9EF58 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */; };
-		A42A1F40176FCCA10008812A /* Evolution.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F3F176FCCA10008812A /* Evolution.m */; };
 		A42A1F43176FCD280008812A /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F42176FCD280008812A /* Monster.m */; };
 		A42A1F46176FCD350008812A /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F45176FCD350008812A /* Task.m */; };
-		A42A1F49176FCD460008812A /* TaskDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F48176FCD460008812A /* TaskDetail.m */; };
 		A42A1F4C176FCD590008812A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F4B176FCD590008812A /* User.m */; };
 		A42A1F4E176FCFC10008812A /* SparkleShine-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A42A1F4D176FCFC10008812A /* SparkleShine-overlay.png */; };
 		A43ED6991766942F00BD14DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43ED6981766942F00BD14DE /* MainStoryboard.storyboard */; };
@@ -94,6 +92,14 @@
 		A4F378EF176629A700CEC7FB /* NewEggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378EE176629A700CEC7FB /* NewEggViewController.m */; };
 		A4F954FE1770A4FC00FE2554 /* monstrous-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F954FD1770A4FC00FE2554 /* monstrous-icon.png */; };
 		A4F955001770A52300FE2554 /* monstrous-icon@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F954FF1770A52300FE2554 /* monstrous-icon@2px.png */; };
+		A4F955021770FDF300FE2554 /* WelcomeMat-wormyMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F955011770FDF300FE2554 /* WelcomeMat-wormyMessage.png */; };
+		A4F955051771428100FE2554 /* turtling-ev3-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F955031771428100FE2554 /* turtling-ev3-thumbnail.png */; };
+		A4F955061771428100FE2554 /* turtling-ev3-thumbnail@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F955041771428100FE2554 /* turtling-ev3-thumbnail@2px.png */; };
+		A4F9550C177165F200FE2554 /* TaskDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9550B177165F200FE2554 /* TaskDetail.m */; };
+		A4F9550F1771663200FE2554 /* Evolution.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9550E1771663200FE2554 /* Evolution.m */; };
+		A4F955141771F14900FE2554 /* onboarding-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F955111771F14900FE2554 /* onboarding-2.png */; };
+		A4F9551917721AB200FE2554 /* onboarding-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F9551817721AB200FE2554 /* onboarding-1.png */; };
+		A4F9551D17721B8E00FE2554 /* onboarding-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F9551C17721B8E00FE2554 /* onboarding-3.png */; };
 		A4FDE61D1766332D00623BB3 /* ProjectPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */; };
 		A4FE71E917668BAE00FB60D1 /* ProjectNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FE71E817668BAE00FB60D1 /* ProjectNameVC.m */; };
 /* End PBXBuildFile section */
@@ -173,14 +179,10 @@
 		A40769E81767775E00AE7F7F /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
 		A40F33691767C1B300E9EF58 /* ProjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListViewController.h; sourceTree = "<group>"; };
 		A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectListViewController.m; sourceTree = "<group>"; };
-		A42A1F3E176FCCA10008812A /* Evolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evolution.h; sourceTree = "<group>"; };
-		A42A1F3F176FCCA10008812A /* Evolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evolution.m; sourceTree = "<group>"; };
 		A42A1F41176FCD280008812A /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		A42A1F42176FCD280008812A /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		A42A1F44176FCD350008812A /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		A42A1F45176FCD350008812A /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
-		A42A1F47176FCD460008812A /* TaskDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetail.h; sourceTree = "<group>"; };
-		A42A1F48176FCD460008812A /* TaskDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetail.m; sourceTree = "<group>"; };
 		A42A1F4A176FCD590008812A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A42A1F4B176FCD590008812A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A42A1F4D176FCFC10008812A /* SparkleShine-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SparkleShine-overlay.png"; sourceTree = "<group>"; };
@@ -211,6 +213,16 @@
 		A4F378EE176629A700CEC7FB /* NewEggViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewEggViewController.m; path = ../NewEggViewController.m; sourceTree = "<group>"; };
 		A4F954FD1770A4FC00FE2554 /* monstrous-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monstrous-icon.png"; path = "../monstrous-icon.png"; sourceTree = "<group>"; };
 		A4F954FF1770A52300FE2554 /* monstrous-icon@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monstrous-icon@2px.png"; path = "../monstrous-icon@2px.png"; sourceTree = "<group>"; };
+		A4F955011770FDF300FE2554 /* WelcomeMat-wormyMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WelcomeMat-wormyMessage.png"; sourceTree = "<group>"; };
+		A4F955031771428100FE2554 /* turtling-ev3-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev3-thumbnail.png"; sourceTree = "<group>"; };
+		A4F955041771428100FE2554 /* turtling-ev3-thumbnail@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev3-thumbnail@2px.png"; sourceTree = "<group>"; };
+		A4F9550A177165F100FE2554 /* TaskDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetail.h; sourceTree = "<group>"; };
+		A4F9550B177165F200FE2554 /* TaskDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetail.m; sourceTree = "<group>"; };
+		A4F9550D1771663200FE2554 /* Evolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evolution.h; sourceTree = "<group>"; };
+		A4F9550E1771663200FE2554 /* Evolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evolution.m; sourceTree = "<group>"; };
+		A4F955111771F14900FE2554 /* onboarding-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "onboarding-2.png"; sourceTree = "<group>"; };
+		A4F9551817721AB200FE2554 /* onboarding-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "onboarding-1.png"; sourceTree = "<group>"; };
+		A4F9551C17721B8E00FE2554 /* onboarding-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "onboarding-3.png"; sourceTree = "<group>"; };
 		A4FDE61B1766332D00623BB3 /* ProjectPickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectPickerVC.h; sourceTree = "<group>"; };
 		A4FDE61C1766332D00623BB3 /* ProjectPickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectPickerVC.m; sourceTree = "<group>"; };
 		A4FE71E717668BAE00FB60D1 /* ProjectNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectNameVC.h; sourceTree = "<group>"; };
@@ -338,6 +350,7 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4F955011770FDF300FE2554 /* WelcomeMat-wormyMessage.png */,
 				A4F954FF1770A52300FE2554 /* monstrous-icon@2px.png */,
 				A4F954FD1770A4FC00FE2554 /* monstrous-icon.png */,
 				A4744F9C176F52C6004A55E9 /* turtlingEvolutions */,
@@ -368,6 +381,9 @@
 		29F1DF7D176C227500FFB46F /* Onboarding Images */ = {
 			isa = PBXGroup;
 			children = (
+				A4F9551C17721B8E00FE2554 /* onboarding-3.png */,
+				A4F955111771F14900FE2554 /* onboarding-2.png */,
+				A4F9551817721AB200FE2554 /* onboarding-1.png */,
 				29F1DF7E176C22B000FFB46F /* WelcomeMat_whitebg.png */,
 				29F1DF80176C22F900FFB46F /* DoorKnob_test.png */,
 				29F1DF89176C32A000FFB46F /* step1.png */,
@@ -425,17 +441,17 @@
 		A442FD02176ABA70006E71B6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				A42A1F3E176FCCA10008812A /* Evolution.h */,
-				A42A1F3F176FCCA10008812A /* Evolution.m */,
 				A42A1F41176FCD280008812A /* Monster.h */,
 				A42A1F42176FCD280008812A /* Monster.m */,
 				A42A1F44176FCD350008812A /* Task.h */,
 				A42A1F45176FCD350008812A /* Task.m */,
-				A42A1F47176FCD460008812A /* TaskDetail.h */,
-				A42A1F48176FCD460008812A /* TaskDetail.m */,
 				A42A1F4A176FCD590008812A /* User.h */,
 				A42A1F4B176FCD590008812A /* User.m */,
+				A4F9550A177165F100FE2554 /* TaskDetail.h */,
+				A4F9550B177165F200FE2554 /* TaskDetail.m */,
 				185B9F5717667AEB00F3E24B /* MonsterModel.xcdatamodeld */,
+				A4F9550D1771663200FE2554 /* Evolution.h */,
+				A4F9550E1771663200FE2554 /* Evolution.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -458,6 +474,8 @@
 		A4744F9C176F52C6004A55E9 /* turtlingEvolutions */ = {
 			isa = PBXGroup;
 			children = (
+				A4F955031771428100FE2554 /* turtling-ev3-thumbnail.png */,
+				A4F955041771428100FE2554 /* turtling-ev3-thumbnail@2px.png */,
 				A4744F9D176F52EE004A55E9 /* turtling-ev2-thumbnail@2px.png */,
 				A4744F9E176F52EE004A55E9 /* turtling-ev2-thumbnail.png */,
 				A4744F9F176F52EE004A55E9 /* turtling-ev1-thumbnail@2px.png */,
@@ -585,6 +603,12 @@
 				18FDC3ED176F85D90064368F /* Monster_Shimmer.wav in Resources */,
 				18FDC3EE176F85D90064368F /* Monster_Step.wav in Resources */,
 				18FDC3EF176F85D90064368F /* Monster_Win.wav in Resources */,
+				A4F955021770FDF300FE2554 /* WelcomeMat-wormyMessage.png in Resources */,
+				A4F955051771428100FE2554 /* turtling-ev3-thumbnail.png in Resources */,
+				A4F955061771428100FE2554 /* turtling-ev3-thumbnail@2px.png in Resources */,
+				A4F955141771F14900FE2554 /* onboarding-2.png in Resources */,
+				A4F9551917721AB200FE2554 /* onboarding-1.png in Resources */,
+				A4F9551D17721B8E00FE2554 /* onboarding-3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,11 +639,11 @@
 				293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */,
 				892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */,
 				89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */,
-				A42A1F40176FCCA10008812A /* Evolution.m in Sources */,
 				A42A1F43176FCD280008812A /* Monster.m in Sources */,
 				A42A1F46176FCD350008812A /* Task.m in Sources */,
-				A42A1F49176FCD460008812A /* TaskDetail.m in Sources */,
 				A42A1F4C176FCD590008812A /* User.m in Sources */,
+				A4F9550C177165F200FE2554 /* TaskDetail.m in Sources */,
+				A4F9550F1771663200FE2554 /* Evolution.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

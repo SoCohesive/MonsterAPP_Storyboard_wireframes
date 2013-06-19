@@ -2,7 +2,7 @@
 //  TaskDetail.m
 //  MonsterAPP_Storyboard_Wireframes
 //
-//  Created by Erin Hochstatter on 6/17/13.
+//  Created by Erin Hochstatter on 6/18/13.
 //  Copyright (c) 2013 Sonam Dhingra. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @dynamic stepXP;
 @dynamic taskID;
 @dynamic userID;
+@dynamic possStepXP;
 @dynamic task;
 
 @end

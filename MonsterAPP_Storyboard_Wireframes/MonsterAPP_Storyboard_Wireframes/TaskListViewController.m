@@ -22,6 +22,10 @@
     
 }
 
+@property (strong, nonatomic) NSNumber *totalActualXP;
+@property (strong, nonatomic) NSNumber *totalPossibleXP;
+@property (strong, nonatomic) NSArray *sortedEvolutions;
+
 -(void)chooseTaskList;
 -(void)toggleEdit;
 -(void) setUpPointsArray;
@@ -52,10 +56,30 @@
     [super viewDidLoad];
     
     self.navigationItem.title = self.selectedTask.taskName;
+    NSLog(@"the selected project is %@",self.selectedTask.taskName);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    NSString *dueString = [dateFormatter stringFromDate:self.selectedTask.projectedEndDate];
+    self.dateLabel.text = dueString;
+
+    //sum up potential XP
+    NSSet *possibleXPSet = self.selectedTask.taskDetails;
+    self.totalPossibleXP = [possibleXPSet valueForKeyPath:@"@sum.possStepXP"];
+    self.selectedTask.possibleXP = self.totalPossibleXP;
     
+
     NSLog(@"the existing task in task list has %@",self.selectedTask);
     //self.dateLabel.text = self.selectedTask.dateCreated;
 
+    //sum up potential XP
+    NSSet *actualXPSet = self.selectedTask.taskDetails;
+    self.totalActualXP = [actualXPSet valueForKeyPath:@"@sum.stepXP"];
+    self.selectedTask.possibleXP = self.totalActualXP;
+
+
+    NSString *xpString = [self.selectedTask.actualXP stringValue];
+    self.xpLabel.text =xpString;
+    
     //Set up edit/done button
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem.title = @"Edit";
@@ -89,6 +113,7 @@
                                     repeats:NO];
 }
 
+
 #pragma add custom left bar nav button
 -(void) setNavigationLogic {
     
@@ -108,6 +133,7 @@
     
     self.pointsArray =[[NSMutableArray alloc] initWithObjects:@"50",@"100",@"500",@"250",@"20", nil];
 }
+
 
 #pragma mark set up keyboard response for textfield entry and add text to the array
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -138,7 +164,11 @@
             pointString = self.pointsArray[pointsIndexPath];
             NSNumberFormatter *formatter= [[NSNumberFormatter alloc] init];
             [formatter setNumberStyle:NSNumberFormatterNoStyle];
-            newStep.stepXP= [formatter numberFromString:pointString];
+            //newStep.stepXP= [formatter numberFromString:pointString];
+            newStep.possStepXP = [formatter numberFromString:pointString];
+            int totalPossXPInt = [self.totalPossibleXP intValue]+ [newStep.possStepXP intValue];
+            self.totalPossibleXP = [NSNumber numberWithInt:totalPossXPInt];
+
             
             NSError *error = nil;
             if (![managedObjectContext save:&error]) {
@@ -146,7 +176,7 @@
                 NSLog(@"An error occured: %@", error);
             }
             
-            NSLog(@"the steps array has %@",self.stepsArray);
+           // NSLog(@"the steps array has %@",self.stepsArray);
             
         };
         
@@ -407,7 +437,7 @@
 //    }
     
     UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
-    pointsLabel.text = [step.stepXP stringValue];
+    pointsLabel.text = [step.possStepXP stringValue];
     
     UILabel *stepsLabel = (UILabel *) [cell viewWithTag:1];
     stepsLabel.text = step.stepDetail;
@@ -420,7 +450,6 @@
 #pragma mark select row action
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
     
     UITableViewCell *cell = [self.taskTable cellForRowAtIndexPath:indexPath];
     
@@ -436,21 +465,69 @@
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
     step.stepCompleted = [NSNumber numberWithInt:1];
     
+    NSLog (@"actualxp: %@", self.selectedTask.actualXP);
+    //set actual xp to potential.
+    step.stepXP = step.possStepXP;
+    NSLog(@"actual step HP: %@", step.stepXP);
+    int totalActualXPInt = [self.totalActualXP intValue]+ [step.stepXP intValue];
+    self.totalActualXP = [NSNumber numberWithInt:totalActualXPInt];
+
+    // i put this here because it needs access to step.
+    //the number of points per evolution, relates to a completion percentage
+    //the actual xp / possible xp, creates a percentage of points completed.
+    
+    int updatedTaskXP = [self.selectedTask.actualXP intValue]+ [step.stepXP intValue];
+
+    NSLog(@"updated task XP: %d", updatedTaskXP);
+    NSLog(@" total poss%@", self.totalPossibleXP);
+    
+    float percentageOfCompletedSteps = updatedTaskXP/[self.totalPossibleXP floatValue];
+    NSLog(@"percent of tasks complete:%f", percentageOfCompletedSteps);
+    
+    float percentageOfPotentialEvolutions= [self.selectedTask.monster.evolutions count]*.1f;
+    NSLog(@"percent of evolutions:%f", percentageOfPotentialEvolutions);
+    
+    float justToKnow = percentageOfPotentialEvolutions * [self.totalPossibleXP floatValue];
+    NSLog(@"this should probably tell me the point threshhold for evolution 1, 2 is this x2, etc.: %f", justToKnow);
+   
+    //creates array of evolutions, sorted by number, so that [0] should be evolution1, etc.?
+    NSSet *evolutionsSet = [self.selectedTask.monster evolutions];
+    NSSortDescriptor *sortByEvoNumber = [[NSSortDescriptor alloc] initWithKey:@"evolutionNumber"
+                                                                   ascending:YES];
+    self.sortedEvolutions = [evolutionsSet sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoNumber]];
+
+    //can i clear all of the evolution completes?  do it before setting the value of one to yes. 
+    
+    if (percentageOfCompletedSteps < percentageOfPotentialEvolutions){
+        NSLog(@"evolution s/b: 1");
+        self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
+        [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+        ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:YES];
+        ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:NO];
+        
+    } else if (percentageOfCompletedSteps < (percentageOfPotentialEvolutions*2)){
+        NSLog(@"evolution s/b: 2");
+        self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
+        [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+        ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:YES];
+        ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:NO];
+        
+    } else if (percentageOfCompletedSteps <percentageOfPotentialEvolutions*3){
+        NSLog(@"evolution s/b: 2");
+        self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
+        [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+        ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:YES];    }
+    
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         
         NSLog(@"An error occured: %@", error);
     }
     
-}
-
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"segueToEvolve"]) {
-        
-        NSLog(@" SEGUE to evolve worked");
-        
-    }
 }
 
 #pragma mark rotate monster animation
