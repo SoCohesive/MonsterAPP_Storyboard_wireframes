@@ -9,6 +9,7 @@
 #import "EggHatchesViewController.h"
 #import "TaskListViewController.h"
 #import "AppDelegate.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface EggHatchesViewController ()
 
@@ -50,6 +51,16 @@
     self.nameButton.titleLabel.font = lunchBoxBold;
     
     [self hatchRightEgg];
+    
+    
+    SystemSoundID soundID2;
+    NSString *soundFile2 = [[NSBundle mainBundle]
+                            pathForResource:@"Monster_Hatch" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile2]
+									 , &soundID2);
+    AudioServicesPlaySystemSound(soundID2);
     
     
 }
