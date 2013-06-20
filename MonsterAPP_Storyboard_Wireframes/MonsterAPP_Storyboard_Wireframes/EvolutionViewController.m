@@ -7,6 +7,7 @@
 //
 
 #import "EvolutionViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface EvolutionViewController ()
 
@@ -34,6 +35,15 @@
     self.evolutionDescriptionLabel.font = lunchBoxBold;
 
 	// Do any additional setup after loading the view.
+    
+    SystemSoundID soundID;
+    NSString *soundFile = [[NSBundle mainBundle]
+						   pathForResource:@"Monster_Step" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile]
+									 , &soundID);
+    AudioServicesPlaySystemSound(soundID);
 }
 
 - (void)didReceiveMemoryWarning
