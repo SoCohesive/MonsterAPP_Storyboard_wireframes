@@ -19,7 +19,6 @@
     NSString    *selectionString;
     NSDate      *pickerDate;
     NSDate      *currentDate;
-    User        *currentUser;
 }
 
 -(void)chooseNameRequest;
@@ -44,7 +43,6 @@
     [self formatTextFields];
     [self chooseNameRequest];
     [self chooseDueQuestion];
-    [self fetchCurrentUser];
     
     pickerDate = [self.datePicker date];
     selectionString = [[NSString alloc] initWithFormat:@"%@", [pickerDate descriptionWithLocale:[NSLocale currentLocale]]];
@@ -161,25 +159,6 @@
 #pragma 
 #pragma CoreData 
 
--(void)fetchCurrentUser
-{
-    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSError *error = nil;
-    NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (fetchedObjects == nil) {
-        NSLog(@"user fetch error");
-    }
-    
-    currentUser = fetchedObjects.lastObject;
-
-}
-
 -(void)addTask
 {
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
@@ -196,7 +175,7 @@
     self.currentTask.taskType= self.projectTypeForName;
     self.currentTask.actualHP = [NSNumber numberWithInt: 50];
     self.currentTask.actualXP = [NSNumber numberWithInt:50];
-    self.currentTask.user = currentUser;
+    self.currentTask.user = self.projNameUser;
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -204,7 +183,7 @@
         NSLog(@"Could not save task: %@", error);
     }
     
-    [currentUser addTasksObject:self.currentTask];
+    [self.projNameUser addTasksObject:self.currentTask];
    
     //once this works, we should prevent the back button from saving over it, and do some kind of edit instead.
     //when the project is saved, we should assign a new monster, and save the monster name on the next screen.
@@ -288,7 +267,8 @@
 
     [self addTask];
     
-    //these will go away
+
+    ((EggHatchesViewController*)(segue.destinationViewController)).eggHatchUser = self.projNameUser;
     ((EggHatchesViewController*)(segue.destinationViewController)).taskProjectType = self.projectTypeForName;
     ((EggHatchesViewController*)(segue.destinationViewController)).taskTitle = self.titleTextField.text;
     

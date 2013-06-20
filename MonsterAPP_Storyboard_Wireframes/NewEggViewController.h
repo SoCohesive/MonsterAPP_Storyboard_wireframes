@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *projectTypeName;
 @property (strong, nonatomic) IBOutlet UILabel *tapInstructionLabel;
 @property (strong, nonatomic) IBOutlet SparkleImageView *sparkleImage;
+@property (strong, nonatomic) User *eggUser;
 
 @property (strong, nonatomic) NSString *monsterType;
 @end

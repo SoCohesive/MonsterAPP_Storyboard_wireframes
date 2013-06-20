@@ -95,6 +95,9 @@
     
     NSLog(@"PickedProject as sent to egg -->%@",((NewEggViewController*)(segue.destinationViewController)).projectTypeName );
     
+    ((NewEggViewController*)(segue.destinationViewController)).eggUser=self.projPickerCurrentUser;
+    
+    NSLog(@"User sent to Egg -->%@",((NewEggViewController*)(segue.destinationViewController)).eggUser);
 }
 
 

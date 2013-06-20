@@ -28,10 +28,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self registerForKeyboardNotifications];
+    
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.hatchedLabel.font.pointSize];
     self.hatchedLabel.font = lunchBoxBold;
     self.hatchedHeaderLabel.font = lunchBoxBold;
-	// Do any additional setup after loading the view.
+    
+    self.monsterNameField.clearsOnInsertion = YES;
+    self.monsterNameField.layer.cornerRadius=8.0f;
+    self.monsterNameField.layer.masksToBounds=YES;
+    self.monsterNameField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
+    self.monsterNameField.layer.borderWidth= 1.0f;
+    self.monsterNameField.text = @"Let's give that monster a name.";
+    
+    self.nameButton.layer.cornerRadius = 8.0f;
+    self.nameButton.layer.masksToBounds = YES;
+    self.nameButton.tintColor = [UIColor purpleColor];
+    //colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0];
+    self.nameButton.titleLabel.font = lunchBoxBold;
     
 }
 
@@ -56,6 +70,8 @@
     ((TaskListViewController*)(segue.destinationViewController)).taskType = self.taskProjectType;
     ((TaskListViewController*)(segue.destinationViewController)).taskDueDate =self.taskDueString;
     ((TaskListViewController*)(segue.destinationViewController)).taskName = self.taskTitle;
+    ((TaskListViewController*)(segue.destinationViewController)).taskListUser = self.eggHatchUser;
+
     
 }
 
@@ -63,7 +79,7 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.monsterNameField resignFirstResponder];
-    
+    [self performSegueWithIdentifier:@"segueToTaskList" sender:self];
     return YES;
 }
 
@@ -136,6 +152,51 @@
     }
     
    }
+
+#pragma
+#pragma slideView for Keyboard Space
+//from documentation
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.scrollViewForKeyboard.contentInset = contentInsets;
+    self.scrollViewForKeyboard.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height+105;
+    CGPoint origin = self.monsterNameField.frame.origin;
+    origin.y -= self.scrollViewForKeyboard.contentOffset.y;
+    if (!CGRectContainsPoint(aRect, origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.monsterNameField.frame.origin.y-(aRect.size.height));
+        [self.scrollViewForKeyboard setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollViewForKeyboard.contentInset = contentInsets;
+    self.scrollViewForKeyboard.scrollIndicatorInsets = contentInsets;
+}
 
 
 @end

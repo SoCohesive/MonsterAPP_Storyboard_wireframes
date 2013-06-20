@@ -46,4 +46,5 @@
 @property (strong,nonatomic) NSMutableArray *pointsArray;
 @property (strong,nonatomic) NSMutableArray *stepsArray;
 
+@property (strong, nonatomic) User *taskListUser;
 @end

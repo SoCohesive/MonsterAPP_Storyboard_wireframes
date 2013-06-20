@@ -165,10 +165,13 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
     
         
         NSSet *evolutions = [self.existingTask.monster evolutions];
-        //sort, or use value to get highest with evolutionAchived tag, which does not yet exist
-        NSMutableArray *evolutionsArray = [NSMutableArray arrayWithArray:[evolutions allObjects]];
-        self.thumbPath = ((Evolution*)evolutionsArray[0]).thumbnailName ;
+        NSSortDescriptor *sortByEvoComplete = [[NSSortDescriptor alloc] initWithKey:@"currentEvolution"
+            ascending:NO];
         
+        NSArray *sortedEvolutions = [evolutions sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoComplete]];
+        
+        self.thumbPath = ((Evolution*)sortedEvolutions[0]).thumbnailName;
+        NSLog(@"evolution marked as current %@", ((Evolution*)sortedEvolutions[0]).evolutionDescription);
         NSLog(@"thumbPath: %@", self.thumbPath);
         
         UIImage *cellThumb = [UIImage imageNamed:self.thumbPath];
@@ -227,7 +230,7 @@ if ([segue.identifier isEqualToString:@"segueToExistingTaskDetail"]) {
     }
     
 if ([segue.identifier isEqualToString:@"segueToCreateProject"]) {
-    
+    ((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser = self.currentUser;
     NSLog(@"making new project");
     }
     

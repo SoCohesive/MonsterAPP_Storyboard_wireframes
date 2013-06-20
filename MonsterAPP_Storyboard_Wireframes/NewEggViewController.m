@@ -130,7 +130,7 @@
     
     ((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName = self.projectTypeName;
     ((ProjectNameVC*)(segue.destinationViewController)).monsterKind = self.monsterType;
-    
+    ((ProjectNameVC*)(segue.destinationViewController)).projNameUser = self.eggUser;
     NSLog(@"ProjectType sent to Name View -->%@",((ProjectNameVC*)(segue.destinationViewController)).projectTypeForName);
     
 }

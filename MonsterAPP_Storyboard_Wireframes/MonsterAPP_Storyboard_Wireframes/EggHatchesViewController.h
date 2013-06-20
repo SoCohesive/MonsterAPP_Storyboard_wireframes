@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <QuartzCore/QuartzCore.h>
 #import "Task.h"
 #import "Monster.h"
 #import "Evolution.h"
 
 
 @interface EggHatchesViewController : UIViewController<UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollViewForKeyboard;
 @property (strong, nonatomic) IBOutlet UILabel *hatchedHeaderLabel;
 @property (strong, nonatomic) IBOutlet UILabel *hatchedLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *monsterNameField;
 @property (strong, nonatomic) NSString *monsterType;
 @property (strong, nonatomic) Monster *monster;
+
+@property (strong, nonatomic) User *eggHatchUser;
 
 @property (strong, nonatomic) Evolution *evolution1;
 @property (strong, nonatomic) Evolution *evolution2;
@@ -30,6 +34,8 @@
 @property (strong, nonatomic) NSString *taskTitle;
 @property (strong, nonatomic) Task *task;
 
+
 - (IBAction)enterNameButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *nameButton;
 
 @end

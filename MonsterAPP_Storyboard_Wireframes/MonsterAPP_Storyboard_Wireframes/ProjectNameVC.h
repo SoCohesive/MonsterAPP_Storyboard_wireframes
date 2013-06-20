@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString    *taskTitleEntered;
 @property (strong, nonatomic) NSString    *monsterKind;
 @property (strong, nonatomic) Task        *currentTask;
+@property (strong, nonatomic) User *projNameUser;
 
 @property (strong, nonatomic)   IBOutlet    UITextField *titleTextField;
 @property (strong, nonatomic)   IBOutlet    UITextField *dateEntryField;

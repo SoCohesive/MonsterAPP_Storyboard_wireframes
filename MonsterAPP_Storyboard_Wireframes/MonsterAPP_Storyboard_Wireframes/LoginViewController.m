@@ -135,7 +135,7 @@
             
             NSLog(@"An error occured: %@", error);
         }
-        
+         [self performSegueWithIdentifier:@"segueToPicker" sender:self];
     }
     return YES;
 }
@@ -187,6 +187,16 @@
         
         NSLog(@"An error occured: %@", error);
     }
-
+currentUser = testUser;
+NSLog(@"currentUser%@", currentUser);
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser = currentUser;
+    
+    NSLog(@"User sent to Name View -->%@",((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser);
+    
+}
+
 @end

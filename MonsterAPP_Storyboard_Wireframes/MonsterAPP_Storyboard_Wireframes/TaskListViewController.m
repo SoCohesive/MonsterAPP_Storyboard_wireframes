@@ -123,7 +123,7 @@
       ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
         
       self.navigationController.viewControllers = @[projectListVC,self];
-      
+      projectListVC.currentUser = self.taskListUser;
      // projectListVC.existingTask = self.selectedTask;
 
   }
@@ -132,7 +132,7 @@
 #pragma mark add points
 -(void) setUpPointsArray {
     
-    self.pointsArray =[[NSMutableArray alloc] initWithObjects:@"50",@"100",@"500",@"250",@"20", nil];
+    self.pointsArray =[[NSMutableArray alloc] initWithObjects:@"50",@"100",@"150",@"75",@"25", nil];
 }
 
 
@@ -527,7 +527,7 @@
         NSLog(@"An error occured: %@", error);
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-   
+    NSLog(@"evolutions at save; %@", self.sortedEvolutions);
 }
 
 #pragma mark rotate monster animation
@@ -624,10 +624,10 @@
         
     NSSet *evolutionsSet = [self.selectedTask.monster evolutions];
     NSSortDescriptor *sortByEvoComplete = [[NSSortDescriptor alloc] initWithKey:@"currentEvolution"
-                                                                    ascending:YES];
+                                                                    ascending:NO];
     self.sortedEvolutions = [evolutionsSet sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoComplete]];
     
-    NSLog(@"%@", self.sortedEvolutions);
+    NSLog(@"TaskListVC SortedEvol.%@", self.sortedEvolutions);
    ((EvolutionViewController*)(segue.destinationViewController)).evolutionForImages = [self.sortedEvolutions objectAtIndex:0];
     }
     

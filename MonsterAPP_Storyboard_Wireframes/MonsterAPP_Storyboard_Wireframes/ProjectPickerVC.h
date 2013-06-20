@@ -11,9 +11,8 @@
 
 @interface ProjectPickerVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-{
-    User *projPickerCurrentUser;
-}
+
+@property (strong, nonatomic) User *projPickerCurrentUser;
 @property NSMutableArray *projectTypes;
 @property (strong, nonatomic) IBOutlet UITableView *projectTypesTable;
 @property (strong, nonatomic) NSString *projectTemplateName;

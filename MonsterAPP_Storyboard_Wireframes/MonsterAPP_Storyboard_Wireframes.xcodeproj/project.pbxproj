@@ -86,6 +86,7 @@
 		A485E1411768E1CE00ED06DC /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E1401768E1CE00ED06DC /* OnboardingViewController.m */; };
 		A4DF683C17692E4E00A8A5FC /* CreateNewProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DF683B17692E4E00A8A5FC /* CreateNewProjectCell.m */; };
 		A4EC77DF1769F20000892EF3 /* ExistingProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EC77DE1769F20000892EF3 /* ExistingProjectCell.m */; };
+		A4F36DB717735953005A10DF /* NameMonsterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DB617735953005A10DF /* NameMonsterButton.png */; };
 		A4F378E21766268200CEC7FB /* firstEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E11766268200CEC7FB /* firstEgg.png */; };
 		A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E41766268E00CEC7FB /* SparkleShine.png */; };
 		A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378E8176627E300CEC7FB /* SparkleImageView.m */; };
@@ -205,6 +206,7 @@
 		A4DF683B17692E4E00A8A5FC /* CreateNewProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewProjectCell.m; sourceTree = "<group>"; };
 		A4EC77DD1769F20000892EF3 /* ExistingProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingProjectCell.h; sourceTree = "<group>"; };
 		A4EC77DE1769F20000892EF3 /* ExistingProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingProjectCell.m; sourceTree = "<group>"; };
+		A4F36DB617735953005A10DF /* NameMonsterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NameMonsterButton.png; sourceTree = "<group>"; };
 		A4F378E11766268200CEC7FB /* firstEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstEgg.png; sourceTree = "<group>"; };
 		A4F378E41766268E00CEC7FB /* SparkleShine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SparkleShine.png; sourceTree = "<group>"; };
 		A4F378E7176627E300CEC7FB /* SparkleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleImageView.h; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		294B082E1763631B00C5DFFA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4F36DB617735953005A10DF /* NameMonsterButton.png */,
 				A4F955011770FDF300FE2554 /* WelcomeMat-wormyMessage.png */,
 				A4F954FF1770A52300FE2554 /* monstrous-icon@2px.png */,
 				A4F954FD1770A4FC00FE2554 /* monstrous-icon.png */,
@@ -609,6 +612,7 @@
 				A4F955141771F14900FE2554 /* onboarding-2.png in Resources */,
 				A4F9551917721AB200FE2554 /* onboarding-1.png in Resources */,
 				A4F9551D17721B8E00FE2554 /* onboarding-3.png in Resources */,
+				A4F36DB717735953005A10DF /* NameMonsterButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
