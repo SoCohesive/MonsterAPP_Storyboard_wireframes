@@ -38,12 +38,11 @@
 
 - (void)viewDidLoad
 {    //perfect world, we would have a way to randomly select our monster from the roster.
-    [self.sparkleImage setBackgroundColor:[UIColor blueColor]];
-    
-    [self.sparkleImage rotateShine];
-    
     [super viewDidLoad];
-    
+
+    [self performSelector:@selector(shine) withObject:nil afterDelay:0.5f];
+
+        
     //eventually this string will come from an array of monster names.
     self.monsterType = @"turtling";
 
@@ -70,6 +69,13 @@
 									 , &soundID2);
     AudioServicesPlaySystemSound(soundID2);
 }
+
+
+-(void)shine
+{
+    [self.sparkleImage rotateShine];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

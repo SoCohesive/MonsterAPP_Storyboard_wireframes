@@ -12,7 +12,8 @@
 
 @interface EvolutionViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *evolutionDescriptionLabel;
-@property (strong, nonatomic) IBOutlet UIView *MonsterView;
 @property (strong, nonatomic) IBOutlet SparkleImageView *shineForRotation;
+@property (strong, nonatomic) IBOutlet UIImageView *faceView;
+@property (strong, nonatomic) IBOutlet UIImageView *wobbleView;
 @property (strong, nonatomic) Evolution *evolutionForImages;
 @end

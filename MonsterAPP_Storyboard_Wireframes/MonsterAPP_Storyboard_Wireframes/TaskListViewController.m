@@ -19,7 +19,7 @@
     // TaskDetail *step;
     NSString *pointString;
     NSString *stepString;
-    
+    ProjectListViewController *projectListVC;
     
 }
 
@@ -118,9 +118,9 @@
 #pragma add custom left bar nav button
 -(void) setNavigationLogic {
     
-  if ([self.selectedTask.taskName isEqualToString:self.taskName]) {
+  if ( projectListVC != nil) {
         
-      ProjectListViewController *projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
+       projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
         
       self.navigationController.viewControllers = @[projectListVC,self];
       projectListVC.currentUser = self.taskListUser;
