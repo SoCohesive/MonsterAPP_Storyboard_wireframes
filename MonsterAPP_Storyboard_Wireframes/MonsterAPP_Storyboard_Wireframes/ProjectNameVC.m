@@ -50,7 +50,7 @@
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.titleLabel.font.pointSize];
     self.titleLabel.font = lunchBoxBold;
     
-    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
     
 }
 
@@ -107,8 +107,13 @@
     if (textField == self.titleTextField) {
         self.titleTextField.delegate = self;
     
+if ( [self.titleTextField.text length] > 0) {
+    
         [self.titleTextField resignFirstResponder];
         [self.dateEntryField becomeFirstResponder];
+    
+}
+        self.navigationItem.rightBarButtonItem.enabled = YES;
     }
     return YES;
 }

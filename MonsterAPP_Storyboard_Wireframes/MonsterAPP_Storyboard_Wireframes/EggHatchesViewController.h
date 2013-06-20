@@ -35,7 +35,9 @@
 @property (strong, nonatomic) Task *task;
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *leftEggImage;
 - (IBAction)enterNameButton:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *nameButton;
+@property (weak, nonatomic) IBOutlet UIImageView *rightEggImage;
 
 @end

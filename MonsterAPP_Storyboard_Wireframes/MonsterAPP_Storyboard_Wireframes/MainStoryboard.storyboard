@@ -486,8 +486,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="hatchedHeaderLabel" destination="d6S-S7-tKk" id="73Z-vi-LDg"/>
                         <outlet property="hatchedLabel" destination="nVV-rJ-1Mo" id="bQi-UT-qqw"/>
+                        <outlet property="leftEggImage" destination="4fh-8A-Zmb" id="pjS-Lq-oZa"/>
                         <outlet property="monsterNameField" destination="x6p-e1-x8E" id="bAQ-RI-gvn"/>
                         <outlet property="nameButton" destination="czZ-mN-zso" id="2A8-Ii-njE"/>
+                        <outlet property="rightEggImage" destination="mCJ-9G-04u" id="rQD-tH-LKM"/>
                         <outlet property="scrollViewForKeyboard" destination="uel-0n-YHV" id="EAe-TL-IjW"/>
                         <segue destination="BxA-Tk-9iq" kind="push" identifier="segueToTaskList" id="h8v-6d-2Cj"/>
                     </connections>
@@ -993,8 +995,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="enterNameButton:"/>
                 <relationship kind="outlet" name="hatchedHeaderLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hatchedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftEggImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="monsterNameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightEggImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="scrollViewForKeyboard" candidateClass="UIScrollView"/>
             </relationships>
         </class>
