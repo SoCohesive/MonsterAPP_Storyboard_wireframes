@@ -118,15 +118,15 @@
 #pragma add custom left bar nav button
 -(void) setNavigationLogic {
     
-  if ( projectListVC != nil) {
+    if (projectListVC != nil) {
         
-       projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
+        projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
         
-      self.navigationController.viewControllers = @[projectListVC,self];
-      projectListVC.currentUser = self.taskListUser;
-     // projectListVC.existingTask = self.selectedTask;
+        self.navigationController.viewControllers = @[projectListVC,self];
+        projectListVC.currentUser = self.taskListUser;
+        
+    } 
 
-  }
 
 }
 #pragma mark add points
@@ -461,6 +461,7 @@
     
         
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+    
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
     step.stepCompleted = [NSNumber numberWithInt:1];
     
@@ -479,7 +480,8 @@
 
     NSLog(@"updated task XP: %d", updatedTaskXP);
     NSLog(@" total poss%@", self.totalPossibleXP);
-    //self.xpLabel.text =[NSstring st]updatedTaskXP;
+    self.xpLabel.text =[[NSNumber numberWithInt:updatedTaskXP] stringValue];
+    
     
     float percentageOfCompletedSteps = updatedTaskXP/[self.totalPossibleXP floatValue];
     NSLog(@"percent of tasks complete:%f", percentageOfCompletedSteps);

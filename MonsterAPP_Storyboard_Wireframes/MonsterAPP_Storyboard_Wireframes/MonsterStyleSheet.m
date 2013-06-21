@@ -39,6 +39,22 @@
     [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackDefaultImg forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackSelectImg forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2) forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
+
+    
+    UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
+
+    UIImage *barButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton-tapped.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
+    
+    
+    [[UIBarButtonItem appearance] setBackgroundImage:barButtonImage
+                                            forState:UIControlStateNormal
+                                               style:UIBarButtonItemStyleBordered
+                                          barMetrics:UIBarMetricsDefault];
+    
+    [[UIBarButtonItem appearance] setBackgroundImage:barButtonTappedImage
+                                            forState:UIControlStateSelected
+                                               style:UIBarButtonItemStyleBordered
+                                          barMetrics:UIBarMetricsDefault];
     
 /*#pragma
 #pragma editButton

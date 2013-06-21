@@ -96,6 +96,10 @@
 		A4F36DCD17739927005A10DF /* turtling-ev1-for-TaskView-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DC617739927005A10DF /* turtling-ev1-for-TaskView-3.png */; };
 		A4F36DCE17739927005A10DF /* turtling-ev1-for-TaskView-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DC717739927005A10DF /* turtling-ev1-for-TaskView-2.png */; };
 		A4F36DCF17739927005A10DF /* turtling-ev1-for-TaskView-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DC817739927005A10DF /* turtling-ev1-for-TaskView-1.png */; };
+		A4F36DD41773A269005A10DF /* monsterNavBar-stretchyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DD01773A269005A10DF /* monsterNavBar-stretchyButton.png */; };
+		A4F36DD51773A269005A10DF /* monsterNavBar-stretchyButton-tapped.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DD11773A269005A10DF /* monsterNavBar-stretchyButton-tapped.png */; };
+		A4F36DD61773A269005A10DF /* monsterNavBar-stretchyButton@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DD21773A269005A10DF /* monsterNavBar-stretchyButton@2px.png */; };
+		A4F36DD71773A269005A10DF /* monsterNavBar-stretchyButton-tapped@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F36DD31773A269005A10DF /* monsterNavBar-stretchyButton-tapped@2px.png */; };
 		A4F378E21766268200CEC7FB /* firstEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E11766268200CEC7FB /* firstEgg.png */; };
 		A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F378E41766268E00CEC7FB /* SparkleShine.png */; };
 		A4F378E9176627E300CEC7FB /* SparkleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F378E8176627E300CEC7FB /* SparkleImageView.m */; };
@@ -225,6 +229,10 @@
 		A4F36DC617739927005A10DF /* turtling-ev1-for-TaskView-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev1-for-TaskView-3.png"; sourceTree = "<group>"; };
 		A4F36DC717739927005A10DF /* turtling-ev1-for-TaskView-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev1-for-TaskView-2.png"; sourceTree = "<group>"; };
 		A4F36DC817739927005A10DF /* turtling-ev1-for-TaskView-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev1-for-TaskView-1.png"; sourceTree = "<group>"; };
+		A4F36DD01773A269005A10DF /* monsterNavBar-stretchyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-stretchyButton.png"; sourceTree = "<group>"; };
+		A4F36DD11773A269005A10DF /* monsterNavBar-stretchyButton-tapped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-stretchyButton-tapped.png"; sourceTree = "<group>"; };
+		A4F36DD21773A269005A10DF /* monsterNavBar-stretchyButton@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-stretchyButton@2px.png"; sourceTree = "<group>"; };
+		A4F36DD31773A269005A10DF /* monsterNavBar-stretchyButton-tapped@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterNavBar-stretchyButton-tapped@2px.png"; sourceTree = "<group>"; };
 		A4F378E11766268200CEC7FB /* firstEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstEgg.png; sourceTree = "<group>"; };
 		A4F378E41766268E00CEC7FB /* SparkleShine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SparkleShine.png; sourceTree = "<group>"; };
 		A4F378E7176627E300CEC7FB /* SparkleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleImageView.h; sourceTree = "<group>"; };
@@ -428,6 +436,10 @@
 		89A0EF25176EE476001ADFE8 /* NavBarImages */ = {
 			isa = PBXGroup;
 			children = (
+				A4F36DD01773A269005A10DF /* monsterNavBar-stretchyButton.png */,
+				A4F36DD11773A269005A10DF /* monsterNavBar-stretchyButton-tapped.png */,
+				A4F36DD21773A269005A10DF /* monsterNavBar-stretchyButton@2px.png */,
+				A4F36DD31773A269005A10DF /* monsterNavBar-stretchyButton-tapped@2px.png */,
 				8918C975176E570B007421DF /* monsterNavBar-TableBackdrop.png */,
 				8918C973176E51B1007421DF /* monsterNavBar-Edit.png */,
 				89A0EF0C176ECED0001ADFE8 /* monsterNavBar-Edit@2px.png */,
@@ -649,6 +661,10 @@
 				A4F36DCD17739927005A10DF /* turtling-ev1-for-TaskView-3.png in Resources */,
 				A4F36DCE17739927005A10DF /* turtling-ev1-for-TaskView-2.png in Resources */,
 				A4F36DCF17739927005A10DF /* turtling-ev1-for-TaskView-1.png in Resources */,
+				A4F36DD41773A269005A10DF /* monsterNavBar-stretchyButton.png in Resources */,
+				A4F36DD51773A269005A10DF /* monsterNavBar-stretchyButton-tapped.png in Resources */,
+				A4F36DD61773A269005A10DF /* monsterNavBar-stretchyButton@2px.png in Resources */,
+				A4F36DD71773A269005A10DF /* monsterNavBar-stretchyButton-tapped@2px.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

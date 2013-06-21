@@ -1,3 +1,4 @@
+
 //
 //  EggHatchesViewController.m
 //  MonsterAPP_Storyboard_Wireframes
@@ -9,8 +10,11 @@
 #import "EggHatchesViewController.h"
 #import "TaskListViewController.h"
 #import "AppDelegate.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface EggHatchesViewController ()
+
+-(void) hatchRightEgg;
 
 @end
 
@@ -46,6 +50,19 @@
     self.nameButton.tintColor = [UIColor purpleColor];
     //colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0];
     self.nameButton.titleLabel.font = lunchBoxBold;
+    
+    [self hatchRightEgg];
+    
+    
+    SystemSoundID soundID2;
+    NSString *soundFile2 = [[NSBundle mainBundle]
+                            pathForResource:@"Monster_Hatch" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile2]
+									 , &soundID2);
+    AudioServicesPlaySystemSound(soundID2);
+    
     
 }
 
@@ -196,6 +213,63 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     self.scrollViewForKeyboard.contentInset = contentInsets;
     self.scrollViewForKeyboard.scrollIndicatorInsets = contentInsets;
+}
+
+-(void) hatchRightEgg {
+    
+    CALayer *rightLayer = self.rightEggImage.layer;
+    rightLayer.anchorPoint = CGPointMake(0.5, 1.0);
+    
+    CALayer *leftLayer = self.leftEggImage.layer;
+    leftLayer.anchorPoint = CGPointMake(0.5, 1.0);
+    
+    
+    //RightSide Egg position
+    CGPoint position = rightLayer.position;
+    CGFloat posX= position.x;
+    CGFloat posY = 247;
+    rightLayer.position = CGPointMake(posX, posY);
+    
+    CGPoint leftPosition = leftLayer.position;
+    CGFloat leftPosX= leftPosition.x;
+    CGFloat leftPosY = 247;
+    leftLayer.position = CGPointMake(leftPosX, leftPosY);
+    
+    [UIView animateWithDuration:.07
+                          delay: 0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         // ASK about looping through and adding degrees one at a time
+                         
+                         // for (int i=3; i < 10; i++) {
+                         
+                         [UIView setAnimationRepeatAutoreverses:YES];
+                         [UIView setAnimationRepeatCount:10];
+                         
+                         self.rightEggImage.transform = CGAffineTransformMakeRotation(1.0 * M_PI/180);
+                         self.leftEggImage.transform = CGAffineTransformMakeRotation(-1.0 * M_PI/180);
+                         
+                         
+                     }
+     
+                     completion:^(BOOL finished) {
+                         
+                         [UIView animateWithDuration:.10 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                             [UIView setAnimationRepeatAutoreverses:YES];
+                             [UIView setAnimationRepeatCount:10];
+                             
+                             self.rightEggImage.transform = CGAffineTransformMakeRotation(4.5 * M_PI/180);
+                             self.leftEggImage.transform = CGAffineTransformMakeRotation(-4.5 * M_PI/180);
+                         } completion:^(BOOL finished) {
+                             
+                             
+                         }];
+                         
+                         
+                     }];
+    
+    
 }
 
 

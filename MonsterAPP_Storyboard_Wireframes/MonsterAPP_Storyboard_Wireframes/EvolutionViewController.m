@@ -7,6 +7,7 @@
 //
 
 #import "EvolutionViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface EvolutionViewController ()
 {
@@ -28,10 +29,15 @@
 
 - (void)viewDidLoad
 {
+    //[self.shineForRotation rotateShine];
     [super viewDidLoad];
+
     self.evolutionDescriptionLabel.text = self.evolutionForImages.evolutionDescription;
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.evolutionDescriptionLabel.font.pointSize];
     self.evolutionDescriptionLabel.font = lunchBoxBold;
+    
+    NSLog(@"%@", self.evolutionForImages.evolutionNumber);
+    
     if ([self.evolutionForImages.evolutionNumber intValue]== 1) {
         
         [self performSelector:@selector(evol1Animate) withObject:nil afterDelay:.5f];
@@ -42,6 +48,15 @@
     }
 
 	// Do any additional setup after loading the view.
+    
+    SystemSoundID soundID;
+    NSString *soundFile = [[NSBundle mainBundle]
+						   pathForResource:@"Monster_Step" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+									 [NSURL fileURLWithPath:soundFile]
+									 , &soundID);
+    AudioServicesPlaySystemSound(soundID);
 }
 
 - (void)didReceiveMemoryWarning
