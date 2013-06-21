@@ -47,17 +47,15 @@
 	// Do any additional setup after loading the view.
      [self.navigationItem setHidesBackButton:YES animated:YES];
     
-    
     self.loginLabel.text= @"Login, please:";
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.loginLabel.font.pointSize];
     self.loginLabel.font = lunchBoxBold;
     
     
+
     [self formatTextFields];
     
-    NSLog(@"LunchBox: %@", [UIFont fontNamesForFamilyName:@"LunchBox"]);
-
-}
+    }
 
 - (void)didReceiveMemoryWarning
 {
@@ -65,25 +63,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-//    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
+//- (void)insertNewObject:(id)sender
+//{
+//    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+//    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+//    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+//    
+//    // If appropriate, configure the new managed object.
+//    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+////    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+//    
+//    // Save the context.
+//    NSError *error = nil;
+//    if (![context save:&error]) {
+//        // Replace this implementation with code to handle the error appropriately.
+//        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
+//}
 
 -(void)formatTextFields
 {
@@ -116,26 +114,8 @@
         //add titleTextField.text to task properties
     } else {
         
-         self.emailField.delegate = self;
-        
-        //maybe this should be a separate method, called at button and enter
-        
-        NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
-        
-        //user is our managedObject
-        User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
-        
-        testUser.firstName = self.nameField.text;
-        testUser.nickname = self.emailField.text;
-        testUser.userID = userNumber;
-        testUser.dateCreated = [NSDate date];
-        
-        NSError *error = nil;
-        if (![managedObjectContext save:&error]) {
-            
-            NSLog(@"An error occured: %@", error);
-        }
-         [self performSegueWithIdentifier:@"segueToPicker" sender:self];
+        [self saveUser];
+        [self performSegueWithIdentifier:@"segueToPicker" sender:self];
     }
     return YES;
 }
@@ -155,41 +135,29 @@
     if (fetchedObjects == nil) {
         NSLog(@"user fetch error");
     }
-    //this isn't working as of 1pm, 6/14.
-    if (fetchedObjects.count == 0){
-        
-       userNumber = [NSNumber numberWithInt: 1] ;
-        
-    } else {
-        
-        userNumber = [NSNumber numberWithInt: fetchedObjects.count +1];
-
-    }
-    //insert comparison feature here.
+        //insert comparison feature here.
 }
 
+-(void)saveUser
+{
+NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
 
+//user is our managedObject
+User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
 
+testUser.firstName = self.nameField.text;
+testUser.nickname = self.emailField.text;
+testUser.dateCreated = [NSDate date];
 
-- (IBAction)loginDoneBarButton:(id)sender {
-    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+NSError *error = nil;
+if (![managedObjectContext save:&error]) {
     
-    //user is our managedObject
-    User *testUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
-    
-    testUser.firstName = self.nameField.text;
-    testUser.nickname = self.emailField.text;
-    testUser.userID = userNumber;
-    testUser.dateCreated = [NSDate date];
-    
-    NSError *error = nil;
-    if (![managedObjectContext save:&error]) {
-        
-        NSLog(@"An error occured: %@", error);
-    }
+    NSLog(@"An error occured: %@", error);
+}
 currentUser = testUser;
 NSLog(@"currentUser%@", currentUser);
 }
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -199,4 +167,8 @@ NSLog(@"currentUser%@", currentUser);
     
 }
 
+- (IBAction)loginWithButton:(id)sender {
+    [self saveUser];
+    [self performSegueWithIdentifier:@"segueToPicker" sender:self];
+}
 @end

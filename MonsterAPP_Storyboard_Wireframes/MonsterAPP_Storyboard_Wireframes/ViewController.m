@@ -17,7 +17,12 @@
     NSString    *segueID;
     User * user;
 }
+
 -(void)fetchForLanding;
+-(void)chooseLanding;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
+
 @end
 
 @implementation ViewController

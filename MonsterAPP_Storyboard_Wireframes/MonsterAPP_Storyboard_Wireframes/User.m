@@ -2,7 +2,7 @@
 //  User.m
 //  MonsterAPP_Storyboard_Wireframes
 //
-//  Created by Erin Hochstatter on 6/17/13.
+//  Created by Erin Hochstatter on 6/21/13.
 //  Copyright (c) 2013 Sonam Dhingra. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @dynamic firstName;
 @dynamic nickname;
 @dynamic userID;
+@dynamic totalXP;
 @dynamic tasks;
 
 @end

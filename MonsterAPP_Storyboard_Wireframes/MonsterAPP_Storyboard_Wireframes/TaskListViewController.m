@@ -27,11 +27,9 @@
 @property (strong, nonatomic) NSNumber *totalPossibleXP;
 @property (strong, nonatomic) NSArray *sortedEvolutions;
 
-//-(void)chooseTaskList;
 -(void)toggleEdit;
 -(void) setUpPointsArray;
 -(void) showCheeksAnimation;
--(void) createTemplates;
 -(void) rotateMonster;
 -(void) saveData;
 -(void) setNavigationLogic;
@@ -56,6 +54,8 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"the existing task in task list has %@",self.selectedTask);
+    //self.dateLabel.text = self.selectedTask.dateCreated;
     self.navigationItem.title = self.selectedTask.taskName;
     NSLog(@"the selected project is %@",self.selectedTask.taskName);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -63,23 +63,21 @@
     NSString *dueString = [dateFormatter stringFromDate:self.selectedTask.projectedEndDate];
     self.dateLabel.text = dueString;
 
-    //sum up potential XP
+    //sum up potential XP for setting evolution thresholds
     NSSet *possibleXPSet = self.selectedTask.taskDetails;
     self.totalPossibleXP = [possibleXPSet valueForKeyPath:@"@sum.possStepXP"];
     self.selectedTask.possibleXP = self.totalPossibleXP;
     
+    //sum up actual XP for label
+    NSSet *actualXPSet = self.selectedTask.taskDetails;
+    self.totalActualXP = [actualXPSet valueForKeyPath:@"@sum.stepXP"];
+    self.selectedTask.actualXP = self.totalActualXP;
+    NSString *xpString = [self.selectedTask.actualXP stringValue];
+    self.xpLabel.text =xpString;
 
     NSLog(@"the existing task in task list has %@",self.selectedTask);
     //self.dateLabel.text = self.selectedTask.dateCreated;
-
-    //sum up potential XP
-    NSSet *actualXPSet = self.selectedTask.taskDetails;
-    self.totalActualXP = [actualXPSet valueForKeyPath:@"@sum.stepXP"];
-    self.selectedTask.possibleXP = self.totalActualXP;
-
-
-    NSString *xpString = [self.selectedTask.actualXP stringValue];
-    self.xpLabel.text =xpString;
+    
     
     //Set up edit/done button
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -115,7 +113,9 @@
 }
 
 
-#pragma add custom left bar nav button
+#pragma 
+#pragma mark create new project list view controller if coming from the new project stack.
+
 -(void) setNavigationLogic {
     
     if (projectListVC != nil) {
@@ -129,6 +129,11 @@
 
 
 }
+
+#pragma mark set label contents
+
+
+
 #pragma mark add points
 -(void) setUpPointsArray {
     
@@ -153,6 +158,7 @@
             TaskDetail *newStep = [NSEntityDescription insertNewObjectForEntityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
             newStep.stepDetail = customStepsEntered;
             newStep.stepNumber = [NSNumber numberWithInt:[self.stepsArray count]];
+            newStep.stepCreatedDate = [NSDate date];
             
             // add steps to task 
             newStep.task = self.selectedTask;
@@ -207,8 +213,8 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"stepDetail"
-                                                                   ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"stepCreatedDate"
+                                                                   ascending:NO];
     
    NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:taskDescriptors];
@@ -297,51 +303,6 @@
 }
 
 
-
-
-#pragma mark
--(void) createTemplates {
-    self.scienceTaskTemplate = [NSMutableArray arrayWithObjects:
-                                @"Choose the scientific question",
-                                @"Create hypothesis",
-                                @"Submit hypothesis to teacher",
-                                @"Interview somebody",
-                                //                                @"Based on your research, write a statement that predicts the outcome of your experiment (your hypothesis).",
-                                //                                @"Design an experiment.",
-                                //                                @"Establish a consistent procedure for conducting your experiment.",
-                                //                                @"Decide what data you need to meet your research objective and how you will collect it.",
-                                //                                @"Identify all variables that could impact your data.",
-                                //                                @"Think of how to control any variables that are not being manipulated in your experiment."
-                                //                                @"Include a control group in your experiment.",
-                                //                                @"Confirm that you have enough quality data that the research is reliable.",
-                                //                                @"Maintain notes as you conduct your experiment.",
-                                //                                @"Collect data throughout the course of your experiment.",
-                                @"Analyze data for patterns.",
-                                @"write conclusion",
-                                // @"Prepare research summary paper.",
-                                @"Prepare display board for classroom.",
-                                nil];
-    
-    
-    self.bookReptTaskTemplate = [NSMutableArray arrayWithObjects:
-                                 @"Get book from Library",
-                                 @"Study protagonist",
-                                 @"Read first three chapters",
-                                 @"Take notes on characters",
-                                 nil];
-    
-    self.testTaskTemplate = [NSMutableArray arrayWithObjects:
-                             @"Review homework",
-                             @"Make FlashCards",
-                             @"Explain topics to friends",
-                             @"Get an A!",
-                             nil];
-    
-    //[self chooseTaskList];
-    
-}
-
-
 #pragma mark edit button & actions
 -(void)toggleEdit
 {
@@ -384,18 +345,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma  chooose corresponding task list
-//-(void)chooseTaskList
-//{
-//    if ([self.taskType isEqual:@"Write a Book Report"]) {
-//        self.selectedTaskTemplate = self.bookReptTaskTemplate;
-//
-//    }else if ([self.taskType isEqual:@"Study for a Test"]){
-//        self.selectedTaskTemplate =self.testTaskTemplate;
-//    } else {
-//        self.selectedTaskTemplate = self.scienceTaskTemplate;
-//    }
-//}
+
 
 
 #pragma mark Table view data source
@@ -427,7 +377,7 @@
     
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
     
-    NSSet *steps = self.selectedTask.taskDetails;
+//    NSSet *steps = self.selectedTask.taskDetails;
 //    NSMutableArray *stepListArray = [NSMutableArray arrayWithArray:[steps allObjects]];
 //    // enumerate through array and get all steps for task
     
@@ -490,7 +440,7 @@
     NSLog(@"percent of evolutions:%f", percentageOfPotentialEvolutions);
     
     float justToKnow = percentageOfPotentialEvolutions * [self.totalPossibleXP floatValue];
-    NSLog(@"this should probably tell me the point threshhold for evolution 1, 2 is this x2, etc.: %f", justToKnow);
+    NSLog(@"points per evolution: %f", justToKnow);
    
     
     NSSet *evolutionsSet = [self.selectedTask.monster evolutions];
@@ -530,6 +480,13 @@
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"evolutions at save; %@", self.sortedEvolutions);
+
+    //slows the segue down a moment so animation doesn't catch
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+});
 }
 
 #pragma mark rotate monster animation

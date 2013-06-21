@@ -29,25 +29,27 @@
 #pragma BackButton Attributes
     //ideally, set up @2x images, landscape.
     
-    UIBarButtonItem *barButtonItemAppearance = [UIBarButtonItem appearance];
-    
     int imageSize = 44; //image width
     
     UIImage *barItemBackDefaultImg = [[UIImage imageNamed:@"monsterNavBar_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
     UIImage *barItemBackSelectImg = [[UIImage imageNamed:@"monsterNavBar_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
     
-    [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackDefaultImg forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [barButtonItemAppearance setBackButtonBackgroundImage: barItemBackSelectImg forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2) forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
-
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage: barItemBackDefaultImg
+                                                 forState:UIControlStateNormal
+                                               barMetrics:UIBarMetricsDefault];
     
-    UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage: barItemBackSelectImg
+                                                 forState:UIControlStateSelected
+                                               barMetrics:UIBarMetricsDefault];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2)
+                                                         forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
 
+    UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
     UIImage *barButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton-tapped.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
     
-    
     [[UIBarButtonItem appearance] setBackgroundImage:barButtonImage
-                                            forState:UIControlStateNormal
+                                            forState:UIControlStateNormal |UIControlStateHighlighted
                                                style:UIBarButtonItemStyleBordered
                                           barMetrics:UIBarMetricsDefault];
     
@@ -56,57 +58,6 @@
                                                style:UIBarButtonItemStyleBordered
                                           barMetrics:UIBarMetricsDefault];
     
-/*#pragma
-#pragma editButton
-    
-    UIImage *editButtonImage = [[UIImage imageNamed:@"monsterNavBar-Edit.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-    UIImage *editButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-edit_tapped.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0)
-                                               forBarMetrics:UIBarMetricsDefault];
-    
-    [[UIBarButtonItem appearance] setBackgroundImage:editButtonImage
-                                            forState:UIControlStateNormal
-                                               style:((UIBarButtonItemStyle)(UIBarButtonSystemItemEdit)) //why would this not be a pointer?
-                                          barMetrics:UIBarMetricsDefault];
-    
-    [[UIBarButtonItem appearance] setBackgroundImage:editButtonTappedImage
-                                            forState:UIControlStateSelected
-                                               style:((UIBarButtonItemStyle)(UIBarButtonSystemItemEdit))
-                                          barMetrics:UIBarMetricsDefault];
-    
-    
-#pragma 
-#pragma doneButton
-    
-    UIImage *doneButtonImage = [[UIImage imageNamed:@"monsterNavBar-done.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-    UIImage *doneButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-done_tapped.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-    
-    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackgroundImage:doneButtonTappedImage forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0) forBarMetrics:UIBarMetricsDefault];
-
-    */
-/*#pragma
-#pragma usersButton
-
-        UIImage *usersButtonImage = [[UIImage imageNamed:@"monsterNavBar-Users.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-        UIImage *usersButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-users_tapped.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, imageSize, 0, 0)];
-    
-        [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -88.0)
-                                                   forBarMetrics:UIBarMetricsDefault];
-    
-        [[UIBarButtonItem appearance] setBackgroundImage:usersButtonImage
-                                                forState:UIControlStateNormal
-                                                   style:UIBarButtonItemStyleDone<<<<<find correct selector for this one. or it may be a one off. 
-                                              barMetrics:UIBarMetricsDefault];
-    
-        [[UIBarButtonItem appearance] setBackgroundImage:usersButtonTappedImage
-                                                forState:UIControlStateSelected
-                                                   style:UIBarButtonItemStyleDone<<<<<find correct selector for this one. or it may be a one off. 
-                                              barMetrics:UIBarMetricsDefault];
-*/    
-
-  
 }
 
 

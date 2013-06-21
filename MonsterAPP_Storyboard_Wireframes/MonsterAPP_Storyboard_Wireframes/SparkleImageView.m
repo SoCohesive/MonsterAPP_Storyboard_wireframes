@@ -23,11 +23,11 @@
 -(void)rotateShine{
     
     [UIView animateWithDuration: 1.0
-                          delay: 0.2f
+                          delay: 0.01f
                         options:((UIViewAnimationOptions)(UIViewAnimationCurveEaseOut))
                      animations:^{
                          
-                         [UIView setAnimationRepeatCount:5];
+                         [UIView setAnimationRepeatCount:3];
                          self.transform = CGAffineTransformMakeRotation(135 *M_PI/180);
                      }
      

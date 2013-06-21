@@ -20,12 +20,13 @@
 {
     NSMutableArray              *projectsBySection;
     NSMutableArray              *existingTasksArray;
-    
    
 }
 
 @property (strong, nonatomic) NSFetchedResultsController  *taskResultsController;
 @property (strong, nonatomic) NSString *thumbPath;
+
+-(void)setupTasksFetchController;
 
 @end
 
@@ -45,6 +46,7 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
+    
     //do an array where we have random greetings, random between name/nickname
     NSString *welcome = [NSString stringWithFormat:@"Welcome back, %@", self.currentUser.firstName];
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.welcomeLabel.font.pointSize];
@@ -56,8 +58,18 @@
 
     [self setupTasksFetchController];
     
-    NSLog(@"the existing tasks in project list have these steps %@",self.existingTask.taskDetails);
+    NSString *projectCount = [NSString stringWithFormat:@"%d",[self.taskResultsController.fetchedObjects count]];
+    self.projectCountLabel.text = projectCount;
+
+    //sum up Total XP for label
+    NSSet *actualXPSet = self.currentUser.tasks;
+    NSNumber *totalXP = [actualXPSet valueForKeyPath:@"@sum.actualXP"];
+    self.currentUser.totalXP = totalXP;
+    NSString *xpString = [self.currentUser.totalXP stringValue];
+    self.pointCountLabel.text =xpString;
     
+    
+    NSLog(@"the existing tasks in project list have these steps %@",self.existingTask.taskDetails);
 
     [self.projectsTableView reloadData];
 }
@@ -68,7 +80,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma
+
 #pragma CoreData
 
 
@@ -78,19 +90,19 @@
     
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
-//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];  user.tasks?
+//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];  
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
   //  [taskFetchRequest setPredicate:userPredicate];
     
-//once Tasks save taskDetails, switch name to taskDetails
-    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"taskName" ascending:NO]];
+    
+    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"projectedEndDate" ascending:NO]];
     
     self.taskResultsController = [[NSFetchedResultsController alloc]
                                     initWithFetchRequest:taskFetchRequest
                                     managedObjectContext:managedObjectContext
-                                    sectionNameKeyPath:@"taskComplete" //taskComplete
+                                    sectionNameKeyPath:@"taskComplete" 
                                     cacheName:@"nil"];
    
     NSError *error;
@@ -156,14 +168,14 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
     } else {
     
     if ([[self.taskResultsController sections] objectAtIndex:0]) {
-        //confirm that this will always be completedTasks, should I use key?    
+        //confirm that this will always be completedTasks, should I use array?    
         existingProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID2 forIndexPath:indexPath];
         
         self.existingTask = [self.taskResultsController objectAtIndexPath:indexPath];
         existingProjectCell.existingTitle.text = self.existingTask.taskName;
         existingProjectCell.subtitle.text = self.existingTask.taskType;
     
-        
+        //pulls monster's thumbnail that aligns with the appropriate evolution.
         NSSet *evolutions = [self.existingTask.monster evolutions];
         NSSortDescriptor *sortByEvoComplete = [[NSSortDescriptor alloc] initWithKey:@"currentEvolution"
             ascending:NO];
@@ -177,8 +189,26 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         UIImage *cellThumb = [UIImage imageNamed:self.thumbPath];
         existingProjectCell.monsterProfilePic.image = cellThumb;
         
-        NSString *dateString =  [[NSString alloc] initWithFormat:@"%@", [self.existingTask.projectedEndDate descriptionWithLocale:[NSLocale currentLocale]]];
-        existingProjectCell.deadlineReminderLabel.text = dateString;
+        //formats the due date in days or hours left
+        NSDate *dueDate = self.existingTask.projectedEndDate;
+        NSDate *currentDate = [NSDate date];
+        NSTimeInterval differenceInDays;
+        NSTimeInterval differenceInHours;
+        
+        differenceInDays = [currentDate timeIntervalSinceDate:dueDate] / 86400;
+        differenceInHours = [currentDate timeIntervalSinceDate:dueDate] / 3600;
+        
+        NSString *dayDiffString = [NSString stringWithFormat:@"%d", abs(differenceInDays)];
+        NSString *hourDiffString = [NSString stringWithFormat:@"%d", abs(differenceInHours)];
+        
+        if (ABS(differenceInDays) > 1) {
+            existingProjectCell.deadlineAmtType.text = dayDiffString;
+            existingProjectCell.deadlineIntervalType.text = @"days";
+        }else{
+            existingProjectCell.deadlineAmtType.text = hourDiffString;
+            existingProjectCell.deadlineIntervalType.text = @"hours";
+        }
+        
                 
         return existingProjectCell;
         

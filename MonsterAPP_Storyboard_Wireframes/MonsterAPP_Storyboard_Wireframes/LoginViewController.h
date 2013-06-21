@@ -19,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *nameField;
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
-- (IBAction)loginDoneBarButton:(id)sender;
-
+- (IBAction)loginWithButton:(id)sender;
 
 @end

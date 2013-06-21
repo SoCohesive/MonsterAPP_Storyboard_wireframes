@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "EggHatchesViewController.h"
+#import "TaskDetail.h"
 
 @interface ProjectNameVC ()
 {
@@ -22,6 +23,9 @@
 }
 
 -(void)chooseNameRequest;
+-(void)formatTextFields;
+-(void) chooseTaskList;
+-(void) createTemplates;
 
 @end
 
@@ -43,6 +47,7 @@
     [self formatTextFields];
     [self chooseNameRequest];
     [self chooseDueQuestion];
+    [self createTemplates];
     
     pickerDate = [self.datePicker date];
     selectionString = [[NSString alloc] initWithFormat:@"%@", [pickerDate descriptionWithLocale:[NSLocale currentLocale]]];
@@ -73,12 +78,6 @@
     self.dateEntryField.layer.borderWidth= 1.0f;
     
     self.dateEntryField.inputView = self.datePicker;
-
-    
-//    UITapGestureRecognizer *singleFingerTap =
-//    [[UITapGestureRecognizer alloc] initWithTarget:self.dateEntryField
-//                                            action:@selector(handleSingleTap:)];
-//    [self.dateEntryField addGestureRecognizer:singleFingerTap];
 }
 
 
@@ -107,12 +106,12 @@
     if (textField == self.titleTextField) {
         self.titleTextField.delegate = self;
     
-if ( [self.titleTextField.text length] > 0) {
+        if ( [self.titleTextField.text length] > 0) {
     
-        [self.titleTextField resignFirstResponder];
-        [self.dateEntryField becomeFirstResponder];
+            [self.titleTextField resignFirstResponder];
+            [self.dateEntryField becomeFirstResponder];
     
-}
+        }
         self.navigationItem.rightBarButtonItem.enabled = YES;
     }
     return YES;
@@ -126,8 +125,10 @@ if ( [self.titleTextField.text length] > 0) {
 {
     if ([self.projectTypeForName isEqual:@"Write a Book Report"]) {
         self.dateEntryField.text = @"When is your report due?";
+        
     }else if ([self.projectTypeForName isEqual:@"Study for a Test"]){
         self.dateEntryField.text = @"So when is the big test?";
+        
     } else {
         self.dateEntryField.text = @"When will you present your discovery?";
     }
@@ -136,7 +137,6 @@ if ( [self.titleTextField.text length] > 0) {
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
-    //self.datePicker = [[UIDatePicker alloc] init];
     [self animateDatePicker];
     [self.view addSubview:self.datePicker];
  }
@@ -181,6 +181,19 @@ if ( [self.titleTextField.text length] > 0) {
     self.currentTask.actualHP = [NSNumber numberWithInt: 50];
     self.currentTask.actualXP = [NSNumber numberWithInt:50];
     self.currentTask.user = self.projNameUser;
+
+
+    for (NSString *step in self.selectedTaskTemplate) {
+        //create the object
+        TaskDetail * taskDetail = [NSEntityDescription insertNewObjectForEntityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
+        taskDetail.stepDetail = step;
+        taskDetail.stepCreatedDate = [NSDate date];
+        taskDetail.task = self.currentTask;
+        taskDetail.possStepXP = [NSNumber numberWithInt:25];
+        
+    [self.currentTask addTaskDetailsObject:taskDetail];
+    }
+
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -194,34 +207,62 @@ if ( [self.titleTextField.text length] > 0) {
     //when the project is saved, we should assign a new monster, and save the monster name on the next screen.
 
 }
-
+                                   
 #pragma
-#pragma mark Date Difference Logic
+#pragma mark Setup & Save Preformatted Templates
 
-    //currentDate
-    //pickerDate
+-(void) createTemplates {
+    self.scienceTaskTemplate = [NSMutableArray arrayWithObjects:
+                                @"Choose the scientific question",
+                                @"Create hypothesis",
+                                @"Submit hypothesis to teacher",
+                                @"Interview somebody",
+                                //                                @"Based on your research, write a statement that predicts the outcome of your experiment (your hypothesis).",
+                                //                                @"Design an experiment.",
+                                //                                @"Establish a consistent procedure for conducting your experiment.",
+                                //                                @"Decide what data you need to meet your research objective and how you will collect it.",
+                                //                                @"Identify all variables that could impact your data.",
+                                //                                @"Think of how to control any variables that are not being manipulated in your experiment."
+                                //                                @"Include a control group in your experiment.",
+                                //                                @"Confirm that you have enough quality data that the research is reliable.",
+                                //                                @"Maintain notes as you conduct your experiment.",
+                                //                                @"Collect data throughout the course of your experiment.",
+                                @"Analyze data for patterns.",
+                                @"write conclusion",
+                                // @"Prepare research summary paper.",
+                                @"Prepare display board for classroom.",
+                                nil];
+    
+    
+    self.bookReptTaskTemplate = [NSMutableArray arrayWithObjects:
+                                 @"Get book from Library",
+                                 @"Study protagonist",
+                                 @"Read first three chapters",
+                                 @"Take notes on characters",
+                                 nil];
+    
+    self.testTaskTemplate = [NSMutableArray arrayWithObjects:
+                             @"Review homework",
+                             @"Make FlashCards",
+                             @"Explain topics to friends",
+                             @"Get an A!",
+                             nil];
+    
+    [self chooseTaskList];
+    
+}
 
--(void)calculateDateDifference:(NSDate *)chosenDate{
-//    NSDate *todaysDate;
-    NSString *differenceOutput;
-    NSString *currentDateString;
-    NSString *pickerDateString;
-    NSDateFormatter *dateFormat;
-    NSTimeInterval differenceInDays;
-    
-//    todaysDate = [NSDate date];
-    differenceInDays = [currentDate timeIntervalSinceDate:chosenDate] / 86400;
-    
-    dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"MMMM d, yyyy hh:mm:ssa"];
-    currentDateString = [dateFormat stringFromDate:currentDate];
-    pickerDateString = [dateFormat stringFromDate:pickerDate];
-    
-    differenceOutput = [[NSString alloc] initWithFormat:@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", pickerDateString, currentDateString, fabs(differenceInDays)];
-    
-    NSLog(@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", pickerDateString, currentDateString, fabs(differenceInDays));
-//    self.outputLabel.text = differenceOutput;
-    
+
+-(void)chooseTaskList
+{
+    if ([self.projectTypeForName isEqual:@"Write a Book Report"]) {
+        self.selectedTaskTemplate = self.bookReptTaskTemplate;
+        
+    }else if ([self.projectTypeForName isEqual:@"Study for a Test"]){
+        self.selectedTaskTemplate =self.testTaskTemplate;
+    } else {
+        self.selectedTaskTemplate = self.scienceTaskTemplate;
+    }
 }
 
 
@@ -232,38 +273,6 @@ if ( [self.titleTextField.text length] > 0) {
 {
     //add titleTextField.text to task properties
     [self performSegueWithIdentifier:@"segueToHatch" sender:self];
-    
-    //Date Difference Logic
-    
-    pickerDate = [self.datePicker date];
-    
-    NSString *differenceOutput;
-    NSString *currentDateString;
-    NSString *pickerDateString;
-    NSDateFormatter *dateFormat;
-    NSTimeInterval differenceInDays;
-    NSTimeInterval differenceInHours;
-    
-    differenceInDays = [currentDate timeIntervalSinceDate:pickerDate] / 86400;
-    differenceInHours = [currentDate timeIntervalSinceDate:pickerDate] / 3600;
-    
-    dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"MMMM d, yyyy hh:mm:ssa"];
-    currentDateString = [dateFormat stringFromDate:currentDate];
-    pickerDateString = [dateFormat stringFromDate:pickerDate];
-    
-    differenceOutput = [[NSString alloc] initWithFormat:@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", currentDateString, pickerDateString, fabs(differenceInDays)];
-    if (ABS(differenceInDays) > 1) {
-        NSLog(@"Your begin date is %@, you plan to finish by %@, so you have %1.2f days left!!", currentDateString, pickerDateString, fabs(differenceInDays));
-    }else{
-        NSLog(@"You have %1.2f hours left!!", fabs(differenceInHours));
-    }
-    
-    
-    
-    
-    NSLog(@"the date picked is %@", pickerDateString);
-    
     
 }
 

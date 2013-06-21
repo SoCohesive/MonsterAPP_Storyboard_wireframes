@@ -26,4 +26,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *currentHighPointMonster;
 @property (weak, nonatomic) IBOutlet UITableView *staticesqueTable;
 
+
 @end

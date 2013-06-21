@@ -32,10 +32,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mouthOpenImage;
 
 
-@property NSMutableArray *selectedTaskTemplate;
-@property NSMutableArray *scienceTaskTemplate;
-@property NSMutableArray *bookReptTaskTemplate;
-@property NSMutableArray *testTaskTemplate;
 @property NSString *taskDueDate;
 @property NSString *taskType;
 @property NSString *taskName;

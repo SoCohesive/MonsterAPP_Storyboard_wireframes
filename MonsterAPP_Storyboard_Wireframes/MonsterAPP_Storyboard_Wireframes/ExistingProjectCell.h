@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *existingTitle;
 @property (strong, nonatomic) IBOutlet UILabel *subtitle;
 @property (strong, nonatomic) IBOutlet UILabel *deadlineReminderLabel;
+@property (strong, nonatomic) IBOutlet UILabel *deadlineIntervalType;
+@property (strong, nonatomic) IBOutlet UILabel *deadlineAmtType;
 
 @end

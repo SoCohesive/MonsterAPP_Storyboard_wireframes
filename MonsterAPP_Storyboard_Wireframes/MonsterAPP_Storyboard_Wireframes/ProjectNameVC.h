@@ -18,12 +18,16 @@
 @property (strong, nonatomic) Task        *currentTask;
 @property (strong, nonatomic) User *projNameUser;
 
+@property NSMutableArray *selectedTaskTemplate;
+@property NSMutableArray *scienceTaskTemplate;
+@property NSMutableArray *bookReptTaskTemplate;
+@property NSMutableArray *testTaskTemplate;
+
 @property (strong, nonatomic)   IBOutlet    UITextField *titleTextField;
 @property (strong, nonatomic)   IBOutlet    UITextField *dateEntryField;
 @property (strong, nonatomic)   IBOutlet    UIDatePicker *datePicker;
 @property (weak, nonatomic)     IBOutlet    UILabel *titleLabel;
 
 - (IBAction)saveTaskDoneButton:(id)sender;
--(void)calculateDateDifference:(NSDate *)chosenDate;
 
 @end

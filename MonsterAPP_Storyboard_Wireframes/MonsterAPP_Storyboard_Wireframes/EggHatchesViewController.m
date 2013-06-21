@@ -53,16 +53,16 @@
     
     [self hatchRightEgg];
     
-    
-    SystemSoundID soundID2;
-    NSString *soundFile2 = [[NSBundle mainBundle]
-                            pathForResource:@"Monster_Hatch" ofType:@"wav"];
-    
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
-									 [NSURL fileURLWithPath:soundFile2]
-									 , &soundID2);
-    AudioServicesPlaySystemSound(soundID2);
-    
+//need to get sound file from Chuck
+//    SystemSoundID soundID2;
+//    NSString *soundFile2 = [[NSBundle mainBundle]
+//                            pathForResource:@"Monster_Hatch" ofType:@"wav"];
+//    
+//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+//									 [NSURL fileURLWithPath:soundFile2]
+//									 , &soundID2);
+//    AudioServicesPlaySystemSound(soundID2);
+//    
     
 }
 
