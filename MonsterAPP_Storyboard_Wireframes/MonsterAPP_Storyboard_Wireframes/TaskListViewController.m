@@ -122,6 +122,7 @@
         
         projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
         
+        
         self.navigationController.viewControllers = @[projectListVC,self];
         projectListVC.currentUser = self.taskListUser;
         

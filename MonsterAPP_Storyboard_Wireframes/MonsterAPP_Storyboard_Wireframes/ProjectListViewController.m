@@ -90,12 +90,13 @@
     
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
-//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];  
+//    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];  user.tasks?
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
   //  [taskFetchRequest setPredicate:userPredicate];
     
+//once Tasks save taskDetails, switch name to taskDetails
     
     taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"projectedEndDate" ascending:NO]];
     

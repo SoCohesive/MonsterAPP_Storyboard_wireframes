@@ -17,9 +17,8 @@
     //NSString *nameRequest;
     //NSString *dateRequest;
     
-    NSString    *selectionString;
+    //NSString    *selectionString;
     NSDate      *pickerDate;
-    NSDate      *currentDate;
 }
 
 -(void)chooseNameRequest;
@@ -43,14 +42,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self formatTextFields];
     [self chooseNameRequest];
     [self chooseDueQuestion];
     [self createTemplates];
     
     pickerDate = [self.datePicker date];
-    selectionString = [[NSString alloc] initWithFormat:@"%@", [pickerDate descriptionWithLocale:[NSLocale currentLocale]]];
+    //selectionString = [[NSString alloc] initWithFormat:@"%@", [pickerDate descriptionWithLocale:[NSLocale currentLocale]]];
     
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.titleLabel.font.pointSize];
     self.titleLabel.font = lunchBoxBold;
@@ -93,24 +92,24 @@
     } else {
         self.titleTextField.text = @"What will your experiment be about?";
     }
-//at some point these questions may be an entity property?
+    //at some point these questions may be an entity property?
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-        return YES;
-    }
+    return YES;
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     
     if (textField == self.titleTextField) {
         self.titleTextField.delegate = self;
-    
+        
         if ( [self.titleTextField.text length] > 0) {
-    
+            
             [self.titleTextField resignFirstResponder];
             [self.dateEntryField becomeFirstResponder];
-    
+            
         }
         self.navigationItem.rightBarButtonItem.enabled = YES;
     }
@@ -139,7 +138,7 @@
     
     [self animateDatePicker];
     [self.view addSubview:self.datePicker];
- }
+}
 
 -(void)animateDatePicker
 {
@@ -156,16 +155,18 @@
     [[self.datePicker layer] addAnimation:animation forKey:@"transitionViewAnimation"];
     
     self.datePicker.hidden = FALSE;
+    self.datePicker.minimumDate = [NSDate date];
     
     [[self.datePicker layer] removeAnimationForKey:@"transitionViewAnimation"];
     animation = nil;
     
 }
-#pragma 
-#pragma CoreData 
+#pragma
+#pragma CoreData
 
 -(void)addTask
 {
+    NSLog(@"datepicker date:%@", pickerDate);
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     //create managedObject
@@ -173,16 +174,20 @@
     
     
     //set managedObject properties
-    currentDate = [NSDate date];
-    self.currentTask.dateCreated =  currentDate;
-    self.currentTask.projectedEndDate =  pickerDate;
+    self.currentTask.dateCreated =  [NSDate date];
+    self.currentTask.projectedEndDate =  [self.datePicker date];
     self.currentTask.taskName = self.titleTextField.text;
     self.currentTask.taskType= self.projectTypeForName;
     self.currentTask.actualHP = [NSNumber numberWithInt: 50];
     self.currentTask.actualXP = [NSNumber numberWithInt:50];
     self.currentTask.user = self.projNameUser;
-
-
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMMM d, yyyy hh:mm:ssa"];
+    NSString *logDateString = [dateFormatter stringFromDate:self.currentTask.projectedEndDate];
+    NSLog(@"the date picked is %@", logDateString);
+    
+    
     for (NSString *step in self.selectedTaskTemplate) {
         //create the object
         TaskDetail * taskDetail = [NSEntityDescription insertNewObjectForEntityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
@@ -191,9 +196,9 @@
         taskDetail.task = self.currentTask;
         taskDetail.possStepXP = [NSNumber numberWithInt:25];
         
-    [self.currentTask addTaskDetailsObject:taskDetail];
+        [self.currentTask addTaskDetailsObject:taskDetail];
     }
-
+    
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
@@ -202,12 +207,12 @@
     }
     
     [self.projNameUser addTasksObject:self.currentTask];
-   
+    
     //once this works, we should prevent the back button from saving over it, and do some kind of edit instead.
     //when the project is saved, we should assign a new monster, and save the monster name on the next screen.
-
+    
 }
-                                   
+
 #pragma
 #pragma mark Setup & Save Preformatted Templates
 
@@ -278,20 +283,20 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    
     [self addTask];
     
-
+    
     ((EggHatchesViewController*)(segue.destinationViewController)).eggHatchUser = self.projNameUser;
     ((EggHatchesViewController*)(segue.destinationViewController)).taskProjectType = self.projectTypeForName;
     ((EggHatchesViewController*)(segue.destinationViewController)).taskTitle = self.titleTextField.text;
     
     
-    ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString = selectionString;
+    //((EggHatchesViewController*)(segue.destinationViewController)).taskDueString = selectionString;
     ((EggHatchesViewController*)(segue.destinationViewController)).monsterType = self.monsterKind;
-     ((EggHatchesViewController*)(segue.destinationViewController)).task = self.currentTask;
+    ((EggHatchesViewController*)(segue.destinationViewController)).task = self.currentTask;
     
-     NSLog(@"Project sent to Hatching View -->%@, due: %@, namedTaskName: %@",((EggHatchesViewController*)(segue.destinationViewController)).taskTitle,  ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString, self.currentTask);
+    //NSLog(@"Project sent to Hatching View -->%@, due: %@, namedTaskName: %@",((EggHatchesViewController*)(segue.destinationViewController)).taskTitle,  ((EggHatchesViewController*)(segue.destinationViewController)).taskDueString, self.currentTask);
     
 }
 
