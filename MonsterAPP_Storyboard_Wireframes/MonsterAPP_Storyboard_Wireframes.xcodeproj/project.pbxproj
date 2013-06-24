@@ -22,8 +22,17 @@
 		290B4773176D2A6700B91B7E /* turtling-mouth_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4772176D2A6700B91B7E /* turtling-mouth_open.png */; };
 		290B4776176D2C0A00B91B7E /* purple_checkmark_v1.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4775176D2C0A00B91B7E /* purple_checkmark_v1.png */; };
 		290B4778176D2C3C00B91B7E /* checkbox-empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B4777176D2C3C00B91B7E /* checkbox-empty.png */; };
+		2919D3741778A99C00B1B618 /* monsterWelcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3731778A99C00B1B618 /* monsterWelcome.png */; };
+		2919D3761778AA1E00B1B618 /* MonsterWelcomePaw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3751778AA1E00B1B618 /* MonsterWelcomePaw@2x.png */; };
+		2919D3781778AA2600B1B618 /* monsterWelcome@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3771778AA2600B1B618 /* monsterWelcome@2px.png */; };
+		2919D37A1778B4A300B1B618 /* WelcomeMat_TransparentBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3791778B4A300B1B618 /* WelcomeMat_TransparentBG.png */; };
+		2919D3801778BA6F00B1B618 /* MonsterWelcomePawWithArmv3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D37F1778BA6F00B1B618 /* MonsterWelcomePawWithArmv3@2x.png */; };
+		2919D3821778BD9000B1B618 /* MonsterWelcomePawWithArmv2v5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3811778BD9000B1B618 /* MonsterWelcomePawWithArmv2v5@2x.png */; };
+		2919D3841778BEAA00B1B618 /* monsterWelcome-Note@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3831778BEAA00B1B618 /* monsterWelcome-Note@2px.png */; };
+		2919D3861778BEBC00B1B618 /* monsterWelcome-note.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3851778BEBC00B1B618 /* monsterWelcome-note.png */; };
+		2919D3881778C3BF00B1B618 /* monsterWelcome-note_withText.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3871778C3BF00B1B618 /* monsterWelcome-note_withText.png */; };
+		2919D38A1778C65700B1B618 /* monsterWelcome-note_updatedText.png in Resources */ = {isa = PBXBuildFile; fileRef = 2919D3891778C65700B1B618 /* monsterWelcome-note_updatedText.png */; };
 		292943FB176403E4001315E8 /* chinchilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 292943FA176403E4001315E8 /* chinchilla.png */; };
-		293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293DD110176CAE1C001B4FB0 /* PagedScrollViewController.m */; };
 		294B08281763631B00C5DFFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08271763631B00C5DFFA /* UIKit.framework */; };
 		294B082A1763631B00C5DFFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B08291763631B00C5DFFA /* Foundation.framework */; };
 		294B082C1763631B00C5DFFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B082B1763631B00C5DFFA /* CoreGraphics.framework */; };
@@ -135,9 +144,17 @@
 		290B4772176D2A6700B91B7E /* turtling-mouth_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-mouth_open.png"; sourceTree = "<group>"; };
 		290B4775176D2C0A00B91B7E /* purple_checkmark_v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_checkmark_v1.png; sourceTree = "<group>"; };
 		290B4777176D2C3C00B91B7E /* checkbox-empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox-empty.png"; sourceTree = "<group>"; };
+		2919D3731778A99C00B1B618 /* monsterWelcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monsterWelcome.png; sourceTree = "<group>"; };
+		2919D3751778AA1E00B1B618 /* MonsterWelcomePaw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MonsterWelcomePaw@2x.png"; sourceTree = "<group>"; };
+		2919D3771778AA2600B1B618 /* monsterWelcome@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterWelcome@2px.png"; sourceTree = "<group>"; };
+		2919D3791778B4A300B1B618 /* WelcomeMat_TransparentBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeMat_TransparentBG.png; sourceTree = "<group>"; };
+		2919D37F1778BA6F00B1B618 /* MonsterWelcomePawWithArmv3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MonsterWelcomePawWithArmv3@2x.png"; sourceTree = "<group>"; };
+		2919D3811778BD9000B1B618 /* MonsterWelcomePawWithArmv2v5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MonsterWelcomePawWithArmv2v5@2x.png"; sourceTree = "<group>"; };
+		2919D3831778BEAA00B1B618 /* monsterWelcome-Note@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterWelcome-Note@2px.png"; sourceTree = "<group>"; };
+		2919D3851778BEBC00B1B618 /* monsterWelcome-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterWelcome-note.png"; sourceTree = "<group>"; };
+		2919D3871778C3BF00B1B618 /* monsterWelcome-note_withText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterWelcome-note_withText.png"; sourceTree = "<group>"; };
+		2919D3891778C65700B1B618 /* monsterWelcome-note_updatedText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monsterWelcome-note_updatedText.png"; sourceTree = "<group>"; };
 		292943FA176403E4001315E8 /* chinchilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinchilla.png; sourceTree = "<group>"; };
-		293DD10F176CAE11001B4FB0 /* PagedScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagedScrollViewController.h; sourceTree = "<group>"; };
-		293DD110176CAE1C001B4FB0 /* PagedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedScrollViewController.m; sourceTree = "<group>"; };
 		294B08241763631B00C5DFFA /* MonsterAPP_Storyboard_Wireframes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterAPP_Storyboard_Wireframes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		294B08271763631B00C5DFFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		294B08291763631B00C5DFFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -411,8 +428,18 @@
 			isa = PBXGroup;
 			children = (
 				A4F9551C17721B8E00FE2554 /* onboarding-3.png */,
+				2919D3871778C3BF00B1B618 /* monsterWelcome-note_withText.png */,
+				2919D3851778BEBC00B1B618 /* monsterWelcome-note.png */,
+				2919D3751778AA1E00B1B618 /* MonsterWelcomePaw@2x.png */,
+				2919D3891778C65700B1B618 /* monsterWelcome-note_updatedText.png */,
+				2919D3731778A99C00B1B618 /* monsterWelcome.png */,
+				2919D3831778BEAA00B1B618 /* monsterWelcome-Note@2px.png */,
+				2919D37F1778BA6F00B1B618 /* MonsterWelcomePawWithArmv3@2x.png */,
+				2919D3771778AA2600B1B618 /* monsterWelcome@2px.png */,
+				2919D3811778BD9000B1B618 /* MonsterWelcomePawWithArmv2v5@2x.png */,
 				A4F955111771F14900FE2554 /* onboarding-2.png */,
 				A4F9551817721AB200FE2554 /* onboarding-1.png */,
+				2919D3791778B4A300B1B618 /* WelcomeMat_TransparentBG.png */,
 				29F1DF7E176C22B000FFB46F /* WelcomeMat_whitebg.png */,
 				29F1DF80176C22F900FFB46F /* DoorKnob_test.png */,
 				29F1DF89176C32A000FFB46F /* step1.png */,
@@ -425,8 +452,6 @@
 		29F1DF88176C306200FFB46F /* OnBoarding  */ = {
 			isa = PBXGroup;
 			children = (
-				293DD10F176CAE11001B4FB0 /* PagedScrollViewController.h */,
-				293DD110176CAE1C001B4FB0 /* PagedScrollViewController.m */,
 				A485E13F1768E1CE00ED06DC /* OnboardingViewController.h */,
 				A485E1401768E1CE00ED06DC /* OnboardingViewController.m */,
 			);
@@ -665,6 +690,16 @@
 				A4D9885B1774FD9800FA9312 /* monsterNavBar-stretchyButton.png in Resources */,
 				A4D9885D1774FFD600FA9312 /* monstrous-icon.png in Resources */,
 				A4D9885F1774FFDB00FA9312 /* monstrous-icon@2px.png in Resources */,
+				2919D3741778A99C00B1B618 /* monsterWelcome.png in Resources */,
+				2919D3761778AA1E00B1B618 /* MonsterWelcomePaw@2x.png in Resources */,
+				2919D3781778AA2600B1B618 /* monsterWelcome@2px.png in Resources */,
+				2919D37A1778B4A300B1B618 /* WelcomeMat_TransparentBG.png in Resources */,
+				2919D3801778BA6F00B1B618 /* MonsterWelcomePawWithArmv3@2x.png in Resources */,
+				2919D3821778BD9000B1B618 /* MonsterWelcomePawWithArmv2v5@2x.png in Resources */,
+				2919D3841778BEAA00B1B618 /* monsterWelcome-Note@2px.png in Resources */,
+				2919D3861778BEBC00B1B618 /* monsterWelcome-note.png in Resources */,
+				2919D3881778C3BF00B1B618 /* monsterWelcome-note_withText.png in Resources */,
+				2919D38A1778C65700B1B618 /* monsterWelcome-note_updatedText.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +727,6 @@
 				A4DF683C17692E4E00A8A5FC /* CreateNewProjectCell.m in Sources */,
 				A4EC77DF1769F20000892EF3 /* ExistingProjectCell.m in Sources */,
 				A442FCEC176A3A3D006E71B6 /* CompletedProjectsCell.m in Sources */,
-				293DD111176CAE1C001B4FB0 /* PagedScrollViewController.m in Sources */,
 				892CC511176DEC0800BF8122 /* MonsterStyleSheet.m in Sources */,
 				89A0EF1B176EDA33001ADFE8 /* TurtlingClass.m in Sources */,
 				A42A1F43176FCD280008812A /* Monster.m in Sources */,

@@ -124,10 +124,6 @@
     } 
 }
 
-#pragma mark set label contents
-
-
-
 #pragma mark add points
 -(void) setUpPointsArray {
     
@@ -322,17 +318,7 @@
 
     
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
-    
-//    NSSet *steps = self.selectedTask.taskDetails;
-//    NSMutableArray *stepListArray = [NSMutableArray arrayWithArray:[steps allObjects]];
-//    // enumerate through array and get all steps for task
-    
-//    for (TaskDetail *details in stepListArray) {
-//        
-//        // use this for an EXISTING project. In a new project there are NO stepdetails so this would be null.
-//        stepString = details.stepDetail;
-//    }
-    
+
     UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
     pointsLabel.text = [step.possStepXP stringValue];
     
@@ -346,7 +332,9 @@
         UIImageView *checkMarkImage = (UIImageView *)[cell viewWithTag:4];
         checkMarkImage.hidden = NO;
         pointsLabel.alpha = .3;
-        stepsLabel.alpha = .3; 
+        stepsLabel.alpha = .3;
+        UILabel *pointStringLabel = (UILabel *) [cell viewWithTag:5];
+        pointStringLabel.alpha = .3; 
     }
     
     return cell;

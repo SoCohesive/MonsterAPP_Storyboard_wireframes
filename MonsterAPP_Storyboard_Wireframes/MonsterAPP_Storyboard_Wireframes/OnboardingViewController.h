@@ -14,7 +14,12 @@
 @interface OnboardingViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *doorImage;
-- (IBAction)tapGestureForDoor:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *monsterImage;
+@property (weak, nonatomic) IBOutlet UIImageView *monsterPawImage;
 
+@property (weak, nonatomic) IBOutlet UIImageView *getStartedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *noteImageForButton;
+
+- (IBAction)getStartedButton:(id)sender;
 
 @end
