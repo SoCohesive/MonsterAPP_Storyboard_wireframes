@@ -49,12 +49,17 @@
 	// Do any additional setup after loading the view.
      [self.navigationItem setHidesBackButton:YES animated:YES];
     
-    self.loginLabel.text= @"Login, please:";
+    self.loginLabel.text= @"Sign up";
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.loginLabel.font.pointSize];
     self.loginLabel.font = lunchBoxBold;
     
+    self.nameLabel.text= @"Name:";
+    UIFont *lunchBoxBold2 = [UIFont fontWithName:@"LunchBox-Light" size:self.nameLabel.font.pointSize];
+    self.nameLabel.font = lunchBoxBold2;
     
-
+    self.nicknameLabel.text = @"Nickname:";
+    self.nicknameLabel.font = lunchBoxBold2;
+    
     [self formatTextFields];
     
     }
@@ -87,8 +92,8 @@
 
 -(void)formatTextFields
 {
-    self.nameField.text = @"What's your name?";
-    self.emailField.text = @"Give us a special nickname, too.";
+//    self.nameField.text = @"What's your name?";
+//    self.emailField.text = @"Give us a special nickname, too.";
     
     self.nameField.clearsOnInsertion = YES;
     self.nameField.layer.cornerRadius=8.0f;

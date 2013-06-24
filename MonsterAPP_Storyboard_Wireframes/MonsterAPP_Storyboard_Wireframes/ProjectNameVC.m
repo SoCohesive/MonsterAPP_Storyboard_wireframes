@@ -54,6 +54,16 @@
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.titleLabel.font.pointSize];
     self.titleLabel.font = lunchBoxBold;
     
+    self.nameLabel.text= @"Project Name:";
+    UIFont *lunchBoxBold2 = [UIFont fontWithName:@"LunchBox-Light" size:self.nameLabel.font.pointSize];
+    self.nameLabel.font = lunchBoxBold2;
+    
+    self.dueDateLabel.text = @"Due Date:";
+    self.dueDateLabel.font = lunchBoxBold2;
+    
+    [self formatTextFields];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
     
 }
 
@@ -108,6 +118,7 @@
             
             [self.titleTextField resignFirstResponder];
             [self.dateEntryField becomeFirstResponder];
+            [self animateDatePicker];
             
         }
         self.navigationItem.rightBarButtonItem.enabled = YES;
@@ -122,7 +133,7 @@
 -(void)chooseDueQuestion
 {
     if ([self.projectTypeForName isEqual:@"Write a Book Report"]) {
-        self.dateEntryField.text = @"When is your report due?";
+        self.dateEntryField.text = @"Select Date";
         
     }else if ([self.projectTypeForName isEqual:@"Study for a Test"]){
         self.dateEntryField.text = @"So when is the big test?";
@@ -159,12 +170,14 @@
     [[self.datePicker layer] removeAnimationForKey:@"transitionViewAnimation"];
     animation = nil;
     
+    
 }
 #pragma
 #pragma CoreData
 
 -(void)addTask
 {
+       
     NSLog(@"datepicker date:%@", pickerDate);
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     

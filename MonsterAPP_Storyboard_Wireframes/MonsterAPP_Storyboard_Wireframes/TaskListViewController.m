@@ -54,7 +54,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setNavigationLogic];
     
     //NSLog(@"the existing task in task list has %@",self.selectedTask);
     //NSLog(@"user is: %@", self.taskListUser);
@@ -85,6 +84,9 @@
     
     // set up points array 
     [self setUpPointsArray];
+    [self stepsResultController];
+    
+    [self setNavigationLogic];
 
     
     // set up timer for eye blinking animation
@@ -144,11 +146,8 @@
         projectListVC.currentUser = self.taskListUser;
         NSLog(@"project list existed");
     }
+
 }
-
-#pragma mark set label contents
-
-
 
 #pragma mark add points
 -(void) setUpPointsArray {
@@ -215,66 +214,10 @@
     return YES;
 }
 
-#pragma mark Setup FetchedResults controller
 
--(NSFetchedResultsController *) stepsResultController {
+-(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
     
-    if (stepsResultsController != nil) {
-        return stepsResultsController;
-    }
-    
-    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"stepCreatedDate"
-                                                                   ascending:NO];
-    
-   NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:taskDescriptors];
-    
-   // NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
-   // NSPredicate *completedPredicate = [NSPredicate predicateWithFormat:@"stepCompleted == %@", nil];
-   
-    NSPredicate *taskWithCompletedPredicate = [NSPredicate predicateWithFormat:@"(task == %@) AND (stepCompleted == %@)", self.selectedTask, nil];
-
-    NSLog(@"the predicate is %@",taskWithCompletedPredicate);
-        
-    
-    stepsResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
-                                                               managedObjectContext:managedObjectContext
-                                                                 sectionNameKeyPath:nil
-                                                                          cacheName:nil];
-    
-    NSError *error;
-    BOOL success = [stepsResultsController performFetch:&error];
-    if (!success) {
-        NSLog(@"Task Fetch Error: %@", error.description);
-    }
-    
-    if (success) {
-        
-        [self.taskTable reloadData];
-       
-    }
-     
-    stepsResultsController.delegate = self;
-    return stepsResultsController;
-    
-    
-}
-
-//-(void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
-//    
-//    [self.taskTable beginUpdates];
-//}
-
-
--(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    
-    [self.taskTable reloadData];
+    [self.taskTable beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller
@@ -318,8 +261,14 @@
         UILabel *stepLabel = (UILabel *) [cell viewWithTag:1];
         stepLabel.text = [addStep valueForKey:@"stepDetail"];
         
+        
     }
     
+}
+
+-(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
+    [self.taskTable endUpdates];
 }
 
 
@@ -356,10 +305,6 @@
     
 }
 
-
-
-
-
 #pragma mark Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -388,23 +333,24 @@
 
     
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
-    
-//    NSSet *steps = self.selectedTask.taskDetails;
-//    NSMutableArray *stepListArray = [NSMutableArray arrayWithArray:[steps allObjects]];
-//    // enumerate through array and get all steps for task
-    
-//    for (TaskDetail *details in stepListArray) {
-//        
-//        // use this for an EXISTING project. In a new project there are NO stepdetails so this would be null.
-//        stepString = details.stepDetail;
-//    }
-    
+
     UILabel *pointsLabel = (UILabel *)[cell viewWithTag:2];
     pointsLabel.text = [step.possStepXP stringValue];
     
     UILabel *stepsLabel = (UILabel *) [cell viewWithTag:1];
     stepsLabel.text = step.stepDetail;
     
+    // set up Check mark image 
+    NSNumber *baseNumber = [NSNumber numberWithInt:1];
+    if ([step.stepCompleted isEqualToNumber:baseNumber]) {
+        
+        UIImageView *checkMarkImage = (UIImageView *)[cell viewWithTag:4];
+        checkMarkImage.hidden = NO;
+        pointsLabel.alpha = .3;
+        stepsLabel.alpha = .3;
+        UILabel *pointStringLabel = (UILabel *) [cell viewWithTag:5];
+        pointStringLabel.alpha = .3; 
+    }
     
     return cell;
     
@@ -418,7 +364,6 @@
     // Unhide image of check mark
     UIImageView *checkMarkImage = (UIImageView *)[cell viewWithTag:4];
     checkMarkImage.hidden = NO;
-    // lessen alpha of cell itself
     cell.alpha = .3;
     
         
@@ -496,6 +441,7 @@
         
         NSLog(@"An error occured: %@", error);
     }
+     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"evolutions at save; %@", self.sortedEvolutions);
 
@@ -604,5 +550,57 @@
     }
     
 }
+
+#pragma mark Setup FetchedResults controller
+
+-(NSFetchedResultsController *) stepsResultController {
+    
+    if (stepsResultsController != nil) {
+        
+        return stepsResultsController;
+    }
+    
+    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TaskDetail" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"stepCreatedDate"
+                                                                   ascending:NO];
+    
+    NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:taskDescriptors];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
+    [fetchRequest setPredicate:predicate];
+    NSLog(@"the predicate is %@",predicate);
+    
+    
+    stepsResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
+                                                                managedObjectContext:managedObjectContext
+                                                                  sectionNameKeyPath:nil
+                                                                           cacheName:nil];
+    
+    NSError *error;
+    BOOL success = [stepsResultsController performFetch:&error];
+    if (!success) {
+        NSLog(@"Task Fetch Error: %@", error.description);
+    }
+    
+    if (success) {
+        
+        //  [self.taskTable reloadData];
+        
+    }
+    
+    stepsResultsController.delegate = self;
+    return stepsResultsController;
+    
+    
+}
+
+
+
 
 @end

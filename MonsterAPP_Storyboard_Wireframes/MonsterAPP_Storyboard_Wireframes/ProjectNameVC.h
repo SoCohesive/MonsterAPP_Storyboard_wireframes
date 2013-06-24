@@ -27,6 +27,8 @@
 @property (strong, nonatomic)   IBOutlet    UITextField *dateEntryField;
 @property (strong, nonatomic)   IBOutlet    UIDatePicker *datePicker;
 @property (weak, nonatomic)     IBOutlet    UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
 
 - (IBAction)saveTaskDoneButton:(id)sender;
 

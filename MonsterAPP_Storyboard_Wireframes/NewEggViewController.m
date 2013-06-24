@@ -22,6 +22,7 @@
 -(void)chooseAchievementMessage;
 -(void)chooseCongrat;
 -(void)rephraseProjectType;
+-(void) pushToNextView;
 
 @end
 
@@ -41,7 +42,7 @@
     [super viewDidLoad];
 
     [self performSelector:@selector(shine) withObject:nil afterDelay:0.5f];
-
+    [self performSelector:@selector(pushToNextView) withObject:nil afterDelay:2.0f];
         
     //eventually this string will come from an array of monster names.
     self.monsterType = @"turtling";
@@ -52,12 +53,6 @@
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.congratsLabel.font.pointSize];
     self.congratsLabel.font = lunchBoxBold;
     
-    UITapGestureRecognizer *singleFingerTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(handleSingleTap:)];
-    [self.view addGestureRecognizer:singleFingerTap];
-    
-            
     // Audio triggers below, with Monster_Shimmer.wav sound
     
     SystemSoundID soundID2;
@@ -121,9 +116,7 @@
 
 #pragma
 #pragma mark Segue to Naming Project
-
-
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+- (void)pushToNextView {
     
     //CGPoint location = [recognizer locationInView:[recognizer.view superview]];
     

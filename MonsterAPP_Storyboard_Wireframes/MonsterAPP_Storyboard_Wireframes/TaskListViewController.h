@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 
+
 //monster images
 @property (weak, nonatomic) IBOutlet UIImageView *fullMonsterImage;
 @property (weak, nonatomic) IBOutlet UIImageView *monsterRightEyeImage;
