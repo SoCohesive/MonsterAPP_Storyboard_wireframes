@@ -12,8 +12,8 @@
 
 @interface TurtlingClass : NSObject
 
-@property (strong, nonatomic) Monster   *monster;
-@property (strong, nonatomic) Evolution *evolution1;
-@property (strong, nonatomic) Evolution *evolution2;
-
+/*+(void)turtlingEvolution1;
++(void)turtlingEvolution2;
++(void)turtlingEvolution3;
+*/
 @end

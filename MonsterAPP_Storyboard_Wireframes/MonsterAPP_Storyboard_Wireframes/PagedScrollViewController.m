@@ -37,7 +37,8 @@
     
      self.navigationItem.hidesBackButton = YES;
     [self performSegueWithIdentifier:@"pushToLogin" sender:self];
-}
+      
+     }
 
 - (void)loadVisiblePages {
     

@@ -54,7 +54,6 @@
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.titleLabel.font.pointSize];
     self.titleLabel.font = lunchBoxBold;
     
-    self.navigationItem.rightBarButtonItem.enabled = NO;
     
 }
 
@@ -277,6 +276,12 @@
 - (IBAction)saveTaskDoneButton:(id)sender
 {
     //add titleTextField.text to task properties
+    [self performSegueWithIdentifier:@"segueToHatch" sender:self];
+
+    
+}
+-(void)buttonTest
+{
     [self performSegueWithIdentifier:@"segueToHatch" sender:self];
     
 }

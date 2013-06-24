@@ -10,7 +10,7 @@
 #import "User.h"
 #import "Task.h"
 
-@interface ProjectNameVC : UIViewController<UITextFieldDelegate>
+@interface ProjectNameVC : UIViewController<UITextFieldDelegate, UIAppearanceContainer>
 
 @property (strong, nonatomic) NSString    *projectTypeForName;
 @property (strong, nonatomic) NSString    *taskTitleEntered;
@@ -29,5 +29,6 @@
 @property (weak, nonatomic)     IBOutlet    UILabel *titleLabel;
 
 - (IBAction)saveTaskDoneButton:(id)sender;
+
 
 @end

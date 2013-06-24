@@ -46,6 +46,7 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
+    NSLog(@"ProjectListNavStack %@", [self.navigationController viewControllers]);
     
     //do an array where we have random greetings, random between name/nickname
     NSString *welcome = [NSString stringWithFormat:@"Welcome back, %@", self.currentUser.firstName];
@@ -91,14 +92,16 @@
     NSFetchRequest *taskFetchRequest = [[NSFetchRequest alloc] init];
     
 //    NSPredicate *userPredicate = [NSPredicate predicateWithFormat:@"user = %@", self.currentUser];  user.tasks?
+    NSPredicate * completionPredicate = [NSPredicate predicateWithFormat:@"taskComplete = %@", nil];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
     [taskFetchRequest setEntity:entity];
   //  [taskFetchRequest setPredicate:userPredicate];
+    [taskFetchRequest setPredicate: completionPredicate];
     
 //once Tasks save taskDetails, switch name to taskDetails
     
-    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"projectedEndDate" ascending:NO]];
+    taskFetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"taskComplete" ascending:NO],[NSSortDescriptor sortDescriptorWithKey:@"projectedEndDate" ascending:NO]];
     
     self.taskResultsController = [[NSFetchedResultsController alloc]
                                     initWithFetchRequest:taskFetchRequest
@@ -114,7 +117,6 @@
 
     
 }
-
 
 
 
@@ -146,6 +148,22 @@
     return [sectionInfo numberOfObjects];
     }
 }
+
+/* If we want to include completed projects, use this to section them, 
+ 
+ - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (tableView == self.staticesqueTable) {
+        return nil;
+                
+    } else {
+        
+        
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.taskResultsController sections] objectAtIndex:section];
+        return [sectionInfo name];
+        
+    }
+    
+}*/
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,14 +213,21 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
         NSDate *currentDate = [NSDate date];
         NSTimeInterval differenceInDays;
         NSTimeInterval differenceInHours;
+        NSTimeInterval differenceInWeeks;
         
+        differenceInWeeks = [currentDate timeIntervalSinceDate:dueDate] / 604800;;
         differenceInDays = [currentDate timeIntervalSinceDate:dueDate] / 86400;
         differenceInHours = [currentDate timeIntervalSinceDate:dueDate] / 3600;
         
+        NSString *weekDiffString = [NSString stringWithFormat:@"%d", abs(differenceInWeeks)];
         NSString *dayDiffString = [NSString stringWithFormat:@"%d", abs(differenceInDays)];
         NSString *hourDiffString = [NSString stringWithFormat:@"%d", abs(differenceInHours)];
         
-        if (ABS(differenceInDays) > 1) {
+        if (ABS(differenceInWeeks) > 1){
+            existingProjectCell.deadlineAmtType.text = weekDiffString;
+            existingProjectCell.deadlineIntervalType.text = @"weeks";
+        }
+        else if (ABS(differenceInDays) > 1) {
             existingProjectCell.deadlineAmtType.text = dayDiffString;
             existingProjectCell.deadlineIntervalType.text = @"days";
         }else{
@@ -258,6 +283,7 @@ if ([segue.identifier isEqualToString:@"segueToExistingTaskDetail"]) {
     
 
     ((TaskListViewController *)segue.destinationViewController).selectedTask = self.tappedTask;
+    ((TaskListViewController *)segue.destinationViewController).taskListUser = self.currentUser;
     }
     
 if ([segue.identifier isEqualToString:@"segueToCreateProject"]) {

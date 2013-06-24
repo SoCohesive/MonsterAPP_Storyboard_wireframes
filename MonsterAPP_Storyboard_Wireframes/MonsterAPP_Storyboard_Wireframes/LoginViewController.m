@@ -16,10 +16,12 @@
 @interface LoginViewController ()
 {
     NSNumber    *userNumber;
-    User        *currentUser;
+    
 }
 
 -(void)fetchUserInfo;
+@property (strong, nonatomic) User *currentUser;
+
 @end
 
 @implementation LoginViewController
@@ -115,28 +117,13 @@
     } else {
         
         [self saveUser];
+        
         [self performSegueWithIdentifier:@"segueToPicker" sender:self];
+        
     }
     return YES;
 }
 
-
--(void)fetchUserInfo
-{
-    NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSError *error = nil;
-    NSArray *fetchedObjects = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (fetchedObjects == nil) {
-        NSLog(@"user fetch error");
-    }
-        //insert comparison feature here.
-}
 
 -(void)saveUser
 {
@@ -154,14 +141,14 @@ if (![managedObjectContext save:&error]) {
     
     NSLog(@"An error occured: %@", error);
 }
-currentUser = testUser;
-NSLog(@"currentUser%@", currentUser);
+self.currentUser = testUser;
+NSLog(@"currentUser: %@", self.currentUser);
 }
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    ((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser = currentUser;
+    ((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser = self.currentUser;
     
     NSLog(@"User sent to Name View -->%@",((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser);
     

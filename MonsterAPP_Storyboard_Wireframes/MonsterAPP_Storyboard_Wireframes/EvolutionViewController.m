@@ -13,6 +13,7 @@
 {
     NSArray *turtleWobble;
     NSArray *tailFlickArray;
+    NSArray *evolution3Array;
 }
 @end
 
@@ -42,9 +43,13 @@
         
         [self performSelector:@selector(evol1Animate) withObject:nil afterDelay:.5f];
 
+    } else if ([self.evolutionForImages.evolutionNumber intValue]== 2) {
+        
+        [self performSelector:@selector(tailFlickAnimate) withObject:nil afterDelay:.5f];
+    
     } else {
 
-        [self performSelector:@selector(tailFlickAnimate) withObject:nil afterDelay:.5f];
+        [self performSelector:@selector(evolution3Animate) withObject:nil afterDelay:.5f];
     }
 
 	// Do any additional setup after loading the view.
@@ -90,5 +95,18 @@
     
     [self.faceView startAnimating];
 
+}
+
+-(void)evolution3Animate
+{
+    
+    evolution3Array = [NSArray arrayWithObjects:
+                      [UIImage imageNamed:@"turtling-ev3-for-TaskView-1.png"],[UIImage imageNamed:@"turtling-ev3-for-TaskView-2.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-3.png"],[UIImage imageNamed:@"turtling-ev3-for-TaskView-4.png"], [UIImage imageNamed:@"turtling-ev2-for-TaskView-3.png"], [UIImage imageNamed:@"turtling-ev2-for-TaskView-2.png"],nil];
+    
+    self.evolution3.animationImages = evolution3Array;
+    self.evolution3.animationDuration = 1.0f;
+    
+    [self.evolution3 startAnimating];
+    
 }
 @end

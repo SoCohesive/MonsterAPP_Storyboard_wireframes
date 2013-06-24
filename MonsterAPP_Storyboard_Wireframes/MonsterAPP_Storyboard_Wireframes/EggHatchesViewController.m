@@ -36,9 +36,10 @@
     [super viewDidLoad];
     [self registerForKeyboardNotifications];
     
+    UIFont *lunchBoxTitle = [UIFont fontWithName:@"LunchBox-Light" size:self.hatchedHeaderLabel.font.pointSize];
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.hatchedLabel.font.pointSize];
     self.hatchedLabel.font = lunchBoxBold;
-    self.hatchedHeaderLabel.font = lunchBoxBold;
+    self.hatchedHeaderLabel.font = lunchBoxTitle;
     
     self.monsterNameField.clearsOnInsertion = YES;
     self.monsterNameField.layer.cornerRadius=8.0f;
@@ -47,9 +48,9 @@
     self.monsterNameField.layer.borderWidth= 1.0f;
     self.monsterNameField.text = @"Let's give that monster a name.";
     
-    self.nameButton.layer.cornerRadius = 8.0f;
-    self.nameButton.layer.masksToBounds = YES;
-    self.nameButton.tintColor = [UIColor purpleColor];
+    //self.nameButton.layer.cornerRadius = 8.0f;
+    //self.nameButton.layer.masksToBounds = YES;
+    //self.nameButton.tintColor = [UIColor purpleColor];
     //colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0];
     self.nameButton.titleLabel.font = lunchBoxBold;
     
@@ -90,7 +91,6 @@
     //((TaskListViewController*)(segue.destinationViewController)).taskDueDate =self.taskDueString;
     ((TaskListViewController*)(segue.destinationViewController)).taskName = self.taskTitle;
     ((TaskListViewController*)(segue.destinationViewController)).taskListUser = self.eggHatchUser;
-
     
 }
 
@@ -141,6 +141,7 @@
     self.evolution1.thumbnailName = @"turtling-ev1-thumbnail.png";
     self.evolution1.eggImageName = @"firstEgg.png";
     self.evolution1.monster = self.monster;
+    self.evolution1.currentEvolution = [NSNumber numberWithBool:YES];
     [self.monster addEvolutionsObject:self.evolution1];
 
     
@@ -152,7 +153,9 @@
     self.evolution2.evolutionDescription=@"Your turtling grew a tail! Now he's a tuserpent.";
     self.evolution2.thumbnailName = @"turtling-ev2-thumbnail.png";
     self.evolution2.monster = self.monster;
+    self.evolution2.currentEvolution = [NSNumber numberWithBool:NO];
     [self.monster addEvolutionsObject:self.evolution2];
+
     
     //create managedObject
     self.evolution3 = [NSEntityDescription insertNewObjectForEntityForName:@"Evolution" inManagedObjectContext:managedObjectContext];
@@ -162,6 +165,7 @@
     self.evolution3.evolutionDescription=@"Your tuserpent grew some interesting forelimbs.";
     self.evolution3.thumbnailName = @"turtling-ev3-thumbnail.png";
     self.evolution3.monster = self.monster;
+    self.evolution3.currentEvolution = [NSNumber numberWithBool:NO];
     [self.monster addEvolutionsObject:self.evolution3];
 
     NSError *error = nil;

@@ -7,27 +7,28 @@
 //
 
 #import "MonsterStyleSheet.h"
+#import "LoginViewController.h"
+#import "ProjectNameVC.h"
 
 @implementation MonsterStyleSheet
 
 +(void)applyStyle{
-    
-    //sets UINavBar image.
-    //ideally, set up @2x images, landscape.
-    
-    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
-    [navigationBarAppearance setBackgroundImage:[UIImage imageNamed:@"monsterNavBar.png"]  forBarMetrics:UIBarMetricsDefault];
-    
+
     
 #pragma
-#pragma NavBar Text Attributes
-    //probably want to keep normal font (just playing for now)
-    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont fontWithName:@"LunchBox-Bold" size:24.0],UITextAttributeFont, nil];
+#pragma Navigation Bar Appearance
+
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    
+    [navigationBarAppearance setBackgroundImage:[UIImage imageNamed:@"monsterNavBar.png"]  forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTitleVerticalPositionAdjustment:5.0f forBarMetrics:UIBarMetricsDefault];
+
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont fontWithName:@"LunchBox-Bold" size:18.0],UITextAttributeFont, nil];
     [navigationBarAppearance setTitleTextAttributes: textAttributes];
+    
     
 #pragma
 #pragma BackButton Attributes
-    //ideally, set up @2x images, landscape.
     
     int imageSize = 44; //image width
     
@@ -44,20 +45,23 @@
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, imageSize*2)
                                                          forBarMetrics:UIBarMetricsDefault]; //this one scoots the default title offscreen.
-
-    UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
-    UIImage *barButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton-tapped.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] ;
     
+    UIImage *barButtonImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0] ;
+    UIImage *barButtonTappedImage = [[UIImage imageNamed:@"monsterNavBar-stretchyButton-tapped.png"] stretchableImageWithLeftCapWidth:12 topCapHeight:0] ;
+
+    [[UIBarButtonItem appearance] setTintColor: [UIColor purpleColor]];
+        
     [[UIBarButtonItem appearance] setBackgroundImage:barButtonImage
-                                            forState:UIControlStateNormal |UIControlStateHighlighted
+                                            forState:UIControlStateNormal
                                                style:UIBarButtonItemStyleBordered
                                           barMetrics:UIBarMetricsDefault];
     
     [[UIBarButtonItem appearance] setBackgroundImage:barButtonTappedImage
-                                            forState:UIControlStateSelected
+                                            forState:UIControlStateHighlighted
                                                style:UIBarButtonItemStyleBordered
                                           barMetrics:UIBarMetricsDefault];
-    
+ 
+    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, 1.f) forBarMetrics:UIBarMetricsDefault];
 }
 
 

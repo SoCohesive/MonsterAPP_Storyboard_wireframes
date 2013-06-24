@@ -16,24 +16,25 @@
 
 @interface TaskListViewController ()
 {
-    // TaskDetail *step;
-    NSString *pointString;
-    NSString *stepString;
-    ProjectListViewController *projectListVC;
+//  TaskDetail                  *step;
+//  NSString                    *stepString;
+    NSString                    *pointString;
+    ProjectListViewController   *projectListVC;
     
 }
 
-@property (strong, nonatomic) NSNumber *totalActualXP;
-@property (strong, nonatomic) NSNumber *totalPossibleXP;
-@property (strong, nonatomic) NSArray *sortedEvolutions;
+@property (strong, nonatomic) NSNumber  *totalActualXP;
+@property (strong, nonatomic) NSNumber  *totalPossibleXP;
+@property (strong, nonatomic) NSArray   *sortedEvolutions;
 
 -(void)toggleEdit;
 -(void) setUpPointsArray;
--(void) showCheeksAnimation;
--(void) rotateMonster;
--(void) saveData;
 -(void) setNavigationLogic;
--(void) pushProjectListView;
+
+//-(void) showCheeksAnimation;
+//-(void) rotateMonster;
+//-(void) saveData;
+//-(void) pushProjectListView;
 
 @end
 
@@ -53,42 +54,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNavigationLogic];
     
-    NSLog(@"the existing task in task list has %@",self.selectedTask);
-    //self.dateLabel.text = self.selectedTask.dateCreated;
+    //NSLog(@"the existing task in task list has %@",self.selectedTask);
+    //NSLog(@"user is: %@", self.taskListUser);
+    
     self.navigationItem.title = self.selectedTask.taskName;
     NSLog(@"the selected project is %@",self.selectedTask.taskName);
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/YYYY"];
     NSString *dueString = [dateFormatter stringFromDate:self.selectedTask.projectedEndDate];
     self.dateLabel.text = dueString;
-
+    
     //sum up potential XP for setting evolution thresholds
     NSSet *possibleXPSet = self.selectedTask.taskDetails;
-    self.totalPossibleXP = [possibleXPSet valueForKeyPath:@"@sum.possStepXP"];
+    int possibleXPFromTasks = [[possibleXPSet valueForKeyPath:@"@sum.possStepXP"] intValue];
+    int possibleXPWithStartPoints = possibleXPFromTasks + 50;
+    self.totalPossibleXP = [NSNumber numberWithInt:possibleXPWithStartPoints];
     self.selectedTask.possibleXP = self.totalPossibleXP;
     
-    //sum up actual XP for label
-    NSSet *actualXPSet = self.selectedTask.taskDetails;
-    self.totalActualXP = [actualXPSet valueForKeyPath:@"@sum.stepXP"];
-    self.selectedTask.actualXP = self.totalActualXP;
+    //actual XP for label
     NSString *xpString = [self.selectedTask.actualXP stringValue];
     self.xpLabel.text =xpString;
-
-    NSLog(@"the existing task in task list has %@",self.selectedTask);
-    //self.dateLabel.text = self.selectedTask.dateCreated;
-    
     
     //Set up edit/done button
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem.title = @"Edit";
     self.editButtonItem.action = @selector(toggleEdit);
     
-    // set up points array and task templates
+    // set up points array 
     [self setUpPointsArray];
-    // [self createTemplates];
-    
-    [self setNavigationLogic];
 
     
     // set up timer for eye blinking animation
@@ -113,22 +109,41 @@
 }
 
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if (self.parentViewController == nil) {
+        NSLog(@"viewDidDisappear doesn't have parent so it's been popped");
+        //release stuff here
+    } else {
+        NSLog(@"TaskViewController view just hidden");
+    }
+}
+
 #pragma 
 #pragma mark create new project list view controller if coming from the new project stack.
 
 -(void) setNavigationLogic {
     
-    if (projectListVC != nil) {
-        
+    if (projectListVC == nil) {
         projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
-        
-        
+
         self.navigationController.viewControllers = @[projectListVC,self];
         projectListVC.currentUser = self.taskListUser;
+        NSLog(@"new project list created");
         
-    } 
-
-
+    } else {
+        
+        self.navigationController.viewControllers = @[projectListVC,self];
+        [self.navigationController popToViewController:projectListVC animated:NO];
+        projectListVC.currentUser = self.taskListUser;
+        NSLog(@"project list existed");
+    }
 }
 
 #pragma mark set label contents
@@ -174,8 +189,8 @@
             [formatter setNumberStyle:NSNumberFormatterNoStyle];
             //newStep.stepXP= [formatter numberFromString:pointString];
             newStep.possStepXP = [formatter numberFromString:pointString];
-            int totalPossXPInt = [self.totalPossibleXP intValue]+ [newStep.possStepXP intValue];
-            self.totalPossibleXP = [NSNumber numberWithInt:totalPossXPInt];
+           // int totalPossXPInt = [self.totalPossibleXP intValue]+ [newStep.possStepXP intValue];
+            //self.totalPossibleXP = [NSNumber numberWithInt:totalPossXPInt];
 
             
             NSError *error = nil;
@@ -220,10 +235,13 @@
    NSArray *taskDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:taskDescriptors];
     
-   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
-   [fetchRequest setPredicate:predicate];
-    NSLog(@"the predicate is %@",predicate);
-    
+   // NSPredicate *predicate = [NSPredicate predicateWithFormat:@"task == %@",self.selectedTask];
+   // NSPredicate *completedPredicate = [NSPredicate predicateWithFormat:@"stepCompleted == %@", nil];
+   
+    NSPredicate *taskWithCompletedPredicate = [NSPredicate predicateWithFormat:@"(task == %@) AND (stepCompleted == %@)", self.selectedTask, nil];
+
+    NSLog(@"the predicate is %@",taskWithCompletedPredicate);
+        
     
     stepsResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest
                                                                managedObjectContext:managedObjectContext
@@ -267,7 +285,8 @@
 {
     switch(type)
     
-    {
+    {//app breaks on the first one, from a totally different viewcontroller
+            //setting the date of the book report, test, etc.
         case NSFetchedResultsChangeInsert:
             [self.taskTable insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
                                   withRowAnimation:UITableViewRowAnimationFade];
@@ -340,14 +359,6 @@
 
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 
 #pragma mark Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -414,9 +425,11 @@
     NSManagedObjectContext *managedObjectContext = ((AppDelegate *)([UIApplication sharedApplication].delegate)).managedObjectContext;
     
     TaskDetail *step = [stepsResultsController objectAtIndexPath:indexPath];
-    step.stepCompleted = [NSNumber numberWithInt:1];
+    step.stepCompleted = [NSNumber numberWithBool:YES];
+    
     
     NSLog (@"actualxp: %@", self.selectedTask.actualXP);
+    
     //set actual xp to potential.
     step.stepXP = step.possStepXP;
     NSLog(@"actual step HP: %@", step.stepXP);
@@ -436,6 +449,10 @@
     
     float percentageOfCompletedSteps = updatedTaskXP/[self.totalPossibleXP floatValue];
     NSLog(@"percent of tasks complete:%f", percentageOfCompletedSteps);
+    
+    if (percentageOfCompletedSteps ==1){
+        self.selectedTask.taskComplete = [NSNumber numberWithBool:YES];
+    }
     
     float percentageOfPotentialEvolutions= [self.selectedTask.monster.evolutions count]*.1f;
     NSLog(@"percent of evolutions:%f", percentageOfPotentialEvolutions);
@@ -467,7 +484,7 @@
         ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:NO];
         
     } else if (percentageOfCompletedSteps <percentageOfPotentialEvolutions*3){
-        NSLog(@"evolution s/b: 2");
+        NSLog(@"evolution s/b: 3");
         self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
         //[self performSegueWithIdentifier:@"segueToEvolve" sender:self];
         ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:NO];
@@ -482,12 +499,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"evolutions at save; %@", self.sortedEvolutions);
 
-    //slows the segue down a moment so animation doesn't catch
-    double delayInSeconds = 1.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
-});
+        [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
 }
 
 #pragma mark rotate monster animation
