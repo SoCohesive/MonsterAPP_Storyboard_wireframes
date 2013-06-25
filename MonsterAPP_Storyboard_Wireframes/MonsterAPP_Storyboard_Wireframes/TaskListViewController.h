@@ -12,6 +12,8 @@
 #import "Task.h"
 #import <CoreData/CoreData.h>
 #import "ProjectListViewController.h"
+#import "MonsterEvolutionImageView.h"
+#import "Evolution.h"
 
 @interface TaskListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, NSFetchedResultsControllerDelegate , UINavigationControllerDelegate>
 
@@ -26,11 +28,14 @@
 
 
 //monster images
-@property (weak, nonatomic) IBOutlet UIImageView *fullMonsterImage;
-@property (weak, nonatomic) IBOutlet UIImageView *monsterRightEyeImage;
-@property (weak, nonatomic) IBOutlet UIImageView *monsterLeftEyeImage;
-@property (weak, nonatomic) IBOutlet UIImageView *blushedCheeksImage;
+@property (weak, nonatomic) IBOutlet MonsterEvolutionImageView *fullMonsterImage;
+@property (weak, nonatomic) IBOutlet MonsterEvolutionImageView *monsterRightEyeImage;
+@property (weak, nonatomic) IBOutlet MonsterEvolutionImageView *monsterLeftEyeImage;
+@property (weak, nonatomic) IBOutlet MonsterEvolutionImageView *blushedCheeksImage;
 @property (weak, nonatomic) IBOutlet UIImageView *mouthOpenImage;
+@property (weak, nonatomic) IBOutlet MonsterEvolutionImageView *monsterEvolutionImage;
+
+@property (strong, nonatomic) Evolution *evolutionForImages;
 
 
 @property NSString *taskDueDate;

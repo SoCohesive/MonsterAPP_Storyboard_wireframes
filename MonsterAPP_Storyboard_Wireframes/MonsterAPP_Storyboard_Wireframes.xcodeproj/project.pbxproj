@@ -46,6 +46,7 @@
 		294B084B176385E600C5DFFA /* vector_monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084A176385E600C5DFFA /* vector_monster.png */; };
 		294B084D176386F800C5DFFA /* egg_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084C176386F800C5DFFA /* egg_still.png */; };
 		294B084F1763874100C5DFFA /* junglg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084E1763874100C5DFFA /* junglg_bg.png */; };
+		2993697F17792A2F00E8CBF7 /* MonsterEvolutionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993697E17792A2F00E8CBF7 /* MonsterEvolutionImageView.m */; };
 		29F1DF7F176C22B000FFB46F /* WelcomeMat_whitebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 29F1DF7E176C22B000FFB46F /* WelcomeMat_whitebg.png */; };
 		29F1DF81176C22F900FFB46F /* DoorKnob_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 29F1DF80176C22F900FFB46F /* DoorKnob_test.png */; };
 		29F1DF8A176C32A000FFB46F /* step1.png in Resources */ = {isa = PBXBuildFile; fileRef = 29F1DF89176C32A000FFB46F /* step1.png */; };
@@ -164,6 +165,8 @@
 		294B084A176385E600C5DFFA /* vector_monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vector_monster.png; sourceTree = "<group>"; };
 		294B084C176386F800C5DFFA /* egg_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_still.png; sourceTree = "<group>"; };
 		294B084E1763874100C5DFFA /* junglg_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junglg_bg.png; sourceTree = "<group>"; };
+		2993697D17792A2F00E8CBF7 /* MonsterEvolutionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterEvolutionImageView.h; sourceTree = "<group>"; };
+		2993697E17792A2F00E8CBF7 /* MonsterEvolutionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterEvolutionImageView.m; sourceTree = "<group>"; };
 		29F1DF7E176C22B000FFB46F /* WelcomeMat_whitebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeMat_whitebg.png; sourceTree = "<group>"; };
 		29F1DF80176C22F900FFB46F /* DoorKnob_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DoorKnob_test.png; sourceTree = "<group>"; };
 		29F1DF89176C32A000FFB46F /* step1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = step1.png; sourceTree = "<group>"; };
@@ -368,6 +371,8 @@
 				A4FE71E817668BAE00FB60D1 /* ProjectNameVC.m */,
 				A40769E417676FAB00AE7F7F /* EggHatchesViewController.h */,
 				A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */,
+				2993697D17792A2F00E8CBF7 /* MonsterEvolutionImageView.h */,
+				2993697E17792A2F00E8CBF7 /* MonsterEvolutionImageView.m */,
 				A485E13C1768E18E00ED06DC /* EvolutionViewController.h */,
 				A485E13D1768E18E00ED06DC /* EvolutionViewController.m */,
 				A442FD02176ABA70006E71B6 /* CoreData */,
@@ -698,6 +703,7 @@
 				A4F9550C177165F200FE2554 /* TaskDetail.m in Sources */,
 				A4F9550F1771663200FE2554 /* Evolution.m in Sources */,
 				A4D988531774EF3100FA9312 /* User.m in Sources */,
+				2993697F17792A2F00E8CBF7 /* MonsterEvolutionImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

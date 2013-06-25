@@ -11,9 +11,9 @@
 
 @interface EvolutionViewController ()
 {
-    NSArray *turtleWobble;
-    NSArray *tailFlickArray;
-    NSArray *evolution3Array;
+   // NSArray *turtleWobble;
+    //NSArray *tailFlickArray;
+   // NSArray *evolution3Array;
 }
 @end
 
@@ -37,19 +37,20 @@
     UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.evolutionDescriptionLabel.font.pointSize];
     self.evolutionDescriptionLabel.font = lunchBoxBold;
     
-    NSLog(@"%@", self.evolutionForImages.evolutionNumber);
+    //implement evolution logic
+    NSLog(@"%@", self.evolutionForImages.currentEvolution);
     
-    if ([self.evolutionForImages.evolutionNumber intValue]== 1) {
+    if ([self.evolutionForImages.currentEvolution intValue]== 1) {
         
-        [self performSelector:@selector(evol1Animate) withObject:nil afterDelay:.5f];
+        [self performSelector:@selector(wobbleHeadEvo1) withObject:nil afterDelay:.5f];
 
-    } else if ([self.evolutionForImages.evolutionNumber intValue]== 2) {
+    } else if ([self.evolutionForImages.currentEvolution intValue]== 2) {
         
-        [self performSelector:@selector(tailFlickAnimate) withObject:nil afterDelay:.5f];
+        [self performSelector:@selector(flickTailEvo2) withObject:nil afterDelay:.5f];
     
     } else {
 
-        [self performSelector:@selector(evolution3Animate) withObject:nil afterDelay:.5f];
+        [self performSelector:@selector(addLimbsEvo3) withObject:nil afterDelay:.5f];
     }
 
 	// Do any additional setup after loading the view.
@@ -62,6 +63,10 @@
 									 [NSURL fileURLWithPath:soundFile]
 									 , &soundID);
     AudioServicesPlaySystemSound(soundID);
+    
+    // dismiss view after time interval
+    [self performSelector:@selector(goBackToTaskView) withObject:nil afterDelay:2.8];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,43 +75,34 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)evol1Animate
-{
-    
-    turtleWobble = [NSArray arrayWithObjects:
-                      [UIImage imageNamed:@"turtling-ev1-for-TaskView-1.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-2.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-3.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-4.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-3.png"], [UIImage imageNamed:@"turtling-ev1-for-TaskView-2.png"],  [UIImage imageNamed:@"turtling-ev1-for-TaskView-1.png"],nil];
-    
-    self.wobbleView.animationImages = turtleWobble;
-    self.wobbleView.animationDuration = 1.0f;
-    //self.stillStickFigureImageView.alpha = 0;
-    
-    [self.wobbleView startAnimating];
+-(void)wobbleHeadEvo1 {
+   
+    [self.monsterImagesForAnimation animationOne];
+   
 }
 
--(void)tailFlickAnimate
+-(void)flickTailEvo2
 {
-    
-    tailFlickArray = [NSArray arrayWithObjects:
-                             [UIImage imageNamed:@"turtling-ev2-for-TaskView-tailLow.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-tailMiddle.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-tailHigh.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-tailMiddle.png"],nil];
-    
-    self.faceView.animationImages = tailFlickArray;
-    self.faceView.animationDuration = 1.0f;
-    //self.stillStickFigureImageView.alpha = 0;
-    
-    [self.faceView startAnimating];
+  
+    [self.monsterImagesForAnimation tailFlickAnimate];
 
 }
 
--(void)evolution3Animate
+-(void)addLimbsEvo3 
 {
     
-    evolution3Array = [NSArray arrayWithObjects:
-                      [UIImage imageNamed:@"turtling-ev3-for-TaskView-1.png"],[UIImage imageNamed:@"turtling-ev3-for-TaskView-2.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-3.png"],[UIImage imageNamed:@"turtling-ev3-for-TaskView-4.png"], [UIImage imageNamed:@"turtling-ev2-for-TaskView-3.png"], [UIImage imageNamed:@"turtling-ev2-for-TaskView-2.png"],nil];
-    
-    self.evolution3.animationImages = evolution3Array;
-    self.evolution3.animationDuration = 1.0f;
-    
-    [self.evolution3 startAnimating];
-    
+    [self.monsterImagesForAnimation growLimbsEvo3];
+
 }
+
+- (void)goBackToTaskView {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"Dismissing evolution");
+        
+    }];
+}
+
+
+
 @end
