@@ -91,20 +91,6 @@
 
     
     // set up Timer for eye and cheek animation if monster is at this stage
-    if ([self.selectedTask.monster evolutions] == nil) {
-        
-        [NSTimer scheduledTimerWithTimeInterval:2
-                                         target:self
-                                       selector:@selector(blinkCloseAnimationForMonster)                                    userInfo:self
-                                        repeats:YES];
-        
-        //set up timer for cheeks
-        [NSTimer scheduledTimerWithTimeInterval:1
-                                         target:self
-                                       selector:@selector(animateCheeks)
-                                       userInfo:self
-                                        repeats:NO];
-    } else
         
         [self monsterImageLogic];
 }
@@ -138,7 +124,22 @@
     self.sortedEvolutions = [evolutionSetForMonster sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoNumber]];
     evolutionNumber = ((Evolution *)self.sortedEvolutions[0]).evolutionNumber;
     
-    if ([evolutionNumber intValue] == 1){
+    if ([evolutionNumber intValue] == 0) {
+        
+        [NSTimer scheduledTimerWithTimeInterval:2
+                                         target:self
+                                       selector:@selector(blinkCloseAnimationForMonster)                                    userInfo:self
+                                        repeats:YES];
+        
+        //set up timer for cheeks
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(animateCheeks)
+                                       userInfo:self
+                                        repeats:NO];
+        
+    }
+    else if ([evolutionNumber intValue] == 1){
         
         self.monsterLeftEyeImage.hidden = YES;
         self.monsterRightEyeImage.hidden = YES;
@@ -486,7 +487,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"evolutions at save; %@", self.sortedEvolutions);
 
-        [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+    [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+    [self monsterImageLogic];
 }
 
 

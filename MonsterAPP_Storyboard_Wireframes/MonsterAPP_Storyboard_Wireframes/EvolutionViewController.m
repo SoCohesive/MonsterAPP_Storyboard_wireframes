@@ -98,8 +98,8 @@
 - (void)goBackToTaskView {
     
     [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Dismissing evolution");
-        
+
+    
     }];
 }
 
