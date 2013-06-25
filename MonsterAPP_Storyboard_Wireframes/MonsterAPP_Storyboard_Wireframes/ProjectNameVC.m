@@ -17,14 +17,17 @@
     //NSString *nameRequest;
     //NSString *dateRequest;
     
-    //NSString    *selectionString;
-    NSDate      *pickerDate;
+    //NSString      *selectionString;
+    NSDate          *pickerDate;
+
 }
+
 
 -(void)chooseNameRequest;
 -(void)formatTextFields;
 -(void) chooseTaskList;
 -(void) createTemplates;
+
 
 @end
 
@@ -47,6 +50,7 @@
     [self chooseNameRequest];
     [self chooseDueQuestion];
     [self createTemplates];
+    
     
     pickerDate = [self.datePicker date];
     //selectionString = [[NSString alloc] initWithFormat:@"%@", [pickerDate descriptionWithLocale:[NSLocale currentLocale]]];
@@ -86,6 +90,8 @@
     self.dateEntryField.layer.borderWidth= 1.0f;
     
     self.dateEntryField.inputView = self.datePicker;
+    self.dateEntryField.inputAccessoryView = self.datePickToolbar;
+
 }
 
 
@@ -105,7 +111,12 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    return YES;
+    if (textField == self.titleTextField) {
+        return YES;
+    }else{
+        return NO;
+    
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -147,12 +158,12 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
     [self animateDatePicker];
-    [self.view addSubview:self.datePicker];
 }
+
 
 -(void)animateDatePicker
 {
-    
+
     CATransition *animation = [CATransition animation];
     [animation setDelegate:self];
     
@@ -160,14 +171,17 @@
     [animation setType:kCATransitionMoveIn];
     [animation setSubtype:kCATransitionFromTop];
     // Set the duration and timing function of the transtion -- duration is passed in as a parameter, use ease in/ease out as the timing function
-    [animation setDuration:0.5];
+    [animation setDuration:0.1];
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [[self.datePicker layer] addAnimation:animation forKey:@"transitionViewAnimation"];
+    [[self.datePickToolbar layer] addAnimation:animation forKey:@"transitionViewAnimation"];
     
     self.datePicker.hidden = FALSE;
+    self.datePickToolbar.hidden = FALSE;
     self.datePicker.minimumDate = [NSDate date];
     
     [[self.datePicker layer] removeAnimationForKey:@"transitionViewAnimation"];
+    [[self.datePickToolbar layer] removeAnimationForKey:@"transitionViewAnimation"];
     animation = nil;
     
     
@@ -290,15 +304,14 @@
 {
     //add titleTextField.text to task properties
     [self performSegueWithIdentifier:@"segueToHatch" sender:self];
-
-    
+  
 }
--(void)buttonTest
-{
+
+- (IBAction)pickerToolbarDoneButton:(id)sender {
+
     [self performSegueWithIdentifier:@"segueToHatch" sender:self];
-    
-}
 
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -318,4 +331,9 @@
     
 }
 
+
+- (IBAction)pickDateButton:(id)sender {
+    [self performSegueWithIdentifier:@"segueToHatch" sender:self];
+
+}
 @end

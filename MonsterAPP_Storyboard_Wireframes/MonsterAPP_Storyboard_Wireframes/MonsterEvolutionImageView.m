@@ -14,6 +14,7 @@
     NSArray *tailFlickArray;
     NSArray *turtleWobble;
     NSArray *evolution3Array;
+    SystemSoundID  soundID3;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -68,19 +69,18 @@
                          
                          
                      } completion:^(BOOL finished) {
-                         
+                                                
                          [self blinkOpenAnimationForMonster];
-                         
+                                                  
                      }];
     
-    SystemSoundID soundID3;
     NSString *soundFile3 = [[NSBundle mainBundle]
-                            pathForResource:@"Monster_Wink" ofType:@"wav"];
-    
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
-                                     [NSURL fileURLWithPath:soundFile3]
-                                     , &soundID3);
-    AudioServicesPlaySystemSound(soundID3);
+            pathForResource:@"Monster_Wink" ofType:@"wav"];
+            
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef)
+            [NSURL fileURLWithPath:soundFile3]
+            , &soundID3);
+            AudioServicesPlaySystemSound(soundID3);
     
     
 }
@@ -96,6 +96,7 @@
                          
                      } completion:^(BOOL finished) {
                          
+                         AudioServicesDisposeSystemSoundID(soundID3);
                          
                      }];
     

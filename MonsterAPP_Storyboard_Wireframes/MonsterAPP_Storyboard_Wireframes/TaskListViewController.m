@@ -21,7 +21,6 @@
     NSString                    *pointString;
     ProjectListViewController   *projectListVC;
 
-    
 }
 
 @property (strong, nonatomic) NSNumber  *totalActualXP;
@@ -121,6 +120,8 @@
 {
     if (self.parentViewController == nil) {
         NSLog(@"viewDidDisappear doesn't have parent so it's been popped");
+        [self dismissViewControllerAnimated:YES completion: nil];
+        
         //release stuff here
     } else {
         NSLog(@"TaskViewController view just hidden");
@@ -503,8 +504,7 @@
     [self.monsterRightEyeImage animateEyesForBlinking];
      
 }
-
-#pragma prepareForEvolutionSegue
+  #pragma prepareForEvolutionSegue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString: @"segueToEvolve"]){
         

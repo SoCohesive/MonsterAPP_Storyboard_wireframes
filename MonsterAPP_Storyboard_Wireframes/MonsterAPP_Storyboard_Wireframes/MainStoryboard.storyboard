@@ -118,7 +118,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="D4d-Su-q7a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qod-pg-wbi">
+                        <barButtonItem key="rightBarButtonItem" title="Sign In" id="qod-pg-wbi">
                             <connections>
                                 <action selector="loginWithButton:" destination="xLR-tL-bC3" id="per-VW-W8F"/>
                             </connections>
@@ -293,6 +293,23 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="monsterNavBar-TableBackdrop.png" id="CPB-Qz-fzT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LRf-Ef-GDu">
+                                <rect key="frame" x="0.0" y="156" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="i0e-FT-226"/>
+                                    <barButtonItem title="Set Date" id="iQn-tF-nLI">
+                                        <connections>
+                                            <action selector="pickDateButton:" destination="hU3-eb-Yu9" id="Tpa-wT-5cW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.49803921568627452" green="0.24705882352941178" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="phB-NN-whp">
                                 <rect key="frame" x="0.0" y="200" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -321,10 +338,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="monsterNavBar-TableBackdrop.png" id="CPB-Qz-fzT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Project Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eip-sz-NDn">
                                 <rect key="frame" x="20" y="12" width="280" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -333,7 +346,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="24" id="I8H-QO-GRh">
-                                <rect key="frame" x="135" y="74" width="165" height="44"/>
+                                <rect key="frame" x="135" y="55" width="165" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -342,7 +355,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="24" id="Xt5-Dw-R5J">
-                                <rect key="frame" x="135" y="126" width="165" height="44"/>
+                                <rect key="frame" x="135" y="105" width="165" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -351,14 +364,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nwa-n2-9oT">
-                                <rect key="frame" x="31" y="85" width="103" height="21"/>
+                                <rect key="frame" x="31" y="66" width="103" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Eg-yn-0Eg">
-                                <rect key="frame" x="31" y="137" width="72" height="21"/>
+                                <rect key="frame" x="31" y="116" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -368,7 +381,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8Gu-tH-eD3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ibq-CX-6dE">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Ibq-CX-6dE">
                             <connections>
                                 <action selector="saveTaskDoneButton:" destination="hU3-eb-Yu9" id="ITG-dv-jh4"/>
                             </connections>
@@ -378,6 +391,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="dateEntryField" destination="Xt5-Dw-R5J" id="ap9-US-77t"/>
+                        <outlet property="datePickToolbar" destination="LRf-Ef-GDu" id="QaJ-Kp-ncS"/>
                         <outlet property="datePicker" destination="phB-NN-whp" id="WIm-s6-bgf"/>
                         <outlet property="dueDateLabel" destination="0Eg-yn-0Eg" id="6YV-Wt-OGN"/>
                         <outlet property="nameLabel" destination="nwa-n2-9oT" id="43n-r2-Zyz"/>
@@ -1023,8 +1037,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ProjectNameVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectNameVC.h"/>
             <relationships>
+                <relationship kind="action" name="pickDateButton:"/>
                 <relationship kind="action" name="saveTaskDoneButton:"/>
                 <relationship kind="outlet" name="dateEntryField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="datePickToolbar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="dueDateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
