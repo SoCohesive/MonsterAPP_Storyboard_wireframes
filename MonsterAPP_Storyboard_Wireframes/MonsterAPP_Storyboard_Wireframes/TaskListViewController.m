@@ -20,6 +20,7 @@
 //  NSString                    *stepString;
     NSString                    *pointString;
     ProjectListViewController   *projectListVC;
+    SystemSoundID               soundID3;
     
 }
 
@@ -121,6 +122,8 @@
 {
     if (self.parentViewController == nil) {
         NSLog(@"viewDidDisappear doesn't have parent so it's been popped");
+        [self dismissViewControllerAnimated:YES completion: nil];
+        
         //release stuff here
     } else {
         NSLog(@"TaskViewController view just hidden");
@@ -504,7 +507,7 @@
                          
                      }];
     
-    SystemSoundID soundID3;
+    
     NSString *soundFile3 = [[NSBundle mainBundle]
                             pathForResource:@"Monster_Wink" ofType:@"wav"];
     
