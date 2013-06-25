@@ -220,7 +220,7 @@
         taskDetail.stepDetail = step;
         taskDetail.stepCreatedDate = [NSDate date];
         taskDetail.task = self.currentTask;
-        taskDetail.possStepXP = [NSNumber numberWithInt:25];
+        taskDetail.possStepXP = [NSNumber numberWithInt:50];
         
         [self.currentTask addTaskDetailsObject:taskDetail];
     }

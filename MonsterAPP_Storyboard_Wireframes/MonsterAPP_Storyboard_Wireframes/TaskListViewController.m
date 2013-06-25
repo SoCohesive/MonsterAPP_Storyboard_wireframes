@@ -21,6 +21,8 @@
     NSString                    *pointString;
     ProjectListViewController   *projectListVC;
     SystemSoundID               soundID3;
+    int                         blinkCounter;
+    NSTimer                     *blinkTimer;
     
 }
 
@@ -91,10 +93,13 @@
 
     
     // set up timer for eye blinking animation
-    [NSTimer scheduledTimerWithTimeInterval:2
+    blinkTimer = [NSTimer scheduledTimerWithTimeInterval:2
                                      target:self
-                                   selector:@selector(blinkCloseAnimationForMonster)                                    userInfo:self
+                                   selector:@selector(blinkCloseAnimationForMonster)
+                                   userInfo:self
                                     repeats:YES];
+    blinkCounter = 0;
+    
     
     //set up timer for cheeks
     [NSTimer scheduledTimerWithTimeInterval:1
@@ -118,17 +123,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    if (self.parentViewController == nil) {
-        NSLog(@"viewDidDisappear doesn't have parent so it's been popped");
-        [self dismissViewControllerAnimated:YES completion: nil];
-        
-        //release stuff here
-    } else {
-        NSLog(@"TaskViewController view just hidden");
-    }
-}
 
 #pragma 
 #pragma mark create new project list view controller if coming from the new project stack.
@@ -191,8 +185,8 @@
             [formatter setNumberStyle:NSNumberFormatterNoStyle];
             //newStep.stepXP= [formatter numberFromString:pointString];
             newStep.possStepXP = [formatter numberFromString:pointString];
-           // int totalPossXPInt = [self.totalPossibleXP intValue]+ [newStep.possStepXP intValue];
-            //self.totalPossibleXP = [NSNumber numberWithInt:totalPossXPInt];
+            int totalPossXPInt = [self.totalPossibleXP intValue]+ [newStep.possStepXP intValue];
+            self.totalPossibleXP = [NSNumber numberWithInt:totalPossXPInt];
 
             
             NSError *error = nil;
@@ -405,6 +399,7 @@
     float percentageOfPotentialEvolutions= [self.selectedTask.monster.evolutions count]*.1f;
     NSLog(@"percent of evolutions:%f", percentageOfPotentialEvolutions);
     
+    
     float justToKnow = percentageOfPotentialEvolutions * [self.totalPossibleXP floatValue];
     NSLog(@"points per evolution: %f", justToKnow);
    
@@ -489,10 +484,11 @@
     //self.monsterLeftEyeImage.hidden = NO;
     
     [UIView animateWithDuration:.4
-                          delay:0
+                          delay: 0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          
+
                          self.monsterRightEyeImage.hidden= NO;
                          self.monsterLeftEyeImage.hidden = NO;
                          
@@ -503,8 +499,22 @@
                          
                      } completion:^(BOOL finished) {
                          
-                         [self blinkOpeneAnimationForMonster];
-                         
+                         [UIView animateWithDuration:.4 delay:0
+                                             options:UIViewAnimationOptionCurveEaseIn
+                                          animations:^{
+                                              
+                                              self.monsterLeftEyeImage.alpha = 0.0f;
+                                              self.monsterRightEyeImage.alpha = 0.0f;
+                                              
+                                          } completion:^(BOOL finished) {
+                                              
+                                              {
+                                                  blinkCounter++;
+                                                  if (blinkCounter >= 3) {
+                                                      [blinkTimer invalidate];
+                                                      }
+                                              }
+                                    }];
                      }];
     
     
@@ -518,21 +528,6 @@
     
 }
 
-#pragma mark open eye animation
--(void) blinkOpeneAnimationForMonster {
-    [UIView animateWithDuration:.4 delay:0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-                         self.monsterLeftEyeImage.alpha = 0.0f;
-                         self.monsterRightEyeImage.alpha = 0.0f;
-                         
-                     } completion:^(BOOL finished) {
-                         
-                         
-                     }];
-    
-}
 
 
 #pragma

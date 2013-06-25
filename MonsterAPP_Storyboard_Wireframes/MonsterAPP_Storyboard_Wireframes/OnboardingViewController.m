@@ -40,7 +40,8 @@
     
     self.navigationItem.hidesBackButton = YES;
     [self.navigationController setNavigationBarHidden:YES]; 
-    animated = YES;
+    //animated was never read.
+    //animated = YES;
     
     [self performSelector:@selector(playOpenDoorSound) withObject:nil afterDelay:.02];
     [self performSelector:@selector(openDoorAnimation) withObject:nil afterDelay:.15];

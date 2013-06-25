@@ -11,8 +11,9 @@
 #import "Task.h"
 #import "Monster.h"
 #import "Evolution.h"
+#import "SelectedTaskDelegate.h"
 
-@interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@interface ProjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) User *currentUser;
 @property (strong, nonatomic) Task *existingTask;
@@ -25,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *finishedCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *currentHighPointMonster;
 @property (weak, nonatomic) IBOutlet UITableView *staticesqueTable;
+
+@property (strong, nonatomic) id <SelectedTaskDelegate> delegate;
 
 
 @end

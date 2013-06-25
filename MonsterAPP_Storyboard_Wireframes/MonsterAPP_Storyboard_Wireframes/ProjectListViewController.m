@@ -20,6 +20,7 @@
 {
     NSMutableArray              *projectsBySection;
     NSMutableArray              *existingTasksArray;
+    TaskListViewController      *taskListViewController;
    
 }
 
@@ -27,6 +28,8 @@
 @property (strong, nonatomic) NSString *thumbPath;
 
 -(void)setupTasksFetchController;
+//-(void) setNavigationLogic;
+
 
 @end
 
@@ -44,6 +47,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[self setNavigationLogic];
     
     self.navigationItem.hidesBackButton = YES;
     NSLog(@"ProjectListNavStack %@", [self.navigationController viewControllers]);
@@ -178,7 +182,7 @@ CompletedProjectsCell *completedProjectCell =[[CompletedProjectsCell alloc] init
 
     if (tableView == self.staticesqueTable) {
         
-    
+            
         newProjectCell = [tableView dequeueReusableCellWithIdentifier:cellID1];
         newProjectCell.createLabel.text = [projectsBySection[0] objectAtIndex:indexPath.row];
         
@@ -267,7 +271,10 @@ indexPath
         
     } else {
         
-        
+        //[self.delegate selectedValueIs:[self.taskResultsController objectAtIndexPath:indexPath]];
+        //NSLog(@"viewControllers for PLVC: %@", [self.navigationController.viewControllers objectAtIndex:1]);
+        //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+
         [self.projectsTableView deselectRowAtIndexPath:indexPath animated:YES];
        
         self.tappedTask= [self.taskResultsController objectAtIndexPath:indexPath];
@@ -288,11 +295,31 @@ if ([segue.identifier isEqualToString:@"segueToExistingTaskDetail"]) {
     
 if ([segue.identifier isEqualToString:@"segueToCreateProject"]) {
     ((ProjectPickerVC*)(segue.destinationViewController)).projPickerCurrentUser = self.currentUser;
-    NSLog(@"making new project");
-    }
+}
     
 }
 
+#pragma
+#pragma mark set TaskList in stack
+//Doing this so delegation can be used rather than segues (to prevent duplicate instantiation).
+
+-(void) setNavigationLogic {
+    
+    if (taskListViewController == nil) {
+        taskListViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TaskListViewController"];
+        
+        self.navigationController.viewControllers = @[self,taskListViewController];
+        taskListViewController.taskListUser = self.currentUser;
+        NSLog(@"new task list created");
+        
+    } else {
+        
+        self.navigationController.viewControllers = @[self,taskListViewController];
+        taskListViewController.taskListUser = self.currentUser;
+        NSLog(@"task list existed");
+    }
+    
+}
 
 
 @end

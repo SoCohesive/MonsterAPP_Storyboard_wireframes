@@ -97,8 +97,8 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.monsterNameField resignFirstResponder];
     [self performSegueWithIdentifier:@"segueToTaskList" sender:self];
+    [self saveMonster];
     return YES;
 }
 
