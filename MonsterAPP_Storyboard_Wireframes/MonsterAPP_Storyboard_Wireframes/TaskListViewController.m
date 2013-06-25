@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "User.h"
 #import "EvolutionViewController.h"
+#import "Monster.h"
 
 
 
@@ -23,7 +24,6 @@
     SystemSoundID               soundID3;
     int                         blinkCounter;
     NSTimer                     *blinkTimer;
-    
 }
 
 @property (strong, nonatomic) NSNumber  *totalActualXP;
@@ -89,31 +89,16 @@
     [self setUpPointsArray];
     [self stepsResultController];
     
+    self.monsterNameLabel.text= self.selectedTask.monster.monsterName;
+    UIFont *lunchBoxBold = [UIFont fontWithName:@"LunchBox-Light" size:self.monsterNameLabel.font.pointSize];
+    self.monsterNameLabel.font = lunchBoxBold;
+    
     [self setNavigationLogic];
 
-    
-    // set up timer for eye blinking animation
-    blinkTimer = [NSTimer scheduledTimerWithTimeInterval:2
-                                     target:self
-                                   selector:@selector(blinkCloseAnimationForMonster)
-                                   userInfo:self
-                                    repeats:YES];
-    blinkCounter = 0;
-    
-    
-    //set up timer for cheeks
-    [NSTimer scheduledTimerWithTimeInterval:1
-                                     target:self
-                                   selector:@selector(showCheeksAnimation)
-                                   userInfo:self
-                                    repeats:NO];
-    
-    //set up timer for rotating turtle guy
-    [NSTimer scheduledTimerWithTimeInterval:1
-                                     target:self
-                                   selector:@selector(rotateMonster)
-                                   userInfo:self
-                                    repeats:NO];
+
+    // set up Timer for eye and cheek animation if monster is at this stage
+        
+        [self monsterImageLogic];
 }
 
 
@@ -124,20 +109,80 @@
 }
 
 
+-(void) monsterImageLogic {
+    
+    NSNumber *evolutionNumber;
+    NSSet *evolutionSetForMonster = [self.selectedTask.monster evolutions];
+    NSSortDescriptor *sortByEvoNumber = [[NSSortDescriptor alloc] initWithKey:@"currentEvolution"
+                                                                    ascending:NO];
+    
+    self.sortedEvolutions = [evolutionSetForMonster sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoNumber]];
+    evolutionNumber = ((Evolution *)self.sortedEvolutions[0]).evolutionNumber;
+    
+    if ([evolutionNumber intValue] == 0) {
+        
+        [NSTimer scheduledTimerWithTimeInterval:2
+                                         target:self
+                                       selector:@selector(blinkCloseAnimationForMonster)                                    userInfo:self
+                                        repeats:YES];
+        blinkCounter = 0;
+
+        
+        //set up timer for cheeks
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(animateCheeks)
+                                       userInfo:self
+                                        repeats:NO];
+        
+    }
+    else if ([evolutionNumber intValue] == 1){
+        
+        self.monsterLeftEyeImage.hidden = YES;
+        self.monsterRightEyeImage.hidden = YES;
+        self.fullMonsterImage.hidden = YES;
+        self.blushedCheeksImage.hidden = YES;
+        self.mouthOpenImage.hidden = YES;
+        
+        [self.monsterEvolutionImage animationOne];
+        
+    } else if ([evolutionNumber intValue] == 2) {
+        
+        self.monsterLeftEyeImage.hidden = YES;
+        self.monsterRightEyeImage.hidden = YES;
+        self.fullMonsterImage.hidden = YES;
+        self.mouthOpenImage.hidden = YES;
+        self.blushedCheeksImage.hidden = YES;
+        
+        [self.monsterEvolutionImage tailFlickAnimate];
+        
+    } else if ([evolutionNumber intValue] == 3) {
+        
+        self.monsterLeftEyeImage.hidden = YES;
+        self.monsterRightEyeImage.hidden = YES;
+        self.fullMonsterImage.hidden = YES;
+        self.mouthOpenImage.hidden = YES;
+        self.blushedCheeksImage.hidden = YES; 
+        
+        [self.monsterEvolutionImage growLimbsEvo3];
+        
+    
+    }
+}
+
 #pragma 
 #pragma mark create new project list view controller if coming from the new project stack.
-
 -(void) setNavigationLogic {
-    
+
     if (projectListVC == nil) {
         projectListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProjectListViewController"];
 
         self.navigationController.viewControllers = @[projectListVC,self];
         projectListVC.currentUser = self.taskListUser;
         NSLog(@"new project list created");
-        
+
     } else {
-        
+
         self.navigationController.viewControllers = @[projectListVC,self];
         [self.navigationController popToViewController:projectListVC animated:NO];
         projectListVC.currentUser = self.taskListUser;
@@ -443,97 +488,33 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"evolutions at save; %@", self.sortedEvolutions);
 
-        [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+    [self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+    [self performSelector:@selector(monsterImageLogic) withObject:nil afterDelay:.8];
 }
 
-#pragma mark rotate monster animation
--(void) rotateMonster {
-    
-    [UIView animateWithDuration:1 animations:^{
-        
-        // In order to do this we need to make an animation group so that all elements move in accordance with the monsters full image
-        
-        
-    }];
-    
-}
+
 
 #pragma mark cheek animation
--(void) showCheeksAnimation {
-    
-    self.blushedCheeksImage.alpha =0.0f;
-    
-    [UIView animateWithDuration:2
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-                         self.blushedCheeksImage.alpha = 1.0;
-                         self.blushedCheeksImage.hidden= NO;
-                         
-                     } completion:^(BOOL finished) {
-                         //
-                     }];
-    
+-(void) animateCheeks {
+    [self.blushedCheeksImage showCheeksAnimation];
 }
 
 
 #pragma mark create monster eye animation
 -(void) blinkCloseAnimationForMonster {
-    
-    //self.monsterLeftEyeImage.hidden = NO;
-    
-    [UIView animateWithDuration:.4
-                          delay: 0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         
-
-                         self.monsterRightEyeImage.hidden= NO;
-                         self.monsterLeftEyeImage.hidden = NO;
-                         
-                         self.monsterLeftEyeImage.alpha = 1.0f;
-                         self.monsterRightEyeImage.alpha = 1.0f;
-                         
-                         
-                         
-                     } completion:^(BOOL finished) {
-                         
-                         [UIView animateWithDuration:.4 delay:0
-                                             options:UIViewAnimationOptionCurveEaseIn
-                                          animations:^{
-                                              
-                                              self.monsterLeftEyeImage.alpha = 0.0f;
-                                              self.monsterRightEyeImage.alpha = 0.0f;
-                                              
-                                          } completion:^(BOOL finished) {
-                                              
-                                              {
-                                                  blinkCounter++;
-                                                  if (blinkCounter >= 3) {
-                                                      [blinkTimer invalidate];
-                                                      }
-                                              }
-                                    }];
-                     }];
-    
-    
-    NSString *soundFile3 = [[NSBundle mainBundle]
-                            pathForResource:@"Monster_Wink" ofType:@"wav"];
-    
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)
-									 [NSURL fileURLWithPath:soundFile3]
-									 , &soundID3);
-    AudioServicesPlaySystemSound(soundID3);
-    
+    blinkCounter++;
+    if (blinkCounter >= 4){
+        [blinkTimer invalidate];
+    } else {
+        [self.monsterLeftEyeImage animateEyesForBlinking];
+        [self.monsterRightEyeImage animateEyesForBlinking];
+    }
 }
 
 
 
 #pragma
 #pragma prepareForEvolutionSegue
-
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString: @"segueToEvolve"]){
@@ -545,6 +526,8 @@
     
     NSLog(@"TaskListVC SortedEvol.%@", self.sortedEvolutions);
    ((EvolutionViewController*)(segue.destinationViewController)).evolutionForImages = [self.sortedEvolutions objectAtIndex:0];
+        
+        [self.monsterEvolutionImage stopAnimating];
     }
     
 }
