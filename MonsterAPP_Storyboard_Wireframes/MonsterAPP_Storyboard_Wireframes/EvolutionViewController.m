@@ -40,11 +40,11 @@
     //implement evolution logic
     NSLog(@"%@", self.evolutionForImages.currentEvolution);
     
-    if ([self.evolutionForImages.currentEvolution intValue]== 1) {
+    if ([self.evolutionForImages.evolutionNumber intValue] == 1) {
         
         [self performSelector:@selector(wobbleHeadEvo1) withObject:nil afterDelay:.5f];
 
-    } else if ([self.evolutionForImages.currentEvolution intValue]== 2) {
+    } else if ([self.evolutionForImages.evolutionNumber intValue]== 2) {
         
         [self performSelector:@selector(flickTailEvo2) withObject:nil afterDelay:.5f];
     
