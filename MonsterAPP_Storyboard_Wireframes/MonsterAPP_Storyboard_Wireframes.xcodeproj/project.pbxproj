@@ -237,6 +237,7 @@
 		A4D9887A177A028900FA9312 /* turtling-ev4-for-TaskView-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev4-for-TaskView-6.png"; sourceTree = "<group>"; };
 		A4D9887B177A028900FA9312 /* turtling-ev4-for-TaskView-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev4-for-TaskView-5.png"; sourceTree = "<group>"; };
 		A4D9887C177A028900FA9312 /* turtling-ev4-for-TaskView-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev4-for-TaskView-4.png"; sourceTree = "<group>"; };
+		A4D98885177A123D00FA9312 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A4DF683A17692E4E00A8A5FC /* CreateNewProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewProjectCell.h; sourceTree = "<group>"; };
 		A4DF683B17692E4E00A8A5FC /* CreateNewProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewProjectCell.m; sourceTree = "<group>"; };
 		A4EC77DD1769F20000892EF3 /* ExistingProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingProjectCell.h; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 		294B081B1763631B00C5DFFA = {
 			isa = PBXGroup;
 			children = (
+				A4D98885177A123D00FA9312 /* Default.png */,
 				18FDC3E5176F85A60064368F /* Sounds */,
 				294B082D1763631B00C5DFFA /* MonsterAPP_Storyboard_Wireframes */,
 				294B08261763631B00C5DFFA /* Frameworks */,
@@ -792,8 +794,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Erin Hochstatter (X52FW29WA8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Erin Hochstatter (5T84PP4W5D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Erin Hochstatter (5T84PP4W5D)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -801,7 +803,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "A43E357A-1F46-4053-9EEE-DC741B97A958";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A43E357A-1F46-4053-9EEE-DC741B97A958";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -824,12 +827,12 @@
 		294B08491763631B00C5DFFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Erin Hochstatter (5T84PP4W5D)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MonsterAPP_Storyboard_Wireframes/MonsterAPP_Storyboard_Wireframes-Prefix.pch";
 				INFOPLIST_FILE = "MonsterAPP_Storyboard_Wireframes/MonsterAPP_Storyboard_Wireframes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "A43E357A-1F46-4053-9EEE-DC741B97A958";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

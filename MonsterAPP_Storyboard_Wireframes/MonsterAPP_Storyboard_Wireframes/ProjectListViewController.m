@@ -271,10 +271,6 @@ indexPath
         
     } else {
         
-        //[self.delegate selectedValueIs:[self.taskResultsController objectAtIndexPath:indexPath]];
-        //NSLog(@"viewControllers for PLVC: %@", [self.navigationController.viewControllers objectAtIndex:1]);
-        //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
-
         [self.projectsTableView deselectRowAtIndexPath:indexPath animated:YES];
        
         self.tappedTask= [self.taskResultsController objectAtIndexPath:indexPath];
