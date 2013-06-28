@@ -141,7 +141,7 @@
     self.evolution1.thumbnailName = @"turtling-ev1-thumbnail.png";
     self.evolution1.eggImageName = @"firstEgg.png";
     self.evolution1.monster = self.monster;
-    self.evolution1.currentEvolution = [NSNumber numberWithBool:YES];
+    self.evolution1.currentEvolution = [NSNumber numberWithBool:NO];
     [self.monster addEvolutionsObject:self.evolution1];
 
     
@@ -167,6 +167,18 @@
     self.evolution3.monster = self.monster;
     self.evolution3.currentEvolution = [NSNumber numberWithBool:NO];
     [self.monster addEvolutionsObject:self.evolution3];
+    
+    //create managedObject
+    self.evolution4 = [NSEntityDescription insertNewObjectForEntityForName:@"Evolution" inManagedObjectContext:managedObjectContext];
+    
+    //set managedObject properties
+    self.evolution4.evolutionNumber = [NSNumber numberWithInt:4];
+    self.evolution4.evolutionDescription=@"Looks like your tuserpent has grown wings.";
+    self.evolution4.thumbnailName = @"turtling-ev4-thumbnail.png";
+    self.evolution4.monster = self.monster;
+    self.evolution4.currentEvolution = [NSNumber numberWithBool:NO];
+    [self.monster addEvolutionsObject:self.evolution4];
+
 
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {

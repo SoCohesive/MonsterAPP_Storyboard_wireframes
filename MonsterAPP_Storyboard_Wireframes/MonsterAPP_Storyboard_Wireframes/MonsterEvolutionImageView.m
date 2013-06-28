@@ -14,8 +14,11 @@
     NSArray *tailFlickArray;
     NSArray *turtleWobble;
     NSArray *evolution3Array;
+    NSArray *evolution4Array;
+
     SystemSoundID  soundID3;
 }
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -102,11 +105,16 @@
 {
     
     turtleWobble = [NSArray arrayWithObjects:
-                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-1.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-2.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-3.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-4.png"],[UIImage imageNamed:@"turtling-ev1-for-TaskView-3.png"], [UIImage imageNamed:@"turtling-ev1-for-TaskView-2.png"],  [UIImage imageNamed:@"turtling-ev1-for-TaskView-1.png"],nil];
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-1.png"],
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-2.png"],
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-3.png"],
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-4.png"],
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-3.png"],
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-2.png"],
+                    [UIImage imageNamed:@"turtling-ev1-for-TaskView-1.png"],nil];
     
     self.animationImages = turtleWobble;
     self.animationDuration = 1.0f;
-    //self.stillStickFigureImageView.alpha = 0;
     
     [self startAnimating];
 }
@@ -115,7 +123,10 @@
 -(void)tailFlickAnimate {
     
  tailFlickArray = [NSArray arrayWithObjects:
-                  [UIImage imageNamed:@"turtling-ev2-for-TaskView-tailLow.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-tailMiddle.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-tailHigh.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-tailMiddle.png"],nil];
+                   [UIImage imageNamed:@"turtling-ev2-for-TaskView-tailLow.png"],
+                   [UIImage imageNamed:@"turtling-ev2-for-TaskView-tailMiddle.png"],
+                   [UIImage imageNamed:@"turtling-ev2-for-TaskView-tailHigh.png"],
+                   [UIImage imageNamed:@"turtling-ev2-for-TaskView-tailMiddle.png"],nil];
 
 self.animationImages = tailFlickArray;
 self.animationDuration = 1.0f;
@@ -127,7 +138,12 @@ self.animationDuration = 1.0f;
 -(void) growLimbsEvo3 {
     
 evolution3Array = [NSArray arrayWithObjects:
-                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-1.png"],[UIImage imageNamed:@"turtling-ev3-for-TaskView-2.png"],[UIImage imageNamed:@"turtling-ev2-for-TaskView-3.png"],[UIImage imageNamed:@"turtling-ev3-for-TaskView-4.png"], [UIImage imageNamed:@"turtling-ev2-for-TaskView-3.png"], [UIImage imageNamed:@"turtling-ev2-for-TaskView-2.png"],nil];
+                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-1.png"],
+                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-2.png"],
+                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-3.png"],
+                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-4.png"],
+                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-3.png"],
+                   [UIImage imageNamed:@"turtling-ev3-for-TaskView-2.png"],nil];
 
 self.animationImages = evolution3Array;
 self.animationDuration = 1.0f;
@@ -136,4 +152,26 @@ self.animationDuration = 1.0f;
     
 }
 
+-(void) growWingsEvo4 {
+    
+    evolution3Array = [NSArray arrayWithObjects:
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-1.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-2.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-3.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-4.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-5.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-6.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-7.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-6.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-5.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-4.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-3.png"],
+                       [UIImage imageNamed:@"turtling-ev4-for-TaskView-2.png"],nil];
+    
+    self.animationImages = evolution3Array;
+    self.animationDuration = 1.0f;
+    
+    [self startAnimating];
+    
+}
 @end

@@ -167,6 +167,15 @@
         [self.monsterEvolutionImage growLimbsEvo3];
         
     
+    } else if ([evolutionNumber intValue] == 4) {
+        
+        self.monsterLeftEyeImage.hidden = YES;
+        self.monsterRightEyeImage.hidden = YES;
+        self.fullMonsterImage.hidden = YES;
+        self.mouthOpenImage.hidden = YES;
+        self.blushedCheeksImage.hidden = YES;
+        
+        [self.monsterEvolutionImage growWingsEvo4];
     }
 }
 
@@ -425,8 +434,8 @@
 
     // i put this here because it needs access to step.
     //the number of points per evolution, relates to a completion percentage
+   
     //the actual xp / possible xp, creates a percentage of points completed.
-    
     int updatedTaskXP = [self.selectedTask.actualXP intValue]+ [step.stepXP intValue];
 
     NSLog(@"updated task XP: %d", updatedTaskXP);
@@ -441,7 +450,7 @@
         self.selectedTask.taskComplete = [NSNumber numberWithBool:YES];
     }
     
-    float percentageOfPotentialEvolutions= [self.selectedTask.monster.evolutions count]*.1f;
+    float percentageOfPotentialEvolutions= 1.0f/[self.selectedTask.monster.evolutions count];
     NSLog(@"percent of evolutions:%f", percentageOfPotentialEvolutions);
     
     
@@ -455,30 +464,48 @@
     self.sortedEvolutions = [evolutionsSet sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortByEvoNumber]];
 
     
-    if (percentageOfCompletedSteps < percentageOfPotentialEvolutions){
+    if (percentageOfCompletedSteps <= percentageOfPotentialEvolutions){
         NSLog(@"evolution s/b: 1");
+        
+        
         self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
         //[self performSegueWithIdentifier:@"segueToEvolve" sender:self];
         ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:YES];
         ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:NO];
         ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[3]).currentEvolution = [NSNumber numberWithBool:NO];
+
         
-    } else if (percentageOfCompletedSteps < (percentageOfPotentialEvolutions*2)){
+    } else if (percentageOfCompletedSteps <= (percentageOfPotentialEvolutions*2)){
         NSLog(@"evolution s/b: 2");
         self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
         //[self performSegueWithIdentifier:@"segueToEvolve" sender:self];
         ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:NO];
         ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:YES];
         ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[3]).currentEvolution = [NSNumber numberWithBool:NO];
+
         
-    } else if (percentageOfCompletedSteps <percentageOfPotentialEvolutions*3){
+    } else if (percentageOfCompletedSteps <= percentageOfPotentialEvolutions*3){
         NSLog(@"evolution s/b: 3");
         self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
         //[self performSegueWithIdentifier:@"segueToEvolve" sender:self];
         ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:NO];
         ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:NO];
-        ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:YES];    }
+        ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:YES];
+        ((Evolution*)self.sortedEvolutions[3]).currentEvolution = [NSNumber numberWithBool:NO];
+
+    } else if (percentageOfCompletedSteps <= percentageOfPotentialEvolutions*4){
+        NSLog(@"evolution s/b: 4");
+        self.selectedTask.actualXP = [NSNumber numberWithInt: updatedTaskXP];
+        //[self performSegueWithIdentifier:@"segueToEvolve" sender:self];
+        ((Evolution*)self.sortedEvolutions[0]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[1]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[2]).currentEvolution = [NSNumber numberWithBool:NO];
+        ((Evolution*)self.sortedEvolutions[3]).currentEvolution = [NSNumber numberWithBool:YES];
+    }
     
+
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         
@@ -531,7 +558,7 @@
     }
     
 }
-
+ 
 #pragma mark Setup FetchedResults controller
 
 -(NSFetchedResultsController *) stepsResultController {

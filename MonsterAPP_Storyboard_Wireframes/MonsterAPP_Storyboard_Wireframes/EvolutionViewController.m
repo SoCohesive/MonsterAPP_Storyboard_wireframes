@@ -48,10 +48,15 @@
         
         [self performSelector:@selector(flickTailEvo2) withObject:nil afterDelay:.5f];
     
-    } else {
-
+    } else if([self.evolutionForImages.evolutionNumber intValue]== 3)
+        {
+            
         [self performSelector:@selector(addLimbsEvo3) withObject:nil afterDelay:.5f];
-    }
+        
+        } else {
+        
+            [self performSelector:@selector(addWingsEvo4) withObject:nil afterDelay:.5f];
+        }
 
 	// Do any additional setup after loading the view.
     
@@ -93,6 +98,13 @@
     
     [self.monsterImagesForAnimation growLimbsEvo3];
 
+}
+
+-(void)addWingsEvo4
+{
+    
+    [self.monsterImagesForAnimation growWingsEvo4];
+    
 }
 
 - (void)goBackToTaskView {

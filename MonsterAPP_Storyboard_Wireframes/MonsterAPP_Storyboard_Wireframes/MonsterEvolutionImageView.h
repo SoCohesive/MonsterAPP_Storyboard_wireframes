@@ -14,6 +14,7 @@
 -(void) animationOne;
 -(void)tailFlickAnimate;
 -(void) growLimbsEvo3;
+-(void) growWingsEvo4;
 -(void) showCheeksAnimation;
 -(void) animateEyesForBlinking;
 -(void) blinkOpenAnimationForMonster;

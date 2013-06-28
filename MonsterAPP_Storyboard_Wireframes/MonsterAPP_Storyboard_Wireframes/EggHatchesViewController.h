@@ -28,6 +28,7 @@
 @property (strong, nonatomic) Evolution *evolution1;
 @property (strong, nonatomic) Evolution *evolution2;
 @property (strong, nonatomic) Evolution *evolution3;
+@property (strong, nonatomic) Evolution *evolution4;
 
 @property (strong, nonatomic) NSString *taskDueString;
 @property (strong, nonatomic) NSString *taskProjectType;
