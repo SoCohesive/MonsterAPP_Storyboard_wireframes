@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSString *thumbPath;
 
 -(void)setupTasksFetchController;
+-(void)setupLogoutButton;
 //-(void) setNavigationLogic;
 
 
@@ -75,6 +76,14 @@
     
     
     NSLog(@"the existing tasks in project list have these steps %@",self.existingTask.taskDetails);
+    
+    //insert log out button
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(setupLogoutButton)];
+    self.navigationItem.rightBarButtonItem = logoutButton;
+    
 
     [self.projectsTableView reloadData];
 }
