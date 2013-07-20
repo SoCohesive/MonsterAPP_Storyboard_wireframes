@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
 
 - (IBAction)saveTaskDoneButton:(id)sender;
+- (IBAction)datePickerValueChange:(id)sender;
 
 
 @end

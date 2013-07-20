@@ -15,6 +15,9 @@
     NSArray *turtleWobble;
     NSArray *evolution3Array;
     NSArray *evolution4Array;
+    NSArray *evolution5Array;
+    NSArray *evolution6Array;
+
 
     SystemSoundID  soundID3;
 }
@@ -154,7 +157,7 @@ self.animationDuration = 1.0f;
 
 -(void) growWingsEvo4 {
     
-    evolution3Array = [NSArray arrayWithObjects:
+    evolution4Array = [NSArray arrayWithObjects:
                        [UIImage imageNamed:@"turtling-ev4-for-TaskView-1.png"],
                        [UIImage imageNamed:@"turtling-ev4-for-TaskView-2.png"],
                        [UIImage imageNamed:@"turtling-ev4-for-TaskView-3.png"],
@@ -168,10 +171,71 @@ self.animationDuration = 1.0f;
                        [UIImage imageNamed:@"turtling-ev4-for-TaskView-3.png"],
                        [UIImage imageNamed:@"turtling-ev4-for-TaskView-2.png"],nil];
     
-    self.animationImages = evolution3Array;
+    self.animationImages = evolution4Array;
     self.animationDuration = 1.0f;
     
     [self startAnimating];
     
 }
+
+-(void) faceChangeEvo5 {
+    
+    evolution5Array = [NSArray arrayWithObjects:
+                       [UIImage imageNamed:@"turtling-ev5-1.png"],
+                       [UIImage imageNamed:@"turtling-ev5-2.png"],
+                       [UIImage imageNamed:@"turtling-ev5-3.png"],
+                       [UIImage imageNamed:@"turtling-ev5-4.png"],
+                       [UIImage imageNamed:@"turtling-ev5-5.png"],
+                       [UIImage imageNamed:@"turtling-ev5-6.png"],
+                       [UIImage imageNamed:@"turtling-ev5-7.png"],
+                       [UIImage imageNamed:@"turtling-ev5-8.png"],
+                       [UIImage imageNamed:@"turtling-ev5-7.png"],
+                       [UIImage imageNamed:@"turtling-ev5-6.png"],
+                       [UIImage imageNamed:@"turtling-ev5-5.png"],
+                       [UIImage imageNamed:@"turtling-ev5-4.png"],
+                       [UIImage imageNamed:@"turtling-ev5-3.png"],
+                       [UIImage imageNamed:@"turtling-ev5-2.png"],nil];
+    
+    self.animationImages = evolution5Array;
+    self.animationDuration = 1.0f;
+    
+    [self startAnimating];
+    
+}
+
+-(void) tailChangeEvo6;
+{
+    evolution6Array = [NSArray arrayWithObjects:
+                       [UIImage imageNamed:@"turtling-ev6-1.png"],
+                       [UIImage imageNamed:@"turtling-ev6-2.png"],
+                       [UIImage imageNamed:@"turtling-ev6-3.png"],
+                       [UIImage imageNamed:@"turtling-ev6-4.png"],
+                       [UIImage imageNamed:@"turtling-ev6-5.png"],
+                       [UIImage imageNamed:@"turtling-ev6-6.png"],
+                       [UIImage imageNamed:@"turtling-ev6-7.png"],
+                       [UIImage imageNamed:@"turtling-ev6-8.png"],
+                       [UIImage imageNamed:@"turtling-ev6-9.png"],
+                       [UIImage imageNamed:@"turtling-ev6-10.png"],
+                       [UIImage imageNamed:@"turtling-ev6-11.png"],
+                       [UIImage imageNamed:@"turtling-ev6-12.png"],
+                       [UIImage imageNamed:@"turtling-ev6-13.png"],
+                       [UIImage imageNamed:@"turtling-ev6-13.png"],
+                       [UIImage imageNamed:@"turtling-ev6-12.png"],
+                       [UIImage imageNamed:@"turtling-ev6-11.png"],
+                       [UIImage imageNamed:@"turtling-ev6-10.png"],
+                       [UIImage imageNamed:@"turtling-ev6-9.png"],
+                       [UIImage imageNamed:@"turtling-ev6-7.png"],
+                       [UIImage imageNamed:@"turtling-ev6-6.png"],
+                       [UIImage imageNamed:@"turtling-ev6-5.png"],
+                       [UIImage imageNamed:@"turtling-ev6-4.png"],
+                       [UIImage imageNamed:@"turtling-ev6-3.png"],
+                       [UIImage imageNamed:@"turtling-ev6-2.png"],nil];
+    
+    self.animationImages = evolution6Array;
+    self.animationDuration = 1.5f;
+    
+    [self startAnimating];
+
+}
+
 @end

@@ -18,4 +18,8 @@
 -(void) showCheeksAnimation;
 -(void) animateEyesForBlinking;
 -(void) blinkOpenAnimationForMonster;
+-(void) faceChangeEvo5;
+-(void) tailChangeEvo6;
+
+
 @end

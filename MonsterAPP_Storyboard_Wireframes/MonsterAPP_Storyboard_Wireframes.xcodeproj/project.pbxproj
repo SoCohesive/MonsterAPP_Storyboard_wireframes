@@ -43,9 +43,6 @@
 		294B083C1763631B00C5DFFA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B083B1763631B00C5DFFA /* Default@2x.png */; };
 		294B083E1763631B00C5DFFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B083D1763631B00C5DFFA /* Default-568h@2x.png */; };
 		294B08441763631B00C5DFFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B08431763631B00C5DFFA /* ViewController.m */; };
-		294B084B176385E600C5DFFA /* vector_monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084A176385E600C5DFFA /* vector_monster.png */; };
-		294B084D176386F800C5DFFA /* egg_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084C176386F800C5DFFA /* egg_still.png */; };
-		294B084F1763874100C5DFFA /* junglg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 294B084E1763874100C5DFFA /* junglg_bg.png */; };
 		2993697F17792A2F00E8CBF7 /* MonsterEvolutionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993697E17792A2F00E8CBF7 /* MonsterEvolutionImageView.m */; };
 		29F1DF7F176C22B000FFB46F /* WelcomeMat_whitebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 29F1DF7E176C22B000FFB46F /* WelcomeMat_whitebg.png */; };
 		29F1DF81176C22F900FFB46F /* DoorKnob_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 29F1DF80176C22F900FFB46F /* DoorKnob_test.png */; };
@@ -72,6 +69,8 @@
 		A40769E617676FAB00AE7F7F /* EggHatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E517676FAB00AE7F7F /* EggHatchesViewController.m */; };
 		A40769E91767775F00AE7F7F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40769E81767775E00AE7F7F /* TaskListViewController.m */; };
 		A40F336B1767C1B400E9EF58 /* ProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */; };
+		A41719EC1780D8A1009FD84C /* turtling-ev5-thumbnail@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A41719E21780D8A1009FD84C /* turtling-ev5-thumbnail@2px.png */; };
+		A41719ED1780D8A1009FD84C /* turtling-ev5-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A41719E31780D8A1009FD84C /* turtling-ev5-thumbnail.png */; };
 		A42A1F43176FCD280008812A /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F42176FCD280008812A /* Monster.m */; };
 		A42A1F46176FCD350008812A /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A1F45176FCD350008812A /* Task.m */; };
 		A42A1F4E176FCFC10008812A /* SparkleShine-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A42A1F4D176FCFC10008812A /* SparkleShine-overlay.png */; };
@@ -87,6 +86,29 @@
 		A4744FA4176F52EE004A55E9 /* turtling-ev1-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A4744FA0176F52EE004A55E9 /* turtling-ev1-thumbnail.png */; };
 		A485E13E1768E18E00ED06DC /* EvolutionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E13D1768E18E00ED06DC /* EvolutionViewController.m */; };
 		A485E1411768E1CE00ED06DC /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A485E1401768E1CE00ED06DC /* OnboardingViewController.m */; };
+		A4D78E0D1790DBF100F165DD /* turtling-ev5-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E051790DBF000F165DD /* turtling-ev5-1.png */; };
+		A4D78E0E1790DBF100F165DD /* turtling-ev5-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E061790DBF000F165DD /* turtling-ev5-2.png */; };
+		A4D78E0F1790DBF100F165DD /* turtling-ev5-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E071790DBF000F165DD /* turtling-ev5-3.png */; };
+		A4D78E101790DBF100F165DD /* turtling-ev5-4.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E081790DBF000F165DD /* turtling-ev5-4.png */; };
+		A4D78E111790DBF100F165DD /* turtling-ev5-5.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E091790DBF100F165DD /* turtling-ev5-5.png */; };
+		A4D78E121790DBF100F165DD /* turtling-ev5-6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E0A1790DBF100F165DD /* turtling-ev5-6.png */; };
+		A4D78E131790DBF100F165DD /* turtling-ev5-7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E0B1790DBF100F165DD /* turtling-ev5-7.png */; };
+		A4D78E141790DBF100F165DD /* turtling-ev5-8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E0C1790DBF100F165DD /* turtling-ev5-8.png */; };
+		A4D78E2417911D6700F165DD /* turtling-ev6-thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1517911D6700F165DD /* turtling-ev6-thumbnail.png */; };
+		A4D78E2517911D6700F165DD /* turtling-ev6-thumbnail@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1617911D6700F165DD /* turtling-ev6-thumbnail@2px.png */; };
+		A4D78E2617911D6700F165DD /* turtling-ev6-13.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1717911D6700F165DD /* turtling-ev6-13.png */; };
+		A4D78E2717911D6700F165DD /* turtling-ev6-12.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1817911D6700F165DD /* turtling-ev6-12.png */; };
+		A4D78E2817911D6700F165DD /* turtling-ev6-11.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1917911D6700F165DD /* turtling-ev6-11.png */; };
+		A4D78E2917911D6700F165DD /* turtling-ev6-10.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1A17911D6700F165DD /* turtling-ev6-10.png */; };
+		A4D78E2A17911D6700F165DD /* turtling-ev6-9.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1B17911D6700F165DD /* turtling-ev6-9.png */; };
+		A4D78E2B17911D6700F165DD /* turtling-ev6-8.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1C17911D6700F165DD /* turtling-ev6-8.png */; };
+		A4D78E2C17911D6700F165DD /* turtling-ev6-7.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1D17911D6700F165DD /* turtling-ev6-7.png */; };
+		A4D78E2D17911D6700F165DD /* turtling-ev6-6.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1E17911D6700F165DD /* turtling-ev6-6.png */; };
+		A4D78E2E17911D6700F165DD /* turtling-ev6-5.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E1F17911D6700F165DD /* turtling-ev6-5.png */; };
+		A4D78E2F17911D6700F165DD /* turtling-ev6-4.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E2017911D6700F165DD /* turtling-ev6-4.png */; };
+		A4D78E3017911D6700F165DD /* turtling-ev6-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E2117911D6700F165DD /* turtling-ev6-3.png */; };
+		A4D78E3117911D6700F165DD /* turtling-ev6-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E2217911D6700F165DD /* turtling-ev6-2.png */; };
+		A4D78E3217911D6700F165DD /* turtling-ev6-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D78E2317911D6700F165DD /* turtling-ev6-1.png */; };
 		A4D988531774EF3100FA9312 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D988521774EF3100FA9312 /* User.m */; };
 		A4D9885D1774FFD600FA9312 /* monstrous-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9885C1774FFD600FA9312 /* monstrous-icon.png */; };
 		A4D9885F1774FFDB00FA9312 /* monstrous-icon@2px.png in Resources */ = {isa = PBXBuildFile; fileRef = A4D9885E1774FFDB00FA9312 /* monstrous-icon@2px.png */; };
@@ -169,9 +191,6 @@
 		294B083D1763631B00C5DFFA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		294B08421763631B00C5DFFA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		294B08431763631B00C5DFFA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		294B084A176385E600C5DFFA /* vector_monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vector_monster.png; sourceTree = "<group>"; };
-		294B084C176386F800C5DFFA /* egg_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_still.png; sourceTree = "<group>"; };
-		294B084E1763874100C5DFFA /* junglg_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junglg_bg.png; sourceTree = "<group>"; };
 		2993697D17792A2F00E8CBF7 /* MonsterEvolutionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterEvolutionImageView.h; sourceTree = "<group>"; };
 		2993697E17792A2F00E8CBF7 /* MonsterEvolutionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonsterEvolutionImageView.m; sourceTree = "<group>"; };
 		29F1DF7E176C22B000FFB46F /* WelcomeMat_whitebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomeMat_whitebg.png; sourceTree = "<group>"; };
@@ -203,6 +222,8 @@
 		A40769E81767775E00AE7F7F /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
 		A40F33691767C1B300E9EF58 /* ProjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectListViewController.h; sourceTree = "<group>"; };
 		A40F336A1767C1B300E9EF58 /* ProjectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectListViewController.m; sourceTree = "<group>"; };
+		A41719E21780D8A1009FD84C /* turtling-ev5-thumbnail@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-thumbnail@2px.png"; sourceTree = "<group>"; };
+		A41719E31780D8A1009FD84C /* turtling-ev5-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-thumbnail.png"; sourceTree = "<group>"; };
 		A42A1F41176FCD280008812A /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		A42A1F42176FCD280008812A /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 		A42A1F44176FCD350008812A /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
@@ -223,6 +244,29 @@
 		A485E13D1768E18E00ED06DC /* EvolutionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvolutionViewController.m; sourceTree = "<group>"; };
 		A485E13F1768E1CE00ED06DC /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
 		A485E1401768E1CE00ED06DC /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		A4D78E051790DBF000F165DD /* turtling-ev5-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-1.png"; sourceTree = "<group>"; };
+		A4D78E061790DBF000F165DD /* turtling-ev5-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-2.png"; sourceTree = "<group>"; };
+		A4D78E071790DBF000F165DD /* turtling-ev5-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-3.png"; sourceTree = "<group>"; };
+		A4D78E081790DBF000F165DD /* turtling-ev5-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-4.png"; sourceTree = "<group>"; };
+		A4D78E091790DBF100F165DD /* turtling-ev5-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-5.png"; sourceTree = "<group>"; };
+		A4D78E0A1790DBF100F165DD /* turtling-ev5-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-6.png"; sourceTree = "<group>"; };
+		A4D78E0B1790DBF100F165DD /* turtling-ev5-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-7.png"; sourceTree = "<group>"; };
+		A4D78E0C1790DBF100F165DD /* turtling-ev5-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev5-8.png"; sourceTree = "<group>"; };
+		A4D78E1517911D6700F165DD /* turtling-ev6-thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-thumbnail.png"; sourceTree = "<group>"; };
+		A4D78E1617911D6700F165DD /* turtling-ev6-thumbnail@2px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-thumbnail@2px.png"; sourceTree = "<group>"; };
+		A4D78E1717911D6700F165DD /* turtling-ev6-13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-13.png"; sourceTree = "<group>"; };
+		A4D78E1817911D6700F165DD /* turtling-ev6-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-12.png"; sourceTree = "<group>"; };
+		A4D78E1917911D6700F165DD /* turtling-ev6-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-11.png"; sourceTree = "<group>"; };
+		A4D78E1A17911D6700F165DD /* turtling-ev6-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-10.png"; sourceTree = "<group>"; };
+		A4D78E1B17911D6700F165DD /* turtling-ev6-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-9.png"; sourceTree = "<group>"; };
+		A4D78E1C17911D6700F165DD /* turtling-ev6-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-8.png"; sourceTree = "<group>"; };
+		A4D78E1D17911D6700F165DD /* turtling-ev6-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-7.png"; sourceTree = "<group>"; };
+		A4D78E1E17911D6700F165DD /* turtling-ev6-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-6.png"; sourceTree = "<group>"; };
+		A4D78E1F17911D6700F165DD /* turtling-ev6-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-5.png"; sourceTree = "<group>"; };
+		A4D78E2017911D6700F165DD /* turtling-ev6-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-4.png"; sourceTree = "<group>"; };
+		A4D78E2117911D6700F165DD /* turtling-ev6-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-3.png"; sourceTree = "<group>"; };
+		A4D78E2217911D6700F165DD /* turtling-ev6-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-2.png"; sourceTree = "<group>"; };
+		A4D78E2317911D6700F165DD /* turtling-ev6-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turtling-ev6-1.png"; sourceTree = "<group>"; };
 		A4D988511774EF3100FA9312 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A4D988521774EF3100FA9312 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A4D9885C1774FFD600FA9312 /* monstrous-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "monstrous-icon.png"; path = "../monstrous-icon.png"; sourceTree = "<group>"; };
@@ -409,9 +453,6 @@
 				A4F378E01766267000CEC7FB /* new egg files */,
 				A43ED69D1766C1AA00BD14DE /* hatching egg files */,
 				292943FA176403E4001315E8 /* chinchilla.png */,
-				294B084E1763874100C5DFFA /* junglg_bg.png */,
-				294B084C176386F800C5DFFA /* egg_still.png */,
-				294B084A176385E600C5DFFA /* vector_monster.png */,
 				294B082F1763631B00C5DFFA /* MonsterAPP_Storyboard_Wireframes-Info.plist */,
 				294B08301763631B00C5DFFA /* InfoPlist.strings */,
 				294B08331763631B00C5DFFA /* main.m */,
@@ -520,6 +561,29 @@
 		A4744F9C176F52C6004A55E9 /* turtlingEvolutions */ = {
 			isa = PBXGroup;
 			children = (
+				A4D78E1517911D6700F165DD /* turtling-ev6-thumbnail.png */,
+				A4D78E1617911D6700F165DD /* turtling-ev6-thumbnail@2px.png */,
+				A4D78E1717911D6700F165DD /* turtling-ev6-13.png */,
+				A4D78E1817911D6700F165DD /* turtling-ev6-12.png */,
+				A4D78E1917911D6700F165DD /* turtling-ev6-11.png */,
+				A4D78E1A17911D6700F165DD /* turtling-ev6-10.png */,
+				A4D78E1B17911D6700F165DD /* turtling-ev6-9.png */,
+				A4D78E1C17911D6700F165DD /* turtling-ev6-8.png */,
+				A4D78E1D17911D6700F165DD /* turtling-ev6-7.png */,
+				A4D78E1E17911D6700F165DD /* turtling-ev6-6.png */,
+				A4D78E1F17911D6700F165DD /* turtling-ev6-5.png */,
+				A4D78E2017911D6700F165DD /* turtling-ev6-4.png */,
+				A4D78E2117911D6700F165DD /* turtling-ev6-3.png */,
+				A4D78E2217911D6700F165DD /* turtling-ev6-2.png */,
+				A4D78E2317911D6700F165DD /* turtling-ev6-1.png */,
+				A4D78E051790DBF000F165DD /* turtling-ev5-1.png */,
+				A4D78E061790DBF000F165DD /* turtling-ev5-2.png */,
+				A4D78E071790DBF000F165DD /* turtling-ev5-3.png */,
+				A4D78E081790DBF000F165DD /* turtling-ev5-4.png */,
+				A4D78E091790DBF100F165DD /* turtling-ev5-5.png */,
+				A4D78E0A1790DBF100F165DD /* turtling-ev5-6.png */,
+				A4D78E0B1790DBF100F165DD /* turtling-ev5-7.png */,
+				A4D78E0C1790DBF100F165DD /* turtling-ev5-8.png */,
 				89B07E98177DBD9600CED661 /* turtling-ev4-for-TaskView-1.png */,
 				89B07E99177DBD9600CED661 /* turtling-ev4-for-TaskView-2.png */,
 				89B07E9A177DBD9600CED661 /* turtling-ev4-for-TaskView-3.png */,
@@ -529,6 +593,8 @@
 				89B07E9E177DBD9600CED661 /* turtling-ev4-for-TaskView-7.png */,
 				A4D9886A1778B20A00FA9312 /* turtling-ev3-for-TaskView-4.png */,
 				A4D9886B1778B20C00FA9312 /* turtling-ev3-for-TaskView-3.png */,
+				A41719E21780D8A1009FD84C /* turtling-ev5-thumbnail@2px.png */,
+				A41719E31780D8A1009FD84C /* turtling-ev5-thumbnail.png */,
 				A4D9886C1778B20E00FA9312 /* turtling-ev3-for-TaskView-2.png */,
 				A4D9886D1778B20F00FA9312 /* turtling-ev3-for-TaskView-1.png */,
 				A4F36DC217739927005A10DF /* turtling-ev2-for-TaskView-tailHigh.png */,
@@ -618,9 +684,6 @@
 				294B083A1763631B00C5DFFA /* Default.png in Resources */,
 				294B083C1763631B00C5DFFA /* Default@2x.png in Resources */,
 				294B083E1763631B00C5DFFA /* Default-568h@2x.png in Resources */,
-				294B084B176385E600C5DFFA /* vector_monster.png in Resources */,
-				294B084D176386F800C5DFFA /* egg_still.png in Resources */,
-				294B084F1763874100C5DFFA /* junglg_bg.png in Resources */,
 				292943FB176403E4001315E8 /* chinchilla.png in Resources */,
 				A4F378E21766268200CEC7FB /* firstEgg.png in Resources */,
 				A4F378E61766268E00CEC7FB /* SparkleShine.png in Resources */,
@@ -698,6 +761,31 @@
 				89B07EA3177DBD9600CED661 /* turtling-ev4-for-TaskView-5.png in Resources */,
 				89B07EA4177DBD9600CED661 /* turtling-ev4-for-TaskView-6.png in Resources */,
 				89B07EA5177DBD9600CED661 /* turtling-ev4-for-TaskView-7.png in Resources */,
+				A41719EC1780D8A1009FD84C /* turtling-ev5-thumbnail@2px.png in Resources */,
+				A41719ED1780D8A1009FD84C /* turtling-ev5-thumbnail.png in Resources */,
+				A4D78E0D1790DBF100F165DD /* turtling-ev5-1.png in Resources */,
+				A4D78E0E1790DBF100F165DD /* turtling-ev5-2.png in Resources */,
+				A4D78E0F1790DBF100F165DD /* turtling-ev5-3.png in Resources */,
+				A4D78E101790DBF100F165DD /* turtling-ev5-4.png in Resources */,
+				A4D78E111790DBF100F165DD /* turtling-ev5-5.png in Resources */,
+				A4D78E121790DBF100F165DD /* turtling-ev5-6.png in Resources */,
+				A4D78E131790DBF100F165DD /* turtling-ev5-7.png in Resources */,
+				A4D78E141790DBF100F165DD /* turtling-ev5-8.png in Resources */,
+				A4D78E2417911D6700F165DD /* turtling-ev6-thumbnail.png in Resources */,
+				A4D78E2517911D6700F165DD /* turtling-ev6-thumbnail@2px.png in Resources */,
+				A4D78E2617911D6700F165DD /* turtling-ev6-13.png in Resources */,
+				A4D78E2717911D6700F165DD /* turtling-ev6-12.png in Resources */,
+				A4D78E2817911D6700F165DD /* turtling-ev6-11.png in Resources */,
+				A4D78E2917911D6700F165DD /* turtling-ev6-10.png in Resources */,
+				A4D78E2A17911D6700F165DD /* turtling-ev6-9.png in Resources */,
+				A4D78E2B17911D6700F165DD /* turtling-ev6-8.png in Resources */,
+				A4D78E2C17911D6700F165DD /* turtling-ev6-7.png in Resources */,
+				A4D78E2D17911D6700F165DD /* turtling-ev6-6.png in Resources */,
+				A4D78E2E17911D6700F165DD /* turtling-ev6-5.png in Resources */,
+				A4D78E2F17911D6700F165DD /* turtling-ev6-4.png in Resources */,
+				A4D78E3017911D6700F165DD /* turtling-ev6-3.png in Resources */,
+				A4D78E3117911D6700F165DD /* turtling-ev6-2.png in Resources */,
+				A4D78E3217911D6700F165DD /* turtling-ev6-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

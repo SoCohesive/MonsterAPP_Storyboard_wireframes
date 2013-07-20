@@ -53,10 +53,19 @@
             
         [self performSelector:@selector(addLimbsEvo3) withObject:nil afterDelay:.5f];
         
-        } else {
+        } else if ([self.evolutionForImages.evolutionNumber intValue]== 4)
+            {
         
             [self performSelector:@selector(addWingsEvo4) withObject:nil afterDelay:.5f];
-        }
+            
+            } else if ([self.evolutionForImages.evolutionNumber intValue]== 5)
+                
+            {[self performSelector:@selector(changeFaceEvo5) withObject:nil afterDelay:.5f];
+            
+            } else {
+                
+                [self performSelector:@selector(changeTailEvo6) withObject:nil afterDelay:.5f];
+            }
 
 	// Do any additional setup after loading the view.
     
@@ -105,6 +114,19 @@
     
     [self.monsterImagesForAnimation growWingsEvo4];
     
+}
+
+-(void)changeFaceEvo5
+{
+    
+    [self.monsterImagesForAnimation faceChangeEvo5];
+    
+}
+
+-(void)changeTailEvo6
+{
+    [self.monsterImagesForAnimation tailChangeEvo6];
+
 }
 
 - (void)goBackToTaskView {

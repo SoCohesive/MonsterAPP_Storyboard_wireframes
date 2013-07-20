@@ -97,8 +97,11 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    self.monsterNameField.delegate = self;
+
     [self performSegueWithIdentifier:@"segueToTaskList" sender:self];
     [self saveMonster];
+    
     return YES;
 }
 
@@ -178,6 +181,28 @@
     self.evolution4.monster = self.monster;
     self.evolution4.currentEvolution = [NSNumber numberWithBool:NO];
     [self.monster addEvolutionsObject:self.evolution4];
+
+    //create managedObject
+    self.evolution5 = [NSEntityDescription insertNewObjectForEntityForName:@"Evolution" inManagedObjectContext:managedObjectContext];
+    
+    //set managedObject properties
+    self.evolution5.evolutionNumber = [NSNumber numberWithInt:5];
+    self.evolution5.evolutionDescription=@"Tuserpent has a new look in his eyes.";
+    self.evolution5.thumbnailName = @"turtling-ev5-thumbnail.png";
+    self.evolution5.monster = self.monster;
+    self.evolution5.currentEvolution = [NSNumber numberWithBool:NO];
+    [self.monster addEvolutionsObject:self.evolution5];
+    
+    //create managedObject
+    self.evolution6 = [NSEntityDescription insertNewObjectForEntityForName:@"Evolution" inManagedObjectContext:managedObjectContext];
+    
+    //set managedObject properties
+    self.evolution6.evolutionNumber = [NSNumber numberWithInt:6];
+    self.evolution6.evolutionDescription=@"Tuserpent is developing a dragon body.";
+    self.evolution6.thumbnailName = @"turtling-ev6-thumbnail.png";
+    self.evolution6.monster = self.monster;
+    self.evolution6.currentEvolution = [NSNumber numberWithBool:NO];
+    [self.monster addEvolutionsObject:self.evolution6];
 
 
     NSError *error = nil;

@@ -100,11 +100,15 @@
     self.nameField.layer.masksToBounds=YES;
     self.nameField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
     self.nameField.layer.borderWidth= 1.0f;
+    self.nameField.backgroundColor = [UIColor whiteColor];
+
     
     self.emailField.layer.cornerRadius=8.0f;
     self.emailField.layer.masksToBounds=YES;
     self.emailField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
     self.emailField.layer.borderWidth= 1.0f;
+    self.emailField.backgroundColor = [UIColor whiteColor];
+
     
 }
 

@@ -88,6 +88,7 @@
     self.dateEntryField.layer.masksToBounds=YES;
     self.dateEntryField.layer.borderColor = [[UIColor colorWithRed:49.0/255.0 green:25.0/255.0 blue:60.0/255.0 alpha:1.0]CGColor];
     self.dateEntryField.layer.borderWidth= 1.0f;
+
     
     self.dateEntryField.inputView = self.datePicker;
     self.dateEntryField.inputAccessoryView = self.datePickToolbar;
@@ -101,22 +102,22 @@
 -(void)chooseNameRequest
 {
     if ([self.projectTypeForName isEqual:@"Write a Book Report"]) {
-        self.titleTextField.text = @"What book are you reading?";
+        self.titleTextField.text = @"Type the book title here.";
     }else if ([self.projectTypeForName isEqual:@"Study for a Test"]){
-        self.titleTextField.text = @"What test are you studying for?";
+        self.titleTextField.text = @"Type the test's subject here.";
     } else {
-        self.titleTextField.text = @"What will your experiment be about?";
+        self.titleTextField.text = @"Type your experiment name here.";
     }
     //at some point these questions may be an entity property?
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    if (textField == self.titleTextField) {
+    //if (textField == self.titleTextField) {
         return YES;
-    }else{
-        return NO;
+    //}else{
+      //  return NO;
     
-    }
+    //}
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -144,13 +145,13 @@
 -(void)chooseDueQuestion
 {
     if ([self.projectTypeForName isEqual:@"Write a Book Report"]) {
-        self.dateEntryField.text = @"Select Date";
+        self.dateEntryField.text = @"Pick the report's due date below.";
         
     }else if ([self.projectTypeForName isEqual:@"Study for a Test"]){
-        self.dateEntryField.text = @"So when is the big test?";
+        self.dateEntryField.text = @"Pick the date of the test below.";
         
     } else {
-        self.dateEntryField.text = @"When will you present your discovery?";
+        self.dateEntryField.text = @"Pick the ";
     }
 }
 
@@ -186,6 +187,12 @@
     
     
 }
+- (IBAction)datePickerValueChange:(id)sender {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateStyle = NSDateFormatterMediumStyle;
+    self.dateEntryField.text = [NSString stringWithFormat:@"%@",[df stringFromDate:self.datePicker.date]];
+}
+
 #pragma
 #pragma CoreData
 
@@ -306,6 +313,8 @@
     [self performSegueWithIdentifier:@"segueToHatch" sender:self];
   
 }
+
+
 
 - (IBAction)pickerToolbarDoneButton:(id)sender {
 
